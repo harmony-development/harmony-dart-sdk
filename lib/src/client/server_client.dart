@@ -4,6 +4,8 @@ import 'homeserver.dart';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 
+import 'package:web_socket_channel/io.dart';
+
 class ServerClient {
   Homeserver _homeserver;
   String _session;
@@ -12,6 +14,17 @@ class ServerClient {
 
   Homeserver get homeserver => _homeserver;
   String get session => _session;
+
+  IOWebSocketChannel subscribe() {
+    IOWebSocketChannel channel = IOWebSocketChannel.connect(homeserver.toSocket().toString());
+    channel.sink.add(json.encode({
+      "type": "subscribe",
+      "data": {
+        "Session": session
+      }
+    }));
+    return channel;
+  }
 
   Future<bool> _login(var params) async {
     var response = await http.post(

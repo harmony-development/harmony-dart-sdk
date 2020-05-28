@@ -4,3 +4,5 @@ description: >-
   The SDK for the Harmony protocol.
 dependencies:
   http: ^0.12.1
+  async: ^2.4.1
+  web_socket_channel: ^1.1.0
