@@ -6,7 +6,8 @@ main() async {
     throw ok;
   }
   print(await client.joinedGuilds());
-  var id = await client.createGuild("Yeet");
-  print(id);
-  print(await client.setGuildName(id, "Yaoi"));
+  var guild = await client.createGuild("Yeet");
+  await guild.setName("Yaoi");
+  print(guild.owner.name);
+  await guild.delete();
 }
