@@ -91,3 +91,20 @@ void deleteGuild(ServerClient client, String guildID) async {
     throw response.statusCode;
   }
 }
+
+Future<List<String>> guildMemberList(ServerClient client, String guildID) async {
+  var response = await http.get(
+    client.homeserver.toAPI("core", 1, "guilds/${guildID}/members"),
+    headers: {
+      HttpHeaders.authorizationHeader: client.session
+    }
+  );
+  if (response.statusCode != HttpStatus.ok) {
+    throw response.statusCode;
+  }
+  var decoded = json.decode(response.body);
+  if (decoded != null && decoded is Map) {
+    return List<String>.from(decoded["members"] ?? [""]);
+  }
+  return List<String>();
+}

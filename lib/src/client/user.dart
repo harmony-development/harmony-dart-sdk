@@ -9,14 +9,20 @@ class User {
   }
 
   void refresh() async {
-    var data = await CoreKit.getUserData(_server, _userID);
-    _name = data["user_name"];
-    _avatar = data["user_avatar"];
+    var data = CoreKit.getUserData(_server, _userID);
+    _name = Future(() async {
+      var doneData = await data;
+      return doneData["user_name"];
+    });
+    _avatar = Future(() async {
+      var doneData = await data;
+      return doneData["user_avatar"];
+    });
   }
 
-  String _name;
-  String get name => _name;
-  
-  String _avatar;
-  String get avatar => _avatar;
+  Future<String> _name;
+  Future<String> get name => _name;
+
+  Future<String> _avatar;
+  Future<String> get avatar => _avatar;
 }

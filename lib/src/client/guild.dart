@@ -29,7 +29,14 @@ class Guild {
       var doneData = await data;
       return User(_server, doneData["guild_owner"]);
     });
+    _members = Future(() async {
+      var data = await CoreKit.guildMemberList(_server, _guildID);
+      return data.map((userID) => User(_server, userID)).toList();
+    });
   }
+
+  Future<List<User>> _members;
+  Future<List<User>> get members => _members;
 
   Future<User> _owner;
   Future<User> get owner => _owner;
