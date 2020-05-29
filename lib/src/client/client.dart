@@ -13,12 +13,17 @@ part 'event.dart';
 
 class Client {
   ServerClient _nativeHomeserver;
+  List<ServerClient> _foreignHomeservers = List<ServerClient>();
   StreamGroup<Event> _unifiedStream = StreamGroup<Event>.broadcast();
-  Client _parent;
+  bool _connected = false;
 
   // CoreKit
   Future<List<Guild>> joinedGuilds() async {
     var guilds = await CoreKit.joinedGuilds(_nativeHomeserver);
+    for (var client in _foreignHomeservers) {
+      var foreignGuilds = await CoreKit.joinedGuilds(client);
+      guilds.addAll(foreignGuilds);
+    }
     return guilds.map((guild) => Guild(guild, _nativeHomeserver)).toList();
   }
   Future<Guild> createGuild(String guildName) => Guild.create(_nativeHomeserver, guildName);
@@ -27,23 +32,38 @@ class Client {
     return _nativeHomeserver.login_with_email(email, password);
   }
 
-  void connect() {
-    var channel = _nativeHomeserver.subscribe();
-    var mapped = channel.stream.map((data) => Event.from_json(data));
-    if (_parent != null) {
-      _parent._unifiedStream.add(mapped);
-    } else {
-      _unifiedStream.add(mapped);
+  Future<bool> federate(Homeserver target) async {
+    try {
+      var client = await _nativeHomeserver.federate(target);
+      _foreignHomeservers.add(client);
+      if (_connected) {
+        var channel = client.subscribe();
+        var mapped = channel.stream.map((data) => Event.from_json(data));
+        _unifiedStream.add(mapped);
+      }
+      return true;
+    } catch (e) {
+      return false;
     }
   }
 
-  Stream<Event> get eventStream {
-    if (_parent != null) {
-      return _parent.eventStream;
-    } else {
-      return _unifiedStream.stream;
+  void connect() {
+    if (_connected) {
+      return;
     }
+    var channel = _nativeHomeserver.subscribe();
+    var mapped = channel.stream.map((data) => Event.from_json(data));
+    _unifiedStream.add(mapped);
+    for (var client in _foreignHomeservers) {
+      var chan = client.subscribe();
+      var map = chan.stream.map((data) => Event.from_json(data));
+      _unifiedStream.add(map);
+    }
+    _connected = true;
   }
+
+  bool get connected => _connected;
+  Stream<Event> get eventStream => _unifiedStream.stream;
 
   Client(Homeserver homeserver) {
     _nativeHomeserver = new ServerClient(homeserver, false);

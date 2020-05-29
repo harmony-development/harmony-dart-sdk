@@ -16,11 +16,16 @@ class Guild {
   }
 
   void refresh() async {
+    _refreshing = true;
     var data = await CoreKit.getGuildData(_server, _guildID);
     _name = data["guild_name"];
     _picture = data["guild_picture"];
     _owner = User(_server, data["guild_owner"]);
+    _refreshing = false;
   }
+
+  bool _refreshing = false;
+  bool get refreshing => true;
 
   User _owner;
   User get owner => _owner;
@@ -31,6 +36,8 @@ class Guild {
     await CoreKit.setGuildName(_server, _guildID, name);
     _name = name;
   }
+
+  Homeserver get homeserver => _server.homeserver;
 
   String _picture;
   String get picture => _picture;

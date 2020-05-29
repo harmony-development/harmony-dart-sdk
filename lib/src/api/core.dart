@@ -4,7 +4,6 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 
 import '../client/server_client.dart';
-import 'core_types.dart';
 
 Future<List<String>> joinedGuilds(ServerClient client) async {
   var response = await http.get(
@@ -15,7 +14,10 @@ Future<List<String>> joinedGuilds(ServerClient client) async {
     throw response.statusCode;
   }
   var decoded = json.decode(response.body);
-  return List<String>.from(decoded);
+  if (decoded != null) {
+    return List<String>.from(decoded);
+  }
+  return List<String>();
 }
 
 Future<String> createGuild(ServerClient client, String guildName) async {

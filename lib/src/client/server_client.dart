@@ -26,6 +26,25 @@ class ServerClient {
     return channel;
   }
 
+  Future<ServerClient> federate(Homeserver target) async {
+    var targetURI = _homeserver.toAPI("core", 1, "connect").replace(queryParameters: {
+      "Target": "${target.url}:${target.port}"
+    });
+    var response = await http.get(
+      targetURI,
+      headers: {HttpHeaders.authorizationHeader: _session},
+    );
+    if (response.statusCode != HttpStatus.ok) {
+      throw response.statusCode;
+    }
+    var ret = ServerClient(target, true);
+    var ok = await ret.login_with_token(target, json.decode(response.body)["token"]);
+    if (!ok) {
+      throw ok;
+    }
+    return ret;
+  }
+
   Future<bool> _login(var params) async {
     var response = await http.post(
       _homeserver.toAPI("core", 1, "login"),
@@ -49,7 +68,7 @@ class ServerClient {
 
   Future<bool> login_with_token(Homeserver native, String token) async {
     return _login({
-      'Domain': native.toURI(),
+      'Domain': native.toURI().toString(),
       'Authtoken': token
     });
   }
