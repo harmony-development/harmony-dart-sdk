@@ -9,6 +9,6 @@ main() async {
   var guilds = await client.joinedGuilds();
   for (var guild in guilds) {
     await guild.refresh();
-    print("you're in ${guild.name} on ${guild.homeserver.url}");
+    print("you're in ${await guild.name} on ${guild.homeserver.url}");
   }
 }

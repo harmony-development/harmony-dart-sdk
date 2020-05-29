@@ -11,37 +11,40 @@ class Guild {
   static Future<Guild> create(ServerClient client, String guildName) async {
     var id = await CoreKit.createGuild(client, guildName);
     var guild = Guild(id, client);
-    guild._name = guildName;
+    guild._name = Future.value(guildName);
     return guild;
   }
 
   void refresh() async {
-    _refreshing = true;
-    var data = await CoreKit.getGuildData(_server, _guildID);
-    _name = data["guild_name"];
-    _picture = data["guild_picture"];
-    _owner = User(_server, data["guild_owner"]);
-    _refreshing = false;
+    var data = CoreKit.getGuildData(_server, _guildID);
+    _name = Future(() async {
+      var doneData = await data;
+      return doneData["guild_name"];
+    });
+    _picture = Future(() async {
+      var doneData = await data;
+      return doneData["guild_picture"];
+    });
+    _owner = Future(() async {
+      var doneData = await data;
+      return User(_server, doneData["guild_owner"]);
+    });
   }
 
-  bool _refreshing = false;
-  bool get refreshing => true;
+  Future<User> _owner;
+  Future<User> get owner => _owner;
 
-  User _owner;
-  User get owner => _owner;
-
-  String _name;
-  String get name => _name;
+  Future<String> _name;
+  Future<String> get name => _name;
   void setName(String name) async {
     await CoreKit.setGuildName(_server, _guildID, name);
-    _name = name;
+    _name = Future.value(name);
   }
 
   Homeserver get homeserver => _server.homeserver;
 
-  String _picture;
-  String get picture => _picture;
-  void set picture(String picture) => throw UnimplementedError();
+  Future<String> _picture;
+  Future<String> get picture => _picture;
 
   void delete() async {
     await CoreKit.deleteGuild(_server, _guildID);
