@@ -10,5 +10,8 @@ main() async {
   for (var guild in guilds) {
     await guild.refresh();
     print("you're in ${await guild.name} on ${guild.homeserver.url}, which has ${(await guild.members).length} member");
+    for (var channel in await guild.channels) {
+      print("\tchannel #${channel.name}");
+    }
   }
 }

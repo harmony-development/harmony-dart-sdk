@@ -10,6 +10,7 @@ import '../api/core.dart' as CoreKit;
 part 'guild.dart';
 part 'user.dart';
 part 'event.dart';
+part 'channel.dart';
 
 class Client {
   ServerClient _nativeHomeserver;

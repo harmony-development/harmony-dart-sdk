@@ -108,3 +108,20 @@ Future<List<String>> guildMemberList(ServerClient client, String guildID) async 
   }
   return List<String>();
 }
+
+Future<List<Map<String,dynamic>>> channelList(ServerClient client, String guildID) async {
+  var response = await http.get(
+    client.homeserver.toAPI("core", 1, "guilds/${guildID}/channels"),
+    headers: {
+      HttpHeaders.authorizationHeader: client.session
+    }
+  );
+  if (response.statusCode != HttpStatus.ok) {
+    throw response.statusCode;
+  }
+  var decoded = json.decode(response.body);
+  if (decoded != null && decoded is Map) {
+    return List<Map<String,dynamic>>.from(decoded["channels"] ?? [{}]);
+  }
+  return List<Map<String,dynamic>>();
+}

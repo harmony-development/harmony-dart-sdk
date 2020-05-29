@@ -33,7 +33,14 @@ class Guild {
       var data = await CoreKit.guildMemberList(_server, _guildID);
       return data.map((userID) => User(_server, userID)).toList();
     });
+    _channels = Future(() async {
+      var data = await CoreKit.channelList(_server, _guildID);
+      return data.map((channel) => Channel(_server, _guildID, channel["id"], channel["name"])).toList();
+    });
   }
+
+  Future<List<Channel>> _channels;
+  Future<List<Channel>> get channels => _channels;
 
   Future<List<User>> _members;
   Future<List<User>> get members => _members;
