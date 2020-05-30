@@ -9,4 +9,22 @@ class Channel {
 
   String _name;
   String get name => _name;
+
+  Stream<Message> getMessages(Message before) async* {
+    var responses = await CoreKit.messageList(_server, _guildID, _channelID, before?._messageID);
+    for (var response in responses) {
+      yield Message(
+        _server,
+        _guildID,
+        _channelID,
+        response["message_id"],
+        User(_server, response["author_id"]),
+        DateTime.fromMillisecondsSinceEpoch(int.parse(response["created_at"]), isUtc: true),
+        response.containsKey("edited_at") ? DateTime.fromMillisecondsSinceEpoch(int.tryParse("edited_at"), isUtc: true) : null,
+        response["content"],
+        response.containsKey("embeds") ? (response["embeds"] as List<Map<String,dynamic>>)?.map((element) => Embed.fromJson(element)) : null,
+        response.containsKey("actions") ? (response["actions"] as List<Map<String,dynamic>>)?.map((element) => Action.fromJson(element)) : null
+      );
+    }
+  }
 }
