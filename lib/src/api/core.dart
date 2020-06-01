@@ -191,3 +191,50 @@ Future<void> deleteChannel(ServerClient client, String guildID, String channelID
     throw HTTPError.from_response(response);
   }
 }
+
+Future<Map<String,dynamic>> createInvite(ServerClient client, String guildID, String name, int uses) async {
+  var response = await http.post(
+    client.homeserver.toAPI("core", 1, "guilds/${guildID}/invites"),
+    headers: {
+      HttpHeaders.contentTypeHeader: "application/json",
+      HttpHeaders.authorizationHeader: client.session
+    },
+    body: json.encode({
+      "invite_name": name,
+      "invite_uses": uses
+    })
+  );
+  if (response.statusCode != HttpStatus.ok) {
+    throw HTTPError.from_response(response);
+  }
+  return json.decode(response.body);
+}
+
+Future<List<Map<String,dynamic>>> listInvites(ServerClient client, String guildID) async {
+  var response = await http.get(
+    client.homeserver.toAPI("core", 1, "guilds/${guildID}/invites"),
+    headers: {
+      HttpHeaders.authorizationHeader: client.session
+    }
+  );
+  if (response.statusCode != HttpStatus.ok) {
+    throw HTTPError.from_response(response);
+  }
+  var decoded = json.decode(response.body);
+  if (decoded != null && decoded is Map) {
+    return decoded["invites"] == null ? List<Map<String,dynamic>>() : List<Map<String,dynamic>>.from(decoded["invites"]);
+  }
+  return List<Map<String,dynamic>>();
+}
+
+Future<void> deleteInvite(ServerClient client, String guildID, String inviteID) async {
+  var response = await http.delete(
+    client.homeserver.toAPI("core", 1, "guilds/${guildID}/invites/${inviteID}"),
+    headers: {
+      HttpHeaders.authorizationHeader: client.session
+    },
+  );
+  if (response.statusCode != HttpStatus.ok) {
+    throw HTTPError.from_response(response);
+  }
+}

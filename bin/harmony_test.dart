@@ -28,4 +28,17 @@ main() async {
   await channel.delete();
   print("channel deleted in ${stopwatch.elapsed.toString()}");
   stopwatch.reset();
+
+  var invite = await guilds[0].createInvite("yaoi");
+  print("invite created in ${stopwatch.elapsed.toString()}");
+  stopwatch.reset();
+
+  await guilds[0].refresh();
+  print("${(await guilds[0].invites).length} invites");
+  print("invites listed in ${stopwatch.elapsed.toString()}");
+  stopwatch.reset();
+
+  await invite.delete();
+  print("invite deleted in ${stopwatch.elapsed.toString()}");
+  stopwatch.reset();
 }

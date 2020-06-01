@@ -16,6 +16,7 @@ part 'event.dart';
 part 'channel.dart';
 part 'embeds_and_actions.dart';
 part 'message.dart';
+part 'invite.dart';
 part 'client.g.dart';
 
 class Client {
