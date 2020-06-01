@@ -27,7 +27,7 @@ class ServerClient {
   }
 
   Future<ServerClient> federate(Homeserver target) async {
-    var targetURI = _homeserver.toAPI("core", 1, "connect").replace(queryParameters: {
+    var targetURI = _homeserver.toProtocol("connect").replace(queryParameters: {
       "Target": "${target.url}:${target.port}"
     });
     var response = await http.get(
@@ -47,7 +47,7 @@ class ServerClient {
 
   Future<bool> _login(var params) async {
     var response = await http.post(
-      _homeserver.toAPI("core", 1, "login"),
+      _homeserver.toProtocol("login"),
       headers: {HttpHeaders.contentTypeHeader: "application/json"},
       body: json.encode(params),
     );
