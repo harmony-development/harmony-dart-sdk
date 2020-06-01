@@ -1,18 +1,31 @@
 import 'package:harmony_sdk/harmony.dart' as harmony;
 main() async {
+  var stopwatch = new Stopwatch()..start();
+
   var client = harmony.Client(harmony.Homeserver("janpontaoski.ddns.net"));
+  print("client created in ${stopwatch.elapsed.toString()}");
+  stopwatch.reset();
+
   var ok = await client.login("eee@eee.eee", "1Oopooo");
   if (!ok) {
     throw ok;
   }
+  print("client logged in in ${stopwatch.elapsed.toString()}");
+  stopwatch.reset();
+
   ok = await client.federate(harmony.Homeserver("localhost"));
+  print("client federated in ${stopwatch.elapsed.toString()}, succeeded: ${ok}");
+  stopwatch.reset();
+
   var guilds = await client.joinedGuilds();
-  for (var guild in guilds) {
-    await guild.refresh();
-    print("you're in ${await guild.name} on ${guild.homeserver.url}, which has ${(await guild.members).length} member");
-    for (var channel in await guild.channels) {
-      print("\tchannel #${channel.name}");
-      print("\t\tamount of recent messages: #${(await channel.getMessages(null).toList()).length}");
-    }
-  }
+  print("guilds listed in ${stopwatch.elapsed.toString()}");
+  stopwatch.reset();
+
+  var channel = await guilds[0].createChannel("yeet");
+  print("channel created in ${stopwatch.elapsed.toString()}");
+  stopwatch.reset();
+
+  await channel.delete();
+  print("channel deleted in ${stopwatch.elapsed.toString()}");
+  stopwatch.reset();
 }

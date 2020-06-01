@@ -161,3 +161,33 @@ Future<List<Map<String,dynamic>>> messageList(ServerClient client, String guildI
   }
   return List<Map<String,dynamic>>();
 }
+
+Future<Map<String,dynamic>> createChannel(ServerClient client, String guildID, String channelName) async {
+  var response = await http.post(
+    client.homeserver.toAPI("core", 1, "guilds/${guildID}/channels"),
+    headers: {
+      HttpHeaders.contentTypeHeader: "application/json",
+      HttpHeaders.authorizationHeader: client.session
+    },
+    body: json.encode({
+      "channel_name": channelName,
+    })
+  );
+  if (response.statusCode != HttpStatus.ok) {
+    throw HTTPError.from_response(response);
+  }
+  var decoded = json.decode(response.body);
+  return decoded;
+}
+
+Future<void> deleteChannel(ServerClient client, String guildID, String channelID) async {
+  var response = await http.delete(
+    client.homeserver.toAPI("core", 1, "guilds/${guildID}/channels/${channelID}"),
+    headers: {
+      HttpHeaders.authorizationHeader: client.session
+    },
+  );
+  if (response.statusCode != HttpStatus.ok) {
+    throw HTTPError.from_response(response);
+  }
+}

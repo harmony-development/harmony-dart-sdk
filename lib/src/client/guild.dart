@@ -15,6 +15,11 @@ class Guild {
     return guild;
   }
 
+  Future<Channel> createChannel(String name) async {
+    var channel = await CoreKit.createChannel(_server, _guildID, name);
+    return Channel(_server, _guildID, channel["channel_id"], channel["channel_name"]);
+  }
+
   void refresh() async {
     var data = CoreKit.getGuildData(_server, _guildID);
     _name = Future(() async {

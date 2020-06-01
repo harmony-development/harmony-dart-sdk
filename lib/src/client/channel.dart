@@ -10,6 +10,10 @@ class Channel {
   String _name;
   String get name => _name;
 
+  Future<void> delete() async {
+    await CoreKit.deleteChannel(_server, _guildID, _channelID);
+  }
+
   Stream<Message> getMessages(Message before) async* {
     var responses = await CoreKit.messageList(_server, _guildID, _channelID, before?._messageID);
     for (var response in responses) {
