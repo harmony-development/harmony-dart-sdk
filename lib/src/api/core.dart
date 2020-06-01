@@ -238,3 +238,20 @@ Future<void> deleteInvite(ServerClient client, String guildID, String inviteID) 
     throw HTTPError.from_response(response);
   }
 }
+
+Future<String> joinGuild(ServerClient client, String inviteID) async {
+  var response = await http.post(
+    client.homeserver.toAPI("core", 1, "users/~/guilds/join"),
+    headers: {
+      HttpHeaders.contentTypeHeader: "application/json",
+      HttpHeaders.authorizationHeader: client.session
+    },
+    body: json.encode({
+      "invite_id": inviteID,
+    })
+  );
+  if (response.statusCode != HttpStatus.ok) {
+    throw HTTPError.from_response(response);
+  }
+  return json.decode(response.body)["guild_id"];
+}

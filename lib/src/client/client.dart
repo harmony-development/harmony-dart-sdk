@@ -21,20 +21,31 @@ part 'client.g.dart';
 
 class Client {
   ServerClient _nativeHomeserver;
-  List<ServerClient> _foreignHomeservers = List<ServerClient>();
+  Map<Homeserver,ServerClient> _foreignHomeservers = Map<Homeserver,ServerClient>();
   StreamGroup<Event> _unifiedStream = StreamGroup<Event>.broadcast();
   bool _connected = false;
 
   // CoreKit
   Future<List<Guild>> joinedGuilds() async {
     var guilds = await CoreKit.joinedGuilds(_nativeHomeserver);
-    for (var client in _foreignHomeservers) {
+    for (var client in _foreignHomeservers.values) {
       var foreignGuilds = await CoreKit.joinedGuilds(client);
       guilds.addAll(foreignGuilds);
     }
     return guilds.map((guild) => Guild(guild, _nativeHomeserver)).toList();
   }
   Future<Guild> createGuild(String guildName) => Guild.create(_nativeHomeserver, guildName);
+  Future<Guild> joinGuild(String inviteID) async => Guild(await CoreKit.joinGuild(_nativeHomeserver, inviteID), _nativeHomeserver);
+  Future<Guild> joinForeignGuild(Homeserver server, String inviteID) async {
+    if (_foreignHomeservers.containsKey(server)) {
+      return Guild(await CoreKit.joinGuild(_foreignHomeservers[server], inviteID), _foreignHomeservers[server]);
+    } else {
+      if (await federate(server)) {
+        return Guild(await CoreKit.joinGuild(_foreignHomeservers[server], inviteID), _foreignHomeservers[server]);
+      }
+    }
+    throw "federation error";
+  }
 
   Future<bool> login(String email, String password) {
     return _nativeHomeserver.login_with_email(email, password);
@@ -43,7 +54,7 @@ class Client {
   Future<bool> federate(Homeserver target) async {
     try {
       var client = await _nativeHomeserver.federate(target);
-      _foreignHomeservers.add(client);
+      _foreignHomeservers[target] = client;
       if (_connected) {
         var channel = client.subscribe();
         var mapped = channel.stream.map((data) => Event.from_json(data));
@@ -62,7 +73,7 @@ class Client {
     var channel = _nativeHomeserver.subscribe();
     var mapped = channel.stream.map((data) => Event.from_json(data));
     _unifiedStream.add(mapped);
-    for (var client in _foreignHomeservers) {
+    for (var client in _foreignHomeservers.values) {
       var chan = client.subscribe();
       var map = chan.stream.map((data) => Event.from_json(data));
       _unifiedStream.add(map);
