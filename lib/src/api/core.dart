@@ -4,6 +4,7 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 
 import '../client/server_client.dart';
+import '../client/embeds_and_actions.dart';
 
 class HTTPError {
   int code;
@@ -54,19 +55,6 @@ Future<String> createGuild(ServerClient client, String guildName) async {
 Future<Map<String,dynamic>> getGuildData(ServerClient client, String guildID) async {
   var response = await http.get(
     client.homeserver.toAPI("core", 1, "guilds/${guildID}"),
-    headers: {
-      HttpHeaders.authorizationHeader: client.session
-    }
-  );
-  if (response.statusCode != HttpStatus.ok) {
-    throw HTTPError.from_response(response);
-  }
-  return json.decode(response.body);
-}
-
-Future<Map<String,dynamic>> getUserData(ServerClient client, String userID) async {
-  var response = await http.get(
-    client.homeserver.toAPI("core", 1, "users/${userID}"),
     headers: {
       HttpHeaders.authorizationHeader: client.session
     }
@@ -254,4 +242,53 @@ Future<String> joinGuild(ServerClient client, String inviteID) async {
     throw HTTPError.from_response(response);
   }
   return json.decode(response.body)["guild_id"];
+}
+
+Future<String> sendMessage(ServerClient client, String guildID, String channelID, {String content, List<Embed> embeds, List<Action> actions}) async {
+  var response = await http.post(
+    client.homeserver.toAPI("core", 1, "guilds/${guildID}/channels/${channelID}/messages"),
+    headers: {
+      HttpHeaders.contentTypeHeader: "application/json",
+      HttpHeaders.authorizationHeader: client.session
+    },
+    body: json.encode({
+      "content": content,
+      "embeds": embeds,
+      "actions": actions,
+    })
+  );
+  if (response.statusCode != HttpStatus.ok) {
+    throw HTTPError.from_response(response);
+  }
+  return json.decode(response.body)["message_id"];
+}
+
+Future<void> updateMessage(ServerClient client, String guildID, String channelID, String messageID, {String content, List<Embed> embeds, List<Action> actions}) async {
+  var response = await http.patch(
+    client.homeserver.toAPI("core", 1, "guilds/${guildID}/channels/${channelID}/messages/${messageID}"),
+    headers: {
+      HttpHeaders.contentTypeHeader: "application/json",
+      HttpHeaders.authorizationHeader: client.session
+    },
+    body: json.encode({
+      "content": content,
+      "embeds": embeds,
+      "actions": actions,
+    })
+  );
+  if (response.statusCode != HttpStatus.ok) {
+    throw HTTPError.from_response(response);
+  }
+}
+
+Future<void> deleteMessage(ServerClient client, String guildID, String channelID, String messageID) async {
+  var response = await http.delete(
+    client.homeserver.toAPI("core", 1, "guilds/${guildID}/channels/${channelID}/messages/${messageID}"),
+    headers: {
+      HttpHeaders.authorizationHeader: client.session
+    },
+  );
+  if (response.statusCode != HttpStatus.ok) {
+    throw HTTPError.from_response(response);
+  }
 }

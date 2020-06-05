@@ -25,6 +25,18 @@ main() async {
   print("channel created in ${stopwatch.elapsed.toString()}");
   stopwatch.reset();
 
+  var message = await channel.sendMessage(content: "yeet");
+  print("message sent in ${stopwatch.elapsed.toString()}");
+  stopwatch.reset();
+
+  message.edit(content: "yaoi");
+  print("message edited in ${stopwatch.elapsed.toString()}");
+  stopwatch.reset();
+
+  message.delete();
+  print("message deleted in ${stopwatch.elapsed.toString()}");
+  stopwatch.reset();
+
   await channel.delete();
   print("channel deleted in ${stopwatch.elapsed.toString()}");
   stopwatch.reset();

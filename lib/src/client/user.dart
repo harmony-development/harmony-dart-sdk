@@ -9,7 +9,7 @@ class User {
   }
 
   void refresh() async {
-    var data = CoreKit.getUserData(_server, _userID);
+    var data = ProfileKit.getUserData(_server, _userID);
     _name = Future(() async {
       var doneData = await data;
       return doneData["user_name"];

@@ -1,23 +1,21 @@
 import 'dart:async' show Stream;
 import 'package:async/async.dart' show StreamGroup;
 import 'package:harmony_sdk/harmony.dart';
-import 'package:json_annotation/json_annotation.dart';
-import 'package:json_serializable/builder.dart';
 import 'dart:convert';
 
 import 'server_client.dart';
 import 'homeserver.dart';
+export 'embeds_and_actions.dart';
 
 import '../api/core.dart' as CoreKit;
+import '../api/profile.dart' as ProfileKit;
 
 part 'guild.dart';
 part 'user.dart';
 part 'event.dart';
 part 'channel.dart';
-part 'embeds_and_actions.dart';
 part 'message.dart';
 part 'invite.dart';
-part 'client.g.dart';
 
 class Client {
   ServerClient _nativeHomeserver;

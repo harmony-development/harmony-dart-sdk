@@ -14,6 +14,11 @@ class Channel {
     await CoreKit.deleteChannel(_server, _guildID, _channelID);
   }
 
+  Future<Message> sendMessage({String content, List<Embed> embeds, List<Action> actions}) async {
+    var resp = await CoreKit.sendMessage(_server, _guildID, _channelID, content: content, embeds: embeds, actions: actions);
+    return Message(_server, _guildID, _channelID, resp, User(_server, _server.userID), DateTime.now(), null, content, embeds, actions);
+  }
+
   Stream<Message> getMessages(Message before) async* {
     var responses = await CoreKit.messageList(_server, _guildID, _channelID, before?._messageID);
     for (var response in responses) {

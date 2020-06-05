@@ -9,11 +9,13 @@ import 'package:web_socket_channel/io.dart';
 class ServerClient {
   Homeserver _homeserver;
   String _session;
+  String _userID;
   bool _foreign;
   http.Client _client;
 
   Homeserver get homeserver => _homeserver;
   String get session => _session;
+  String get userID => _userID;
 
   IOWebSocketChannel subscribe() {
     IOWebSocketChannel channel = IOWebSocketChannel.connect(homeserver.toSocket().toString());
@@ -53,7 +55,8 @@ class ServerClient {
     );
     if (response.statusCode == HttpStatus.ok) {
       var decoded = json.decode(response.body);
-      _session = decoded["Session"];
+      _session = decoded["session"];
+      _userID = decoded["user_id"];
       return true;
     }
     return false;
