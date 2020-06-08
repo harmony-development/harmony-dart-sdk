@@ -1,5 +1,8 @@
 name: harmony_sdk
-version: 0.0.0
+version: 0.0.1
+homepage: https://github.com/harmony-development/harmony-dart-sdk
+environment:
+  sdk: '>=2.0.0 <3.0.0'
 description: >-
   The SDK for the Harmony protocol.
 dependencies:
@@ -7,7 +10,6 @@ dependencies:
   async: ^2.4.1
   web_socket_channel: ^1.1.0
   json_annotation: ^3.0.0
-
+  json_serializable: ^3.3.0
 dev_dependencies:
   build_runner: ^1.0.0
-  json_serializable: ^3.3.0
