@@ -1,5 +1,4 @@
 import 'package:json_annotation/json_annotation.dart';
-import 'package:json_serializable/builder.dart';
 
 part 'embeds_and_actions.g.dart';
 
