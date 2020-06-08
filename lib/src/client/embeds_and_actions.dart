@@ -13,18 +13,15 @@ class EmbedHeading {
   String URL;
   @JsonKey(name: "icon")
   String icon;
-  factory EmbedHeading.fromJson(Map<String, dynamic> json) => _$EmbedHeadingFromJson(json);
+  factory EmbedHeading.fromJson(Map<String, dynamic> json) =>
+      _$EmbedHeadingFromJson(json);
   Map<String, dynamic> toJson() => _$EmbedHeadingToJson(this);
   EmbedHeading({this.text, this.subtext, this.URL, this.icon});
 }
 
-enum ActionType {
-  normal,
-  primary,
-  destructive
-}
+enum ActionType { normal, primary, destructive }
 
-Map<int,ActionType> types = {
+Map<int, ActionType> types = {
   0: ActionType.normal,
   1: ActionType.primary,
   2: ActionType.destructive
@@ -59,9 +56,11 @@ class EmbedField {
   String imageURL;
   @JsonKey(name: "actions")
   List<Action> actions;
-  factory EmbedField.fromJson(Map<String, dynamic> json) => _$EmbedFieldFromJson(json);
+  factory EmbedField.fromJson(Map<String, dynamic> json) =>
+      _$EmbedFieldFromJson(json);
   Map<String, dynamic> toJson() => _$EmbedFieldToJson(this);
-  EmbedField({this.title, this.subtitle, this.body, this.imageURL, this.actions});
+  EmbedField(
+      {this.title, this.subtitle, this.body, this.imageURL, this.actions});
 }
 
 @JsonSerializable()
@@ -82,5 +81,12 @@ class Embed {
   List<Action> actions;
   factory Embed.fromJson(Map<String, dynamic> json) => _$EmbedFromJson(json);
   Map<String, dynamic> toJson() => _$EmbedToJson(this);
-  Embed({this.title, this.body, this.color, this.header, this.footer, this.fields, this.actions});
+  Embed(
+      {this.title,
+      this.body,
+      this.color,
+      this.header,
+      this.footer,
+      this.fields,
+      this.actions});
 }

@@ -10,28 +10,25 @@ class ServerClient {
   Homeserver _homeserver;
   String _session;
   String _userID;
-  bool _foreign;
-  http.Client _client;
 
   Homeserver get homeserver => _homeserver;
   String get session => _session;
   String get userID => _userID;
 
   IOWebSocketChannel subscribe() {
-    IOWebSocketChannel channel = IOWebSocketChannel.connect(homeserver.toSocket().toString());
+    IOWebSocketChannel channel =
+        IOWebSocketChannel.connect(homeserver.toSocket().toString());
     channel.sink.add(json.encode({
       "type": "subscribe",
-      "data": {
-        "Session": session
-      }
+      "data": {"Session": session}
     }));
     return channel;
   }
 
   Future<ServerClient> federate(Homeserver target) async {
-    var targetURI = _homeserver.toProtocol("connect").replace(queryParameters: {
-      "Target": "${target.url}:${target.port}"
-    });
+    var targetURI = _homeserver
+        .toProtocol("connect")
+        .replace(queryParameters: {"Target": "${target.url}:${target.port}"});
     var response = await http.get(
       targetURI,
       headers: {HttpHeaders.authorizationHeader: _session},
@@ -40,7 +37,8 @@ class ServerClient {
       throw response.statusCode;
     }
     var ret = ServerClient(target, true);
-    var ok = await ret.login_with_token(target, json.decode(response.body)["token"]);
+    var ok =
+        await ret.login_with_token(target, json.decode(response.body)["token"]);
     if (!ok) {
       throw ok;
     }
@@ -70,10 +68,7 @@ class ServerClient {
   }
 
   Future<bool> login_with_token(Homeserver native, String token) async {
-    return _login({
-      'Domain': native.toURI().toString(),
-      'Authtoken': token
-    });
+    return _login({'Domain': native.toURI().toString(), 'Authtoken': token});
   }
 
   ServerClient(this._homeserver, this._foreign) {

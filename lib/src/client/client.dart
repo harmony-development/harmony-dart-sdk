@@ -7,8 +7,8 @@ import 'server_client.dart';
 import 'homeserver.dart';
 export 'embeds_and_actions.dart';
 
-import '../api/core.dart' as CoreKit;
-import '../api/profile.dart' as ProfileKit;
+import '../api/core.dart' as core_kit;
+import '../api/profile.dart' as profile_kit;
 
 part 'guild.dart';
 part 'user.dart';
@@ -19,27 +19,35 @@ part 'invite.dart';
 
 class Client {
   ServerClient _nativeHomeserver;
-  Map<Homeserver,ServerClient> _foreignHomeservers = Map<Homeserver,ServerClient>();
+  Map<Homeserver, ServerClient> _foreignHomeservers =
+      Map<Homeserver, ServerClient>();
   StreamGroup<Event> _unifiedStream = StreamGroup<Event>.broadcast();
   bool _connected = false;
 
-  // CoreKit
+  // core_kit
   Future<List<Guild>> joinedGuilds() async {
-    var guilds = await CoreKit.joinedGuilds(_nativeHomeserver);
+    var guilds = await core_kit.joinedGuilds(_nativeHomeserver);
     for (var client in _foreignHomeservers.values) {
-      var foreignGuilds = await CoreKit.joinedGuilds(client);
+      var foreignGuilds = await core_kit.joinedGuilds(client);
       guilds.addAll(foreignGuilds);
     }
     return guilds.map((guild) => Guild(guild, _nativeHomeserver)).toList();
   }
-  Future<Guild> createGuild(String guildName) => Guild.create(_nativeHomeserver, guildName);
-  Future<Guild> joinGuild(String inviteID) async => Guild(await CoreKit.joinGuild(_nativeHomeserver, inviteID), _nativeHomeserver);
+
+  Future<Guild> createGuild(String guildName) =>
+      Guild.create(_nativeHomeserver, guildName);
+  Future<Guild> joinGuild(String inviteID) async => Guild(
+      await core_kit.joinGuild(_nativeHomeserver, inviteID), _nativeHomeserver);
   Future<Guild> joinForeignGuild(Homeserver server, String inviteID) async {
     if (_foreignHomeservers.containsKey(server)) {
-      return Guild(await CoreKit.joinGuild(_foreignHomeservers[server], inviteID), _foreignHomeservers[server]);
+      return Guild(
+          await core_kit.joinGuild(_foreignHomeservers[server], inviteID),
+          _foreignHomeservers[server]);
     } else {
       if (await federate(server)) {
-        return Guild(await CoreKit.joinGuild(_foreignHomeservers[server], inviteID), _foreignHomeservers[server]);
+        return Guild(
+            await core_kit.joinGuild(_foreignHomeservers[server], inviteID),
+            _foreignHomeservers[server]);
       }
     }
     throw "federation error";

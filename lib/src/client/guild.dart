@@ -17,12 +17,14 @@ class Guild {
 
   Future<Channel> createChannel(String name) async {
     var channel = await CoreKit.createChannel(_server, _guildID, name);
-    return Channel(_server, _guildID, channel["channel_id"], channel["channel_name"]);
+    return Channel(
+        _server, _guildID, channel["channel_id"], channel["channel_name"]);
   }
 
   Future<Invite> createInvite(String name, [int uses = -1]) async {
     var invite = await CoreKit.createInvite(_server, _guildID, name, uses);
-    return Invite(_server, _guildID, invite["invite_id"], invite["invite_uses"]);
+    return Invite(
+        _server, _guildID, invite["invite_id"], invite["invite_uses"]);
   }
 
   void refresh() async {
@@ -45,11 +47,17 @@ class Guild {
     });
     _channels = Future(() async {
       var data = await CoreKit.channelList(_server, _guildID);
-      return data.map((channel) => Channel(_server, _guildID, channel["id"], channel["name"])).toList();
+      return data
+          .map((channel) =>
+              Channel(_server, _guildID, channel["id"], channel["name"]))
+          .toList();
     });
     _invites = Future(() async {
       var data = await CoreKit.listInvites(_server, _guildID);
-      return data.map((invite) => Invite(_server, _guildID, invite["invite_id"], invite["invite_uses"])).toList();
+      return data
+          .map((invite) => Invite(
+              _server, _guildID, invite["invite_id"], invite["invite_uses"]))
+          .toList();
     });
   }
 
