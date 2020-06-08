@@ -13,6 +13,6 @@ class Invite {
   Invite(this._server, this._guildID, this._inviteID, this._uses);
 
   Future<void> delete() async {
-    await CoreKit.deleteInvite(_server, _guildID, _inviteID);
+    await core_kit.deleteInvite(_server, _guildID, _inviteID);
   }
 }

@@ -91,6 +91,6 @@ class Client {
   Stream<Event> get eventStream => _unifiedStream.stream;
 
   Client(Homeserver homeserver) {
-    _nativeHomeserver = new ServerClient(homeserver, false);
+    _nativeHomeserver = new ServerClient(homeserver);
   }
 }

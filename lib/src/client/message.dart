@@ -26,7 +26,7 @@ class Message {
 
   Future<bool> delete() async {
     try {
-      await CoreKit.deleteMessage(_server, _guildID, _channelID, _messageID);
+      await core_kit.deleteMessage(_server, _guildID, _channelID, _messageID);
       return true;
     } catch (e) {
       return false;
@@ -36,7 +36,7 @@ class Message {
   Future<bool> edit(
       {String content, List<Embed> embeds, List<Action> actions}) async {
     try {
-      await CoreKit.updateMessage(_server, _guildID, _channelID, _messageID,
+      await core_kit.updateMessage(_server, _guildID, _channelID, _messageID,
           content: content, embeds: embeds, actions: actions);
       return true;
     } catch (e) {

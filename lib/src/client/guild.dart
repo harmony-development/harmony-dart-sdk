@@ -9,26 +9,26 @@ class Guild {
   }
 
   static Future<Guild> create(ServerClient client, String guildName) async {
-    var id = await CoreKit.createGuild(client, guildName);
+    var id = await core_kit.createGuild(client, guildName);
     var guild = Guild(id, client);
     guild._name = Future.value(guildName);
     return guild;
   }
 
   Future<Channel> createChannel(String name) async {
-    var channel = await CoreKit.createChannel(_server, _guildID, name);
+    var channel = await core_kit.createChannel(_server, _guildID, name);
     return Channel(
         _server, _guildID, channel["channel_id"], channel["channel_name"]);
   }
 
   Future<Invite> createInvite(String name, [int uses = -1]) async {
-    var invite = await CoreKit.createInvite(_server, _guildID, name, uses);
+    var invite = await core_kit.createInvite(_server, _guildID, name, uses);
     return Invite(
         _server, _guildID, invite["invite_id"], invite["invite_uses"]);
   }
 
   void refresh() async {
-    var data = CoreKit.getGuildData(_server, _guildID);
+    var data = core_kit.getGuildData(_server, _guildID);
     _name = Future(() async {
       var doneData = await data;
       return doneData["guild_name"];
@@ -42,18 +42,18 @@ class Guild {
       return User(_server, doneData["guild_owner"]);
     });
     _members = Future(() async {
-      var data = await CoreKit.guildMemberList(_server, _guildID);
+      var data = await core_kit.guildMemberList(_server, _guildID);
       return data.map((userID) => User(_server, userID)).toList();
     });
     _channels = Future(() async {
-      var data = await CoreKit.channelList(_server, _guildID);
+      var data = await core_kit.channelList(_server, _guildID);
       return data
           .map((channel) =>
               Channel(_server, _guildID, channel["id"], channel["name"]))
           .toList();
     });
     _invites = Future(() async {
-      var data = await CoreKit.listInvites(_server, _guildID);
+      var data = await core_kit.listInvites(_server, _guildID);
       return data
           .map((invite) => Invite(
               _server, _guildID, invite["invite_id"], invite["invite_uses"]))
@@ -76,7 +76,7 @@ class Guild {
   Future<String> _name;
   Future<String> get name => _name;
   void setName(String name) async {
-    await CoreKit.setGuildName(_server, _guildID, name);
+    await core_kit.setGuildName(_server, _guildID, name);
     _name = Future.value(name);
   }
 
@@ -86,6 +86,6 @@ class Guild {
   Future<String> get picture => _picture;
 
   void delete() async {
-    await CoreKit.deleteGuild(_server, _guildID);
+    await core_kit.deleteGuild(_server, _guildID);
   }
 }

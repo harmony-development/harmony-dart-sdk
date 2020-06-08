@@ -11,12 +11,12 @@ class Channel {
   String get name => _name;
 
   Future<void> delete() async {
-    await CoreKit.deleteChannel(_server, _guildID, _channelID);
+    await core_kit.deleteChannel(_server, _guildID, _channelID);
   }
 
   Future<Message> sendMessage(
       {String content, List<Embed> embeds, List<Action> actions}) async {
-    var resp = await CoreKit.sendMessage(_server, _guildID, _channelID,
+    var resp = await core_kit.sendMessage(_server, _guildID, _channelID,
         content: content, embeds: embeds, actions: actions);
     return Message(
         _server,
@@ -32,7 +32,7 @@ class Channel {
   }
 
   Stream<Message> getMessages(Message before) async* {
-    var responses = await CoreKit.messageList(
+    var responses = await core_kit.messageList(
         _server, _guildID, _channelID, before?._messageID);
     for (var response in responses) {
       yield Message(

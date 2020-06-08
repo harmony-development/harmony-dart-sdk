@@ -36,7 +36,7 @@ class ServerClient {
     if (response.statusCode != HttpStatus.ok) {
       throw response.statusCode;
     }
-    var ret = ServerClient(target, true);
+    var ret = ServerClient(target);
     var ok =
         await ret.login_with_token(target, json.decode(response.body)["token"]);
     if (!ok) {
@@ -71,7 +71,5 @@ class ServerClient {
     return _login({'Domain': native.toURI().toString(), 'Authtoken': token});
   }
 
-  ServerClient(this._homeserver, this._foreign) {
-    _client = http.Client();
-  }
+  ServerClient(this._homeserver);
 }
