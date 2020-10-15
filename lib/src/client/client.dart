@@ -5,10 +5,8 @@ import 'dart:convert';
 
 import 'server_client.dart';
 import 'homeserver.dart';
-export 'embeds_and_actions.dart';
 
 import '../api/core.dart' as core_kit;
-import '../api/profile.dart' as profile_kit;
 
 part 'guild.dart';
 part 'user.dart';
