@@ -747,6 +747,20 @@ const SendMessageRequest$json = const {
   ],
 };
 
+const SendMessageResponse$json = const {
+  '1': 'SendMessageResponse',
+  '2': const [
+    const {
+      '1': 'message_id',
+      '3': 1,
+      '4': 1,
+      '5': 4,
+      '8': const {'6': 1},
+      '10': 'messageId',
+    },
+  ],
+};
+
 const AddGuildToGuildListRequest$json = const {
   '1': 'AddGuildToGuildListRequest',
   '2': const [

@@ -145,10 +145,11 @@ class CoreServiceClient extends $grpc.Client {
           ($0.TriggerActionRequest value) => value.writeToBuffer(),
           ($core.List<$core.int> value) => $1.Empty.fromBuffer(value));
   static final _$sendMessage =
-      $grpc.ClientMethod<$0.SendMessageRequest, $1.Empty>(
+      $grpc.ClientMethod<$0.SendMessageRequest, $0.SendMessageResponse>(
           '/protocol.core.v1.CoreService/SendMessage',
           ($0.SendMessageRequest value) => value.writeToBuffer(),
-          ($core.List<$core.int> value) => $1.Empty.fromBuffer(value));
+          ($core.List<$core.int> value) =>
+              $0.SendMessageResponse.fromBuffer(value));
   static final _$streamGuildEvents =
       $grpc.ClientMethod<$0.StreamGuildEventsRequest, $0.GuildEvent>(
           '/protocol.core.v1.CoreService/StreamGuildEvents',
@@ -366,7 +367,8 @@ class CoreServiceClient extends $grpc.Client {
     return $grpc.ResponseFuture(call);
   }
 
-  $grpc.ResponseFuture<$1.Empty> sendMessage($0.SendMessageRequest request,
+  $grpc.ResponseFuture<$0.SendMessageResponse> sendMessage(
+      $0.SendMessageRequest request,
       {$grpc.CallOptions options}) {
     final call = $createCall(
         _$sendMessage, $async.Stream.fromIterable([request]),
@@ -596,14 +598,15 @@ abstract class CoreServiceBase extends $grpc.Service {
         ($core.List<$core.int> value) =>
             $0.TriggerActionRequest.fromBuffer(value),
         ($1.Empty value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$0.SendMessageRequest, $1.Empty>(
-        'SendMessage',
-        sendMessage_Pre,
-        false,
-        false,
-        ($core.List<$core.int> value) =>
-            $0.SendMessageRequest.fromBuffer(value),
-        ($1.Empty value) => value.writeToBuffer()));
+    $addMethod(
+        $grpc.ServiceMethod<$0.SendMessageRequest, $0.SendMessageResponse>(
+            'SendMessage',
+            sendMessage_Pre,
+            false,
+            false,
+            ($core.List<$core.int> value) =>
+                $0.SendMessageRequest.fromBuffer(value),
+            ($0.SendMessageResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$0.StreamGuildEventsRequest, $0.GuildEvent>(
         'StreamGuildEvents',
         streamGuildEvents_Pre,
@@ -756,7 +759,7 @@ abstract class CoreServiceBase extends $grpc.Service {
     return triggerAction(call, await request);
   }
 
-  $async.Future<$1.Empty> sendMessage_Pre($grpc.ServiceCall call,
+  $async.Future<$0.SendMessageResponse> sendMessage_Pre($grpc.ServiceCall call,
       $async.Future<$0.SendMessageRequest> request) async {
     return sendMessage(call, await request);
   }
@@ -823,7 +826,7 @@ abstract class CoreServiceBase extends $grpc.Service {
       $grpc.ServiceCall call, $0.LeaveGuildRequest request);
   $async.Future<$1.Empty> triggerAction(
       $grpc.ServiceCall call, $0.TriggerActionRequest request);
-  $async.Future<$1.Empty> sendMessage(
+  $async.Future<$0.SendMessageResponse> sendMessage(
       $grpc.ServiceCall call, $0.SendMessageRequest request);
   $async.Stream<$0.GuildEvent> streamGuildEvents(
       $grpc.ServiceCall call, $0.StreamGuildEventsRequest request);

@@ -3009,6 +3009,37 @@ class SendMessageRequest extends $pb.GeneratedMessage {
   void clearInReplyTo() => clearField(6);
 }
 
+class SendMessageResponse extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo('SendMessageResponse', package: const $pb.PackageName('protocol.core.v1'), createEmptyInstance: create)
+    ..a<$fixnum.Int64>(1, 'messageId', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
+    ..hasRequiredFields = false
+  ;
+
+  SendMessageResponse._() : super();
+  factory SendMessageResponse() => create();
+  factory SendMessageResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory SendMessageResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  SendMessageResponse clone() => SendMessageResponse()..mergeFromMessage(this);
+  SendMessageResponse copyWith(void Function(SendMessageResponse) updates) => super.copyWith((message) => updates(message as SendMessageResponse));
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static SendMessageResponse create() => SendMessageResponse._();
+  SendMessageResponse createEmptyInstance() => create();
+  static $pb.PbList<SendMessageResponse> createRepeated() => $pb.PbList<SendMessageResponse>();
+  @$core.pragma('dart2js:noInline')
+  static SendMessageResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SendMessageResponse>(create);
+  static SendMessageResponse _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $fixnum.Int64 get messageId => $_getI64(0);
+  @$pb.TagNumber(1)
+  set messageId($fixnum.Int64 v) { $_setInt64(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasMessageId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearMessageId() => clearField(1);
+}
+
 class AddGuildToGuildListRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo('AddGuildToGuildListRequest', package: const $pb.PackageName('protocol.core.v1'), createEmptyInstance: create)
     ..a<$fixnum.Int64>(1, 'guildId', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
