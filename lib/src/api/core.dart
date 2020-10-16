@@ -6,9 +6,7 @@ import 'package:harmony_sdk/src/protocol/core/v1/core.pb.dart';
 import 'package:harmony_sdk/src/protocol/core/v1/core.pbgrpc.dart';
 
 Future<List<Guild>> joinedGuilds(Homeserver server) async {
-  final service = CoreServiceClient(server.channel);
-
-  return await service
+  return await server.core
       .getGuildList(GetGuildListRequest())
       .asStream()
       .expand((resp) => resp.guilds)
@@ -17,38 +15,33 @@ Future<List<Guild>> joinedGuilds(Homeserver server) async {
 }
 
 Future<int> createGuild(Homeserver server, String guildName) async {
-  final service = CoreServiceClient(server.channel);
-  final response = await service.createGuild(CreateGuildRequest()..guildName = guildName);
+  final response = await server.core.createGuild(CreateGuildRequest()..guildName = guildName);
   return response.guildId.toInt();
 }
 
 Future<GuildData> getGuild(Homeserver server, int id) async {
-  final service = CoreServiceClient(server.channel);
   final loc = Location()..guildId = Int64(id);
-  final response = await service.getGuild(GetGuildRequest()..location = loc);
+  final response = await server.core.getGuild(GetGuildRequest()..location = loc);
 
   return GuildData(
       id, server.host, response.guildName, response.guildOwner.toInt(), response.guildPicture);
 }
 
 Future<void> setGuildName(Homeserver server, int guildID, String guildName) async {
-  final service = CoreServiceClient(server.channel);
   final loc = Location()..guildId = Int64(guildID);
-  return await service.updateGuildName(UpdateGuildNameRequest()
+  return await server.core.updateGuildName(UpdateGuildNameRequest()
     ..location = loc
     ..newGuildName = guildName);
 }
 
 Future<void> deleteGuild(Homeserver server, int guildID) async {
-  final service = CoreServiceClient(server.channel);
   final loc = Location()..guildId = Int64(guildID);
-  return await service.deleteGuild(DeleteGuildRequest()..location = loc);
+  return await server.core.deleteGuild(DeleteGuildRequest()..location = loc);
 }
 
 Future<List<int>> guildMemberList(Homeserver server, int guildID) async {
-  final service = CoreServiceClient(server.channel);
   final loc = Location()..guildId = Int64(guildID);
-  return await service
+  return await server.core
       .getGuildMembers(GetGuildMembersRequest()..location = loc)
       .asStream()
       .expand((resp) => resp.members)
@@ -57,9 +50,8 @@ Future<List<int>> guildMemberList(Homeserver server, int guildID) async {
 }
 
 Future<List<Channel>> channelList(Homeserver server, int guildID) async {
-  final service = CoreServiceClient(server.channel);
   final loc = Location()..guildId = Int64(guildID);
-  return await service
+  return await server.core
       .getGuildChannels(GetGuildChannelsRequest()..location = loc)
       .asStream()
       .expand((resp) => resp.channels)
@@ -69,11 +61,10 @@ Future<List<Channel>> channelList(Homeserver server, int guildID) async {
 
 Future<List<MMessage>> messageList(
     Homeserver server, int guildID, int channelID, int beforeMessageID) async {
-  final service = CoreServiceClient(server.channel);
   final loc = Location()
     ..guildId = Int64(guildID)
     ..channelId = Int64(channelID);
-  return await service
+  return await server.core
       .getChannelMessages(GetChannelMessagesRequest()
         ..location = loc
         ..beforeMessage = Int64(beforeMessageID))
@@ -93,9 +84,8 @@ Future<List<MMessage>> messageList(
 
 Future<int> createChannel(
     Homeserver server, int guildID, String channelName, bool isCategory) async {
-  final service = CoreServiceClient(server.channel);
   final loc = Location()..guildId = Int64(guildID);
-  final response = await service.createChannel(CreateChannelRequest()
+  final response = await server.core.createChannel(CreateChannelRequest()
     ..location = loc
     ..channelName = channelName
     ..isCategory = isCategory);
@@ -103,17 +93,15 @@ Future<int> createChannel(
 }
 
 Future<void> deleteChannel(Homeserver server, int guildID, int channelID) async {
-  final service = CoreServiceClient(server.channel);
   final loc = Location()
     ..guildId = Int64(guildID)
     ..channelId = Int64(channelID);
-  return await service.deleteChannel(DeleteChannelRequest()..location = loc);
+  return await server.core.deleteChannel(DeleteChannelRequest()..location = loc);
 }
 
 Future<InviteData> createInvite(Homeserver server, int guildID, String name, int uses) async {
-  final service = CoreServiceClient(server.channel);
   final loc = Location()..guildId = Int64(guildID);
-  final respone = await service.createInvite(CreateInviteRequest()
+  final respone = await server.core.createInvite(CreateInviteRequest()
     ..location = loc
     ..name = name
     ..possibleUses = uses);
@@ -121,9 +109,8 @@ Future<InviteData> createInvite(Homeserver server, int guildID, String name, int
 }
 
 Future<List<Invite>> listInvites(Homeserver server, int guildID) async {
-  final service = CoreServiceClient(server.channel);
   final loc = Location()..guildId = Int64(guildID);
-  return await service
+  return await server.core
       .getGuildInvites(GetGuildInvitesRequest()..location = loc)
       .asStream()
       .expand((resp) => resp.invites)
@@ -132,25 +119,22 @@ Future<List<Invite>> listInvites(Homeserver server, int guildID) async {
 }
 
 Future<void> deleteInvite(Homeserver server, int guildID, String inviteID) async {
-  final service = CoreServiceClient(server.channel);
   final loc = Location()..guildId = Int64(guildID);
-  return await service.deleteInvite(DeleteInviteRequest()
+  return await server.core.deleteInvite(DeleteInviteRequest()
     ..location = loc
     ..inviteId = inviteID);
 }
 
 Future<Guild> joinGuild(Homeserver server, String inviteID) async {
-  final service = CoreServiceClient(server.channel);
-  final respone = await service.joinGuild(JoinGuildRequest()..inviteId = inviteID);
+  final respone = await server.core.joinGuild(JoinGuildRequest()..inviteId = inviteID);
   return Guild(server, respone.location.guildId.toInt());
 }
 
 Future<void> sendMessage(Homeserver server, int guildID, int channelID, String content) async {
-  final service = CoreServiceClient(server.channel);
   final loc = Location()
     ..guildId = Int64(guildID)
     ..channelId = Int64(channelID);
-  final response = await service.sendMessage(SendMessageRequest()
+  final response = await server.core.sendMessage(SendMessageRequest()
     ..location = loc
     ..content = content);
   return response;
@@ -158,21 +142,19 @@ Future<void> sendMessage(Homeserver server, int guildID, int channelID, String c
 
 Future<void> updateMessage(Homeserver server, int guildID, int channelID, int messageID,
     {String content, List<Embed> embeds, List<Action> actions}) async {
-  final service = CoreServiceClient(server.channel);
   final loc = Location()
     ..guildId = Int64(guildID)
     ..channelId = Int64(channelID)
     ..messageId = Int64(messageID);
-  return await service.updateMessage(UpdateMessageRequest()
+  return await server.core.updateMessage(UpdateMessageRequest()
     ..location = loc
     ..content = content);
 }
 
 Future<void> deleteMessage(Homeserver server, int guildID, int channelID, int messageID) async {
-  final service = CoreServiceClient(server.channel);
   final loc = Location()
     ..guildId = Int64(guildID)
     ..channelId = Int64(channelID)
     ..messageId = Int64(messageID);
-  return await service.deleteMessage(DeleteMessageRequest()..location = loc);
+  return await server.core.deleteMessage(DeleteMessageRequest()..location = loc);
 }

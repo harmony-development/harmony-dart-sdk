@@ -1,4 +1,7 @@
 import 'package:grpc/grpc.dart';
+import 'package:harmony_sdk/src/protocol/core/v1/core.pbgrpc.dart';
+import 'package:harmony_sdk/src/protocol/foundation/v1/foundation.pbgrpc.dart';
+import 'package:harmony_sdk/src/protocol/profile/v1/profile.pbgrpc.dart';
 import '../api/foundation.dart' as foundation_kit;
 
 class SSession {
@@ -16,6 +19,14 @@ class Homeserver {
   String get host => _host;
   ClientChannel get channel => _channel;
   SSession get session => _session;
+
+  CoreServiceClient _core;
+  FoundationServiceClient _foundation;
+  ProfileServiceClient _profile;
+
+  CoreServiceClient get core => _core;
+  FoundationServiceClient get foundation => _foundation;
+  ProfileServiceClient get profile => _profile;
 
   Future<Homeserver> federate(String target) async {
     String token = await foundation_kit.federate(this, target);
@@ -44,5 +55,8 @@ class Homeserver {
 
   Homeserver(this._host, [port = 2289]) {
     _channel = ClientChannel(host, port: port);
+    _core = CoreServiceClient(channel);
+    _foundation = FoundationServiceClient(channel);
+    _profile = ProfileServiceClient(channel);
   }
 }
