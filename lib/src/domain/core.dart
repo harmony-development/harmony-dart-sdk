@@ -1,39 +1,4 @@
-class Guild {
-  int id;
-  String host;
-  String name;
-  int owner;
-  String picture;
-}
-
-class ChannelModel {
-  int id;
-  int guild;
-  String name;
-  bool isCategory;
-  bool isVoice;
-}
-
-class MessageModel {
-  int id;
-  int guild;
-  int channel;
-  int author;
-  DateTime createdAt;
-  DateTime editedAt;
-  String content;
-  // repeated Embed embeds = 6;
-  // repeated Action actions = 7;
-  // repeated string attachments = 8;
-  // uint64 in_reply_to = 9 [ jstype = JS_STRING ];
-  // Override overrides = 10;
-}
-
-class InviteModel {
-  String id;
-  int possibleUses;
-  int useCount;
-}
+import 'package:harmony_sdk/harmony.dart';
 
 class GuildEvent {
   int event;
@@ -43,7 +8,7 @@ class MessageSent extends GuildEvent {
   @override
   int get event => 1;
 
-  MessageModel message;
+  MMessage message;
 }
 
 class MessageUpdated extends GuildEvent {

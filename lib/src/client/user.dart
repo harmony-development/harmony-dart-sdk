@@ -1,22 +1,30 @@
 part of 'client.dart';
 
-class User {
-  ServerClient _server;
-  String _userID;
+class UserData {
+  int id;
+  String name;
+  String picture;
 
-  User(this._server, this._userID) {
+  UserData(this.id, this.name, this.picture);
+}
+
+class User {
+  Homeserver _server;
+  int _id;
+
+  User(this._server, this._id) {
     refresh();
   }
 
   void refresh() async {
-    var data = profile_kit.getUserData(_server, _userID);
+    var data = profile_kit.getUserData(_server, _id);
     _name = Future(() async {
       var doneData = await data;
-      return doneData["user_name"];
+      return doneData.name;
     });
     _avatar = Future(() async {
       var doneData = await data;
-      return doneData["user_avatar"];
+      return doneData.picture;
     });
   }
 

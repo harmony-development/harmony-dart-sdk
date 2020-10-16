@@ -1,18 +1,26 @@
 part of 'client.dart';
 
+class InviteData {
+  String id;
+  int guildId;
+  int usesCount;
+
+  InviteData(this.id, this.guildId, this.usesCount);
+}
+
 class Invite {
-  ServerClient _server;
-  String _guildID;
+  Homeserver _server;
+  int _guildID;
 
-  String _inviteID;
-  String get inviteID => _inviteID;
+  String _id;
+  String get id => _id;
 
-  int _uses;
-  int get uses => _uses;
+  int _usesCount;
+  int get usesCount => _usesCount;
 
-  Invite(this._server, this._guildID, this._inviteID, this._uses);
+  Invite(this._server, this._guildID, this._id, this._usesCount);
 
   Future<void> delete() async {
-    await core_kit.deleteInvite(_server, _guildID, _inviteID);
+    await core_kit.deleteInvite(_server, _guildID, _id);
   }
 }
