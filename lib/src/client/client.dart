@@ -26,7 +26,16 @@ class Client {
 
   Future<bool> login(String email, String password) async {
     try {
-      await _nativeHomeserver.login_with_email(email, password);
+      await _nativeHomeserver.login(email, password);
+      return true;
+    } catch (e) {
+      return false;
+    }
+  }
+
+  Future<bool> register(String username, String email, String password) async {
+    try {
+      await _nativeHomeserver.register(username, email, password);
       return true;
     } catch (e) {
       return false;
