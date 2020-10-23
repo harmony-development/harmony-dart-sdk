@@ -11,29 +11,28 @@ class GuildData {
 }
 
 class Guild {
-  Homeserver _server;
+  Server _server;
+
   int _id;
+  int get id => _id;
 
   Guild(this._server, this._id) {
     refresh();
   }
 
-  static Future<Guild> create(Homeserver server, String guildName) async {
-    var id = await core_kit.createGuild(server, guildName);
-    var guild = Guild(server, id);
+  static Future<Guild> create(Server server, String guildName) async {
+    var guild = await core_kit.createGuild(server, guildName);
     guild._name = Future.value(guildName);
     return guild;
   }
 
-  Future<Channel> createChannel(String name, [bool isCategory = false]) async {
-    var id = await core_kit.createChannel(_server, _id, name, isCategory);
-    return Channel(_server, _id, id, name, isCategory);
-  }
+  Future<Channel> createChannel(String name, [bool isCategory = false]) => core_kit
+      .createChannel(_server, _id, name, isCategory)
+      .then((value) => Channel(_server, _id, value, name, isCategory));
 
-  Future<Invite> createInvite(String name, [int uses = -1]) async {
-    var invite = await core_kit.createInvite(_server, _id, name, uses);
-    return Invite(_server, _id, invite.id, invite.usesCount);
-  }
+  Future<Invite> createInvite(String name, [int uses = -1]) => core_kit
+      .createInvite(_server, _id, name, uses)
+      .then((value) => Invite(_server, _id, value.id, value.usesCount));
 
   void refresh() async {
     var data = core_kit.getGuild(_server, _id);
@@ -75,17 +74,17 @@ class Guild {
 
   Future<String> _name;
   Future<String> get name => _name;
-  void setName(String name) async {
+
+  Future<void> setName(String name) async {
     await core_kit.setGuildName(_server, _id, name);
     _name = Future.value(name);
+    return;
   }
 
-  Homeserver get homeserver => _server;
+  Server get server => _server;
 
   Future<String> _picture;
   Future<String> get picture => _picture;
 
-  void delete() async {
-    await core_kit.deleteGuild(_server, _id);
-  }
+  Future<void> delete() => core_kit.deleteGuild(_server, _id);
 }

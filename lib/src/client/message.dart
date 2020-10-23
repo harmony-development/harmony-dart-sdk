@@ -2,9 +2,13 @@ part of 'client.dart';
 
 class MMessage {
   Homeserver _server;
-  int _guildID;
-  int _channelID;
-  int _messageID;
+  int _guildId;
+  int _channelId;
+  int _messageId;
+
+  int get guildId => _guildId;
+  int get channelId => _channelId;
+  int get id => _messageId;
 
   User _author;
   User get author => _author;
@@ -24,24 +28,14 @@ class MMessage {
   // List<Action> _actions;
   // List<Action> get actions => _actions;
 
-  Future<bool> delete() async {
-    try {
-      await core_kit.deleteMessage(_server, _guildID, _channelID, _messageID);
-      return true;
-    } catch (e) {
-      return false;
-    }
+  Future<void> delete() {
+    return core_kit.deleteMessage(_server, _guildId, _channelId, _messageId);
   }
 
-  Future<bool> edit(String content) async {
-    try {
-      await core_kit.updateMessage(_server, _guildID, _channelID, _messageID, content: content);
-      return true;
-    } catch (e) {
-      return false;
-    }
+  Future<void> edit(String content) {
+    return core_kit.updateMessage(_server, _guildId, _channelId, _messageId, content: content);
   }
 
-  MMessage(this._server, this._guildID, this._channelID, this._messageID, this._author,
+  MMessage(this._server, this._guildId, this._channelId, this._messageId, this._author,
       this._createdAt, this._editedAt, this._content);
 }

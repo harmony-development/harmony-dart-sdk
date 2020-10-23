@@ -9,8 +9,8 @@ class InviteData {
 }
 
 class Invite {
-  Homeserver _server;
-  int _guildID;
+  Server _server;
+  int _guildId;
 
   String _id;
   String get id => _id;
@@ -18,9 +18,7 @@ class Invite {
   int _usesCount;
   int get usesCount => _usesCount;
 
-  Invite(this._server, this._guildID, this._id, this._usesCount);
+  Invite(this._server, this._guildId, this._id, this._usesCount);
 
-  Future<void> delete() async {
-    await core_kit.deleteInvite(_server, _guildID, _id);
-  }
+  Future<void> delete() => core_kit.deleteInvite(_server, _guildId, _id);
 }

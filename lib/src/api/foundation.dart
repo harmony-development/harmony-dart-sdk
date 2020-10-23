@@ -1,5 +1,5 @@
 import 'dart:convert';
-import 'package:harmony_sdk/harmony.dart';
+import 'package:harmony_sdk/src/client/client.dart';
 
 import 'package:harmony_sdk/src/protocol/foundation/v1/foundation.pb.dart';
 import 'package:harmony_sdk/src/protocol/foundation/v1/foundation.pbgrpc.dart';
@@ -12,10 +12,10 @@ Future<SSession> localLogin(Homeserver server, String email, String password) as
   return SSession(response.sessionToken, response.userId.toInt());
 }
 
-Future<SSession> federatedLogin(Homeserver server, String token, String domain) async {
+Future<SSession> federatedLogin(Server server, String token, Homeserver home) async {
   final msg = LoginRequest_Federated()
     ..authToken = token
-    ..domain = domain;
+    ..domain = home.host;
   final response = await server.foundation.login(LoginRequest()..federated = msg);
   return SSession(response.sessionToken, response.userId.toInt());
 }
@@ -34,7 +34,8 @@ Future<String> getKey(Homeserver server) async {
   return response.key;
 }
 
-Future<String> federate(Homeserver server, String target) async {
-  final response = await server.foundation.federate(FederateRequest()..target = target);
+Future<String> federate(Homeserver server, Server target) async {
+  final response = await server.foundation
+      .federate(FederateRequest()..target = target.host, options: server.metadata);
   return response.token;
 }
