@@ -14,7 +14,9 @@ class Server {
 
   String get host => _host;
   ClientChannel get channel => _channel;
-  CallOptions get metadata => CallOptions(metadata: {'auth': session.token});
+  CallOptions get metadata =>
+      CallOptions(metadata: {'auth': session.token}, timeout: Duration(seconds: CALL_TIMEOUT));
+  CallOptions get metasess => CallOptions(metadata: {'auth': session.token});
 
   CoreServiceClient _core;
   FoundationServiceClient _foundation;

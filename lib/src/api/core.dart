@@ -1,6 +1,6 @@
 import 'package:fixnum/fixnum.dart';
-import 'package:harmony_sdk/src/client/client.dart';
 
+import 'package:harmony_sdk/src/client/client.dart';
 import 'package:harmony_sdk/src/protocol/core/v1/core.pb.dart';
 import 'package:harmony_sdk/src/protocol/core/v1/core.pbgrpc.dart';
 import 'package:harmony_sdk/src/protocol/google/protobuf/timestamp.pb.dart';
@@ -14,12 +14,12 @@ Future<List<Guild>> joinedGuilds(Homeserver server) async {
       .toList();
 }
 
-Future<Guild> createGuild(Homeserver server, String guildName) async {
+Future<Guild> createGuild(Server server, String guildName) async {
   final response = await server.core
       .createGuild(CreateGuildRequest()..guildName = guildName, options: server.metadata);
 
   final guild = Guild(server, response.guildId.toInt());
-  await addGuildToList(server, guild.id);
+  await addGuildToList(server, guild);
   return guild;
 }
 
@@ -41,10 +41,11 @@ Future<void> setGuildName(Server server, int guildID, String guildName) async {
       options: server.metadata);
 }
 
-Future<void> deleteGuild(Server server, int guildID) async {
-  final loc = Location()..guildId = Int64(guildID);
+Future<void> deleteGuild(Server server, int guildId) async {
+  final loc = Location()..guildId = Int64(guildId);
   await server.core.deleteGuild(DeleteGuildRequest()..location = loc, options: server.metadata);
-  return await removeGuildFromList(server, guildID);
+  final guild = Guild(server, guildId);
+  return await removeGuildFromList(server, guild);
 }
 
 Future<List<int>> guildMemberList(Server server, int guildID) async {
@@ -155,7 +156,7 @@ Future<Guild> joinGuild(Server server, String inviteID) async {
   final response = await server.core
       .joinGuild(JoinGuildRequest()..inviteId = inviteID, options: server.metadata);
   final guild = Guild(server, response.location.guildId.toInt());
-  await addGuildToList(server, guild.id);
+  await addGuildToList(server, guild);
   return guild;
 }
 
@@ -196,7 +197,7 @@ Future<void> deleteMessage(Server server, int guildID, int channelID, int messag
 Stream<GGuildEvent> streamEvents(Server server, int guildId) {
   final loc = Location()..guildId = Int64(guildId);
   var stream = server.core
-      .streamGuildEvents(StreamGuildEventsRequest()..location = loc, options: server.metadata);
+      .streamGuildEvents(StreamGuildEventsRequest()..location = loc, options: server.metasess);
   return stream.map((event) => mapEvent(server, event));
 }
 
@@ -267,18 +268,18 @@ GGuildEvent mapEvent(Server server, GuildEvent e) {
   return null;
 }
 
-Future<void> addGuildToList(Homeserver server, int guildId) async {
-  return await server.core.addGuildToGuildList(
+Future<void> addGuildToList(Homeserver home, Guild guild) async {
+  return await home.core.addGuildToGuildList(
       AddGuildToGuildListRequest()
-        ..guildId = Int64(guildId)
-        ..homeserver = server.host,
-      options: server.metadata);
+        ..guildId = Int64(guild.id)
+        ..homeserver = guild.server.host,
+      options: home.metadata);
 }
 
-Future<void> removeGuildFromList(Homeserver server, int guildId) async {
-  return await server.core.removeGuildFromGuildList(
+Future<void> removeGuildFromList(Homeserver home, Guild guild) async {
+  return await home.core.removeGuildFromGuildList(
       RemoveGuildFromGuildListRequest()
-        ..guildId = Int64(guildId)
-        ..homeserver = server.host,
-      options: server.metadata);
+        ..guildId = Int64(guild.id)
+        ..homeserver = guild.server.host,
+      options: home.metadata);
 }

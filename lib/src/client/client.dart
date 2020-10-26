@@ -15,3 +15,5 @@ part 'channel.dart';
 part 'message.dart';
 part 'invite.dart';
 part 'servers.dart';
+
+const int CALL_TIMEOUT = 5;

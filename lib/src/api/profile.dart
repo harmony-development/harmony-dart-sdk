@@ -1,6 +1,6 @@
 import 'package:fixnum/fixnum.dart';
-import 'package:harmony_sdk/src/client/client.dart';
 
+import 'package:harmony_sdk/src/client/client.dart';
 import 'package:harmony_sdk/src/protocol/profile/v1/profile.pb.dart';
 import 'package:harmony_sdk/src/protocol/profile/v1/profile.pbgrpc.dart';
 

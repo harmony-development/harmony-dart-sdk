@@ -1,7 +1,7 @@
 part of 'client.dart';
 
 class MMessage {
-  Homeserver _server;
+  Server _server;
   int _guildId;
   int _channelId;
   int _messageId;
