@@ -49,8 +49,7 @@ class Guild {
       return User(_server, doneData.owner);
     });
     _members = Future(() async {
-      var data = await core_kit.guildMemberList(_server, _id);
-      return data.map((userID) => User(_server, userID)).toList();
+      return await core_kit.guildMemberList(_server, _id);
     });
     _channels = Future(() async {
       return await core_kit.channelList(_server, _id);
@@ -87,4 +86,7 @@ class Guild {
   Future<String> get picture => _picture;
 
   Future<void> delete() => core_kit.deleteGuild(_server, _id);
+
+  Future<List<Channel>> listChannels() => core_kit.channelList(_server, _id);
+  Future<List<User>> listMembers() => core_kit.guildMemberList(_server, _id);
 }

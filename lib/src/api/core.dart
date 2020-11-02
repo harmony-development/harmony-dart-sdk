@@ -48,13 +48,13 @@ Future<void> deleteGuild(Server server, int guildId) async {
   return await removeGuildFromList(server, guild);
 }
 
-Future<List<int>> guildMemberList(Server server, int guildID) async {
+Future<List<User>> guildMemberList(Server server, int guildID) async {
   final loc = Location()..guildId = Int64(guildID);
   return await server.core
       .getGuildMembers(GetGuildMembersRequest()..location = loc, options: server.metadata)
       .asStream()
       .expand((resp) => resp.members)
-      .map((m) => m.toInt())
+      .map((m) => User(server, m.toInt()))
       .toList();
 }
 

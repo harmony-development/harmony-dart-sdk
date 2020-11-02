@@ -12,6 +12,8 @@ class User {
   Homeserver _server;
   int _id;
 
+  int get id => _id;
+
   User(this._server, this._id) {
     refresh();
   }
