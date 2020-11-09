@@ -1,16 +1,16 @@
 part of 'client.dart';
 
-class SSession {
+class Session {
   String token;
   int userId;
 
-  SSession(this.token, this.userId);
+  Session(this.token, this.userId);
 }
 
 class Server {
   String _host;
   ClientChannel _channel;
-  SSession session;
+  Session session;
 
   String get host => _host;
   ClientChannel get channel => _channel;
@@ -32,11 +32,11 @@ class Server {
 
   Future<Guild> createGuild(String guildName) => Guild.create(this, guildName);
   Future<List<Channel>> listChannels(int guildId) => core_kit.channelList(this, guildId);
-  Future<List<MMessage>> listMessages(int guildId, int channelId) =>
+  Future<List<Message>> listMessages(int guildId, int channelId) =>
       core_kit.messageList(this, guildId, channelId, 0);
   Future<void> sendMessage(int guildId, int channelId, String content) =>
       core_kit.sendMessage(this, guildId, channelId, content);
-  Stream<GGuildEvent> streamEvents(int guildId) => core_kit.streamEvents(this, guildId);
+  Stream<GuildEvent> streamEvents(int guildId) => core_kit.streamEvents(this, guildId);
   Future<Guild> joinGuild(String inviteID) => core_kit.joinGuild(this, inviteID);
 
   Server(this._host) {

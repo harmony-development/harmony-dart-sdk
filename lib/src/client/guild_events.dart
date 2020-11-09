@@ -1,12 +1,12 @@
 part of 'client.dart';
 
-class GGuildEvent {}
+class GuildEvent {}
 
-class MMessageSent extends GGuildEvent {
-  MMessage message;
+class MessageSent extends GuildEvent {
+  Message message;
 }
 
-class MMessageUpdated extends GGuildEvent {
+class MessageUpdated extends GuildEvent {
   int id;
   int guild;
   int channel;
@@ -21,13 +21,13 @@ class MMessageUpdated extends GGuildEvent {
   bool updateAttachments;
 }
 
-class MMessageDeleted extends GGuildEvent {
+class MessageDeleted extends GuildEvent {
   int id;
   int guild;
   int channel;
 }
 
-class CChannelCreated extends GGuildEvent {
+class ChannelCreated extends GuildEvent {
   int id;
   int guild;
   String name;
@@ -36,7 +36,7 @@ class CChannelCreated extends GGuildEvent {
   bool isCategory;
 }
 
-class CChannelUpdated extends GGuildEvent {
+class ChannelUpdated extends GuildEvent {
   int id;
   int guild;
   String name;
@@ -46,22 +46,22 @@ class CChannelUpdated extends GGuildEvent {
   bool updateOrder;
 }
 
-class CChannelDeleted extends GGuildEvent {
+class ChannelDeleted extends GuildEvent {
   int id;
   int guild;
 }
 
-class GGuildUpdated extends GGuildEvent {
+class GuildUpdated extends GuildEvent {
   String name;
   bool updateName;
 }
 
-class GGuildDeleted extends GGuildEvent {}
+class GuildDeleted extends GuildEvent {}
 
-class MMemberJoined extends GGuildEvent {
+class MemberJoined extends GuildEvent {
   int id;
 }
 
-class MMemberLeft extends GGuildEvent {
+class MemberLeft extends GuildEvent {
   int id;
 }

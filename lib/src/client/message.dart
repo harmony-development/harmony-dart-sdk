@@ -1,6 +1,6 @@
 part of 'client.dart';
 
-class MMessage {
+class Message {
   Server _server;
   int _guildId;
   int _channelId;
@@ -36,6 +36,6 @@ class MMessage {
     return core_kit.updateMessage(_server, _guildId, _channelId, _messageId, content: content);
   }
 
-  MMessage(this._server, this._guildId, this._channelId, this._messageId, this._author,
+  Message(this._server, this._guildId, this._channelId, this._messageId, this._author,
       this._createdAt, this._editedAt, this._content);
 }

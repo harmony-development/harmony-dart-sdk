@@ -19,8 +19,8 @@ class Channel {
 
   Future<void> delete() => core_kit.deleteChannel(_server, _guildId, _id);
   Future<void> sendMessage(String content) => core_kit.sendMessage(_server, _guildId, _id, content);
-  Future<List<MMessage>> getMessages(MMessage before) =>
+  Future<List<Message>> getMessages(Message before) =>
       core_kit.messageList(_server, _guildId, _id, before?.id);
   Future<List<User>> listMembers() => core_kit.guildMemberList(_server, _guildId);
-  Stream<GGuildEvent> streamGuildEvents() => _server.streamEvents(_guildId);
+  Stream<GuildEvent> streamGuildEvents() => _server.streamEvents(_guildId);
 }

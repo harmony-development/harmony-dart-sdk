@@ -1,13 +1,13 @@
 import 'package:fixnum/fixnum.dart';
 
 import 'package:harmony_sdk/src/client/client.dart';
-import 'package:harmony_sdk/src/protocol/core/v1/core.pb.dart';
-import 'package:harmony_sdk/src/protocol/core/v1/core.pbgrpc.dart';
+import 'package:harmony_sdk/src/protocol/core/v1/core.pb.dart' as proto;
+import 'package:harmony_sdk/src/protocol/core/v1/core.pbgrpc.dart' as proto;
 import 'package:harmony_sdk/src/protocol/google/protobuf/timestamp.pb.dart';
 
 Future<List<Guild>> joinedGuilds(Homeserver server) async {
   return await server.core
-      .getGuildList(GetGuildListRequest(), options: server.metadata)
+      .getGuildList(proto.GetGuildListRequest(), options: server.metadata)
       .asStream()
       .expand((resp) => resp.guilds)
       .map((e) => Guild(server, e.guildId.toInt()))
@@ -16,7 +16,7 @@ Future<List<Guild>> joinedGuilds(Homeserver server) async {
 
 Future<Guild> createGuild(Server server, String guildName) async {
   final response = await server.core
-      .createGuild(CreateGuildRequest()..guildName = guildName, options: server.metadata);
+      .createGuild(proto.CreateGuildRequest()..guildName = guildName, options: server.metadata);
 
   final guild = Guild(server, response.guildId.toInt());
   await addGuildToList(server, guild);
@@ -24,34 +24,35 @@ Future<Guild> createGuild(Server server, String guildName) async {
 }
 
 Future<GuildData> getGuild(Server server, int id) async {
-  final loc = Location()..guildId = Int64(id);
+  final loc = proto.Location()..guildId = Int64(id);
   final response =
-      await server.core.getGuild(GetGuildRequest()..location = loc, options: server.metadata);
+      await server.core.getGuild(proto.GetGuildRequest()..location = loc, options: server.metadata);
 
   return GuildData(
       id, server.host, response.guildName, response.guildOwner.toInt(), response.guildPicture);
 }
 
 Future<void> setGuildName(Server server, int guildID, String guildName) async {
-  final loc = Location()..guildId = Int64(guildID);
+  final loc = proto.Location()..guildId = Int64(guildID);
   return await server.core.updateGuildName(
-      UpdateGuildNameRequest()
+      proto.UpdateGuildNameRequest()
         ..location = loc
         ..newGuildName = guildName,
       options: server.metadata);
 }
 
 Future<void> deleteGuild(Server server, int guildId) async {
-  final loc = Location()..guildId = Int64(guildId);
-  await server.core.deleteGuild(DeleteGuildRequest()..location = loc, options: server.metadata);
+  final loc = proto.Location()..guildId = Int64(guildId);
+  await server.core
+      .deleteGuild(proto.DeleteGuildRequest()..location = loc, options: server.metadata);
   final guild = Guild(server, guildId);
   return await removeGuildFromList(server, guild);
 }
 
 Future<List<User>> guildMemberList(Server server, int guildID) async {
-  final loc = Location()..guildId = Int64(guildID);
+  final loc = proto.Location()..guildId = Int64(guildID);
   return await server.core
-      .getGuildMembers(GetGuildMembersRequest()..location = loc, options: server.metadata)
+      .getGuildMembers(proto.GetGuildMembersRequest()..location = loc, options: server.metadata)
       .asStream()
       .expand((resp) => resp.members)
       .map((m) => User(server, m.toInt()))
@@ -59,23 +60,23 @@ Future<List<User>> guildMemberList(Server server, int guildID) async {
 }
 
 Future<List<Channel>> channelList(Server server, int guildID) async {
-  final loc = Location()..guildId = Int64(guildID);
+  final loc = proto.Location()..guildId = Int64(guildID);
   return await server.core
-      .getGuildChannels(GetGuildChannelsRequest()..location = loc, options: server.metadata)
+      .getGuildChannels(proto.GetGuildChannelsRequest()..location = loc, options: server.metadata)
       .asStream()
       .expand((resp) => resp.channels)
       .map((c) => Channel(server, guildID, c.channelId.toInt(), c.channelName, c.isCategory))
       .toList();
 }
 
-Future<List<MMessage>> messageList(
+Future<List<Message>> messageList(
     Server server, int guildID, int channelID, int beforeMessageID) async {
-  final loc = Location()
+  final loc = proto.Location()
     ..guildId = Int64(guildID)
     ..channelId = Int64(channelID);
   return await server.core
       .getChannelMessages(
-          GetChannelMessagesRequest()
+          proto.GetChannelMessagesRequest()
             ..location = loc
             ..beforeMessage = Int64(0),
           options: server.metadata)
@@ -87,8 +88,8 @@ Future<List<MMessage>> messageList(
       .toList();
 }
 
-MMessage mapMessage(Server server, Message m) {
-  return MMessage(
+Message mapMessage(Server server, proto.Message m) {
+  return Message(
       server,
       m.location.guildId.toInt(),
       m.location.channelId.toInt(),
@@ -104,9 +105,9 @@ DateTime mapTimestamp(Timestamp t) {
 }
 
 Future<int> createChannel(Server server, int guildID, String channelName, bool isCategory) async {
-  final loc = Location()..guildId = Int64(guildID);
+  final loc = proto.Location()..guildId = Int64(guildID);
   final response = await server.core.createChannel(
-      CreateChannelRequest()
+      proto.CreateChannelRequest()
         ..location = loc
         ..channelName = channelName
         ..isCategory = isCategory,
@@ -115,17 +116,17 @@ Future<int> createChannel(Server server, int guildID, String channelName, bool i
 }
 
 Future<void> deleteChannel(Server server, int guildID, int channelID) async {
-  final loc = Location()
+  final loc = proto.Location()
     ..guildId = Int64(guildID)
     ..channelId = Int64(channelID);
   return await server.core
-      .deleteChannel(DeleteChannelRequest()..location = loc, options: server.metadata);
+      .deleteChannel(proto.DeleteChannelRequest()..location = loc, options: server.metadata);
 }
 
 Future<InviteData> createInvite(Server server, int guildID, String name, int uses) async {
-  final loc = Location()..guildId = Int64(guildID);
+  final loc = proto.Location()..guildId = Int64(guildID);
   final respone = await server.core.createInvite(
-      CreateInviteRequest()
+      proto.CreateInviteRequest()
         ..location = loc
         ..name = name
         ..possibleUses = uses,
@@ -134,9 +135,9 @@ Future<InviteData> createInvite(Server server, int guildID, String name, int use
 }
 
 Future<List<Invite>> listInvites(Server server, int guildID) async {
-  final loc = Location()..guildId = Int64(guildID);
+  final loc = proto.Location()..guildId = Int64(guildID);
   return await server.core
-      .getGuildInvites(GetGuildInvitesRequest()..location = loc, options: server.metadata)
+      .getGuildInvites(proto.GetGuildInvitesRequest()..location = loc, options: server.metadata)
       .asStream()
       .expand((resp) => resp.invites)
       .map((i) => Invite(server, guildID, i.inviteId, i.useCount))
@@ -144,9 +145,9 @@ Future<List<Invite>> listInvites(Server server, int guildID) async {
 }
 
 Future<void> deleteInvite(Server server, int guildID, String inviteID) async {
-  final loc = Location()..guildId = Int64(guildID);
+  final loc = proto.Location()..guildId = Int64(guildID);
   return await server.core.deleteInvite(
-      DeleteInviteRequest()
+      proto.DeleteInviteRequest()
         ..location = loc
         ..inviteId = inviteID,
       options: server.metadata);
@@ -154,18 +155,18 @@ Future<void> deleteInvite(Server server, int guildID, String inviteID) async {
 
 Future<Guild> joinGuild(Server server, String inviteID) async {
   final response = await server.core
-      .joinGuild(JoinGuildRequest()..inviteId = inviteID, options: server.metadata);
+      .joinGuild(proto.JoinGuildRequest()..inviteId = inviteID, options: server.metadata);
   final guild = Guild(server, response.location.guildId.toInt());
   await addGuildToList(server, guild);
   return guild;
 }
 
 Future<void> sendMessage(Server server, int guildID, int channelID, String content) async {
-  final loc = Location()
+  final loc = proto.Location()
     ..guildId = Int64(guildID)
     ..channelId = Int64(channelID);
   final response = await server.core.sendMessage(
-      SendMessageRequest()
+      proto.SendMessageRequest()
         ..location = loc
         ..content = content,
       options: server.metadata);
@@ -173,41 +174,41 @@ Future<void> sendMessage(Server server, int guildID, int channelID, String conte
 }
 
 Future<void> updateMessage(Server server, int guildID, int channelID, int messageID,
-    {String content, List<Embed> embeds, List<Action> actions}) async {
-  final loc = Location()
+    {String content, List<proto.Embed> embeds, List<proto.Action> actions}) async {
+  final loc = proto.Location()
     ..guildId = Int64(guildID)
     ..channelId = Int64(channelID)
     ..messageId = Int64(messageID);
   return await server.core.updateMessage(
-      UpdateMessageRequest()
+      proto.UpdateMessageRequest()
         ..location = loc
         ..content = content,
       options: server.metadata);
 }
 
 Future<void> deleteMessage(Server server, int guildID, int channelID, int messageID) async {
-  final loc = Location()
+  final loc = proto.Location()
     ..guildId = Int64(guildID)
     ..channelId = Int64(channelID)
     ..messageId = Int64(messageID);
   return await server.core
-      .deleteMessage(DeleteMessageRequest()..location = loc, options: server.metadata);
+      .deleteMessage(proto.DeleteMessageRequest()..location = loc, options: server.metadata);
 }
 
-Stream<GGuildEvent> streamEvents(Server server, int guildId) {
-  final loc = Location()..guildId = Int64(guildId);
-  var stream = server.core
-      .streamGuildEvents(StreamGuildEventsRequest()..location = loc, options: server.metasess);
+Stream<GuildEvent> streamEvents(Server server, int guildId) {
+  final loc = proto.Location()..guildId = Int64(guildId);
+  var stream = server.core.streamGuildEvents(proto.StreamGuildEventsRequest()..location = loc,
+      options: server.metasess);
   return stream.map((event) => mapEvent(server, event));
 }
 
-GGuildEvent mapEvent(Server server, GuildEvent e) {
+GuildEvent mapEvent(Server server, proto.GuildEvent e) {
   if (e.hasSentMessage()) {
-    return MMessageSent()..message = mapMessage(server, e.sentMessage.message);
+    return MessageSent()..message = mapMessage(server, e.sentMessage.message);
   }
   if (e.hasEditedMessage()) {
     final m = e.editedMessage;
-    return MMessageUpdated()
+    return MessageUpdated()
       ..id = m.location.messageId.toInt()
       ..channel = m.location.channelId.toInt()
       ..guild = m.location.guildId.toInt()
@@ -220,14 +221,14 @@ GGuildEvent mapEvent(Server server, GuildEvent e) {
   }
   if (e.hasDeletedMessage()) {
     final loc = e.deletedMessage.location;
-    return MMessageDeleted()
+    return MessageDeleted()
       ..id = loc.messageId.toInt()
       ..channel = loc.channelId.toInt()
       ..guild = loc.guildId.toInt();
   }
   if (e.hasCreatedChannel()) {
     final m = e.createdChannel;
-    return CChannelCreated()
+    return ChannelCreated()
       ..id = m.location.channelId.toInt()
       ..guild = m.location.guildId.toInt()
       ..name = m.name
@@ -237,7 +238,7 @@ GGuildEvent mapEvent(Server server, GuildEvent e) {
   }
   if (e.hasEditedChannel()) {
     final m = e.editedChannel;
-    return CChannelUpdated()
+    return ChannelUpdated()
       ..id = m.location.channelId.toInt()
       ..guild = m.location.guildId.toInt()
       ..name = m.name
@@ -247,30 +248,30 @@ GGuildEvent mapEvent(Server server, GuildEvent e) {
       ..updateOrder = m.updateOrder;
   }
   if (e.hasDeletedChannel()) {
-    return CChannelDeleted()
+    return ChannelDeleted()
       ..id = e.deletedChannel.location.channelId.toInt()
       ..guild = e.deletedChannel.location.guildId.toInt();
   }
   if (e.hasEditedGuild()) {
-    return GGuildUpdated()
+    return GuildUpdated()
       ..name = e.editedGuild.name
       ..updateName = e.editedGuild.updateName;
   }
   if (e.hasDeletedGuild()) {
-    return GGuildDeleted();
+    return GuildDeleted();
   }
   if (e.hasJoinedMember()) {
-    return MMemberJoined()..id = e.joinedMember.memberId.toInt();
+    return MemberJoined()..id = e.joinedMember.memberId.toInt();
   }
   if (e.hasLeftMember()) {
-    return MMemberJoined()..id = e.leftMember.memberId.toInt();
+    return MemberJoined()..id = e.leftMember.memberId.toInt();
   }
   return null;
 }
 
 Future<void> addGuildToList(Homeserver home, Guild guild) async {
   return await home.core.addGuildToGuildList(
-      AddGuildToGuildListRequest()
+      proto.AddGuildToGuildListRequest()
         ..guildId = Int64(guild.id)
         ..homeserver = guild.server.host,
       options: home.metadata);
@@ -278,7 +279,7 @@ Future<void> addGuildToList(Homeserver home, Guild guild) async {
 
 Future<void> removeGuildFromList(Homeserver home, Guild guild) async {
   return await home.core.removeGuildFromGuildList(
-      RemoveGuildFromGuildListRequest()
+      proto.RemoveGuildFromGuildListRequest()
         ..guildId = Int64(guild.id)
         ..homeserver = guild.server.host,
       options: home.metadata);
