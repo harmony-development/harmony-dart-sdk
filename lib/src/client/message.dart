@@ -1,10 +1,14 @@
 part of 'client.dart';
 
 class Message {
-  ServerClient _server;
-  String _guildID;
-  String _channelID;
-  String _messageID;
+  Server _server;
+  int _guildId;
+  int _channelId;
+  int _messageId;
+
+  int get guildId => _guildId;
+  int get channelId => _channelId;
+  int get id => _messageId;
 
   User _author;
   User get author => _author;
@@ -18,41 +22,20 @@ class Message {
   String _content;
   String get content => _content;
 
-  List<Embed> _embeds;
-  List<Embed> get embeds => _embeds;
+  // List<Embed> _embeds;
+  // List<Embed> get embeds => _embeds;
 
-  List<Action> _actions;
-  List<Action> get actions => _actions;
+  // List<Action> _actions;
+  // List<Action> get actions => _actions;
 
-  Future<bool> delete() async {
-    try {
-      await core_kit.deleteMessage(_server, _guildID, _channelID, _messageID);
-      return true;
-    } catch (e) {
-      return false;
-    }
+  Future<void> delete() {
+    return core_kit.deleteMessage(_server, _guildId, _channelId, _messageId);
   }
 
-  Future<bool> edit(
-      {String content, List<Embed> embeds, List<Action> actions}) async {
-    try {
-      await core_kit.updateMessage(_server, _guildID, _channelID, _messageID,
-          content: content, embeds: embeds, actions: actions);
-      return true;
-    } catch (e) {
-      return false;
-    }
+  Future<void> edit(String content) {
+    return core_kit.updateMessage(_server, _guildId, _channelId, _messageId, content: content);
   }
 
-  Message(
-      this._server,
-      this._guildID,
-      this._channelID,
-      this._messageID,
-      this._author,
-      this._createdAt,
-      this._editedAt,
-      this._content,
-      this._embeds,
-      this._actions);
+  Message(this._server, this._guildId, this._channelId, this._messageId, this._author,
+      this._createdAt, this._editedAt, this._content);
 }

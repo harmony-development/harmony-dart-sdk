@@ -1,63 +1,61 @@
 part of 'client.dart';
 
-class Guild {
-  ServerClient _server;
-  String _guildID;
+class GuildData {
+  int id;
+  String host;
+  String name;
+  int owner;
+  String picture;
 
-  Guild(this._guildID, this._server) {
+  GuildData(this.id, this.host, this.name, this.owner, this.picture);
+}
+
+class Guild {
+  Server _server;
+
+  int _id;
+  int get id => _id;
+
+  Guild(this._server, this._id) {
     refresh();
   }
 
-  static Future<Guild> create(ServerClient client, String guildName) async {
-    var id = await core_kit.createGuild(client, guildName);
-    var guild = Guild(id, client);
+  static Future<Guild> create(Server server, String guildName) async {
+    var guild = await core_kit.createGuild(server, guildName);
     guild._name = Future.value(guildName);
     return guild;
   }
 
-  Future<Channel> createChannel(String name) async {
-    var channel = await core_kit.createChannel(_server, _guildID, name);
-    return Channel(
-        _server, _guildID, channel["channel_id"], channel["channel_name"]);
-  }
+  Future<Channel> createChannel(String name, [bool isCategory = false]) => core_kit
+      .createChannel(_server, _id, name, isCategory)
+      .then((value) => Channel(_server, _id, value, name, isCategory));
 
-  Future<Invite> createInvite(String name, [int uses = -1]) async {
-    var invite = await core_kit.createInvite(_server, _guildID, name, uses);
-    return Invite(
-        _server, _guildID, invite["invite_id"], invite["invite_uses"]);
-  }
+  Future<Invite> createInvite(String name, [int uses = -1]) => core_kit
+      .createInvite(_server, _id, name, uses)
+      .then((value) => Invite(_server, _id, value.id, value.usesCount));
 
   void refresh() async {
-    var data = core_kit.getGuildData(_server, _guildID);
+    var data = core_kit.getGuild(_server, _id);
     _name = Future(() async {
       var doneData = await data;
-      return doneData["guild_name"];
+      return doneData.name;
     });
     _picture = Future(() async {
       var doneData = await data;
-      return doneData["guild_picture"];
+      return doneData.picture;
     });
     _owner = Future(() async {
       var doneData = await data;
-      return User(_server, doneData["guild_owner"]);
+      return User(_server, doneData.owner);
     });
     _members = Future(() async {
-      var data = await core_kit.guildMemberList(_server, _guildID);
-      return data.map((userID) => User(_server, userID)).toList();
+      return await core_kit.guildMemberList(_server, _id);
     });
     _channels = Future(() async {
-      var data = await core_kit.channelList(_server, _guildID);
-      return data
-          .map((channel) =>
-              Channel(_server, _guildID, channel["id"], channel["name"]))
-          .toList();
+      return await core_kit.channelList(_server, _id);
     });
     _invites = Future(() async {
-      var data = await core_kit.listInvites(_server, _guildID);
-      return data
-          .map((invite) => Invite(
-              _server, _guildID, invite["invite_id"], invite["invite_uses"]))
-          .toList();
+      return await core_kit.listInvites(_server, _id);
     });
   }
 
@@ -75,17 +73,20 @@ class Guild {
 
   Future<String> _name;
   Future<String> get name => _name;
-  void setName(String name) async {
-    await core_kit.setGuildName(_server, _guildID, name);
+
+  Future<void> setName(String name) async {
+    await core_kit.setGuildName(_server, _id, name);
     _name = Future.value(name);
+    return;
   }
 
-  Homeserver get homeserver => _server.homeserver;
+  Server get server => _server;
 
   Future<String> _picture;
   Future<String> get picture => _picture;
 
-  void delete() async {
-    await core_kit.deleteGuild(_server, _guildID);
-  }
+  Future<void> delete() => core_kit.deleteGuild(_server, _id);
+
+  Future<List<Channel>> listChannels() => core_kit.channelList(_server, _id);
+  Future<List<User>> listMembers() => core_kit.guildMemberList(_server, _id);
 }
