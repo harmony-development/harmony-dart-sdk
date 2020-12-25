@@ -1,9 +1,9 @@
 ///
 //  Generated code. Do not modify.
-//  source: foundation/v1/foundation.proto
+//  source: auth/v1/auth.proto
 //
 // @dart = 2.3
-// ignore_for_file: camel_case_types,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type
+// ignore_for_file: annotate_overrides,camel_case_types,unnecessary_const,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type,unnecessary_this,prefer_final_fields
 
 const FederateRequest$json = const {
   '1': 'FederateRequest',
@@ -34,8 +34,8 @@ const KeyReply$json = const {
 const LoginRequest$json = const {
   '1': 'LoginRequest',
   '2': const [
-    const {'1': 'federated', '3': 1, '4': 1, '5': 11, '6': '.protocol.foundation.v1.LoginRequest.Federated', '9': 0, '10': 'federated'},
-    const {'1': 'local', '3': 2, '4': 1, '5': 11, '6': '.protocol.foundation.v1.LoginRequest.Local', '9': 0, '10': 'local'},
+    const {'1': 'federated', '3': 1, '4': 1, '5': 11, '6': '.protocol.auth.v1.LoginRequest.Federated', '9': 0, '10': 'federated'},
+    const {'1': 'local', '3': 2, '4': 1, '5': 11, '6': '.protocol.auth.v1.LoginRequest.Local', '9': 0, '10': 'local'},
   ],
   '3': const [LoginRequest_Federated$json, LoginRequest_Local$json],
   '8': const [

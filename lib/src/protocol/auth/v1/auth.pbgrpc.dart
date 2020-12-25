@@ -1,86 +1,77 @@
 ///
 //  Generated code. Do not modify.
-//  source: foundation/v1/foundation.proto
+//  source: auth/v1/auth.proto
 //
 // @dart = 2.3
-// ignore_for_file: camel_case_types,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type
+// ignore_for_file: annotate_overrides,camel_case_types,unnecessary_const,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type,unnecessary_this,prefer_final_fields
 
 import 'dart:async' as $async;
 
 import 'dart:core' as $core;
 
 import 'package:grpc/service_api.dart' as $grpc;
-import 'foundation.pb.dart' as $0;
+import 'auth.pb.dart' as $0;
 import '../../google/protobuf/empty.pb.dart' as $1;
-export 'foundation.pb.dart';
+export 'auth.pb.dart';
 
-class FoundationServiceClient extends $grpc.Client {
+class AuthServiceClient extends $grpc.Client {
   static final _$federate =
       $grpc.ClientMethod<$0.FederateRequest, $0.FederateReply>(
-          '/protocol.foundation.v1.FoundationService/Federate',
+          '/protocol.auth.v1.AuthService/Federate',
           ($0.FederateRequest value) => value.writeToBuffer(),
           ($core.List<$core.int> value) => $0.FederateReply.fromBuffer(value));
   static final _$key = $grpc.ClientMethod<$0.KeyRequest, $0.KeyReply>(
-      '/protocol.foundation.v1.FoundationService/Key',
+      '/protocol.auth.v1.AuthService/Key',
       ($0.KeyRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $0.KeyReply.fromBuffer(value));
   static final _$login = $grpc.ClientMethod<$0.LoginRequest, $0.Session>(
-      '/protocol.foundation.v1.FoundationService/Login',
+      '/protocol.auth.v1.AuthService/Login',
       ($0.LoginRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $0.Session.fromBuffer(value));
   static final _$register = $grpc.ClientMethod<$0.RegisterRequest, $0.Session>(
-      '/protocol.foundation.v1.FoundationService/Register',
+      '/protocol.auth.v1.AuthService/Register',
       ($0.RegisterRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $0.Session.fromBuffer(value));
   static final _$getConfig = $grpc.ClientMethod<$1.Empty, $0.GetConfigResponse>(
-      '/protocol.foundation.v1.FoundationService/GetConfig',
+      '/protocol.auth.v1.AuthService/GetConfig',
       ($1.Empty value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $0.GetConfigResponse.fromBuffer(value));
 
-  FoundationServiceClient($grpc.ClientChannel channel,
-      {$grpc.CallOptions options})
-      : super(channel, options: options);
+  AuthServiceClient($grpc.ClientChannel channel,
+      {$grpc.CallOptions options,
+      $core.Iterable<$grpc.ClientInterceptor> interceptors})
+      : super(channel, options: options, interceptors: interceptors);
 
   $grpc.ResponseFuture<$0.FederateReply> federate($0.FederateRequest request,
       {$grpc.CallOptions options}) {
-    final call = $createCall(_$federate, $async.Stream.fromIterable([request]),
-        options: options);
-    return $grpc.ResponseFuture(call);
+    return $createUnaryCall(_$federate, request, options: options);
   }
 
   $grpc.ResponseFuture<$0.KeyReply> key($0.KeyRequest request,
       {$grpc.CallOptions options}) {
-    final call = $createCall(_$key, $async.Stream.fromIterable([request]),
-        options: options);
-    return $grpc.ResponseFuture(call);
+    return $createUnaryCall(_$key, request, options: options);
   }
 
   $grpc.ResponseFuture<$0.Session> login($0.LoginRequest request,
       {$grpc.CallOptions options}) {
-    final call = $createCall(_$login, $async.Stream.fromIterable([request]),
-        options: options);
-    return $grpc.ResponseFuture(call);
+    return $createUnaryCall(_$login, request, options: options);
   }
 
   $grpc.ResponseFuture<$0.Session> register($0.RegisterRequest request,
       {$grpc.CallOptions options}) {
-    final call = $createCall(_$register, $async.Stream.fromIterable([request]),
-        options: options);
-    return $grpc.ResponseFuture(call);
+    return $createUnaryCall(_$register, request, options: options);
   }
 
   $grpc.ResponseFuture<$0.GetConfigResponse> getConfig($1.Empty request,
       {$grpc.CallOptions options}) {
-    final call = $createCall(_$getConfig, $async.Stream.fromIterable([request]),
-        options: options);
-    return $grpc.ResponseFuture(call);
+    return $createUnaryCall(_$getConfig, request, options: options);
   }
 }
 
-abstract class FoundationServiceBase extends $grpc.Service {
-  $core.String get $name => 'protocol.foundation.v1.FoundationService';
+abstract class AuthServiceBase extends $grpc.Service {
+  $core.String get $name => 'protocol.auth.v1.AuthService';
 
-  FoundationServiceBase() {
+  AuthServiceBase() {
     $addMethod($grpc.ServiceMethod<$0.FederateRequest, $0.FederateReply>(
         'Federate',
         federate_Pre,
