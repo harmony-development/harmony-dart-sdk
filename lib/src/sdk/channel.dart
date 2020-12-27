@@ -1,4 +1,4 @@
-part of 'client.dart';
+part of 'sdk.dart';
 
 class Channel {
   Server _server;
@@ -17,10 +17,10 @@ class Channel {
   bool _isCategory;
   bool get isCategory => _isCategory;
 
-  Future<void> delete() => core_kit.deleteChannel(_server, _guildId, _id);
-  Future<void> sendMessage(String content) => core_kit.sendMessage(_server, _guildId, _id, content);
+  Future<void> delete() => chat_kit.deleteChannel(_server, _guildId, _id);
+  Future<void> sendMessage(String content) => chat_kit.sendMessage(_server, _guildId, _id, content);
   Future<List<Message>> getMessages(Message before) =>
-      core_kit.messageList(_server, _guildId, _id, before?.id);
-  Future<List<User>> listMembers() => core_kit.guildMemberList(_server, _guildId);
+      chat_kit.messageList(_server, _guildId, _id, before?.id);
+  Future<List<User>> listMembers() => chat_kit.guildMemberList(_server, _guildId);
   Stream<GuildEvent> streamGuildEvents() => _server.streamEvents(_guildId);
 }

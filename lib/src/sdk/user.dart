@@ -1,4 +1,4 @@
-part of 'client.dart';
+part of 'sdk.dart';
 
 class UserData {
   int id;
@@ -19,7 +19,7 @@ class User {
   }
 
   void refresh() async {
-    var data = profile_kit.getUserData(_server, _id);
+    var data = chat_kit.getUserData(_server, _id);
     _name = Future(() async {
       var doneData = await data;
       return doneData.name;

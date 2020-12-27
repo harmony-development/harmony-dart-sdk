@@ -1,4 +1,4 @@
-part of 'client.dart';
+part of 'sdk.dart';
 
 class Message {
   Server _server;
@@ -29,11 +29,11 @@ class Message {
   // List<Action> get actions => _actions;
 
   Future<void> delete() {
-    return core_kit.deleteMessage(_server, _guildId, _channelId, _messageId);
+    return chat_kit.deleteMessage(_server, _guildId, _channelId, _messageId);
   }
 
   Future<void> edit(String content) {
-    return core_kit.updateMessage(_server, _guildId, _channelId, _messageId, content: content);
+    return chat_kit.updateMessage(_server, _guildId, _channelId, _messageId, content: content);
   }
 
   Message(this._server, this._guildId, this._channelId, this._messageId, this._author,

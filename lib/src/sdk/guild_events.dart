@@ -1,4 +1,4 @@
-part of 'client.dart';
+part of 'sdk.dart';
 
 class GuildEvent {}
 

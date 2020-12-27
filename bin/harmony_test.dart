@@ -1,6 +1,6 @@
 import 'dart:io';
 
-import 'package:harmony_sdk/harmony.dart' as harmony;
+import 'package:harmony_sdk/harmony_sdk.dart' as harmony;
 
 main() async {
   var stopwatch = new Stopwatch()..start();
@@ -13,7 +13,7 @@ main() async {
   print("client logged in in ${stopwatch.elapsed.toString()}");
   stopwatch.reset();
 
-  var guild = await client.createGuild("club");
+  var guild = await client.createGuild("bimgus");
   print("guild created in ${stopwatch.elapsed.toString()}");
   stopwatch.reset();
 

@@ -1,4 +1,4 @@
-part of 'client.dart';
+part of 'sdk.dart';
 
 class InviteData {
   String id;
@@ -20,5 +20,5 @@ class Invite {
 
   Invite(this._server, this._guildId, this._id, this._usesCount);
 
-  Future<void> delete() => core_kit.deleteInvite(_server, _guildId, _id);
+  Future<void> delete() => chat_kit.deleteInvite(_server, _guildId, _id);
 }
