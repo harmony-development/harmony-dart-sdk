@@ -1,5 +1,5 @@
 name: harmony_sdk
-version: 0.0.5
+version: 0.0.6
 homepage: https://github.com/harmony-development/harmony-dart-sdk
 environment:
   sdk: '>=2.3.0 <3.0.0'
