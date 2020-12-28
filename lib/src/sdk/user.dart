@@ -9,17 +9,18 @@ class UserData {
 }
 
 class User {
-  Homeserver _server;
+  Homeserver _home;
   int _id;
 
   int get id => _id;
+  Server get homeserver => _home;
 
-  User(this._server, this._id) {
+  User(this._home, this._id) {
     refresh();
   }
 
-  void refresh() async {
-    var data = chat_kit.getUserData(_server, _id);
+  Future<void> refresh() async {
+    var data = chat_kit.getUserData(_home, _id);
     _name = Future(() async {
       var doneData = await data;
       return doneData.name;

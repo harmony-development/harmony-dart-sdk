@@ -37,7 +37,7 @@ class Server {
   Future<void> sendMessage(int guildId, int channelId, String content) =>
       chat_kit.sendMessage(this, guildId, channelId, content);
   Stream<GuildEvent> streamEvents(int guildId) => chat_kit.streamEvents(this, guildId);
-  Future<Guild> joinGuild(String inviteID) => chat_kit.joinGuild(this, inviteID);
+  Future<Guild> joinGuild(String inviteId) => chat_kit.joinGuild(this, inviteId);
 
   Server(this._host, [this._port = 2289]) {
     _channel = ClientChannel(host, port: port);

@@ -35,10 +35,10 @@ Future<sdk.GuildData> getGuild(sdk.Server server, int id) async {
       id, server.host, response.guildName, response.guildOwner.toInt(), response.guildPicture);
 }
 
-Future<void> setGuildName(sdk.Server server, int guildID, String guildName) async {
+Future<void> setGuildName(sdk.Server server, int guildId, String guildName) async {
   return await server.chat.updateGuildName(
       UpdateGuildNameRequest()
-        ..guildId = Int64(guildID)
+        ..guildId = Int64(guildId)
         ..newGuildName = guildName,
       options: server.metadata);
 }
@@ -50,32 +50,32 @@ Future<void> deleteGuild(sdk.Server server, int guildId) async {
   return await removeGuildFromList(server, guild);
 }
 
-Future<List<sdk.User>> guildMemberList(sdk.Server server, int guildID) async {
+Future<List<sdk.User>> guildMemberList(sdk.Server server, int guildId) async {
   return await server.chat
-      .getGuildMembers(GetGuildMembersRequest()..guildId = Int64(guildID), options: server.metadata)
+      .getGuildMembers(GetGuildMembersRequest()..guildId = Int64(guildId), options: server.metadata)
       .asStream()
       .expand((resp) => resp.members)
       .map((m) => sdk.User(server, m.toInt()))
       .toList();
 }
 
-Future<List<sdk.Channel>> channelList(sdk.Server server, int guildID) async {
+Future<List<sdk.Channel>> channelList(sdk.Server server, int guildId) async {
   return await server.chat
-      .getGuildChannels(GetGuildChannelsRequest()..guildId = Int64(guildID),
+      .getGuildChannels(GetGuildChannelsRequest()..guildId = Int64(guildId),
           options: server.metadata)
       .asStream()
       .expand((resp) => resp.channels)
-      .map((c) => sdk.Channel(server, guildID, c.channelId.toInt(), c.channelName, c.isCategory))
+      .map((c) => sdk.Channel(server, guildId, c.channelId.toInt(), c.channelName, c.isCategory))
       .toList();
 }
 
 Future<List<sdk.Message>> messageList(
-    sdk.Server server, int guildID, int channelID, int beforeMessageID) async {
+    sdk.Server server, int guildId, int channelId, int beforeMessageId) async {
   return await server.chat
       .getChannelMessages(
           GetChannelMessagesRequest()
-            ..guildId = Int64(guildID)
-            ..channelId = Int64(channelID)
+            ..guildId = Int64(guildId)
+            ..channelId = Int64(channelId)
             ..beforeMessage = Int64(0),
           options: server.metadata)
       .asStream()
@@ -103,86 +103,86 @@ DateTime mapTimestamp(Timestamp t) {
 }
 
 Future<int> createChannel(
-    sdk.Server server, int guildID, String channelName, bool isCategory) async {
+    sdk.Server server, int guildId, String channelName, bool isCategory) async {
   final response = await server.chat.createChannel(
       CreateChannelRequest()
-        ..guildId = Int64(guildID)
+        ..guildId = Int64(guildId)
         ..channelName = channelName
         ..isCategory = isCategory,
       options: server.metadata);
   return response.channelId.toInt();
 }
 
-Future<void> deleteChannel(sdk.Server server, int guildID, int channelID) async {
+Future<void> deleteChannel(sdk.Server server, int guildId, int channelId) async {
   return await server.chat.deleteChannel(
       DeleteChannelRequest()
-        ..guildId = Int64(guildID)
-        ..channelId = Int64(channelID),
+        ..guildId = Int64(guildId)
+        ..channelId = Int64(channelId),
       options: server.metadata);
 }
 
-Future<sdk.InviteData> createInvite(sdk.Server server, int guildID, String name, int uses) async {
+Future<sdk.InviteData> createInvite(sdk.Server server, int guildId, String name, int uses) async {
   final respone = await server.chat.createInvite(
       CreateInviteRequest()
-        ..guildId = Int64(guildID)
+        ..guildId = Int64(guildId)
         ..name = name
         ..possibleUses = uses,
       options: server.metadata);
-  return sdk.InviteData(respone.name, guildID, uses);
+  return sdk.InviteData(respone.name, guildId, uses);
 }
 
-Future<List<sdk.Invite>> listInvites(sdk.Server server, int guildID) async {
+Future<List<sdk.Invite>> listInvites(sdk.Server server, int guildId) async {
   return await server.chat
-      .getGuildInvites(GetGuildInvitesRequest()..guildId = Int64(guildID), options: server.metadata)
+      .getGuildInvites(GetGuildInvitesRequest()..guildId = Int64(guildId), options: server.metadata)
       .asStream()
       .expand((resp) => resp.invites)
-      .map((i) => sdk.Invite(server, guildID, i.inviteId, i.useCount))
+      .map((i) => sdk.Invite(server, guildId, i.inviteId, i.useCount))
       .toList();
 }
 
-Future<void> deleteInvite(sdk.Server server, int guildID, String inviteID) async {
+Future<void> deleteInvite(sdk.Server server, int guildId, String inviteId) async {
   return await server.chat.deleteInvite(
       DeleteInviteRequest()
-        ..guildId = Int64(guildID)
-        ..inviteId = inviteID,
+        ..guildId = Int64(guildId)
+        ..inviteId = inviteId,
       options: server.metadata);
 }
 
-Future<sdk.Guild> joinGuild(sdk.Server server, String inviteID) async {
+Future<sdk.Guild> joinGuild(sdk.Server server, String inviteId) async {
   final response = await server.chat
-      .joinGuild(JoinGuildRequest()..inviteId = inviteID, options: server.metadata);
+      .joinGuild(JoinGuildRequest()..inviteId = inviteId, options: server.metadata);
   final guild = sdk.Guild(server, response.guildId.toInt());
   await addGuildToList(server, guild);
   return guild;
 }
 
-Future<int> sendMessage(sdk.Server server, int guildID, int channelID, String content) async {
+Future<int> sendMessage(sdk.Server server, int guildId, int channelId, String content) async {
   final response = await server.chat.sendMessage(
       SendMessageRequest()
-        ..guildId = Int64(guildID)
-        ..channelId = Int64(channelID)
+        ..guildId = Int64(guildId)
+        ..channelId = Int64(channelId)
         ..content = content,
       options: server.metadata);
   return response.messageId.toInt();
 }
 
-Future<void> updateMessage(sdk.Server server, int guildID, int channelID, int messageID,
+Future<void> updateMessage(sdk.Server server, int guildId, int channelId, int messageId,
     {String content, List<Embed> embeds, List<Action> actions}) async {
   return await server.chat.updateMessage(
       UpdateMessageRequest()
-        ..guildId = Int64(guildID)
-        ..channelId = Int64(channelID)
-        ..messageId = Int64(messageID)
+        ..guildId = Int64(guildId)
+        ..channelId = Int64(channelId)
+        ..messageId = Int64(messageId)
         ..content = content,
       options: server.metadata);
 }
 
-Future<void> deleteMessage(sdk.Server server, int guildID, int channelID, int messageID) async {
+Future<void> deleteMessage(sdk.Server server, int guildId, int channelId, int messageId) async {
   return await server.chat.deleteMessage(
       DeleteMessageRequest()
-        ..guildId = Int64(guildID)
-        ..channelId = Int64(channelID)
-        ..messageId = Int64(messageID),
+        ..guildId = Int64(guildId)
+        ..channelId = Int64(channelId)
+        ..messageId = Int64(messageId),
       options: server.metadata);
 }
 
