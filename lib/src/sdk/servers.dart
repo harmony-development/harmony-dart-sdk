@@ -1,12 +1,5 @@
 part of 'sdk.dart';
 
-class Session {
-  String token;
-  int userId;
-
-  Session(this.token, this.userId);
-}
-
 class Server {
   String _host;
   int _port;
@@ -19,6 +12,7 @@ class Server {
   CallOptions get metadata =>
       CallOptions(metadata: {'auth': session.token}, timeout: Duration(seconds: CALL_TIMEOUT));
   CallOptions get metasess => CallOptions(metadata: {'auth': session.token});
+  CallOptions get timeoutOpts => CallOptions(timeout: Duration(seconds: CALL_TIMEOUT));
 
   AuthServiceClient _auth;
   ChatServiceClient _chat;
@@ -53,13 +47,14 @@ class Homeserver extends Server {
     return auth_kit.federate(this, target);
   }
 
-  Future<void> login(String email, String password) {
-    return auth_kit.localLogin(this, email, password).then((value) => session = value);
-  }
-
-  Future<void> register(String username, String email, String password) {
-    return auth_kit.register(this, email, username, password).then((value) => session = value);
-  }
+  Future<String> beginAuth() => auth_kit.beginAuth(this);
+  Stream<AuthStep> streamSteps(String authId) => auth_kit.streamSteps(this, authId);
+  Future<AuthStep> getFirstStep(String authId) => auth_kit.getFirstStep(this, authId);
+  Future<AuthStep> nextStepChoice(String authId, FilledChoice choice) =>
+      auth_kit.nextStepChoice(this, authId, choice);
+  Future<AuthStep> nextStepForm(String authId, FilledForm form) =>
+      auth_kit.nextStepForm(this, authId, form);
+  Future<AuthStep> stepBack(String authId) => auth_kit.stepBack(this, authId);
 
   Future<List<Guild>> joinedGuilds() => chat_kit.joinedGuilds(this);
 }

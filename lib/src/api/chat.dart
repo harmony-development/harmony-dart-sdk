@@ -36,8 +36,8 @@ Future<sdk.GuildData> getGuild(sdk.Server server, int id) async {
 }
 
 Future<void> setGuildName(sdk.Server server, int guildId, String guildName) async {
-  return await server.chat.updateGuildName(
-      UpdateGuildNameRequest()
+  return await server.chat.updateGuildInformation(
+      UpdateGuildInformationRequest()
         ..guildId = Int64(guildId)
         ..newGuildName = guildName,
       options: server.metadata);

@@ -6,6 +6,7 @@ import 'package:harmony_sdk/src/protocol/chat/v1/chat.pbgrpc.dart';
 import '../api/auth.dart' as auth_kit;
 import '../api/chat.dart' as chat_kit;
 
+part 'auth.dart';
 part 'guild.dart';
 part 'guild_events.dart';
 part 'user.dart';
