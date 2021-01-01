@@ -8,6 +8,7 @@
 const CreateGuildRequest$json = const {
   '1': 'CreateGuildRequest',
   '2': const [
+    const {'1': 'metadata', '3': 3, '4': 1, '5': 11, '6': '.protocol.harmonytypes.v1.Metadata', '10': 'metadata'},
     const {'1': 'guild_name', '3': 1, '4': 1, '5': 9, '10': 'guildName'},
     const {'1': 'picture_url', '3': 2, '4': 1, '5': 9, '10': 'pictureUrl'},
   ],
@@ -94,6 +95,7 @@ const GetGuildRequest$json = const {
 const GetGuildResponse$json = const {
   '1': 'GetGuildResponse',
   '2': const [
+    const {'1': 'metadata', '3': 4, '4': 1, '5': 11, '6': '.protocol.harmonytypes.v1.Metadata', '10': 'metadata'},
     const {'1': 'guild_name', '3': 1, '4': 1, '5': 9, '10': 'guildName'},
     const {
       '1': 'guild_owner',
@@ -166,8 +168,8 @@ const GetGuildMembersResponse$json = const {
   ],
 };
 
-const UpdateGuildNameRequest$json = const {
-  '1': 'UpdateGuildNameRequest',
+const UpdateGuildInformationRequest$json = const {
+  '1': 'UpdateGuildInformationRequest',
   '2': const [
     const {
       '1': 'guild_id',
@@ -178,21 +180,11 @@ const UpdateGuildNameRequest$json = const {
       '10': 'guildId',
     },
     const {'1': 'new_guild_name', '3': 2, '4': 1, '5': 9, '10': 'newGuildName'},
-  ],
-};
-
-const UpdateGuildPictureRequest$json = const {
-  '1': 'UpdateGuildPictureRequest',
-  '2': const [
-    const {
-      '1': 'guild_id',
-      '3': 1,
-      '4': 1,
-      '5': 4,
-      '8': const {'6': 1},
-      '10': 'guildId',
-    },
-    const {'1': 'new_guild_picture', '3': 2, '4': 1, '5': 9, '10': 'newGuildPicture'},
+    const {'1': 'update_guild_name', '3': 3, '4': 1, '5': 8, '10': 'updateGuildName'},
+    const {'1': 'new_guild_picture', '3': 4, '4': 1, '5': 9, '10': 'newGuildPicture'},
+    const {'1': 'update_guild_picture', '3': 5, '4': 1, '5': 8, '10': 'updateGuildPicture'},
+    const {'1': 'metadata', '3': 6, '4': 1, '5': 11, '6': '.protocol.harmonytypes.v1.Metadata', '10': 'metadata'},
+    const {'1': 'update_metadata', '3': 7, '4': 1, '5': 8, '10': 'updateMetadata'},
   ],
 };
 
@@ -242,6 +234,29 @@ const JoinGuildResponse$json = const {
       '5': 4,
       '8': const {'6': 1},
       '10': 'guildId',
+    },
+  ],
+};
+
+const PreviewGuildRequest$json = const {
+  '1': 'PreviewGuildRequest',
+  '2': const [
+    const {'1': 'invite_id', '3': 1, '4': 1, '5': 9, '10': 'inviteId'},
+  ],
+};
+
+const PreviewGuildResponse$json = const {
+  '1': 'PreviewGuildResponse',
+  '2': const [
+    const {'1': 'name', '3': 1, '4': 1, '5': 9, '10': 'name'},
+    const {'1': 'avatar', '3': 2, '4': 1, '5': 9, '10': 'avatar'},
+    const {
+      '1': 'memeber_count',
+      '3': 3,
+      '4': 1,
+      '5': 4,
+      '8': const {'6': 1},
+      '10': 'memeberCount',
     },
   ],
 };

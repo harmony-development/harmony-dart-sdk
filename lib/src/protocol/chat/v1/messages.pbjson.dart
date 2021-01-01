@@ -117,6 +117,8 @@ const UpdateMessageRequest$json = const {
     const {'1': 'update_attachments', '3': 11, '4': 1, '5': 8, '10': 'updateAttachments'},
     const {'1': 'overrides', '3': 12, '4': 1, '5': 11, '6': '.protocol.harmonytypes.v1.Override', '10': 'overrides'},
     const {'1': 'update_overrides', '3': 13, '4': 1, '5': 8, '10': 'updateOverrides'},
+    const {'1': 'metadata', '3': 14, '4': 1, '5': 11, '6': '.protocol.harmonytypes.v1.Metadata', '10': 'metadata'},
+    const {'1': 'update_metadata', '3': 15, '4': 1, '5': 8, '10': 'updateMetadata'},
   ],
 };
 
@@ -208,6 +210,7 @@ const SendMessageRequest$json = const {
     const {'1': 'in_reply_to', '3': 7, '4': 1, '5': 4, '10': 'inReplyTo'},
     const {'1': 'overrides', '3': 8, '4': 1, '5': 11, '6': '.protocol.harmonytypes.v1.Override', '10': 'overrides'},
     const {'1': 'echo_id', '3': 9, '4': 1, '5': 4, '10': 'echoId'},
+    const {'1': 'metadata', '3': 10, '4': 1, '5': 11, '6': '.protocol.harmonytypes.v1.Metadata', '10': 'metadata'},
   ],
 };
 

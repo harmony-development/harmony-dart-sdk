@@ -229,6 +229,8 @@ class UpdateMessageRequest extends $pb.GeneratedMessage {
     ..aOB(11, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'updateAttachments')
     ..aOM<$8.Override>(12, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'overrides', subBuilder: $8.Override.create)
     ..aOB(13, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'updateOverrides')
+    ..aOM<$8.Metadata>(14, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'metadata', subBuilder: $8.Metadata.create)
+    ..aOB(15, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'updateMetadata')
     ..hasRequiredFields = false
   ;
 
@@ -355,6 +357,26 @@ class UpdateMessageRequest extends $pb.GeneratedMessage {
   $core.bool hasUpdateOverrides() => $_has(12);
   @$pb.TagNumber(13)
   void clearUpdateOverrides() => clearField(13);
+
+  @$pb.TagNumber(14)
+  $8.Metadata get metadata => $_getN(13);
+  @$pb.TagNumber(14)
+  set metadata($8.Metadata v) { setField(14, v); }
+  @$pb.TagNumber(14)
+  $core.bool hasMetadata() => $_has(13);
+  @$pb.TagNumber(14)
+  void clearMetadata() => clearField(14);
+  @$pb.TagNumber(14)
+  $8.Metadata ensureMetadata() => $_ensure(13);
+
+  @$pb.TagNumber(15)
+  $core.bool get updateMetadata => $_getBF(14);
+  @$pb.TagNumber(15)
+  set updateMetadata($core.bool v) { $_setBool(14, v); }
+  @$pb.TagNumber(15)
+  $core.bool hasUpdateMetadata() => $_has(14);
+  @$pb.TagNumber(15)
+  void clearUpdateMetadata() => clearField(15);
 }
 
 class DeleteMessageRequest extends $pb.GeneratedMessage {
@@ -506,6 +528,7 @@ class SendMessageRequest extends $pb.GeneratedMessage {
     ..a<$fixnum.Int64>(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'inReplyTo', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
     ..aOM<$8.Override>(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'overrides', subBuilder: $8.Override.create)
     ..a<$fixnum.Int64>(9, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'echoId', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
+    ..aOM<$8.Metadata>(10, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'metadata', subBuilder: $8.Metadata.create)
     ..hasRequiredFields = false
   ;
 
@@ -596,6 +619,17 @@ class SendMessageRequest extends $pb.GeneratedMessage {
   $core.bool hasEchoId() => $_has(8);
   @$pb.TagNumber(9)
   void clearEchoId() => clearField(9);
+
+  @$pb.TagNumber(10)
+  $8.Metadata get metadata => $_getN(9);
+  @$pb.TagNumber(10)
+  set metadata($8.Metadata v) { setField(10, v); }
+  @$pb.TagNumber(10)
+  $core.bool hasMetadata() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearMetadata() => clearField(10);
+  @$pb.TagNumber(10)
+  $8.Metadata ensureMetadata() => $_ensure(9);
 }
 
 class SendMessageResponse extends $pb.GeneratedMessage {

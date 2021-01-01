@@ -261,6 +261,8 @@ class Event_MessageUpdated extends $pb.GeneratedMessage {
     ..aOB(12, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'updateAttachments')
     ..aOM<$8.Override>(13, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'overrides', subBuilder: $8.Override.create)
     ..aOB(14, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'updateOverrides')
+    ..aOM<$8.Metadata>(15, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'metadata', subBuilder: $8.Metadata.create)
+    ..aOB(16, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'updateMetadata')
     ..hasRequiredFields = false
   ;
 
@@ -398,6 +400,26 @@ class Event_MessageUpdated extends $pb.GeneratedMessage {
   $core.bool hasUpdateOverrides() => $_has(13);
   @$pb.TagNumber(14)
   void clearUpdateOverrides() => clearField(14);
+
+  @$pb.TagNumber(15)
+  $8.Metadata get metadata => $_getN(14);
+  @$pb.TagNumber(15)
+  set metadata($8.Metadata v) { setField(15, v); }
+  @$pb.TagNumber(15)
+  $core.bool hasMetadata() => $_has(14);
+  @$pb.TagNumber(15)
+  void clearMetadata() => clearField(15);
+  @$pb.TagNumber(15)
+  $8.Metadata ensureMetadata() => $_ensure(14);
+
+  @$pb.TagNumber(16)
+  $core.bool get updateMetadata => $_getBF(15);
+  @$pb.TagNumber(16)
+  set updateMetadata($core.bool v) { $_setBool(15, v); }
+  @$pb.TagNumber(16)
+  $core.bool hasUpdateMetadata() => $_has(15);
+  @$pb.TagNumber(16)
+  void clearUpdateMetadata() => clearField(16);
 }
 
 class Event_MessageDeleted extends $pb.GeneratedMessage {
@@ -467,6 +489,7 @@ class Event_ChannelCreated extends $pb.GeneratedMessage {
     ..a<$fixnum.Int64>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'previousId', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
     ..a<$fixnum.Int64>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'nextId', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
     ..aOB(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'isCategory')
+    ..aOM<$8.Metadata>(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'metadata', subBuilder: $8.Metadata.create)
     ..hasRequiredFields = false
   ;
 
@@ -546,6 +569,17 @@ class Event_ChannelCreated extends $pb.GeneratedMessage {
   $core.bool hasIsCategory() => $_has(5);
   @$pb.TagNumber(6)
   void clearIsCategory() => clearField(6);
+
+  @$pb.TagNumber(7)
+  $8.Metadata get metadata => $_getN(6);
+  @$pb.TagNumber(7)
+  set metadata($8.Metadata v) { setField(7, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasMetadata() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearMetadata() => clearField(7);
+  @$pb.TagNumber(7)
+  $8.Metadata ensureMetadata() => $_ensure(6);
 }
 
 class Event_ChannelUpdated extends $pb.GeneratedMessage {
@@ -557,6 +591,8 @@ class Event_ChannelUpdated extends $pb.GeneratedMessage {
     ..a<$fixnum.Int64>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'previousId', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
     ..a<$fixnum.Int64>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'nextId', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
     ..aOB(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'updateOrder')
+    ..aOM<$8.Metadata>(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'metadata', subBuilder: $8.Metadata.create)
+    ..aOB(9, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'updateMetadata')
     ..hasRequiredFields = false
   ;
 
@@ -645,6 +681,26 @@ class Event_ChannelUpdated extends $pb.GeneratedMessage {
   $core.bool hasUpdateOrder() => $_has(6);
   @$pb.TagNumber(7)
   void clearUpdateOrder() => clearField(7);
+
+  @$pb.TagNumber(8)
+  $8.Metadata get metadata => $_getN(7);
+  @$pb.TagNumber(8)
+  set metadata($8.Metadata v) { setField(8, v); }
+  @$pb.TagNumber(8)
+  $core.bool hasMetadata() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearMetadata() => clearField(8);
+  @$pb.TagNumber(8)
+  $8.Metadata ensureMetadata() => $_ensure(7);
+
+  @$pb.TagNumber(9)
+  $core.bool get updateMetadata => $_getBF(8);
+  @$pb.TagNumber(9)
+  set updateMetadata($core.bool v) { $_setBool(8, v); }
+  @$pb.TagNumber(9)
+  $core.bool hasUpdateMetadata() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearUpdateMetadata() => clearField(9);
 }
 
 class Event_ChannelDeleted extends $pb.GeneratedMessage {
@@ -703,6 +759,8 @@ class Event_GuildUpdated extends $pb.GeneratedMessage {
     ..aOB(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'updateName')
     ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'picture')
     ..aOB(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'updatePicture')
+    ..aOM<$8.Metadata>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'metadata', subBuilder: $8.Metadata.create)
+    ..aOB(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'updateMetadata')
     ..hasRequiredFields = false
   ;
 
@@ -773,6 +831,26 @@ class Event_GuildUpdated extends $pb.GeneratedMessage {
   $core.bool hasUpdatePicture() => $_has(4);
   @$pb.TagNumber(5)
   void clearUpdatePicture() => clearField(5);
+
+  @$pb.TagNumber(6)
+  $8.Metadata get metadata => $_getN(5);
+  @$pb.TagNumber(6)
+  set metadata($8.Metadata v) { setField(6, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasMetadata() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearMetadata() => clearField(6);
+  @$pb.TagNumber(6)
+  $8.Metadata ensureMetadata() => $_ensure(5);
+
+  @$pb.TagNumber(7)
+  $core.bool get updateMetadata => $_getBF(6);
+  @$pb.TagNumber(7)
+  set updateMetadata($core.bool v) { $_setBool(6, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasUpdateMetadata() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearUpdateMetadata() => clearField(7);
 }
 
 class Event_GuildDeleted extends $pb.GeneratedMessage {
@@ -1147,6 +1225,8 @@ class Event_ProfileUpdated extends $pb.GeneratedMessage {
     ..aOB(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'updateAvatar')
     ..e<$8.UserStatus>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'newStatus', $pb.PbFieldType.OE, defaultOrMaker: $8.UserStatus.USER_STATUS_ONLINE_UNSPECIFIED, valueOf: $8.UserStatus.valueOf, enumValues: $8.UserStatus.values)
     ..aOB(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'updateStatus')
+    ..aOB(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'isBot')
+    ..aOB(9, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'updateIsBot')
     ..hasRequiredFields = false
   ;
 
@@ -1235,6 +1315,83 @@ class Event_ProfileUpdated extends $pb.GeneratedMessage {
   $core.bool hasUpdateStatus() => $_has(6);
   @$pb.TagNumber(7)
   void clearUpdateStatus() => clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.bool get isBot => $_getBF(7);
+  @$pb.TagNumber(8)
+  set isBot($core.bool v) { $_setBool(7, v); }
+  @$pb.TagNumber(8)
+  $core.bool hasIsBot() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearIsBot() => clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.bool get updateIsBot => $_getBF(8);
+  @$pb.TagNumber(9)
+  set updateIsBot($core.bool v) { $_setBool(8, v); }
+  @$pb.TagNumber(9)
+  $core.bool hasUpdateIsBot() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearUpdateIsBot() => clearField(9);
+}
+
+class Event_Typing extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Event.Typing', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.chat.v1'), createEmptyInstance: create)
+    ..a<$fixnum.Int64>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'userId', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
+    ..a<$fixnum.Int64>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'guildId', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
+    ..a<$fixnum.Int64>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'channelId', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
+    ..hasRequiredFields = false
+  ;
+
+  Event_Typing._() : super();
+  factory Event_Typing() => create();
+  factory Event_Typing.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory Event_Typing.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  Event_Typing clone() => Event_Typing()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  Event_Typing copyWith(void Function(Event_Typing) updates) => super.copyWith((message) => updates(message as Event_Typing)); // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static Event_Typing create() => Event_Typing._();
+  Event_Typing createEmptyInstance() => create();
+  static $pb.PbList<Event_Typing> createRepeated() => $pb.PbList<Event_Typing>();
+  @$core.pragma('dart2js:noInline')
+  static Event_Typing getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Event_Typing>(create);
+  static Event_Typing _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $fixnum.Int64 get userId => $_getI64(0);
+  @$pb.TagNumber(1)
+  set userId($fixnum.Int64 v) { $_setInt64(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasUserId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearUserId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $fixnum.Int64 get guildId => $_getI64(1);
+  @$pb.TagNumber(2)
+  set guildId($fixnum.Int64 v) { $_setInt64(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasGuildId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearGuildId() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $fixnum.Int64 get channelId => $_getI64(2);
+  @$pb.TagNumber(3)
+  set channelId($fixnum.Int64 v) { $_setInt64(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasChannelId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearChannelId() => clearField(3);
 }
 
 enum Event_Event {
@@ -1253,6 +1410,7 @@ enum Event_Event {
   leftMember, 
   roleMoved, 
   profileUpdated, 
+  typing, 
   notSet
 }
 
@@ -1273,10 +1431,11 @@ class Event extends $pb.GeneratedMessage {
     13 : Event_Event.leftMember,
     14 : Event_Event.roleMoved,
     15 : Event_Event.profileUpdated,
+    16 : Event_Event.typing,
     0 : Event_Event.notSet
   };
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Event', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.chat.v1'), createEmptyInstance: create)
-    ..oo(0, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15])
+    ..oo(0, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16])
     ..aOM<Event_GuildAddedToList>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'guildAddedToList', subBuilder: Event_GuildAddedToList.create)
     ..aOM<Event_GuildRemovedFromList>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'guildRemovedFromList', subBuilder: Event_GuildRemovedFromList.create)
     ..aOM<Event_ActionPerformed>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'actionPerformed', subBuilder: Event_ActionPerformed.create)
@@ -1292,6 +1451,7 @@ class Event extends $pb.GeneratedMessage {
     ..aOM<Event_MemberLeft>(13, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'leftMember', subBuilder: Event_MemberLeft.create)
     ..aOM<Event_RoleMoved>(14, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'roleMoved', subBuilder: Event_RoleMoved.create)
     ..aOM<Event_ProfileUpdated>(15, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'profileUpdated', subBuilder: Event_ProfileUpdated.create)
+    ..aOM<Event_Typing>(16, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'typing', subBuilder: Event_Typing.create)
     ..hasRequiredFields = false
   ;
 
@@ -1485,5 +1645,16 @@ class Event extends $pb.GeneratedMessage {
   void clearProfileUpdated() => clearField(15);
   @$pb.TagNumber(15)
   Event_ProfileUpdated ensureProfileUpdated() => $_ensure(14);
+
+  @$pb.TagNumber(16)
+  Event_Typing get typing => $_getN(15);
+  @$pb.TagNumber(16)
+  set typing(Event_Typing v) { setField(16, v); }
+  @$pb.TagNumber(16)
+  $core.bool hasTyping() => $_has(15);
+  @$pb.TagNumber(16)
+  void clearTyping() => clearField(16);
+  @$pb.TagNumber(16)
+  Event_Typing ensureTyping() => $_ensure(15);
 }
 

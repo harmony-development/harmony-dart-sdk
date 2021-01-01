@@ -34,7 +34,7 @@ const CreateChannelRequest$json = const {
       '8': const {'6': 1},
       '10': 'nextId',
     },
-    const {'1': 'channel_kind', '3': 6, '4': 1, '5': 9, '10': 'channelKind'},
+    const {'1': 'metadata', '3': 6, '4': 1, '5': 11, '6': '.protocol.harmonytypes.v1.Metadata', '10': 'metadata'},
   ],
 };
 
@@ -77,6 +77,7 @@ const GetGuildChannelsResponse$json = const {
 const GetGuildChannelsResponse_Channel$json = const {
   '1': 'Channel',
   '2': const [
+    const {'1': 'metadata', '3': 4, '4': 1, '5': 11, '6': '.protocol.harmonytypes.v1.Metadata', '10': 'metadata'},
     const {
       '1': 'channel_id',
       '3': 1,
@@ -87,12 +88,11 @@ const GetGuildChannelsResponse_Channel$json = const {
     },
     const {'1': 'channel_name', '3': 2, '4': 1, '5': 9, '10': 'channelName'},
     const {'1': 'is_category', '3': 3, '4': 1, '5': 8, '10': 'isCategory'},
-    const {'1': 'kind', '3': 4, '4': 1, '5': 9, '10': 'kind'},
   ],
 };
 
-const UpdateChannelNameRequest$json = const {
-  '1': 'UpdateChannelNameRequest',
+const UpdateChannelInformationRequest$json = const {
+  '1': 'UpdateChannelInformationRequest',
   '2': const [
     const {
       '1': 'guild_id',
@@ -110,7 +110,10 @@ const UpdateChannelNameRequest$json = const {
       '8': const {'6': 1},
       '10': 'channelId',
     },
-    const {'1': 'new_channel_name', '3': 3, '4': 1, '5': 9, '10': 'newChannelName'},
+    const {'1': 'name', '3': 3, '4': 1, '5': 9, '10': 'name'},
+    const {'1': 'update_name', '3': 4, '4': 1, '5': 8, '10': 'updateName'},
+    const {'1': 'metadata', '3': 5, '4': 1, '5': 11, '6': '.protocol.harmonytypes.v1.Metadata', '10': 'metadata'},
+    const {'1': 'update_metadata', '3': 6, '4': 1, '5': 8, '10': 'updateMetadata'},
   ],
 };
 
@@ -154,6 +157,28 @@ const UpdateChannelOrderRequest$json = const {
 
 const DeleteChannelRequest$json = const {
   '1': 'DeleteChannelRequest',
+  '2': const [
+    const {
+      '1': 'guild_id',
+      '3': 1,
+      '4': 1,
+      '5': 4,
+      '8': const {'6': 1},
+      '10': 'guildId',
+    },
+    const {
+      '1': 'channel_id',
+      '3': 2,
+      '4': 1,
+      '5': 4,
+      '8': const {'6': 1},
+      '10': 'channelId',
+    },
+  ],
+};
+
+const TypingRequest$json = const {
+  '1': 'TypingRequest',
   '2': const [
     const {
       '1': 'guild_id',

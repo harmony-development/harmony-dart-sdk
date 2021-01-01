@@ -11,7 +11,8 @@ import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 import '../../google/protobuf/empty.pb.dart' as $0;
-import '../../google/protobuf/timestamp.pb.dart' as $1;
+import '../../google/protobuf/any.pb.dart' as $1;
+import '../../google/protobuf/timestamp.pb.dart' as $2;
 
 import 'types.pbenum.dart';
 
@@ -540,20 +541,64 @@ class Attachment extends $pb.GeneratedMessage {
   void clearSize() => clearField(4);
 }
 
+class Metadata extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Metadata', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.harmonytypes.v1'), createEmptyInstance: create)
+    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'kind')
+    ..m<$core.String, $1.Any>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'extension', entryClassName: 'Metadata.ExtensionEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OM, valueCreator: $1.Any.create, packageName: const $pb.PackageName('protocol.harmonytypes.v1'))
+    ..hasRequiredFields = false
+  ;
+
+  Metadata._() : super();
+  factory Metadata() => create();
+  factory Metadata.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory Metadata.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  Metadata clone() => Metadata()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  Metadata copyWith(void Function(Metadata) updates) => super.copyWith((message) => updates(message as Metadata)); // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static Metadata create() => Metadata._();
+  Metadata createEmptyInstance() => create();
+  static $pb.PbList<Metadata> createRepeated() => $pb.PbList<Metadata>();
+  @$core.pragma('dart2js:noInline')
+  static Metadata getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Metadata>(create);
+  static Metadata _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get kind => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set kind($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasKind() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearKind() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.Map<$core.String, $1.Any> get extension => $_getMap(1);
+}
+
 class Message extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Message', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.harmonytypes.v1'), createEmptyInstance: create)
     ..a<$fixnum.Int64>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'guildId', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
     ..a<$fixnum.Int64>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'channelId', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
     ..a<$fixnum.Int64>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'messageId', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
     ..a<$fixnum.Int64>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'authorId', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
-    ..aOM<$1.Timestamp>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'createdAt', subBuilder: $1.Timestamp.create)
-    ..aOM<$1.Timestamp>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'editedAt', subBuilder: $1.Timestamp.create)
+    ..aOM<$2.Timestamp>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'createdAt', subBuilder: $2.Timestamp.create)
+    ..aOM<$2.Timestamp>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'editedAt', subBuilder: $2.Timestamp.create)
     ..aOS(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'content')
     ..pc<Embed>(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'embeds', $pb.PbFieldType.PM, subBuilder: Embed.create)
     ..pc<Action>(9, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'actions', $pb.PbFieldType.PM, subBuilder: Action.create)
     ..pc<Attachment>(10, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'attachments', $pb.PbFieldType.PM, subBuilder: Attachment.create)
     ..a<$fixnum.Int64>(11, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'inReplyTo', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
     ..aOM<Override>(12, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'overrides', subBuilder: Override.create)
+    ..aOM<Metadata>(13, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'metadata', subBuilder: Metadata.create)
     ..hasRequiredFields = false
   ;
 
@@ -617,26 +662,26 @@ class Message extends $pb.GeneratedMessage {
   void clearAuthorId() => clearField(4);
 
   @$pb.TagNumber(5)
-  $1.Timestamp get createdAt => $_getN(4);
+  $2.Timestamp get createdAt => $_getN(4);
   @$pb.TagNumber(5)
-  set createdAt($1.Timestamp v) { setField(5, v); }
+  set createdAt($2.Timestamp v) { setField(5, v); }
   @$pb.TagNumber(5)
   $core.bool hasCreatedAt() => $_has(4);
   @$pb.TagNumber(5)
   void clearCreatedAt() => clearField(5);
   @$pb.TagNumber(5)
-  $1.Timestamp ensureCreatedAt() => $_ensure(4);
+  $2.Timestamp ensureCreatedAt() => $_ensure(4);
 
   @$pb.TagNumber(6)
-  $1.Timestamp get editedAt => $_getN(5);
+  $2.Timestamp get editedAt => $_getN(5);
   @$pb.TagNumber(6)
-  set editedAt($1.Timestamp v) { setField(6, v); }
+  set editedAt($2.Timestamp v) { setField(6, v); }
   @$pb.TagNumber(6)
   $core.bool hasEditedAt() => $_has(5);
   @$pb.TagNumber(6)
   void clearEditedAt() => clearField(6);
   @$pb.TagNumber(6)
-  $1.Timestamp ensureEditedAt() => $_ensure(5);
+  $2.Timestamp ensureEditedAt() => $_ensure(5);
 
   @$pb.TagNumber(7)
   $core.String get content => $_getSZ(6);
@@ -675,5 +720,16 @@ class Message extends $pb.GeneratedMessage {
   void clearOverrides() => clearField(12);
   @$pb.TagNumber(12)
   Override ensureOverrides() => $_ensure(11);
+
+  @$pb.TagNumber(13)
+  Metadata get metadata => $_getN(12);
+  @$pb.TagNumber(13)
+  set metadata(Metadata v) { setField(13, v); }
+  @$pb.TagNumber(13)
+  $core.bool hasMetadata() => $_has(12);
+  @$pb.TagNumber(13)
+  void clearMetadata() => clearField(13);
+  @$pb.TagNumber(13)
+  Metadata ensureMetadata() => $_ensure(12);
 }
 

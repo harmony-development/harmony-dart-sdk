@@ -58,8 +58,9 @@ const Event$json = const {
     const {'1': 'left_member', '3': 13, '4': 1, '5': 11, '6': '.protocol.chat.v1.Event.MemberLeft', '9': 0, '10': 'leftMember'},
     const {'1': 'role_moved', '3': 14, '4': 1, '5': 11, '6': '.protocol.chat.v1.Event.RoleMoved', '9': 0, '10': 'roleMoved'},
     const {'1': 'profile_updated', '3': 15, '4': 1, '5': 11, '6': '.protocol.chat.v1.Event.ProfileUpdated', '9': 0, '10': 'profileUpdated'},
+    const {'1': 'typing', '3': 16, '4': 1, '5': 11, '6': '.protocol.chat.v1.Event.Typing', '9': 0, '10': 'typing'},
   ],
-  '3': const [Event_MessageSent$json, Event_MessageUpdated$json, Event_MessageDeleted$json, Event_ChannelCreated$json, Event_ChannelUpdated$json, Event_ChannelDeleted$json, Event_GuildUpdated$json, Event_GuildDeleted$json, Event_MemberJoined$json, Event_MemberLeft$json, Event_GuildAddedToList$json, Event_GuildRemovedFromList$json, Event_ActionPerformed$json, Event_RoleMoved$json, Event_ProfileUpdated$json],
+  '3': const [Event_MessageSent$json, Event_MessageUpdated$json, Event_MessageDeleted$json, Event_ChannelCreated$json, Event_ChannelUpdated$json, Event_ChannelDeleted$json, Event_GuildUpdated$json, Event_GuildDeleted$json, Event_MemberJoined$json, Event_MemberLeft$json, Event_GuildAddedToList$json, Event_GuildRemovedFromList$json, Event_ActionPerformed$json, Event_RoleMoved$json, Event_ProfileUpdated$json, Event_Typing$json],
   '8': const [
     const {'1': 'event'},
   ],
@@ -111,6 +112,8 @@ const Event_MessageUpdated$json = const {
     const {'1': 'update_attachments', '3': 12, '4': 1, '5': 8, '10': 'updateAttachments'},
     const {'1': 'overrides', '3': 13, '4': 1, '5': 11, '6': '.protocol.harmonytypes.v1.Override', '10': 'overrides'},
     const {'1': 'update_overrides', '3': 14, '4': 1, '5': 8, '10': 'updateOverrides'},
+    const {'1': 'metadata', '3': 15, '4': 1, '5': 11, '6': '.protocol.harmonytypes.v1.Metadata', '10': 'metadata'},
+    const {'1': 'update_metadata', '3': 16, '4': 1, '5': 8, '10': 'updateMetadata'},
   ],
 };
 
@@ -181,6 +184,7 @@ const Event_ChannelCreated$json = const {
       '10': 'nextId',
     },
     const {'1': 'is_category', '3': 6, '4': 1, '5': 8, '10': 'isCategory'},
+    const {'1': 'metadata', '3': 7, '4': 1, '5': 11, '6': '.protocol.harmonytypes.v1.Metadata', '10': 'metadata'},
   ],
 };
 
@@ -222,6 +226,8 @@ const Event_ChannelUpdated$json = const {
       '10': 'nextId',
     },
     const {'1': 'update_order', '3': 7, '4': 1, '5': 8, '10': 'updateOrder'},
+    const {'1': 'metadata', '3': 8, '4': 1, '5': 11, '6': '.protocol.harmonytypes.v1.Metadata', '10': 'metadata'},
+    const {'1': 'update_metadata', '3': 9, '4': 1, '5': 8, '10': 'updateMetadata'},
   ],
 };
 
@@ -262,6 +268,8 @@ const Event_GuildUpdated$json = const {
     const {'1': 'update_name', '3': 3, '4': 1, '5': 8, '10': 'updateName'},
     const {'1': 'picture', '3': 4, '4': 1, '5': 9, '10': 'picture'},
     const {'1': 'update_picture', '3': 5, '4': 1, '5': 8, '10': 'updatePicture'},
+    const {'1': 'metadata', '3': 6, '4': 1, '5': 11, '6': '.protocol.harmonytypes.v1.Metadata', '10': 'metadata'},
+    const {'1': 'update_metadata', '3': 7, '4': 1, '5': 8, '10': 'updateMetadata'},
   ],
 };
 
@@ -424,6 +432,38 @@ const Event_ProfileUpdated$json = const {
     const {'1': 'update_avatar', '3': 5, '4': 1, '5': 8, '10': 'updateAvatar'},
     const {'1': 'new_status', '3': 6, '4': 1, '5': 14, '6': '.protocol.harmonytypes.v1.UserStatus', '10': 'newStatus'},
     const {'1': 'update_status', '3': 7, '4': 1, '5': 8, '10': 'updateStatus'},
+    const {'1': 'is_bot', '3': 8, '4': 1, '5': 8, '10': 'isBot'},
+    const {'1': 'update_is_bot', '3': 9, '4': 1, '5': 8, '10': 'updateIsBot'},
+  ],
+};
+
+const Event_Typing$json = const {
+  '1': 'Typing',
+  '2': const [
+    const {
+      '1': 'user_id',
+      '3': 1,
+      '4': 1,
+      '5': 4,
+      '8': const {'6': 1},
+      '10': 'userId',
+    },
+    const {
+      '1': 'guild_id',
+      '3': 2,
+      '4': 1,
+      '5': 4,
+      '8': const {'6': 1},
+      '10': 'guildId',
+    },
+    const {
+      '1': 'channel_id',
+      '3': 3,
+      '4': 1,
+      '5': 4,
+      '8': const {'6': 1},
+      '10': 'channelId',
+    },
   ],
 };
 

@@ -10,6 +10,8 @@ import 'dart:core' as $core;
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
+import '../../harmonytypes/v1/types.pb.dart' as $8;
+
 class CreateChannelRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'CreateChannelRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.chat.v1'), createEmptyInstance: create)
     ..a<$fixnum.Int64>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'guildId', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
@@ -17,7 +19,7 @@ class CreateChannelRequest extends $pb.GeneratedMessage {
     ..aOB(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'isCategory')
     ..a<$fixnum.Int64>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'nextId', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
     ..a<$fixnum.Int64>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'previousId', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
-    ..aOS(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'channelKind')
+    ..aOM<$8.Metadata>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'metadata', subBuilder: $8.Metadata.create)
     ..hasRequiredFields = false
   ;
 
@@ -90,13 +92,15 @@ class CreateChannelRequest extends $pb.GeneratedMessage {
   void clearPreviousId() => clearField(5);
 
   @$pb.TagNumber(6)
-  $core.String get channelKind => $_getSZ(5);
+  $8.Metadata get metadata => $_getN(5);
   @$pb.TagNumber(6)
-  set channelKind($core.String v) { $_setString(5, v); }
+  set metadata($8.Metadata v) { setField(6, v); }
   @$pb.TagNumber(6)
-  $core.bool hasChannelKind() => $_has(5);
+  $core.bool hasMetadata() => $_has(5);
   @$pb.TagNumber(6)
-  void clearChannelKind() => clearField(6);
+  void clearMetadata() => clearField(6);
+  @$pb.TagNumber(6)
+  $8.Metadata ensureMetadata() => $_ensure(5);
 }
 
 class CreateChannelResponse extends $pb.GeneratedMessage {
@@ -182,7 +186,7 @@ class GetGuildChannelsResponse_Channel extends $pb.GeneratedMessage {
     ..a<$fixnum.Int64>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'channelId', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
     ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'channelName')
     ..aOB(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'isCategory')
-    ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'kind')
+    ..aOM<$8.Metadata>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'metadata', subBuilder: $8.Metadata.create)
     ..hasRequiredFields = false
   ;
 
@@ -237,13 +241,15 @@ class GetGuildChannelsResponse_Channel extends $pb.GeneratedMessage {
   void clearIsCategory() => clearField(3);
 
   @$pb.TagNumber(4)
-  $core.String get kind => $_getSZ(3);
+  $8.Metadata get metadata => $_getN(3);
   @$pb.TagNumber(4)
-  set kind($core.String v) { $_setString(3, v); }
+  set metadata($8.Metadata v) { setField(4, v); }
   @$pb.TagNumber(4)
-  $core.bool hasKind() => $_has(3);
+  $core.bool hasMetadata() => $_has(3);
   @$pb.TagNumber(4)
-  void clearKind() => clearField(4);
+  void clearMetadata() => clearField(4);
+  @$pb.TagNumber(4)
+  $8.Metadata ensureMetadata() => $_ensure(3);
 }
 
 class GetGuildChannelsResponse extends $pb.GeneratedMessage {
@@ -279,36 +285,39 @@ class GetGuildChannelsResponse extends $pb.GeneratedMessage {
   $core.List<GetGuildChannelsResponse_Channel> get channels => $_getList(0);
 }
 
-class UpdateChannelNameRequest extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'UpdateChannelNameRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.chat.v1'), createEmptyInstance: create)
+class UpdateChannelInformationRequest extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'UpdateChannelInformationRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.chat.v1'), createEmptyInstance: create)
     ..a<$fixnum.Int64>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'guildId', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
     ..a<$fixnum.Int64>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'channelId', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
-    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'newChannelName')
+    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'name')
+    ..aOB(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'updateName')
+    ..aOM<$8.Metadata>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'metadata', subBuilder: $8.Metadata.create)
+    ..aOB(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'updateMetadata')
     ..hasRequiredFields = false
   ;
 
-  UpdateChannelNameRequest._() : super();
-  factory UpdateChannelNameRequest() => create();
-  factory UpdateChannelNameRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory UpdateChannelNameRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  UpdateChannelInformationRequest._() : super();
+  factory UpdateChannelInformationRequest() => create();
+  factory UpdateChannelInformationRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory UpdateChannelInformationRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
   'Will be removed in next major version')
-  UpdateChannelNameRequest clone() => UpdateChannelNameRequest()..mergeFromMessage(this);
+  UpdateChannelInformationRequest clone() => UpdateChannelInformationRequest()..mergeFromMessage(this);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  UpdateChannelNameRequest copyWith(void Function(UpdateChannelNameRequest) updates) => super.copyWith((message) => updates(message as UpdateChannelNameRequest)); // ignore: deprecated_member_use
+  UpdateChannelInformationRequest copyWith(void Function(UpdateChannelInformationRequest) updates) => super.copyWith((message) => updates(message as UpdateChannelInformationRequest)); // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
-  static UpdateChannelNameRequest create() => UpdateChannelNameRequest._();
-  UpdateChannelNameRequest createEmptyInstance() => create();
-  static $pb.PbList<UpdateChannelNameRequest> createRepeated() => $pb.PbList<UpdateChannelNameRequest>();
+  static UpdateChannelInformationRequest create() => UpdateChannelInformationRequest._();
+  UpdateChannelInformationRequest createEmptyInstance() => create();
+  static $pb.PbList<UpdateChannelInformationRequest> createRepeated() => $pb.PbList<UpdateChannelInformationRequest>();
   @$core.pragma('dart2js:noInline')
-  static UpdateChannelNameRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpdateChannelNameRequest>(create);
-  static UpdateChannelNameRequest _defaultInstance;
+  static UpdateChannelInformationRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpdateChannelInformationRequest>(create);
+  static UpdateChannelInformationRequest _defaultInstance;
 
   @$pb.TagNumber(1)
   $fixnum.Int64 get guildId => $_getI64(0);
@@ -329,13 +338,42 @@ class UpdateChannelNameRequest extends $pb.GeneratedMessage {
   void clearChannelId() => clearField(2);
 
   @$pb.TagNumber(3)
-  $core.String get newChannelName => $_getSZ(2);
+  $core.String get name => $_getSZ(2);
   @$pb.TagNumber(3)
-  set newChannelName($core.String v) { $_setString(2, v); }
+  set name($core.String v) { $_setString(2, v); }
   @$pb.TagNumber(3)
-  $core.bool hasNewChannelName() => $_has(2);
+  $core.bool hasName() => $_has(2);
   @$pb.TagNumber(3)
-  void clearNewChannelName() => clearField(3);
+  void clearName() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.bool get updateName => $_getBF(3);
+  @$pb.TagNumber(4)
+  set updateName($core.bool v) { $_setBool(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasUpdateName() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearUpdateName() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $8.Metadata get metadata => $_getN(4);
+  @$pb.TagNumber(5)
+  set metadata($8.Metadata v) { setField(5, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasMetadata() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearMetadata() => clearField(5);
+  @$pb.TagNumber(5)
+  $8.Metadata ensureMetadata() => $_ensure(4);
+
+  @$pb.TagNumber(6)
+  $core.bool get updateMetadata => $_getBF(5);
+  @$pb.TagNumber(6)
+  set updateMetadata($core.bool v) { $_setBool(5, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasUpdateMetadata() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearUpdateMetadata() => clearField(6);
 }
 
 class UpdateChannelOrderRequest extends $pb.GeneratedMessage {
@@ -436,6 +474,55 @@ class DeleteChannelRequest extends $pb.GeneratedMessage {
   @$core.pragma('dart2js:noInline')
   static DeleteChannelRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DeleteChannelRequest>(create);
   static DeleteChannelRequest _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $fixnum.Int64 get guildId => $_getI64(0);
+  @$pb.TagNumber(1)
+  set guildId($fixnum.Int64 v) { $_setInt64(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasGuildId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearGuildId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $fixnum.Int64 get channelId => $_getI64(1);
+  @$pb.TagNumber(2)
+  set channelId($fixnum.Int64 v) { $_setInt64(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasChannelId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearChannelId() => clearField(2);
+}
+
+class TypingRequest extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'TypingRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.chat.v1'), createEmptyInstance: create)
+    ..a<$fixnum.Int64>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'guildId', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
+    ..a<$fixnum.Int64>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'channelId', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
+    ..hasRequiredFields = false
+  ;
+
+  TypingRequest._() : super();
+  factory TypingRequest() => create();
+  factory TypingRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory TypingRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  TypingRequest clone() => TypingRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  TypingRequest copyWith(void Function(TypingRequest) updates) => super.copyWith((message) => updates(message as TypingRequest)); // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static TypingRequest create() => TypingRequest._();
+  TypingRequest createEmptyInstance() => create();
+  static $pb.PbList<TypingRequest> createRepeated() => $pb.PbList<TypingRequest>();
+  @$core.pragma('dart2js:noInline')
+  static TypingRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<TypingRequest>(create);
+  static TypingRequest _defaultInstance;
 
   @$pb.TagNumber(1)
   $fixnum.Int64 get guildId => $_getI64(0);

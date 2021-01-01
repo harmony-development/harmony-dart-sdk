@@ -56,6 +56,7 @@ class GetUserResponse extends $pb.GeneratedMessage {
     ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'userName')
     ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'userAvatar')
     ..e<$8.UserStatus>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'userStatus', $pb.PbFieldType.OE, defaultOrMaker: $8.UserStatus.USER_STATUS_ONLINE_UNSPECIFIED, valueOf: $8.UserStatus.valueOf, enumValues: $8.UserStatus.values)
+    ..aOB(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'isBot')
     ..hasRequiredFields = false
   ;
 
@@ -108,6 +109,15 @@ class GetUserResponse extends $pb.GeneratedMessage {
   $core.bool hasUserStatus() => $_has(2);
   @$pb.TagNumber(3)
   void clearUserStatus() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.bool get isBot => $_getBF(3);
+  @$pb.TagNumber(4)
+  set isBot($core.bool v) { $_setBool(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasIsBot() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearIsBot() => clearField(4);
 }
 
 class GetUserMetadataRequest extends $pb.GeneratedMessage {
@@ -196,6 +206,8 @@ class ProfileUpdateRequest extends $pb.GeneratedMessage {
     ..aOB(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'updateAvatar')
     ..e<$8.UserStatus>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'newStatus', $pb.PbFieldType.OE, defaultOrMaker: $8.UserStatus.USER_STATUS_ONLINE_UNSPECIFIED, valueOf: $8.UserStatus.valueOf, enumValues: $8.UserStatus.values)
     ..aOB(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'updateStatus')
+    ..aOB(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'isBot')
+    ..aOB(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'updateIsBot')
     ..hasRequiredFields = false
   ;
 
@@ -275,5 +287,23 @@ class ProfileUpdateRequest extends $pb.GeneratedMessage {
   $core.bool hasUpdateStatus() => $_has(5);
   @$pb.TagNumber(6)
   void clearUpdateStatus() => clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.bool get isBot => $_getBF(6);
+  @$pb.TagNumber(7)
+  set isBot($core.bool v) { $_setBool(6, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasIsBot() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearIsBot() => clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.bool get updateIsBot => $_getBF(7);
+  @$pb.TagNumber(8)
+  set updateIsBot($core.bool v) { $_setBool(7, v); }
+  @$pb.TagNumber(8)
+  $core.bool hasUpdateIsBot() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearUpdateIsBot() => clearField(8);
 }
 

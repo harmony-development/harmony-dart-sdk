@@ -10,10 +10,13 @@ import 'dart:core' as $core;
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
+import '../../harmonytypes/v1/types.pb.dart' as $8;
+
 class CreateGuildRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'CreateGuildRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.chat.v1'), createEmptyInstance: create)
     ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'guildName')
     ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'pictureUrl')
+    ..aOM<$8.Metadata>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'metadata', subBuilder: $8.Metadata.create)
     ..hasRequiredFields = false
   ;
 
@@ -57,6 +60,17 @@ class CreateGuildRequest extends $pb.GeneratedMessage {
   $core.bool hasPictureUrl() => $_has(1);
   @$pb.TagNumber(2)
   void clearPictureUrl() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $8.Metadata get metadata => $_getN(2);
+  @$pb.TagNumber(3)
+  set metadata($8.Metadata v) { setField(3, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasMetadata() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearMetadata() => clearField(3);
+  @$pb.TagNumber(3)
+  $8.Metadata ensureMetadata() => $_ensure(2);
 }
 
 class CreateGuildResponse extends $pb.GeneratedMessage {
@@ -351,6 +365,7 @@ class GetGuildResponse extends $pb.GeneratedMessage {
     ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'guildName')
     ..a<$fixnum.Int64>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'guildOwner', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
     ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'guildPicture')
+    ..aOM<$8.Metadata>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'metadata', subBuilder: $8.Metadata.create)
     ..hasRequiredFields = false
   ;
 
@@ -403,6 +418,17 @@ class GetGuildResponse extends $pb.GeneratedMessage {
   $core.bool hasGuildPicture() => $_has(2);
   @$pb.TagNumber(3)
   void clearGuildPicture() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $8.Metadata get metadata => $_getN(3);
+  @$pb.TagNumber(4)
+  set metadata($8.Metadata v) { setField(4, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasMetadata() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearMetadata() => clearField(4);
+  @$pb.TagNumber(4)
+  $8.Metadata ensureMetadata() => $_ensure(3);
 }
 
 class GetGuildInvitesRequest extends $pb.GeneratedMessage {
@@ -608,35 +634,40 @@ class GetGuildMembersResponse extends $pb.GeneratedMessage {
   $core.List<$fixnum.Int64> get members => $_getList(0);
 }
 
-class UpdateGuildNameRequest extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'UpdateGuildNameRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.chat.v1'), createEmptyInstance: create)
+class UpdateGuildInformationRequest extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'UpdateGuildInformationRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.chat.v1'), createEmptyInstance: create)
     ..a<$fixnum.Int64>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'guildId', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
     ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'newGuildName')
+    ..aOB(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'updateGuildName')
+    ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'newGuildPicture')
+    ..aOB(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'updateGuildPicture')
+    ..aOM<$8.Metadata>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'metadata', subBuilder: $8.Metadata.create)
+    ..aOB(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'updateMetadata')
     ..hasRequiredFields = false
   ;
 
-  UpdateGuildNameRequest._() : super();
-  factory UpdateGuildNameRequest() => create();
-  factory UpdateGuildNameRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory UpdateGuildNameRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  UpdateGuildInformationRequest._() : super();
+  factory UpdateGuildInformationRequest() => create();
+  factory UpdateGuildInformationRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory UpdateGuildInformationRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
   'Will be removed in next major version')
-  UpdateGuildNameRequest clone() => UpdateGuildNameRequest()..mergeFromMessage(this);
+  UpdateGuildInformationRequest clone() => UpdateGuildInformationRequest()..mergeFromMessage(this);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  UpdateGuildNameRequest copyWith(void Function(UpdateGuildNameRequest) updates) => super.copyWith((message) => updates(message as UpdateGuildNameRequest)); // ignore: deprecated_member_use
+  UpdateGuildInformationRequest copyWith(void Function(UpdateGuildInformationRequest) updates) => super.copyWith((message) => updates(message as UpdateGuildInformationRequest)); // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
-  static UpdateGuildNameRequest create() => UpdateGuildNameRequest._();
-  UpdateGuildNameRequest createEmptyInstance() => create();
-  static $pb.PbList<UpdateGuildNameRequest> createRepeated() => $pb.PbList<UpdateGuildNameRequest>();
+  static UpdateGuildInformationRequest create() => UpdateGuildInformationRequest._();
+  UpdateGuildInformationRequest createEmptyInstance() => create();
+  static $pb.PbList<UpdateGuildInformationRequest> createRepeated() => $pb.PbList<UpdateGuildInformationRequest>();
   @$core.pragma('dart2js:noInline')
-  static UpdateGuildNameRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpdateGuildNameRequest>(create);
-  static UpdateGuildNameRequest _defaultInstance;
+  static UpdateGuildInformationRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpdateGuildInformationRequest>(create);
+  static UpdateGuildInformationRequest _defaultInstance;
 
   @$pb.TagNumber(1)
   $fixnum.Int64 get guildId => $_getI64(0);
@@ -655,55 +686,53 @@ class UpdateGuildNameRequest extends $pb.GeneratedMessage {
   $core.bool hasNewGuildName() => $_has(1);
   @$pb.TagNumber(2)
   void clearNewGuildName() => clearField(2);
-}
 
-class UpdateGuildPictureRequest extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'UpdateGuildPictureRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.chat.v1'), createEmptyInstance: create)
-    ..a<$fixnum.Int64>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'guildId', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
-    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'newGuildPicture')
-    ..hasRequiredFields = false
-  ;
+  @$pb.TagNumber(3)
+  $core.bool get updateGuildName => $_getBF(2);
+  @$pb.TagNumber(3)
+  set updateGuildName($core.bool v) { $_setBool(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasUpdateGuildName() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearUpdateGuildName() => clearField(3);
 
-  UpdateGuildPictureRequest._() : super();
-  factory UpdateGuildPictureRequest() => create();
-  factory UpdateGuildPictureRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory UpdateGuildPictureRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
-  UpdateGuildPictureRequest clone() => UpdateGuildPictureRequest()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
-  UpdateGuildPictureRequest copyWith(void Function(UpdateGuildPictureRequest) updates) => super.copyWith((message) => updates(message as UpdateGuildPictureRequest)); // ignore: deprecated_member_use
-  $pb.BuilderInfo get info_ => _i;
-  @$core.pragma('dart2js:noInline')
-  static UpdateGuildPictureRequest create() => UpdateGuildPictureRequest._();
-  UpdateGuildPictureRequest createEmptyInstance() => create();
-  static $pb.PbList<UpdateGuildPictureRequest> createRepeated() => $pb.PbList<UpdateGuildPictureRequest>();
-  @$core.pragma('dart2js:noInline')
-  static UpdateGuildPictureRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpdateGuildPictureRequest>(create);
-  static UpdateGuildPictureRequest _defaultInstance;
+  @$pb.TagNumber(4)
+  $core.String get newGuildPicture => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set newGuildPicture($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasNewGuildPicture() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearNewGuildPicture() => clearField(4);
 
-  @$pb.TagNumber(1)
-  $fixnum.Int64 get guildId => $_getI64(0);
-  @$pb.TagNumber(1)
-  set guildId($fixnum.Int64 v) { $_setInt64(0, v); }
-  @$pb.TagNumber(1)
-  $core.bool hasGuildId() => $_has(0);
-  @$pb.TagNumber(1)
-  void clearGuildId() => clearField(1);
+  @$pb.TagNumber(5)
+  $core.bool get updateGuildPicture => $_getBF(4);
+  @$pb.TagNumber(5)
+  set updateGuildPicture($core.bool v) { $_setBool(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasUpdateGuildPicture() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearUpdateGuildPicture() => clearField(5);
 
-  @$pb.TagNumber(2)
-  $core.String get newGuildPicture => $_getSZ(1);
-  @$pb.TagNumber(2)
-  set newGuildPicture($core.String v) { $_setString(1, v); }
-  @$pb.TagNumber(2)
-  $core.bool hasNewGuildPicture() => $_has(1);
-  @$pb.TagNumber(2)
-  void clearNewGuildPicture() => clearField(2);
+  @$pb.TagNumber(6)
+  $8.Metadata get metadata => $_getN(5);
+  @$pb.TagNumber(6)
+  set metadata($8.Metadata v) { setField(6, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasMetadata() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearMetadata() => clearField(6);
+  @$pb.TagNumber(6)
+  $8.Metadata ensureMetadata() => $_ensure(5);
+
+  @$pb.TagNumber(7)
+  $core.bool get updateMetadata => $_getBF(6);
+  @$pb.TagNumber(7)
+  set updateMetadata($core.bool v) { $_setBool(6, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasUpdateMetadata() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearUpdateMetadata() => clearField(7);
 }
 
 class DeleteGuildRequest extends $pb.GeneratedMessage {
@@ -870,6 +899,104 @@ class JoinGuildResponse extends $pb.GeneratedMessage {
   $core.bool hasGuildId() => $_has(0);
   @$pb.TagNumber(1)
   void clearGuildId() => clearField(1);
+}
+
+class PreviewGuildRequest extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'PreviewGuildRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.chat.v1'), createEmptyInstance: create)
+    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'inviteId')
+    ..hasRequiredFields = false
+  ;
+
+  PreviewGuildRequest._() : super();
+  factory PreviewGuildRequest() => create();
+  factory PreviewGuildRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory PreviewGuildRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  PreviewGuildRequest clone() => PreviewGuildRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  PreviewGuildRequest copyWith(void Function(PreviewGuildRequest) updates) => super.copyWith((message) => updates(message as PreviewGuildRequest)); // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static PreviewGuildRequest create() => PreviewGuildRequest._();
+  PreviewGuildRequest createEmptyInstance() => create();
+  static $pb.PbList<PreviewGuildRequest> createRepeated() => $pb.PbList<PreviewGuildRequest>();
+  @$core.pragma('dart2js:noInline')
+  static PreviewGuildRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<PreviewGuildRequest>(create);
+  static PreviewGuildRequest _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get inviteId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set inviteId($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasInviteId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearInviteId() => clearField(1);
+}
+
+class PreviewGuildResponse extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'PreviewGuildResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.chat.v1'), createEmptyInstance: create)
+    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'name')
+    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'avatar')
+    ..a<$fixnum.Int64>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'memeberCount', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
+    ..hasRequiredFields = false
+  ;
+
+  PreviewGuildResponse._() : super();
+  factory PreviewGuildResponse() => create();
+  factory PreviewGuildResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory PreviewGuildResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  PreviewGuildResponse clone() => PreviewGuildResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  PreviewGuildResponse copyWith(void Function(PreviewGuildResponse) updates) => super.copyWith((message) => updates(message as PreviewGuildResponse)); // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static PreviewGuildResponse create() => PreviewGuildResponse._();
+  PreviewGuildResponse createEmptyInstance() => create();
+  static $pb.PbList<PreviewGuildResponse> createRepeated() => $pb.PbList<PreviewGuildResponse>();
+  @$core.pragma('dart2js:noInline')
+  static PreviewGuildResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<PreviewGuildResponse>(create);
+  static PreviewGuildResponse _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get name => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set name($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasName() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearName() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get avatar => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set avatar($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasAvatar() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearAvatar() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $fixnum.Int64 get memeberCount => $_getI64(2);
+  @$pb.TagNumber(3)
+  set memeberCount($fixnum.Int64 v) { $_setInt64(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasMemeberCount() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearMemeberCount() => clearField(3);
 }
 
 class LeaveGuildRequest extends $pb.GeneratedMessage {

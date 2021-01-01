@@ -112,20 +112,15 @@ class ChatServiceClient extends $grpc.Client {
       ($2.GetEmotePackEmotesRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) =>
           $2.GetEmotePackEmotesResponse.fromBuffer(value));
-  static final _$updateGuildName =
-      $grpc.ClientMethod<$0.UpdateGuildNameRequest, $4.Empty>(
-          '/protocol.chat.v1.ChatService/UpdateGuildName',
-          ($0.UpdateGuildNameRequest value) => value.writeToBuffer(),
+  static final _$updateGuildInformation =
+      $grpc.ClientMethod<$0.UpdateGuildInformationRequest, $4.Empty>(
+          '/protocol.chat.v1.ChatService/UpdateGuildInformation',
+          ($0.UpdateGuildInformationRequest value) => value.writeToBuffer(),
           ($core.List<$core.int> value) => $4.Empty.fromBuffer(value));
-  static final _$updateGuildPicture =
-      $grpc.ClientMethod<$0.UpdateGuildPictureRequest, $4.Empty>(
-          '/protocol.chat.v1.ChatService/UpdateGuildPicture',
-          ($0.UpdateGuildPictureRequest value) => value.writeToBuffer(),
-          ($core.List<$core.int> value) => $4.Empty.fromBuffer(value));
-  static final _$updateChannelName =
-      $grpc.ClientMethod<$1.UpdateChannelNameRequest, $4.Empty>(
-          '/protocol.chat.v1.ChatService/UpdateChannelName',
-          ($1.UpdateChannelNameRequest value) => value.writeToBuffer(),
+  static final _$updateChannelInformation =
+      $grpc.ClientMethod<$1.UpdateChannelInformationRequest, $4.Empty>(
+          '/protocol.chat.v1.ChatService/UpdateChannelInformation',
+          ($1.UpdateChannelInformationRequest value) => value.writeToBuffer(),
           ($core.List<$core.int> value) => $4.Empty.fromBuffer(value));
   static final _$updateChannelOrder =
       $grpc.ClientMethod<$1.UpdateChannelOrderRequest, $4.Empty>(
@@ -277,6 +272,16 @@ class ChatServiceClient extends $grpc.Client {
           '/protocol.chat.v1.ChatService/ProfileUpdate',
           ($7.ProfileUpdateRequest value) => value.writeToBuffer(),
           ($core.List<$core.int> value) => $4.Empty.fromBuffer(value));
+  static final _$typing = $grpc.ClientMethod<$1.TypingRequest, $4.Empty>(
+      '/protocol.chat.v1.ChatService/Typing',
+      ($1.TypingRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $4.Empty.fromBuffer(value));
+  static final _$previewGuild =
+      $grpc.ClientMethod<$0.PreviewGuildRequest, $0.PreviewGuildResponse>(
+          '/protocol.chat.v1.ChatService/PreviewGuild',
+          ($0.PreviewGuildRequest value) => value.writeToBuffer(),
+          ($core.List<$core.int> value) =>
+              $0.PreviewGuildResponse.fromBuffer(value));
 
   ChatServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions options,
@@ -373,22 +378,18 @@ class ChatServiceClient extends $grpc.Client {
     return $createUnaryCall(_$getEmotePackEmotes, request, options: options);
   }
 
-  $grpc.ResponseFuture<$4.Empty> updateGuildName(
-      $0.UpdateGuildNameRequest request,
+  $grpc.ResponseFuture<$4.Empty> updateGuildInformation(
+      $0.UpdateGuildInformationRequest request,
       {$grpc.CallOptions options}) {
-    return $createUnaryCall(_$updateGuildName, request, options: options);
+    return $createUnaryCall(_$updateGuildInformation, request,
+        options: options);
   }
 
-  $grpc.ResponseFuture<$4.Empty> updateGuildPicture(
-      $0.UpdateGuildPictureRequest request,
+  $grpc.ResponseFuture<$4.Empty> updateChannelInformation(
+      $1.UpdateChannelInformationRequest request,
       {$grpc.CallOptions options}) {
-    return $createUnaryCall(_$updateGuildPicture, request, options: options);
-  }
-
-  $grpc.ResponseFuture<$4.Empty> updateChannelName(
-      $1.UpdateChannelNameRequest request,
-      {$grpc.CallOptions options}) {
-    return $createUnaryCall(_$updateChannelName, request, options: options);
+    return $createUnaryCall(_$updateChannelInformation, request,
+        options: options);
   }
 
   $grpc.ResponseFuture<$4.Empty> updateChannelOrder(
@@ -548,6 +549,17 @@ class ChatServiceClient extends $grpc.Client {
       {$grpc.CallOptions options}) {
     return $createUnaryCall(_$profileUpdate, request, options: options);
   }
+
+  $grpc.ResponseFuture<$4.Empty> typing($1.TypingRequest request,
+      {$grpc.CallOptions options}) {
+    return $createUnaryCall(_$typing, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.PreviewGuildResponse> previewGuild(
+      $0.PreviewGuildRequest request,
+      {$grpc.CallOptions options}) {
+    return $createUnaryCall(_$previewGuild, request, options: options);
+  }
 }
 
 abstract class ChatServiceBase extends $grpc.Service {
@@ -685,30 +697,23 @@ abstract class ChatServiceBase extends $grpc.Service {
         ($core.List<$core.int> value) =>
             $2.GetEmotePackEmotesRequest.fromBuffer(value),
         ($2.GetEmotePackEmotesResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$0.UpdateGuildNameRequest, $4.Empty>(
-        'UpdateGuildName',
-        updateGuildName_Pre,
+    $addMethod($grpc.ServiceMethod<$0.UpdateGuildInformationRequest, $4.Empty>(
+        'UpdateGuildInformation',
+        updateGuildInformation_Pre,
         false,
         false,
         ($core.List<$core.int> value) =>
-            $0.UpdateGuildNameRequest.fromBuffer(value),
+            $0.UpdateGuildInformationRequest.fromBuffer(value),
         ($4.Empty value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$0.UpdateGuildPictureRequest, $4.Empty>(
-        'UpdateGuildPicture',
-        updateGuildPicture_Pre,
-        false,
-        false,
-        ($core.List<$core.int> value) =>
-            $0.UpdateGuildPictureRequest.fromBuffer(value),
-        ($4.Empty value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$1.UpdateChannelNameRequest, $4.Empty>(
-        'UpdateChannelName',
-        updateChannelName_Pre,
-        false,
-        false,
-        ($core.List<$core.int> value) =>
-            $1.UpdateChannelNameRequest.fromBuffer(value),
-        ($4.Empty value) => value.writeToBuffer()));
+    $addMethod(
+        $grpc.ServiceMethod<$1.UpdateChannelInformationRequest, $4.Empty>(
+            'UpdateChannelInformation',
+            updateChannelInformation_Pre,
+            false,
+            false,
+            ($core.List<$core.int> value) =>
+                $1.UpdateChannelInformationRequest.fromBuffer(value),
+            ($4.Empty value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$1.UpdateChannelOrderRequest, $4.Empty>(
         'UpdateChannelOrder',
         updateChannelOrder_Pre,
@@ -936,6 +941,22 @@ abstract class ChatServiceBase extends $grpc.Service {
         ($core.List<$core.int> value) =>
             $7.ProfileUpdateRequest.fromBuffer(value),
         ($4.Empty value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$1.TypingRequest, $4.Empty>(
+        'Typing',
+        typing_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $1.TypingRequest.fromBuffer(value),
+        ($4.Empty value) => value.writeToBuffer()));
+    $addMethod(
+        $grpc.ServiceMethod<$0.PreviewGuildRequest, $0.PreviewGuildResponse>(
+            'PreviewGuild',
+            previewGuild_Pre,
+            false,
+            false,
+            ($core.List<$core.int> value) =>
+                $0.PreviewGuildRequest.fromBuffer(value),
+            ($0.PreviewGuildResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$0.CreateGuildResponse> createGuild_Pre($grpc.ServiceCall call,
@@ -1025,19 +1046,14 @@ abstract class ChatServiceBase extends $grpc.Service {
     return getEmotePackEmotes(call, await request);
   }
 
-  $async.Future<$4.Empty> updateGuildName_Pre($grpc.ServiceCall call,
-      $async.Future<$0.UpdateGuildNameRequest> request) async {
-    return updateGuildName(call, await request);
+  $async.Future<$4.Empty> updateGuildInformation_Pre($grpc.ServiceCall call,
+      $async.Future<$0.UpdateGuildInformationRequest> request) async {
+    return updateGuildInformation(call, await request);
   }
 
-  $async.Future<$4.Empty> updateGuildPicture_Pre($grpc.ServiceCall call,
-      $async.Future<$0.UpdateGuildPictureRequest> request) async {
-    return updateGuildPicture(call, await request);
-  }
-
-  $async.Future<$4.Empty> updateChannelName_Pre($grpc.ServiceCall call,
-      $async.Future<$1.UpdateChannelNameRequest> request) async {
-    return updateChannelName(call, await request);
+  $async.Future<$4.Empty> updateChannelInformation_Pre($grpc.ServiceCall call,
+      $async.Future<$1.UpdateChannelInformationRequest> request) async {
+    return updateChannelInformation(call, await request);
   }
 
   $async.Future<$4.Empty> updateChannelOrder_Pre($grpc.ServiceCall call,
@@ -1181,6 +1197,17 @@ abstract class ChatServiceBase extends $grpc.Service {
     return profileUpdate(call, await request);
   }
 
+  $async.Future<$4.Empty> typing_Pre(
+      $grpc.ServiceCall call, $async.Future<$1.TypingRequest> request) async {
+    return typing(call, await request);
+  }
+
+  $async.Future<$0.PreviewGuildResponse> previewGuild_Pre(
+      $grpc.ServiceCall call,
+      $async.Future<$0.PreviewGuildRequest> request) async {
+    return previewGuild(call, await request);
+  }
+
   $async.Future<$0.CreateGuildResponse> createGuild(
       $grpc.ServiceCall call, $0.CreateGuildRequest request);
   $async.Future<$0.CreateInviteResponse> createInvite(
@@ -1211,12 +1238,10 @@ abstract class ChatServiceBase extends $grpc.Service {
       $grpc.ServiceCall call, $2.GetEmotePacksRequest request);
   $async.Future<$2.GetEmotePackEmotesResponse> getEmotePackEmotes(
       $grpc.ServiceCall call, $2.GetEmotePackEmotesRequest request);
-  $async.Future<$4.Empty> updateGuildName(
-      $grpc.ServiceCall call, $0.UpdateGuildNameRequest request);
-  $async.Future<$4.Empty> updateGuildPicture(
-      $grpc.ServiceCall call, $0.UpdateGuildPictureRequest request);
-  $async.Future<$4.Empty> updateChannelName(
-      $grpc.ServiceCall call, $1.UpdateChannelNameRequest request);
+  $async.Future<$4.Empty> updateGuildInformation(
+      $grpc.ServiceCall call, $0.UpdateGuildInformationRequest request);
+  $async.Future<$4.Empty> updateChannelInformation(
+      $grpc.ServiceCall call, $1.UpdateChannelInformationRequest request);
   $async.Future<$4.Empty> updateChannelOrder(
       $grpc.ServiceCall call, $1.UpdateChannelOrderRequest request);
   $async.Future<$4.Empty> updateMessage(
@@ -1273,4 +1298,8 @@ abstract class ChatServiceBase extends $grpc.Service {
       $grpc.ServiceCall call, $7.GetUserMetadataRequest request);
   $async.Future<$4.Empty> profileUpdate(
       $grpc.ServiceCall call, $7.ProfileUpdateRequest request);
+  $async.Future<$4.Empty> typing(
+      $grpc.ServiceCall call, $1.TypingRequest request);
+  $async.Future<$0.PreviewGuildResponse> previewGuild(
+      $grpc.ServiceCall call, $0.PreviewGuildRequest request);
 }

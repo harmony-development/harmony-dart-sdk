@@ -118,9 +118,28 @@ const Attachment$json = const {
   ],
 };
 
+const Metadata$json = const {
+  '1': 'Metadata',
+  '2': const [
+    const {'1': 'kind', '3': 1, '4': 1, '5': 9, '10': 'kind'},
+    const {'1': 'extension', '3': 2, '4': 3, '5': 11, '6': '.protocol.harmonytypes.v1.Metadata.ExtensionEntry', '10': 'extension'},
+  ],
+  '3': const [Metadata_ExtensionEntry$json],
+};
+
+const Metadata_ExtensionEntry$json = const {
+  '1': 'ExtensionEntry',
+  '2': const [
+    const {'1': 'key', '3': 1, '4': 1, '5': 9, '10': 'key'},
+    const {'1': 'value', '3': 2, '4': 1, '5': 11, '6': '.google.protobuf.Any', '10': 'value'},
+  ],
+  '7': const {'7': true},
+};
+
 const Message$json = const {
   '1': 'Message',
   '2': const [
+    const {'1': 'metadata', '3': 13, '4': 1, '5': 11, '6': '.protocol.harmonytypes.v1.Metadata', '10': 'metadata'},
     const {
       '1': 'guild_id',
       '3': 1,

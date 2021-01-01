@@ -25,6 +25,7 @@ const GetUserResponse$json = const {
     const {'1': 'user_name', '3': 1, '4': 1, '5': 9, '10': 'userName'},
     const {'1': 'user_avatar', '3': 2, '4': 1, '5': 9, '10': 'userAvatar'},
     const {'1': 'user_status', '3': 3, '4': 1, '5': 14, '6': '.protocol.harmonytypes.v1.UserStatus', '10': 'userStatus'},
+    const {'1': 'is_bot', '3': 4, '4': 1, '5': 8, '10': 'isBot'},
   ],
 };
 
@@ -51,6 +52,8 @@ const ProfileUpdateRequest$json = const {
     const {'1': 'update_avatar', '3': 4, '4': 1, '5': 8, '10': 'updateAvatar'},
     const {'1': 'new_status', '3': 5, '4': 1, '5': 14, '6': '.protocol.harmonytypes.v1.UserStatus', '10': 'newStatus'},
     const {'1': 'update_status', '3': 6, '4': 1, '5': 8, '10': 'updateStatus'},
+    const {'1': 'is_bot', '3': 7, '4': 1, '5': 8, '10': 'isBot'},
+    const {'1': 'update_is_bot', '3': 8, '4': 1, '5': 8, '10': 'updateIsBot'},
   ],
 };
 
