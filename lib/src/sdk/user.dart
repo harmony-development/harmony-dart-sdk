@@ -4,36 +4,39 @@ class UserData {
   int id;
   String name;
   String picture;
+  UserStatus status;
+  bool isBot;
 
-  UserData(this.id, this.name, this.picture);
+  UserData(this.id, this.name, this.picture, this.status, [this.isBot = false]);
 }
 
 class User {
-  Homeserver _home;
-  int _id;
+  final int id;
+  final Homeserver _home;
 
-  int get id => _id;
-  Server get homeserver => _home;
+  Server get home => _home;
 
-  User(this._home, this._id) {
-    refresh();
-  }
+  User(this._home, this.id);
+
+  String _name;
+  String get name => _name;
+
+  String _avatar;
+  String get avatar => _avatar;
+
+  UserStatus _status;
+  UserStatus get status => _status;
+
+  bool _isBot;
+  bool get isBot => _isBot;
 
   Future<void> refresh() async {
-    var data = chat_kit.getUserData(_home, _id);
-    _name = Future(() async {
-      var doneData = await data;
-      return doneData.name;
-    });
-    _avatar = Future(() async {
-      var doneData = await data;
-      return doneData.picture;
-    });
+    UserData data = await chat_kit.getUserData(_home, id);
+    _name = data.name;
+    _avatar = data.picture;
+    _status = data.status;
+    _isBot = data.isBot;
   }
-
-  Future<String> _name;
-  Future<String> get name => _name;
-
-  Future<String> _avatar;
-  Future<String> get avatar => _avatar;
 }
+
+enum UserStatus { online, streaming, doNotDisturb, idle, offline }
