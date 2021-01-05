@@ -5,7 +5,7 @@ import 'package:harmony_sdk/src/protocol/auth/v1/auth.pb.dart';
 import 'package:harmony_sdk/src/protocol/auth/v1/auth.pbgrpc.dart';
 
 Future<String> beginAuth(sdk.Homeserver server) async {
-  final response = await server.auth.beginAuth(Empty(), options: server.timeoutOpts);
+  final response = await server.auth.beginAuth(Empty(), options: server.timeoutOptions);
   return response.authId;
 }
 
@@ -14,8 +14,8 @@ Stream<sdk.AuthStep> streamSteps(sdk.Homeserver server, String authId) {
 }
 
 Future<sdk.AuthStep> getFirstStep(sdk.Homeserver server, String authId) async {
-  final response =
-      await server.auth.nextStep(NextStepRequest()..authId = authId, options: server.timeoutOpts);
+  final response = await server.auth
+      .nextStep(NextStepRequest()..authId = authId, options: server.timeoutOptions);
   return mapStep(response);
 }
 
@@ -25,7 +25,7 @@ Future<sdk.AuthStep> nextStepForm(sdk.Homeserver server, String authId, sdk.Fill
       NextStepRequest()
         ..authId = authId
         ..form = apiForm,
-      options: server.timeoutOpts);
+      options: server.timeoutOptions);
   return mapStep(response);
 }
 
@@ -44,13 +44,13 @@ Future<sdk.AuthStep> nextStepChoice(
       NextStepRequest()
         ..authId = authId
         ..choice = apiChoice,
-      options: server.timeoutOpts);
+      options: server.timeoutOptions);
   return mapStep(response);
 }
 
 Future<sdk.AuthStep> stepBack(sdk.Homeserver server, String authId) async {
-  final response =
-      await server.auth.stepBack(StepBackRequest()..authId = authId, options: server.timeoutOpts);
+  final response = await server.auth
+      .stepBack(StepBackRequest()..authId = authId, options: server.timeoutOptions);
   return mapStep(response);
 }
 
@@ -79,7 +79,7 @@ List<sdk.FormField> mapFields(List<AuthStep_Form_FormField> fields) {
 }
 
 Future<String> getKey(sdk.Homeserver server) async {
-  final response = await server.auth.key(Empty(), options: server.timeoutOpts);
+  final response = await server.auth.key(Empty(), options: server.timeoutOptions);
   return response.key;
 }
 
@@ -94,6 +94,6 @@ Future<sdk.Session> federatedLogin(sdk.Server server, String token, sdk.Homeserv
       LoginFederatedRequest()
         ..authToken = token
         ..domain = home.host,
-      options: server.timeoutOpts);
+      options: server.timeoutOptions);
   return sdk.Session(response.sessionToken, response.userId.toInt());
 }
