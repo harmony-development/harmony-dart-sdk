@@ -1,24 +1,32 @@
 part of 'sdk.dart';
 
 class Server {
-  String _host;
-  int _port;
+  final String host;
+  final String domain;
+  final int port;
   ClientChannel _channel;
   Session session;
 
-  String get host => _host;
-  int get port => _port;
   ClientChannel get channel => _channel;
+
   CallOptions get metadata =>
-      CallOptions(metadata: {'auth': session.token}, timeout: Duration(seconds: CALL_TIMEOUT));
-  CallOptions get metasess => CallOptions(metadata: {'auth': session.token});
-  CallOptions get timeoutOpts => CallOptions(timeout: Duration(seconds: CALL_TIMEOUT));
+      CallOptions(metadata: {'auth': session.token}, timeout: Duration(seconds: callTimeout));
+  CallOptions get sessionOptions => CallOptions(metadata: {'auth': session.token});
+  CallOptions get timeoutOptions => CallOptions(timeout: Duration(seconds: callTimeout));
 
   AuthServiceClient _auth;
   ChatServiceClient _chat;
 
   AuthServiceClient get auth => _auth;
   ChatServiceClient get chat => _chat;
+
+  Server(this.host)
+      : domain = host.contains(':') ? host.split(':')[0] : host,
+        port = host.contains(':') ? int.parse(host.split(':')[1]) : defaultPort {
+    _channel = ClientChannel(domain, port: port);
+    _auth = AuthServiceClient(channel);
+    _chat = ChatServiceClient(channel);
+  }
 
   Future<void> login_with_token(String token, Homeserver home) {
     return auth_kit.federatedLogin(this, token, home).then((value) => session = value);
@@ -30,23 +38,15 @@ class Server {
       chat_kit.messageList(this, guildId, channelId, 0);
   Future<void> sendMessage(int guildId, int channelId, String content) =>
       chat_kit.sendMessage(this, guildId, channelId, content);
-  Stream<GuildEvent> streamEvents(int guildId) => chat_kit.streamEvents(this, guildId);
+  Tuple2<Stream<GuildEvent>, StreamController> streamEvents(int guildId) =>
+      chat_kit.streamEvents(this, guildId);
   Future<Guild> joinGuild(String inviteId) => chat_kit.joinGuild(this, inviteId);
-
-  Server(this._host, [this._port = 2289]) {
-    _channel = ClientChannel(host, port: port);
-    _chat = ChatServiceClient(channel);
-    _auth = AuthServiceClient(channel);
-  }
 }
 
 class Homeserver extends Server {
   Homeserver(String host) : super(host);
 
-  Future<String> federate(Server target) {
-    return auth_kit.federate(this, target);
-  }
-
+  Future<String> federate(Server target) => auth_kit.federate(this, target);
   Future<String> beginAuth() => auth_kit.beginAuth(this);
   Stream<AuthStep> streamSteps(String authId) => auth_kit.streamSteps(this, authId);
   Future<AuthStep> getFirstStep(String authId) => auth_kit.getFirstStep(this, authId);
@@ -55,6 +55,5 @@ class Homeserver extends Server {
   Future<AuthStep> nextStepForm(String authId, FilledForm form) =>
       auth_kit.nextStepForm(this, authId, form);
   Future<AuthStep> stepBack(String authId) => auth_kit.stepBack(this, authId);
-
   Future<List<Guild>> joinedGuilds() => chat_kit.joinedGuilds(this);
 }

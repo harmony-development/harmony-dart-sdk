@@ -17,9 +17,10 @@ part 'user.dart';
 part 'channel.dart';
 part 'message.dart';
 part 'invite.dart';
-part 'servers.dart';
+part 'server.dart';
 
-const int CALL_TIMEOUT = 5;
+const int defaultPort = 2289;
+const int callTimeout = 5;
 
 class Metadata {
   String kind;
