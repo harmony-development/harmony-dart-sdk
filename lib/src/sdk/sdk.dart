@@ -12,7 +12,7 @@ part 'action.dart';
 part 'auth.dart';
 part 'embed.dart';
 part 'guild.dart';
-part 'guild_events.dart';
+part 'guild_event.dart';
 part 'user.dart';
 part 'channel.dart';
 part 'message.dart';
