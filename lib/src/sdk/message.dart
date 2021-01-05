@@ -1,41 +1,47 @@
 part of 'sdk.dart';
 
 class Message {
-  Server _server;
-  int _guildId;
-  int _channelId;
-  int _messageId;
+  final Server server;
+  final int id;
+  final int guild;
+  final int channel;
+  final User author;
+  final DateTime createdAt;
+  final DateTime editedAt;
+  final String content;
+  final List<Embed> embeds;
+  final List<Action> actions;
+  final List<Attachment> attachments;
+  final Override override;
 
-  int get guildId => _guildId;
-  int get channelId => _channelId;
-  int get id => _messageId;
-
-  User _author;
-  User get author => _author;
-
-  DateTime _createdAt;
-  DateTime get createdAt => _createdAt;
-
-  DateTime _editedAt;
-  DateTime get editedAt => _editedAt;
-
-  String _content;
-  String get content => _content;
-
-  // List<Embed> _embeds;
-  // List<Embed> get embeds => _embeds;
-
-  // List<Action> _actions;
-  // List<Action> get actions => _actions;
+  Message(this.server, this.guild, this.channel, this.id, this.author, this.createdAt,
+      {this.content, this.editedAt, this.actions, this.embeds, this.attachments, this.override});
 
   Future<void> delete() {
-    return chat_kit.deleteMessage(_server, _guildId, _channelId, _messageId);
+    return chat_kit.deleteMessage(server, id, guild, channel);
   }
 
   Future<void> edit(String content) {
-    return chat_kit.updateMessage(_server, _guildId, _channelId, _messageId, content: content);
+    return chat_kit.updateMessage(server, id, guild, channel, content: content);
   }
-
-  Message(this._server, this._guildId, this._channelId, this._messageId, this._author,
-      this._createdAt, this._editedAt, this._content);
 }
+
+class Attachment {
+  final String id;
+  final String name;
+  final String type;
+  final int size;
+
+  Attachment(this.id, this.name, this.type, this.size);
+}
+
+class Override {
+  final String name;
+  final String avatar;
+  final OverrideReason reason;
+  final String userDefinedReason;
+
+  Override(this.name, this.avatar, this.reason, [this.userDefinedReason]);
+}
+
+enum OverrideReason { user, webhook, plurality, systemMessage, bridge }
