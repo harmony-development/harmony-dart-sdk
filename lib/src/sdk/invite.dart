@@ -1,24 +1,20 @@
 part of 'sdk.dart';
 
 class InviteData {
-  String id;
-  int guildId;
-  int usesCount;
+  final String id;
+  final int guild;
+  final int usesCount;
 
-  InviteData(this.id, this.guildId, this.usesCount);
+  InviteData(this.id, this.guild, this.usesCount);
 }
 
 class Invite {
-  Server _server;
-  int _guildId;
+  final Server server;
+  final String id;
+  final int guild;
+  final int usesCount;
 
-  String _id;
-  String get id => _id;
+  Invite(this.server, this.id, this.guild, this.usesCount);
 
-  int _usesCount;
-  int get usesCount => _usesCount;
-
-  Invite(this._server, this._guildId, this._id, this._usesCount);
-
-  Future<void> delete() => chat_kit.deleteInvite(_server, _guildId, _id);
+  Future<void> delete() => chat_kit.deleteInvite(server, id, guild);
 }
