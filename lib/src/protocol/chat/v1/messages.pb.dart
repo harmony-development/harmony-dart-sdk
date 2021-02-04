@@ -2,7 +2,7 @@
 //  Generated code. Do not modify.
 //  source: chat/v1/messages.proto
 //
-// @dart = 2.3
+// @dart = 2.7
 // ignore_for_file: annotate_overrides,camel_case_types,unnecessary_const,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type,unnecessary_this,prefer_final_fields
 
 import 'dart:core' as $core;
@@ -10,7 +10,7 @@ import 'dart:core' as $core;
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../harmonytypes/v1/types.pb.dart' as $8;
+import '../../harmonytypes/v1/types.pb.dart' as $0;
 
 class GetChannelMessagesRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'GetChannelMessagesRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.chat.v1'), createEmptyInstance: create)
@@ -21,7 +21,23 @@ class GetChannelMessagesRequest extends $pb.GeneratedMessage {
   ;
 
   GetChannelMessagesRequest._() : super();
-  factory GetChannelMessagesRequest() => create();
+  factory GetChannelMessagesRequest({
+    $fixnum.Int64 guildId,
+    $fixnum.Int64 channelId,
+    $fixnum.Int64 beforeMessage,
+  }) {
+    final _result = create();
+    if (guildId != null) {
+      _result.guildId = guildId;
+    }
+    if (channelId != null) {
+      _result.channelId = channelId;
+    }
+    if (beforeMessage != null) {
+      _result.beforeMessage = beforeMessage;
+    }
+    return _result;
+  }
   factory GetChannelMessagesRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetChannelMessagesRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -74,12 +90,24 @@ class GetChannelMessagesRequest extends $pb.GeneratedMessage {
 class GetChannelMessagesResponse extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'GetChannelMessagesResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.chat.v1'), createEmptyInstance: create)
     ..aOB(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'reachedTop')
-    ..pc<$8.Message>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'messages', $pb.PbFieldType.PM, subBuilder: $8.Message.create)
+    ..pc<$0.Message>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'messages', $pb.PbFieldType.PM, subBuilder: $0.Message.create)
     ..hasRequiredFields = false
   ;
 
   GetChannelMessagesResponse._() : super();
-  factory GetChannelMessagesResponse() => create();
+  factory GetChannelMessagesResponse({
+    $core.bool reachedTop,
+    $core.Iterable<$0.Message> messages,
+  }) {
+    final _result = create();
+    if (reachedTop != null) {
+      _result.reachedTop = reachedTop;
+    }
+    if (messages != null) {
+      _result.messages.addAll(messages);
+    }
+    return _result;
+  }
   factory GetChannelMessagesResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetChannelMessagesResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -111,7 +139,7 @@ class GetChannelMessagesResponse extends $pb.GeneratedMessage {
   void clearReachedTop() => clearField(1);
 
   @$pb.TagNumber(2)
-  $core.List<$8.Message> get messages => $_getList(1);
+  $core.List<$0.Message> get messages => $_getList(1);
 }
 
 class GetMessageRequest extends $pb.GeneratedMessage {
@@ -123,7 +151,23 @@ class GetMessageRequest extends $pb.GeneratedMessage {
   ;
 
   GetMessageRequest._() : super();
-  factory GetMessageRequest() => create();
+  factory GetMessageRequest({
+    $fixnum.Int64 guildId,
+    $fixnum.Int64 channelId,
+    $fixnum.Int64 messageId,
+  }) {
+    final _result = create();
+    if (guildId != null) {
+      _result.guildId = guildId;
+    }
+    if (channelId != null) {
+      _result.channelId = channelId;
+    }
+    if (messageId != null) {
+      _result.messageId = messageId;
+    }
+    return _result;
+  }
   factory GetMessageRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetMessageRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -175,12 +219,20 @@ class GetMessageRequest extends $pb.GeneratedMessage {
 
 class GetMessageResponse extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'GetMessageResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.chat.v1'), createEmptyInstance: create)
-    ..aOM<$8.Message>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'message', subBuilder: $8.Message.create)
+    ..aOM<$0.Message>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'message', subBuilder: $0.Message.create)
     ..hasRequiredFields = false
   ;
 
   GetMessageResponse._() : super();
-  factory GetMessageResponse() => create();
+  factory GetMessageResponse({
+    $0.Message message,
+  }) {
+    final _result = create();
+    if (message != null) {
+      _result.message = message;
+    }
+    return _result;
+  }
   factory GetMessageResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetMessageResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -203,15 +255,15 @@ class GetMessageResponse extends $pb.GeneratedMessage {
   static GetMessageResponse _defaultInstance;
 
   @$pb.TagNumber(1)
-  $8.Message get message => $_getN(0);
+  $0.Message get message => $_getN(0);
   @$pb.TagNumber(1)
-  set message($8.Message v) { setField(1, v); }
+  set message($0.Message v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasMessage() => $_has(0);
   @$pb.TagNumber(1)
   void clearMessage() => clearField(1);
   @$pb.TagNumber(1)
-  $8.Message ensureMessage() => $_ensure(0);
+  $0.Message ensureMessage() => $_ensure(0);
 }
 
 class UpdateMessageRequest extends $pb.GeneratedMessage {
@@ -221,21 +273,85 @@ class UpdateMessageRequest extends $pb.GeneratedMessage {
     ..a<$fixnum.Int64>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'messageId', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
     ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'content')
     ..aOB(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'updateContent')
-    ..pc<$8.Embed>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'embeds', $pb.PbFieldType.PM, subBuilder: $8.Embed.create)
+    ..pc<$0.Embed>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'embeds', $pb.PbFieldType.PM, subBuilder: $0.Embed.create)
     ..aOB(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'updateEmbeds')
-    ..pc<$8.Action>(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'actions', $pb.PbFieldType.PM, subBuilder: $8.Action.create)
+    ..pc<$0.Action>(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'actions', $pb.PbFieldType.PM, subBuilder: $0.Action.create)
     ..aOB(9, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'updateActions')
     ..pPS(10, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'attachments')
     ..aOB(11, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'updateAttachments')
-    ..aOM<$8.Override>(12, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'overrides', subBuilder: $8.Override.create)
+    ..aOM<$0.Override>(12, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'overrides', subBuilder: $0.Override.create)
     ..aOB(13, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'updateOverrides')
-    ..aOM<$8.Metadata>(14, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'metadata', subBuilder: $8.Metadata.create)
+    ..aOM<$0.Metadata>(14, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'metadata', subBuilder: $0.Metadata.create)
     ..aOB(15, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'updateMetadata')
     ..hasRequiredFields = false
   ;
 
   UpdateMessageRequest._() : super();
-  factory UpdateMessageRequest() => create();
+  factory UpdateMessageRequest({
+    $fixnum.Int64 guildId,
+    $fixnum.Int64 channelId,
+    $fixnum.Int64 messageId,
+    $core.String content,
+    $core.bool updateContent,
+    $core.Iterable<$0.Embed> embeds,
+    $core.bool updateEmbeds,
+    $core.Iterable<$0.Action> actions,
+    $core.bool updateActions,
+    $core.Iterable<$core.String> attachments,
+    $core.bool updateAttachments,
+    $0.Override overrides,
+    $core.bool updateOverrides,
+    $0.Metadata metadata,
+    $core.bool updateMetadata,
+  }) {
+    final _result = create();
+    if (guildId != null) {
+      _result.guildId = guildId;
+    }
+    if (channelId != null) {
+      _result.channelId = channelId;
+    }
+    if (messageId != null) {
+      _result.messageId = messageId;
+    }
+    if (content != null) {
+      _result.content = content;
+    }
+    if (updateContent != null) {
+      _result.updateContent = updateContent;
+    }
+    if (embeds != null) {
+      _result.embeds.addAll(embeds);
+    }
+    if (updateEmbeds != null) {
+      _result.updateEmbeds = updateEmbeds;
+    }
+    if (actions != null) {
+      _result.actions.addAll(actions);
+    }
+    if (updateActions != null) {
+      _result.updateActions = updateActions;
+    }
+    if (attachments != null) {
+      _result.attachments.addAll(attachments);
+    }
+    if (updateAttachments != null) {
+      _result.updateAttachments = updateAttachments;
+    }
+    if (overrides != null) {
+      _result.overrides = overrides;
+    }
+    if (updateOverrides != null) {
+      _result.updateOverrides = updateOverrides;
+    }
+    if (metadata != null) {
+      _result.metadata = metadata;
+    }
+    if (updateMetadata != null) {
+      _result.updateMetadata = updateMetadata;
+    }
+    return _result;
+  }
   factory UpdateMessageRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory UpdateMessageRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -303,7 +419,7 @@ class UpdateMessageRequest extends $pb.GeneratedMessage {
   void clearUpdateContent() => clearField(5);
 
   @$pb.TagNumber(6)
-  $core.List<$8.Embed> get embeds => $_getList(5);
+  $core.List<$0.Embed> get embeds => $_getList(5);
 
   @$pb.TagNumber(7)
   $core.bool get updateEmbeds => $_getBF(6);
@@ -315,7 +431,7 @@ class UpdateMessageRequest extends $pb.GeneratedMessage {
   void clearUpdateEmbeds() => clearField(7);
 
   @$pb.TagNumber(8)
-  $core.List<$8.Action> get actions => $_getList(7);
+  $core.List<$0.Action> get actions => $_getList(7);
 
   @$pb.TagNumber(9)
   $core.bool get updateActions => $_getBF(8);
@@ -339,15 +455,15 @@ class UpdateMessageRequest extends $pb.GeneratedMessage {
   void clearUpdateAttachments() => clearField(11);
 
   @$pb.TagNumber(12)
-  $8.Override get overrides => $_getN(11);
+  $0.Override get overrides => $_getN(11);
   @$pb.TagNumber(12)
-  set overrides($8.Override v) { setField(12, v); }
+  set overrides($0.Override v) { setField(12, v); }
   @$pb.TagNumber(12)
   $core.bool hasOverrides() => $_has(11);
   @$pb.TagNumber(12)
   void clearOverrides() => clearField(12);
   @$pb.TagNumber(12)
-  $8.Override ensureOverrides() => $_ensure(11);
+  $0.Override ensureOverrides() => $_ensure(11);
 
   @$pb.TagNumber(13)
   $core.bool get updateOverrides => $_getBF(12);
@@ -359,15 +475,15 @@ class UpdateMessageRequest extends $pb.GeneratedMessage {
   void clearUpdateOverrides() => clearField(13);
 
   @$pb.TagNumber(14)
-  $8.Metadata get metadata => $_getN(13);
+  $0.Metadata get metadata => $_getN(13);
   @$pb.TagNumber(14)
-  set metadata($8.Metadata v) { setField(14, v); }
+  set metadata($0.Metadata v) { setField(14, v); }
   @$pb.TagNumber(14)
   $core.bool hasMetadata() => $_has(13);
   @$pb.TagNumber(14)
   void clearMetadata() => clearField(14);
   @$pb.TagNumber(14)
-  $8.Metadata ensureMetadata() => $_ensure(13);
+  $0.Metadata ensureMetadata() => $_ensure(13);
 
   @$pb.TagNumber(15)
   $core.bool get updateMetadata => $_getBF(14);
@@ -388,7 +504,23 @@ class DeleteMessageRequest extends $pb.GeneratedMessage {
   ;
 
   DeleteMessageRequest._() : super();
-  factory DeleteMessageRequest() => create();
+  factory DeleteMessageRequest({
+    $fixnum.Int64 guildId,
+    $fixnum.Int64 channelId,
+    $fixnum.Int64 messageId,
+  }) {
+    final _result = create();
+    if (guildId != null) {
+      _result.guildId = guildId;
+    }
+    if (channelId != null) {
+      _result.channelId = channelId;
+    }
+    if (messageId != null) {
+      _result.messageId = messageId;
+    }
+    return _result;
+  }
   factory DeleteMessageRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory DeleteMessageRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -449,7 +581,31 @@ class TriggerActionRequest extends $pb.GeneratedMessage {
   ;
 
   TriggerActionRequest._() : super();
-  factory TriggerActionRequest() => create();
+  factory TriggerActionRequest({
+    $fixnum.Int64 guildId,
+    $fixnum.Int64 channelId,
+    $fixnum.Int64 messageId,
+    $core.String actionId,
+    $core.String actionData,
+  }) {
+    final _result = create();
+    if (guildId != null) {
+      _result.guildId = guildId;
+    }
+    if (channelId != null) {
+      _result.channelId = channelId;
+    }
+    if (messageId != null) {
+      _result.messageId = messageId;
+    }
+    if (actionId != null) {
+      _result.actionId = actionId;
+    }
+    if (actionData != null) {
+      _result.actionData = actionData;
+    }
+    return _result;
+  }
   factory TriggerActionRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TriggerActionRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -522,18 +678,62 @@ class SendMessageRequest extends $pb.GeneratedMessage {
     ..a<$fixnum.Int64>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'guildId', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
     ..a<$fixnum.Int64>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'channelId', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
     ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'content')
-    ..pc<$8.Action>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'actions', $pb.PbFieldType.PM, subBuilder: $8.Action.create)
-    ..pc<$8.Embed>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'embeds', $pb.PbFieldType.PM, subBuilder: $8.Embed.create)
+    ..pc<$0.Action>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'actions', $pb.PbFieldType.PM, subBuilder: $0.Action.create)
+    ..pc<$0.Embed>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'embeds', $pb.PbFieldType.PM, subBuilder: $0.Embed.create)
     ..pPS(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'attachments')
     ..a<$fixnum.Int64>(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'inReplyTo', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
-    ..aOM<$8.Override>(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'overrides', subBuilder: $8.Override.create)
+    ..aOM<$0.Override>(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'overrides', subBuilder: $0.Override.create)
     ..a<$fixnum.Int64>(9, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'echoId', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
-    ..aOM<$8.Metadata>(10, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'metadata', subBuilder: $8.Metadata.create)
+    ..aOM<$0.Metadata>(10, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'metadata', subBuilder: $0.Metadata.create)
     ..hasRequiredFields = false
   ;
 
   SendMessageRequest._() : super();
-  factory SendMessageRequest() => create();
+  factory SendMessageRequest({
+    $fixnum.Int64 guildId,
+    $fixnum.Int64 channelId,
+    $core.String content,
+    $core.Iterable<$0.Action> actions,
+    $core.Iterable<$0.Embed> embeds,
+    $core.Iterable<$core.String> attachments,
+    $fixnum.Int64 inReplyTo,
+    $0.Override overrides,
+    $fixnum.Int64 echoId,
+    $0.Metadata metadata,
+  }) {
+    final _result = create();
+    if (guildId != null) {
+      _result.guildId = guildId;
+    }
+    if (channelId != null) {
+      _result.channelId = channelId;
+    }
+    if (content != null) {
+      _result.content = content;
+    }
+    if (actions != null) {
+      _result.actions.addAll(actions);
+    }
+    if (embeds != null) {
+      _result.embeds.addAll(embeds);
+    }
+    if (attachments != null) {
+      _result.attachments.addAll(attachments);
+    }
+    if (inReplyTo != null) {
+      _result.inReplyTo = inReplyTo;
+    }
+    if (overrides != null) {
+      _result.overrides = overrides;
+    }
+    if (echoId != null) {
+      _result.echoId = echoId;
+    }
+    if (metadata != null) {
+      _result.metadata = metadata;
+    }
+    return _result;
+  }
   factory SendMessageRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory SendMessageRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -583,10 +783,10 @@ class SendMessageRequest extends $pb.GeneratedMessage {
   void clearContent() => clearField(3);
 
   @$pb.TagNumber(4)
-  $core.List<$8.Action> get actions => $_getList(3);
+  $core.List<$0.Action> get actions => $_getList(3);
 
   @$pb.TagNumber(5)
-  $core.List<$8.Embed> get embeds => $_getList(4);
+  $core.List<$0.Embed> get embeds => $_getList(4);
 
   @$pb.TagNumber(6)
   $core.List<$core.String> get attachments => $_getList(5);
@@ -601,15 +801,15 @@ class SendMessageRequest extends $pb.GeneratedMessage {
   void clearInReplyTo() => clearField(7);
 
   @$pb.TagNumber(8)
-  $8.Override get overrides => $_getN(7);
+  $0.Override get overrides => $_getN(7);
   @$pb.TagNumber(8)
-  set overrides($8.Override v) { setField(8, v); }
+  set overrides($0.Override v) { setField(8, v); }
   @$pb.TagNumber(8)
   $core.bool hasOverrides() => $_has(7);
   @$pb.TagNumber(8)
   void clearOverrides() => clearField(8);
   @$pb.TagNumber(8)
-  $8.Override ensureOverrides() => $_ensure(7);
+  $0.Override ensureOverrides() => $_ensure(7);
 
   @$pb.TagNumber(9)
   $fixnum.Int64 get echoId => $_getI64(8);
@@ -621,15 +821,15 @@ class SendMessageRequest extends $pb.GeneratedMessage {
   void clearEchoId() => clearField(9);
 
   @$pb.TagNumber(10)
-  $8.Metadata get metadata => $_getN(9);
+  $0.Metadata get metadata => $_getN(9);
   @$pb.TagNumber(10)
-  set metadata($8.Metadata v) { setField(10, v); }
+  set metadata($0.Metadata v) { setField(10, v); }
   @$pb.TagNumber(10)
   $core.bool hasMetadata() => $_has(9);
   @$pb.TagNumber(10)
   void clearMetadata() => clearField(10);
   @$pb.TagNumber(10)
-  $8.Metadata ensureMetadata() => $_ensure(9);
+  $0.Metadata ensureMetadata() => $_ensure(9);
 }
 
 class SendMessageResponse extends $pb.GeneratedMessage {
@@ -639,7 +839,15 @@ class SendMessageResponse extends $pb.GeneratedMessage {
   ;
 
   SendMessageResponse._() : super();
-  factory SendMessageResponse() => create();
+  factory SendMessageResponse({
+    $fixnum.Int64 messageId,
+  }) {
+    final _result = create();
+    if (messageId != null) {
+      _result.messageId = messageId;
+    }
+    return _result;
+  }
   factory SendMessageResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory SendMessageResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(

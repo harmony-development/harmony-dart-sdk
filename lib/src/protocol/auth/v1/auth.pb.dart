@@ -2,13 +2,16 @@
 //  Generated code. Do not modify.
 //  source: auth/v1/auth.proto
 //
-// @dart = 2.3
+// @dart = 2.7
 // ignore_for_file: annotate_overrides,camel_case_types,unnecessary_const,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type,unnecessary_this,prefer_final_fields
 
+import 'dart:async' as $async;
 import 'dart:core' as $core;
 
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
+
+import '../../google/protobuf/empty.pb.dart' as $0;
 
 class BeginAuthResponse extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'BeginAuthResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.auth.v1'), createEmptyInstance: create)
@@ -17,7 +20,15 @@ class BeginAuthResponse extends $pb.GeneratedMessage {
   ;
 
   BeginAuthResponse._() : super();
-  factory BeginAuthResponse() => create();
+  factory BeginAuthResponse({
+    $core.String authId,
+  }) {
+    final _result = create();
+    if (authId != null) {
+      _result.authId = authId;
+    }
+    return _result;
+  }
   factory BeginAuthResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory BeginAuthResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -57,7 +68,19 @@ class Session extends $pb.GeneratedMessage {
   ;
 
   Session._() : super();
-  factory Session() => create();
+  factory Session({
+    $fixnum.Int64 userId,
+    $core.String sessionToken,
+  }) {
+    final _result = create();
+    if (userId != null) {
+      _result.userId = userId;
+    }
+    if (sessionToken != null) {
+      _result.sessionToken = sessionToken;
+    }
+    return _result;
+  }
   factory Session.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Session.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -106,7 +129,19 @@ class AuthStep_Choice extends $pb.GeneratedMessage {
   ;
 
   AuthStep_Choice._() : super();
-  factory AuthStep_Choice() => create();
+  factory AuthStep_Choice({
+    $core.String title,
+    $core.Iterable<$core.String> options,
+  }) {
+    final _result = create();
+    if (title != null) {
+      _result.title = title;
+    }
+    if (options != null) {
+      _result.options.addAll(options);
+    }
+    return _result;
+  }
   factory AuthStep_Choice.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory AuthStep_Choice.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -149,7 +184,19 @@ class AuthStep_Form_FormField extends $pb.GeneratedMessage {
   ;
 
   AuthStep_Form_FormField._() : super();
-  factory AuthStep_Form_FormField() => create();
+  factory AuthStep_Form_FormField({
+    $core.String name,
+    $core.String type,
+  }) {
+    final _result = create();
+    if (name != null) {
+      _result.name = name;
+    }
+    if (type != null) {
+      _result.type = type;
+    }
+    return _result;
+  }
   factory AuthStep_Form_FormField.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory AuthStep_Form_FormField.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -198,7 +245,19 @@ class AuthStep_Form extends $pb.GeneratedMessage {
   ;
 
   AuthStep_Form._() : super();
-  factory AuthStep_Form() => create();
+  factory AuthStep_Form({
+    $core.String title,
+    $core.Iterable<AuthStep_Form_FormField> fields,
+  }) {
+    final _result = create();
+    if (title != null) {
+      _result.title = title;
+    }
+    if (fields != null) {
+      _result.fields.addAll(fields);
+    }
+    return _result;
+  }
   factory AuthStep_Form.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory AuthStep_Form.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -241,7 +300,19 @@ class AuthStep_Waiting extends $pb.GeneratedMessage {
   ;
 
   AuthStep_Waiting._() : super();
-  factory AuthStep_Waiting() => create();
+  factory AuthStep_Waiting({
+    $core.String title,
+    $core.String description,
+  }) {
+    final _result = create();
+    if (title != null) {
+      _result.title = title;
+    }
+    if (description != null) {
+      _result.description = description;
+    }
+    return _result;
+  }
   factory AuthStep_Waiting.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory AuthStep_Waiting.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -310,7 +381,35 @@ class AuthStep extends $pb.GeneratedMessage {
   ;
 
   AuthStep._() : super();
-  factory AuthStep() => create();
+  factory AuthStep({
+    $core.String fallbackUrl,
+    $core.bool canGoBack,
+    AuthStep_Choice choice,
+    AuthStep_Form form,
+    Session session,
+    AuthStep_Waiting waiting,
+  }) {
+    final _result = create();
+    if (fallbackUrl != null) {
+      _result.fallbackUrl = fallbackUrl;
+    }
+    if (canGoBack != null) {
+      _result.canGoBack = canGoBack;
+    }
+    if (choice != null) {
+      _result.choice = choice;
+    }
+    if (form != null) {
+      _result.form = form;
+    }
+    if (session != null) {
+      _result.session = session;
+    }
+    if (waiting != null) {
+      _result.waiting = waiting;
+    }
+    return _result;
+  }
   factory AuthStep.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory AuthStep.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -405,7 +504,15 @@ class NextStepRequest_Choice extends $pb.GeneratedMessage {
   ;
 
   NextStepRequest_Choice._() : super();
-  factory NextStepRequest_Choice() => create();
+  factory NextStepRequest_Choice({
+    $core.String choice,
+  }) {
+    final _result = create();
+    if (choice != null) {
+      _result.choice = choice;
+    }
+    return _result;
+  }
   factory NextStepRequest_Choice.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory NextStepRequest_Choice.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -460,7 +567,23 @@ class NextStepRequest_FormFields extends $pb.GeneratedMessage {
   ;
 
   NextStepRequest_FormFields._() : super();
-  factory NextStepRequest_FormFields() => create();
+  factory NextStepRequest_FormFields({
+    $core.List<$core.int> bytes,
+    $core.String string,
+    $fixnum.Int64 number,
+  }) {
+    final _result = create();
+    if (bytes != null) {
+      _result.bytes = bytes;
+    }
+    if (string != null) {
+      _result.string = string;
+    }
+    if (number != null) {
+      _result.number = number;
+    }
+    return _result;
+  }
   factory NextStepRequest_FormFields.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory NextStepRequest_FormFields.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -520,7 +643,15 @@ class NextStepRequest_Form extends $pb.GeneratedMessage {
   ;
 
   NextStepRequest_Form._() : super();
-  factory NextStepRequest_Form() => create();
+  factory NextStepRequest_Form({
+    $core.Iterable<NextStepRequest_FormFields> fields,
+  }) {
+    final _result = create();
+    if (fields != null) {
+      _result.fields.addAll(fields);
+    }
+    return _result;
+  }
   factory NextStepRequest_Form.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory NextStepRequest_Form.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -567,7 +698,23 @@ class NextStepRequest extends $pb.GeneratedMessage {
   ;
 
   NextStepRequest._() : super();
-  factory NextStepRequest() => create();
+  factory NextStepRequest({
+    $core.String authId,
+    NextStepRequest_Choice choice,
+    NextStepRequest_Form form,
+  }) {
+    final _result = create();
+    if (authId != null) {
+      _result.authId = authId;
+    }
+    if (choice != null) {
+      _result.choice = choice;
+    }
+    if (form != null) {
+      _result.form = form;
+    }
+    return _result;
+  }
   factory NextStepRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory NextStepRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -631,7 +778,15 @@ class StepBackRequest extends $pb.GeneratedMessage {
   ;
 
   StepBackRequest._() : super();
-  factory StepBackRequest() => create();
+  factory StepBackRequest({
+    $core.String authId,
+  }) {
+    final _result = create();
+    if (authId != null) {
+      _result.authId = authId;
+    }
+    return _result;
+  }
   factory StepBackRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory StepBackRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -670,7 +825,15 @@ class StreamStepsRequest extends $pb.GeneratedMessage {
   ;
 
   StreamStepsRequest._() : super();
-  factory StreamStepsRequest() => create();
+  factory StreamStepsRequest({
+    $core.String authId,
+  }) {
+    final _result = create();
+    if (authId != null) {
+      _result.authId = authId;
+    }
+    return _result;
+  }
   factory StreamStepsRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory StreamStepsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -709,7 +872,15 @@ class FederateRequest extends $pb.GeneratedMessage {
   ;
 
   FederateRequest._() : super();
-  factory FederateRequest() => create();
+  factory FederateRequest({
+    $core.String target,
+  }) {
+    final _result = create();
+    if (target != null) {
+      _result.target = target;
+    }
+    return _result;
+  }
   factory FederateRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory FederateRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -749,7 +920,19 @@ class FederateReply extends $pb.GeneratedMessage {
   ;
 
   FederateReply._() : super();
-  factory FederateReply() => create();
+  factory FederateReply({
+    $core.String token,
+    $core.String nonce,
+  }) {
+    final _result = create();
+    if (token != null) {
+      _result.token = token;
+    }
+    if (nonce != null) {
+      _result.nonce = nonce;
+    }
+    return _result;
+  }
   factory FederateReply.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory FederateReply.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -797,7 +980,15 @@ class KeyReply extends $pb.GeneratedMessage {
   ;
 
   KeyReply._() : super();
-  factory KeyReply() => create();
+  factory KeyReply({
+    $core.String key,
+  }) {
+    final _result = create();
+    if (key != null) {
+      _result.key = key;
+    }
+    return _result;
+  }
   factory KeyReply.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory KeyReply.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -837,7 +1028,19 @@ class LoginFederatedRequest extends $pb.GeneratedMessage {
   ;
 
   LoginFederatedRequest._() : super();
-  factory LoginFederatedRequest() => create();
+  factory LoginFederatedRequest({
+    $core.String authToken,
+    $core.String domain,
+  }) {
+    final _result = create();
+    if (authToken != null) {
+      _result.authToken = authToken;
+    }
+    if (domain != null) {
+      _result.domain = domain;
+    }
+    return _result;
+  }
   factory LoginFederatedRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory LoginFederatedRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -876,5 +1079,39 @@ class LoginFederatedRequest extends $pb.GeneratedMessage {
   $core.bool hasDomain() => $_has(1);
   @$pb.TagNumber(2)
   void clearDomain() => clearField(2);
+}
+
+class AuthServiceApi {
+  $pb.RpcClient _client;
+  AuthServiceApi(this._client);
+
+  $async.Future<FederateReply> federate($pb.ClientContext ctx, FederateRequest request) {
+    var emptyResponse = FederateReply();
+    return _client.invoke<FederateReply>(ctx, 'AuthService', 'Federate', request, emptyResponse);
+  }
+  $async.Future<Session> loginFederated($pb.ClientContext ctx, LoginFederatedRequest request) {
+    var emptyResponse = Session();
+    return _client.invoke<Session>(ctx, 'AuthService', 'LoginFederated', request, emptyResponse);
+  }
+  $async.Future<KeyReply> key($pb.ClientContext ctx, $0.Empty request) {
+    var emptyResponse = KeyReply();
+    return _client.invoke<KeyReply>(ctx, 'AuthService', 'Key', request, emptyResponse);
+  }
+  $async.Future<BeginAuthResponse> beginAuth($pb.ClientContext ctx, $0.Empty request) {
+    var emptyResponse = BeginAuthResponse();
+    return _client.invoke<BeginAuthResponse>(ctx, 'AuthService', 'BeginAuth', request, emptyResponse);
+  }
+  $async.Future<AuthStep> nextStep($pb.ClientContext ctx, NextStepRequest request) {
+    var emptyResponse = AuthStep();
+    return _client.invoke<AuthStep>(ctx, 'AuthService', 'NextStep', request, emptyResponse);
+  }
+  $async.Future<AuthStep> stepBack($pb.ClientContext ctx, StepBackRequest request) {
+    var emptyResponse = AuthStep();
+    return _client.invoke<AuthStep>(ctx, 'AuthService', 'StepBack', request, emptyResponse);
+  }
+  $async.Future<AuthStep> streamSteps($pb.ClientContext ctx, StreamStepsRequest request) {
+    var emptyResponse = AuthStep();
+    return _client.invoke<AuthStep>(ctx, 'AuthService', 'StreamSteps', request, emptyResponse);
+  }
 }
 

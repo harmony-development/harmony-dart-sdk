@@ -4,15 +4,10 @@ class Server {
   final String host;
   final String domain;
   final int port;
-  ClientChannel _channel;
   Session session;
 
-  ClientChannel get channel => _channel;
-
-  CallOptions get metadata =>
-      CallOptions(metadata: {'auth': session.token}, timeout: Duration(seconds: callTimeout));
-  CallOptions get sessionOptions => CallOptions(metadata: {'auth': session.token});
-  CallOptions get timeoutOptions => CallOptions(timeout: Duration(seconds: callTimeout));
+  Map<String,String> get headers =>
+      {"Authorization": session.token};
 
   AuthServiceClient _auth;
   ChatServiceClient _chat;
@@ -23,9 +18,9 @@ class Server {
   Server(this.host)
       : domain = host.contains(':') ? host.split(':')[0] : host,
         port = host.contains(':') ? int.parse(host.split(':')[1]) : defaultPort {
-    _channel = ClientChannel(domain, port: port);
-    _auth = AuthServiceClient(channel);
-    _chat = ChatServiceClient(channel);
+
+    _auth = AuthServiceClient(secure: true, host: "$domain:$port");
+    _chat = ChatServiceClient(secure: true, host: "$domain:$port");
   }
 
   Future<void> login_with_token(String token, Homeserver home) {

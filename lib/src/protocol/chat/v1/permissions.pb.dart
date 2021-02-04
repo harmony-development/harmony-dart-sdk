@@ -2,7 +2,7 @@
 //  Generated code. Do not modify.
 //  source: chat/v1/permissions.proto
 //
-// @dart = 2.3
+// @dart = 2.7
 // ignore_for_file: annotate_overrides,camel_case_types,unnecessary_const,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type,unnecessary_this,prefer_final_fields
 
 import 'dart:core' as $core;
@@ -24,7 +24,27 @@ class QueryPermissionsRequest extends $pb.GeneratedMessage {
   ;
 
   QueryPermissionsRequest._() : super();
-  factory QueryPermissionsRequest() => create();
+  factory QueryPermissionsRequest({
+    $fixnum.Int64 guildId,
+    $fixnum.Int64 channelId,
+    $core.String checkFor,
+    $fixnum.Int64 as,
+  }) {
+    final _result = create();
+    if (guildId != null) {
+      _result.guildId = guildId;
+    }
+    if (channelId != null) {
+      _result.channelId = channelId;
+    }
+    if (checkFor != null) {
+      _result.checkFor = checkFor;
+    }
+    if (as != null) {
+      _result.as = as;
+    }
+    return _result;
+  }
   factory QueryPermissionsRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory QueryPermissionsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -90,7 +110,15 @@ class QueryPermissionsResponse extends $pb.GeneratedMessage {
   ;
 
   QueryPermissionsResponse._() : super();
-  factory QueryPermissionsResponse() => create();
+  factory QueryPermissionsResponse({
+    $core.bool ok,
+  }) {
+    final _result = create();
+    if (ok != null) {
+      _result.ok = ok;
+    }
+    return _result;
+  }
   factory QueryPermissionsResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory QueryPermissionsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -130,7 +158,19 @@ class Permission extends $pb.GeneratedMessage {
   ;
 
   Permission._() : super();
-  factory Permission() => create();
+  factory Permission({
+    $core.String matches,
+    Permission_Mode mode,
+  }) {
+    final _result = create();
+    if (matches != null) {
+      _result.matches = matches;
+    }
+    if (mode != null) {
+      _result.mode = mode;
+    }
+    return _result;
+  }
   factory Permission.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Permission.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -178,7 +218,15 @@ class PermissionList extends $pb.GeneratedMessage {
   ;
 
   PermissionList._() : super();
-  factory PermissionList() => create();
+  factory PermissionList({
+    $core.Iterable<Permission> permissions,
+  }) {
+    final _result = create();
+    if (permissions != null) {
+      _result.permissions.addAll(permissions);
+    }
+    return _result;
+  }
   factory PermissionList.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory PermissionList.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -214,7 +262,27 @@ class SetPermissionsRequest extends $pb.GeneratedMessage {
   ;
 
   SetPermissionsRequest._() : super();
-  factory SetPermissionsRequest() => create();
+  factory SetPermissionsRequest({
+    $fixnum.Int64 guildId,
+    $fixnum.Int64 channelId,
+    $fixnum.Int64 roleId,
+    PermissionList perms,
+  }) {
+    final _result = create();
+    if (guildId != null) {
+      _result.guildId = guildId;
+    }
+    if (channelId != null) {
+      _result.channelId = channelId;
+    }
+    if (roleId != null) {
+      _result.roleId = roleId;
+    }
+    if (perms != null) {
+      _result.perms = perms;
+    }
+    return _result;
+  }
   factory SetPermissionsRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory SetPermissionsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -284,7 +352,23 @@ class GetPermissionsRequest extends $pb.GeneratedMessage {
   ;
 
   GetPermissionsRequest._() : super();
-  factory GetPermissionsRequest() => create();
+  factory GetPermissionsRequest({
+    $fixnum.Int64 guildId,
+    $fixnum.Int64 channelId,
+    $fixnum.Int64 roleId,
+  }) {
+    final _result = create();
+    if (guildId != null) {
+      _result.guildId = guildId;
+    }
+    if (channelId != null) {
+      _result.channelId = channelId;
+    }
+    if (roleId != null) {
+      _result.roleId = roleId;
+    }
+    return _result;
+  }
   factory GetPermissionsRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetPermissionsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -341,7 +425,15 @@ class GetPermissionsResponse extends $pb.GeneratedMessage {
   ;
 
   GetPermissionsResponse._() : super();
-  factory GetPermissionsResponse() => create();
+  factory GetPermissionsResponse({
+    PermissionList perms,
+  }) {
+    final _result = create();
+    if (perms != null) {
+      _result.perms = perms;
+    }
+    return _result;
+  }
   factory GetPermissionsResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetPermissionsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -386,7 +478,31 @@ class Role extends $pb.GeneratedMessage {
   ;
 
   Role._() : super();
-  factory Role() => create();
+  factory Role({
+    $fixnum.Int64 roleId,
+    $core.String name,
+    $core.int color,
+    $core.bool hoist,
+    $core.bool pingable,
+  }) {
+    final _result = create();
+    if (roleId != null) {
+      _result.roleId = roleId;
+    }
+    if (name != null) {
+      _result.name = name;
+    }
+    if (color != null) {
+      _result.color = color;
+    }
+    if (hoist != null) {
+      _result.hoist = hoist;
+    }
+    if (pingable != null) {
+      _result.pingable = pingable;
+    }
+    return _result;
+  }
   factory Role.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Role.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -464,7 +580,27 @@ class MoveRoleRequest extends $pb.GeneratedMessage {
   ;
 
   MoveRoleRequest._() : super();
-  factory MoveRoleRequest() => create();
+  factory MoveRoleRequest({
+    $fixnum.Int64 guildId,
+    $fixnum.Int64 roleId,
+    $fixnum.Int64 beforeId,
+    $fixnum.Int64 afterId,
+  }) {
+    final _result = create();
+    if (guildId != null) {
+      _result.guildId = guildId;
+    }
+    if (roleId != null) {
+      _result.roleId = roleId;
+    }
+    if (beforeId != null) {
+      _result.beforeId = beforeId;
+    }
+    if (afterId != null) {
+      _result.afterId = afterId;
+    }
+    return _result;
+  }
   factory MoveRoleRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory MoveRoleRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -559,7 +695,15 @@ class GetGuildRolesRequest extends $pb.GeneratedMessage {
   ;
 
   GetGuildRolesRequest._() : super();
-  factory GetGuildRolesRequest() => create();
+  factory GetGuildRolesRequest({
+    $fixnum.Int64 guildId,
+  }) {
+    final _result = create();
+    if (guildId != null) {
+      _result.guildId = guildId;
+    }
+    return _result;
+  }
   factory GetGuildRolesRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetGuildRolesRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -598,7 +742,15 @@ class GetGuildRolesResponse extends $pb.GeneratedMessage {
   ;
 
   GetGuildRolesResponse._() : super();
-  factory GetGuildRolesResponse() => create();
+  factory GetGuildRolesResponse({
+    $core.Iterable<Role> roles,
+  }) {
+    final _result = create();
+    if (roles != null) {
+      _result.roles.addAll(roles);
+    }
+    return _result;
+  }
   factory GetGuildRolesResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetGuildRolesResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -632,7 +784,19 @@ class AddGuildRoleRequest extends $pb.GeneratedMessage {
   ;
 
   AddGuildRoleRequest._() : super();
-  factory AddGuildRoleRequest() => create();
+  factory AddGuildRoleRequest({
+    $fixnum.Int64 guildId,
+    Role role,
+  }) {
+    final _result = create();
+    if (guildId != null) {
+      _result.guildId = guildId;
+    }
+    if (role != null) {
+      _result.role = role;
+    }
+    return _result;
+  }
   factory AddGuildRoleRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory AddGuildRoleRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -682,7 +846,15 @@ class AddGuildRoleResponse extends $pb.GeneratedMessage {
   ;
 
   AddGuildRoleResponse._() : super();
-  factory AddGuildRoleResponse() => create();
+  factory AddGuildRoleResponse({
+    $fixnum.Int64 roleId,
+  }) {
+    final _result = create();
+    if (roleId != null) {
+      _result.roleId = roleId;
+    }
+    return _result;
+  }
   factory AddGuildRoleResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory AddGuildRoleResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -722,7 +894,19 @@ class DeleteGuildRoleRequest extends $pb.GeneratedMessage {
   ;
 
   DeleteGuildRoleRequest._() : super();
-  factory DeleteGuildRoleRequest() => create();
+  factory DeleteGuildRoleRequest({
+    $fixnum.Int64 guildId,
+    $fixnum.Int64 roleId,
+  }) {
+    final _result = create();
+    if (guildId != null) {
+      _result.guildId = guildId;
+    }
+    if (roleId != null) {
+      _result.roleId = roleId;
+    }
+    return _result;
+  }
   factory DeleteGuildRoleRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory DeleteGuildRoleRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -775,7 +959,35 @@ class ModifyGuildRoleRequest extends $pb.GeneratedMessage {
   ;
 
   ModifyGuildRoleRequest._() : super();
-  factory ModifyGuildRoleRequest() => create();
+  factory ModifyGuildRoleRequest({
+    $fixnum.Int64 guildId,
+    Role role,
+    $core.bool modifyName,
+    $core.bool modifyColor,
+    $core.bool modifyHoist,
+    $core.bool modifyPingable,
+  }) {
+    final _result = create();
+    if (guildId != null) {
+      _result.guildId = guildId;
+    }
+    if (role != null) {
+      _result.role = role;
+    }
+    if (modifyName != null) {
+      _result.modifyName = modifyName;
+    }
+    if (modifyColor != null) {
+      _result.modifyColor = modifyColor;
+    }
+    if (modifyHoist != null) {
+      _result.modifyHoist = modifyHoist;
+    }
+    if (modifyPingable != null) {
+      _result.modifyPingable = modifyPingable;
+    }
+    return _result;
+  }
   factory ModifyGuildRoleRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ModifyGuildRoleRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -864,7 +1076,27 @@ class ManageUserRolesRequest extends $pb.GeneratedMessage {
   ;
 
   ManageUserRolesRequest._() : super();
-  factory ManageUserRolesRequest() => create();
+  factory ManageUserRolesRequest({
+    $fixnum.Int64 guildId,
+    $fixnum.Int64 userId,
+    $core.Iterable<$fixnum.Int64> giveRoleIds,
+    $core.Iterable<$fixnum.Int64> takeRoleIds,
+  }) {
+    final _result = create();
+    if (guildId != null) {
+      _result.guildId = guildId;
+    }
+    if (userId != null) {
+      _result.userId = userId;
+    }
+    if (giveRoleIds != null) {
+      _result.giveRoleIds.addAll(giveRoleIds);
+    }
+    if (takeRoleIds != null) {
+      _result.takeRoleIds.addAll(takeRoleIds);
+    }
+    return _result;
+  }
   factory ManageUserRolesRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ManageUserRolesRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -919,7 +1151,19 @@ class GetUserRolesRequest extends $pb.GeneratedMessage {
   ;
 
   GetUserRolesRequest._() : super();
-  factory GetUserRolesRequest() => create();
+  factory GetUserRolesRequest({
+    $fixnum.Int64 guildId,
+    $fixnum.Int64 userId,
+  }) {
+    final _result = create();
+    if (guildId != null) {
+      _result.guildId = guildId;
+    }
+    if (userId != null) {
+      _result.userId = userId;
+    }
+    return _result;
+  }
   factory GetUserRolesRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetUserRolesRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -967,7 +1211,15 @@ class GetUserRolesResponse extends $pb.GeneratedMessage {
   ;
 
   GetUserRolesResponse._() : super();
-  factory GetUserRolesResponse() => create();
+  factory GetUserRolesResponse({
+    $core.Iterable<$fixnum.Int64> roles,
+  }) {
+    final _result = create();
+    if (roles != null) {
+      _result.roles.addAll(roles);
+    }
+    return _result;
+  }
   factory GetUserRolesResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetUserRolesResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(

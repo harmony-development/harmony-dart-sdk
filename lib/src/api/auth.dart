@@ -2,30 +2,30 @@ import 'package:fixnum/fixnum.dart';
 import 'package:harmony_sdk/src/sdk/sdk.dart' as sdk;
 import 'package:harmony_sdk/src/protocol/google/protobuf/empty.pb.dart';
 import 'package:harmony_sdk/src/protocol/auth/v1/auth.pb.dart';
-import 'package:harmony_sdk/src/protocol/auth/v1/auth.pbgrpc.dart';
+import 'package:harmony_sdk/src/protocol/auth/v1/auth.client.hrpc.dart';
 
 Future<String> beginAuth(sdk.Homeserver server) async {
-  final response = await server.auth.beginAuth(Empty(), options: server.timeoutOptions);
+  final response = await server.auth.BeginAuth(Empty());
   return response.authId;
 }
 
 Stream<sdk.AuthStep> streamSteps(sdk.Homeserver server, String authId) {
-  return server.auth.streamSteps(StreamStepsRequest()..authId = authId).map(mapStep);
+  return server.auth.StreamSteps(StreamStepsRequest()..authId = authId).map(mapStep);
 }
 
 Future<sdk.AuthStep> getFirstStep(sdk.Homeserver server, String authId) async {
   final response = await server.auth
-      .nextStep(NextStepRequest()..authId = authId, options: server.timeoutOptions);
+      .NextStep(NextStepRequest()..authId = authId);
   return mapStep(response);
 }
 
 Future<sdk.AuthStep> nextStepForm(sdk.Homeserver server, String authId, sdk.FilledForm form) async {
   final apiForm = NextStepRequest_Form()..fields.addAll(mapFilledFields(form.fields));
-  final response = await server.auth.nextStep(
+  final response = await server.auth.NextStep(
       NextStepRequest()
         ..authId = authId
         ..form = apiForm,
-      options: server.timeoutOptions);
+      );
   return mapStep(response);
 }
 
@@ -40,17 +40,17 @@ List<NextStepRequest_FormFields> mapFilledFields(List<sdk.FilledField> fields) {
 Future<sdk.AuthStep> nextStepChoice(
     sdk.Homeserver server, String authId, sdk.FilledChoice choice) async {
   final apiChoice = NextStepRequest_Choice()..choice = choice.content;
-  final response = await server.auth.nextStep(
+  final response = await server.auth.NextStep(
       NextStepRequest()
         ..authId = authId
         ..choice = apiChoice,
-      options: server.timeoutOptions);
+      );
   return mapStep(response);
 }
 
 Future<sdk.AuthStep> stepBack(sdk.Homeserver server, String authId) async {
   final response = await server.auth
-      .stepBack(StepBackRequest()..authId = authId, options: server.timeoutOptions);
+      .StepBack(StepBackRequest()..authId = authId);
   return mapStep(response);
 }
 
@@ -79,21 +79,21 @@ List<sdk.FormField> mapFields(List<AuthStep_Form_FormField> fields) {
 }
 
 Future<String> getKey(sdk.Homeserver server) async {
-  final response = await server.auth.key(Empty(), options: server.timeoutOptions);
+  final response = await server.auth.Key(Empty(), headers: server.headers);
   return response.key;
 }
 
 Future<String> federate(sdk.Homeserver server, sdk.Server target) async {
   final response =
-      await server.auth.federate(FederateRequest()..target = target.host, options: server.metadata);
+      await server.auth.Federate(FederateRequest()..target = target.host, headers: server.headers);
   return response.token;
 }
 
 Future<sdk.Session> federatedLogin(sdk.Server server, String token, sdk.Homeserver home) async {
-  final response = await server.auth.loginFederated(
+  final response = await server.auth.LoginFederated(
       LoginFederatedRequest()
         ..authToken = token
         ..domain = home.host,
-      options: server.timeoutOptions);
+      headers: server.headers);
   return sdk.Session(response.sessionToken, response.userId.toInt());
 }

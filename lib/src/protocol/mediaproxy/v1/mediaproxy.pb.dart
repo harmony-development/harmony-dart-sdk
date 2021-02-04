@@ -2,9 +2,10 @@
 //  Generated code. Do not modify.
 //  source: mediaproxy/v1/mediaproxy.proto
 //
-// @dart = 2.3
+// @dart = 2.7
 // ignore_for_file: annotate_overrides,camel_case_types,unnecessary_const,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type,unnecessary_this,prefer_final_fields
 
+import 'dart:async' as $async;
 import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
@@ -21,7 +22,35 @@ class SiteMetadata extends $pb.GeneratedMessage {
   ;
 
   SiteMetadata._() : super();
-  factory SiteMetadata() => create();
+  factory SiteMetadata({
+    $core.String siteTitle,
+    $core.String pageTitle,
+    $core.String kind,
+    $core.String description,
+    $core.String url,
+    $core.String image,
+  }) {
+    final _result = create();
+    if (siteTitle != null) {
+      _result.siteTitle = siteTitle;
+    }
+    if (pageTitle != null) {
+      _result.pageTitle = pageTitle;
+    }
+    if (kind != null) {
+      _result.kind = kind;
+    }
+    if (description != null) {
+      _result.description = description;
+    }
+    if (url != null) {
+      _result.url = url;
+    }
+    if (image != null) {
+      _result.image = image;
+    }
+    return _result;
+  }
   factory SiteMetadata.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory SiteMetadata.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -105,7 +134,15 @@ class FetchLinkMetadataRequest extends $pb.GeneratedMessage {
   ;
 
   FetchLinkMetadataRequest._() : super();
-  factory FetchLinkMetadataRequest() => create();
+  factory FetchLinkMetadataRequest({
+    $core.String url,
+  }) {
+    final _result = create();
+    if (url != null) {
+      _result.url = url;
+    }
+    return _result;
+  }
   factory FetchLinkMetadataRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory FetchLinkMetadataRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -144,7 +181,15 @@ class InstantViewRequest extends $pb.GeneratedMessage {
   ;
 
   InstantViewRequest._() : super();
-  factory InstantViewRequest() => create();
+  factory InstantViewRequest({
+    $core.String url,
+  }) {
+    final _result = create();
+    if (url != null) {
+      _result.url = url;
+    }
+    return _result;
+  }
   factory InstantViewRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory InstantViewRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -185,7 +230,23 @@ class InstantViewResponse extends $pb.GeneratedMessage {
   ;
 
   InstantViewResponse._() : super();
-  factory InstantViewResponse() => create();
+  factory InstantViewResponse({
+    SiteMetadata metadata,
+    $core.String content,
+    $core.bool isValid,
+  }) {
+    final _result = create();
+    if (metadata != null) {
+      _result.metadata = metadata;
+    }
+    if (content != null) {
+      _result.content = content;
+    }
+    if (isValid != null) {
+      _result.isValid = isValid;
+    }
+    return _result;
+  }
   factory InstantViewResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory InstantViewResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -244,7 +305,15 @@ class CanInstantViewResponse extends $pb.GeneratedMessage {
   ;
 
   CanInstantViewResponse._() : super();
-  factory CanInstantViewResponse() => create();
+  factory CanInstantViewResponse({
+    $core.bool canInstantView,
+  }) {
+    final _result = create();
+    if (canInstantView != null) {
+      _result.canInstantView = canInstantView;
+    }
+    return _result;
+  }
   factory CanInstantViewResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory CanInstantViewResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -274,5 +343,23 @@ class CanInstantViewResponse extends $pb.GeneratedMessage {
   $core.bool hasCanInstantView() => $_has(0);
   @$pb.TagNumber(1)
   void clearCanInstantView() => clearField(1);
+}
+
+class MediaProxyServiceApi {
+  $pb.RpcClient _client;
+  MediaProxyServiceApi(this._client);
+
+  $async.Future<SiteMetadata> fetchLinkMetadata($pb.ClientContext ctx, FetchLinkMetadataRequest request) {
+    var emptyResponse = SiteMetadata();
+    return _client.invoke<SiteMetadata>(ctx, 'MediaProxyService', 'FetchLinkMetadata', request, emptyResponse);
+  }
+  $async.Future<InstantViewResponse> instantView($pb.ClientContext ctx, InstantViewRequest request) {
+    var emptyResponse = InstantViewResponse();
+    return _client.invoke<InstantViewResponse>(ctx, 'MediaProxyService', 'InstantView', request, emptyResponse);
+  }
+  $async.Future<CanInstantViewResponse> canInstantView($pb.ClientContext ctx, InstantViewRequest request) {
+    var emptyResponse = CanInstantViewResponse();
+    return _client.invoke<CanInstantViewResponse>(ctx, 'MediaProxyService', 'CanInstantView', request, emptyResponse);
+  }
 }
 

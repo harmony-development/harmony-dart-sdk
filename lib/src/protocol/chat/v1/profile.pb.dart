@@ -2,7 +2,7 @@
 //  Generated code. Do not modify.
 //  source: chat/v1/profile.proto
 //
-// @dart = 2.3
+// @dart = 2.7
 // ignore_for_file: annotate_overrides,camel_case_types,unnecessary_const,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type,unnecessary_this,prefer_final_fields
 
 import 'dart:core' as $core;
@@ -10,7 +10,7 @@ import 'dart:core' as $core;
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../harmonytypes/v1/types.pbenum.dart' as $8;
+import '../../harmonytypes/v1/types.pbenum.dart' as $0;
 
 class GetUserRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'GetUserRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.chat.v1'), createEmptyInstance: create)
@@ -19,7 +19,15 @@ class GetUserRequest extends $pb.GeneratedMessage {
   ;
 
   GetUserRequest._() : super();
-  factory GetUserRequest() => create();
+  factory GetUserRequest({
+    $fixnum.Int64 userId,
+  }) {
+    final _result = create();
+    if (userId != null) {
+      _result.userId = userId;
+    }
+    return _result;
+  }
   factory GetUserRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetUserRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -55,13 +63,33 @@ class GetUserResponse extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'GetUserResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.chat.v1'), createEmptyInstance: create)
     ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'userName')
     ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'userAvatar')
-    ..e<$8.UserStatus>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'userStatus', $pb.PbFieldType.OE, defaultOrMaker: $8.UserStatus.USER_STATUS_ONLINE_UNSPECIFIED, valueOf: $8.UserStatus.valueOf, enumValues: $8.UserStatus.values)
+    ..e<$0.UserStatus>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'userStatus', $pb.PbFieldType.OE, defaultOrMaker: $0.UserStatus.USER_STATUS_ONLINE_UNSPECIFIED, valueOf: $0.UserStatus.valueOf, enumValues: $0.UserStatus.values)
     ..aOB(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'isBot')
     ..hasRequiredFields = false
   ;
 
   GetUserResponse._() : super();
-  factory GetUserResponse() => create();
+  factory GetUserResponse({
+    $core.String userName,
+    $core.String userAvatar,
+    $0.UserStatus userStatus,
+    $core.bool isBot,
+  }) {
+    final _result = create();
+    if (userName != null) {
+      _result.userName = userName;
+    }
+    if (userAvatar != null) {
+      _result.userAvatar = userAvatar;
+    }
+    if (userStatus != null) {
+      _result.userStatus = userStatus;
+    }
+    if (isBot != null) {
+      _result.isBot = isBot;
+    }
+    return _result;
+  }
   factory GetUserResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetUserResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -102,9 +130,9 @@ class GetUserResponse extends $pb.GeneratedMessage {
   void clearUserAvatar() => clearField(2);
 
   @$pb.TagNumber(3)
-  $8.UserStatus get userStatus => $_getN(2);
+  $0.UserStatus get userStatus => $_getN(2);
   @$pb.TagNumber(3)
-  set userStatus($8.UserStatus v) { setField(3, v); }
+  set userStatus($0.UserStatus v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasUserStatus() => $_has(2);
   @$pb.TagNumber(3)
@@ -127,7 +155,15 @@ class GetUserMetadataRequest extends $pb.GeneratedMessage {
   ;
 
   GetUserMetadataRequest._() : super();
-  factory GetUserMetadataRequest() => create();
+  factory GetUserMetadataRequest({
+    $core.String appId,
+  }) {
+    final _result = create();
+    if (appId != null) {
+      _result.appId = appId;
+    }
+    return _result;
+  }
   factory GetUserMetadataRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetUserMetadataRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -166,7 +202,15 @@ class GetUserMetadataResponse extends $pb.GeneratedMessage {
   ;
 
   GetUserMetadataResponse._() : super();
-  factory GetUserMetadataResponse() => create();
+  factory GetUserMetadataResponse({
+    $core.String metadata,
+  }) {
+    final _result = create();
+    if (metadata != null) {
+      _result.metadata = metadata;
+    }
+    return _result;
+  }
   factory GetUserMetadataResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetUserMetadataResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -204,7 +248,7 @@ class ProfileUpdateRequest extends $pb.GeneratedMessage {
     ..aOB(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'updateUsername')
     ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'newAvatar')
     ..aOB(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'updateAvatar')
-    ..e<$8.UserStatus>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'newStatus', $pb.PbFieldType.OE, defaultOrMaker: $8.UserStatus.USER_STATUS_ONLINE_UNSPECIFIED, valueOf: $8.UserStatus.valueOf, enumValues: $8.UserStatus.values)
+    ..e<$0.UserStatus>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'newStatus', $pb.PbFieldType.OE, defaultOrMaker: $0.UserStatus.USER_STATUS_ONLINE_UNSPECIFIED, valueOf: $0.UserStatus.valueOf, enumValues: $0.UserStatus.values)
     ..aOB(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'updateStatus')
     ..aOB(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'isBot')
     ..aOB(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'updateIsBot')
@@ -212,7 +256,43 @@ class ProfileUpdateRequest extends $pb.GeneratedMessage {
   ;
 
   ProfileUpdateRequest._() : super();
-  factory ProfileUpdateRequest() => create();
+  factory ProfileUpdateRequest({
+    $core.String newUsername,
+    $core.bool updateUsername,
+    $core.String newAvatar,
+    $core.bool updateAvatar,
+    $0.UserStatus newStatus,
+    $core.bool updateStatus,
+    $core.bool isBot,
+    $core.bool updateIsBot,
+  }) {
+    final _result = create();
+    if (newUsername != null) {
+      _result.newUsername = newUsername;
+    }
+    if (updateUsername != null) {
+      _result.updateUsername = updateUsername;
+    }
+    if (newAvatar != null) {
+      _result.newAvatar = newAvatar;
+    }
+    if (updateAvatar != null) {
+      _result.updateAvatar = updateAvatar;
+    }
+    if (newStatus != null) {
+      _result.newStatus = newStatus;
+    }
+    if (updateStatus != null) {
+      _result.updateStatus = updateStatus;
+    }
+    if (isBot != null) {
+      _result.isBot = isBot;
+    }
+    if (updateIsBot != null) {
+      _result.updateIsBot = updateIsBot;
+    }
+    return _result;
+  }
   factory ProfileUpdateRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ProfileUpdateRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -271,9 +351,9 @@ class ProfileUpdateRequest extends $pb.GeneratedMessage {
   void clearUpdateAvatar() => clearField(4);
 
   @$pb.TagNumber(5)
-  $8.UserStatus get newStatus => $_getN(4);
+  $0.UserStatus get newStatus => $_getN(4);
   @$pb.TagNumber(5)
-  set newStatus($8.UserStatus v) { setField(5, v); }
+  set newStatus($0.UserStatus v) { setField(5, v); }
   @$pb.TagNumber(5)
   $core.bool hasNewStatus() => $_has(4);
   @$pb.TagNumber(5)

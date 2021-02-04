@@ -2,7 +2,7 @@
 //  Generated code. Do not modify.
 //  source: chat/v1/emotes.proto
 //
-// @dart = 2.3
+// @dart = 2.7
 // ignore_for_file: annotate_overrides,camel_case_types,unnecessary_const,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type,unnecessary_this,prefer_final_fields
 
 import 'dart:core' as $core;
@@ -17,7 +17,15 @@ class CreateEmotePackRequest extends $pb.GeneratedMessage {
   ;
 
   CreateEmotePackRequest._() : super();
-  factory CreateEmotePackRequest() => create();
+  factory CreateEmotePackRequest({
+    $core.String packName,
+  }) {
+    final _result = create();
+    if (packName != null) {
+      _result.packName = packName;
+    }
+    return _result;
+  }
   factory CreateEmotePackRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory CreateEmotePackRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -56,7 +64,15 @@ class CreateEmotePackResponse extends $pb.GeneratedMessage {
   ;
 
   CreateEmotePackResponse._() : super();
-  factory CreateEmotePackResponse() => create();
+  factory CreateEmotePackResponse({
+    $fixnum.Int64 packId,
+  }) {
+    final _result = create();
+    if (packId != null) {
+      _result.packId = packId;
+    }
+    return _result;
+  }
   factory CreateEmotePackResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory CreateEmotePackResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -126,7 +142,23 @@ class GetEmotePacksResponse_EmotePack extends $pb.GeneratedMessage {
   ;
 
   GetEmotePacksResponse_EmotePack._() : super();
-  factory GetEmotePacksResponse_EmotePack() => create();
+  factory GetEmotePacksResponse_EmotePack({
+    $fixnum.Int64 packId,
+    $fixnum.Int64 packOwner,
+    $core.String packName,
+  }) {
+    final _result = create();
+    if (packId != null) {
+      _result.packId = packId;
+    }
+    if (packOwner != null) {
+      _result.packOwner = packOwner;
+    }
+    if (packName != null) {
+      _result.packName = packName;
+    }
+    return _result;
+  }
   factory GetEmotePacksResponse_EmotePack.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetEmotePacksResponse_EmotePack.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -183,7 +215,15 @@ class GetEmotePacksResponse extends $pb.GeneratedMessage {
   ;
 
   GetEmotePacksResponse._() : super();
-  factory GetEmotePacksResponse() => create();
+  factory GetEmotePacksResponse({
+    $core.Iterable<GetEmotePacksResponse_EmotePack> packs,
+  }) {
+    final _result = create();
+    if (packs != null) {
+      _result.packs.addAll(packs);
+    }
+    return _result;
+  }
   factory GetEmotePacksResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetEmotePacksResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -216,7 +256,15 @@ class GetEmotePackEmotesRequest extends $pb.GeneratedMessage {
   ;
 
   GetEmotePackEmotesRequest._() : super();
-  factory GetEmotePackEmotesRequest() => create();
+  factory GetEmotePackEmotesRequest({
+    $fixnum.Int64 packId,
+  }) {
+    final _result = create();
+    if (packId != null) {
+      _result.packId = packId;
+    }
+    return _result;
+  }
   factory GetEmotePackEmotesRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetEmotePackEmotesRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -256,7 +304,19 @@ class GetEmotePackEmotesResponse_Emote extends $pb.GeneratedMessage {
   ;
 
   GetEmotePackEmotesResponse_Emote._() : super();
-  factory GetEmotePackEmotesResponse_Emote() => create();
+  factory GetEmotePackEmotesResponse_Emote({
+    $core.String imageId,
+    $core.String name,
+  }) {
+    final _result = create();
+    if (imageId != null) {
+      _result.imageId = imageId;
+    }
+    if (name != null) {
+      _result.name = name;
+    }
+    return _result;
+  }
   factory GetEmotePackEmotesResponse_Emote.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetEmotePackEmotesResponse_Emote.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -304,7 +364,15 @@ class GetEmotePackEmotesResponse extends $pb.GeneratedMessage {
   ;
 
   GetEmotePackEmotesResponse._() : super();
-  factory GetEmotePackEmotesResponse() => create();
+  factory GetEmotePackEmotesResponse({
+    $core.Iterable<GetEmotePackEmotesResponse_Emote> emotes,
+  }) {
+    final _result = create();
+    if (emotes != null) {
+      _result.emotes.addAll(emotes);
+    }
+    return _result;
+  }
   factory GetEmotePackEmotesResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetEmotePackEmotesResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -339,7 +407,23 @@ class AddEmoteToPackRequest extends $pb.GeneratedMessage {
   ;
 
   AddEmoteToPackRequest._() : super();
-  factory AddEmoteToPackRequest() => create();
+  factory AddEmoteToPackRequest({
+    $fixnum.Int64 packId,
+    $core.String imageId,
+    $core.String name,
+  }) {
+    final _result = create();
+    if (packId != null) {
+      _result.packId = packId;
+    }
+    if (imageId != null) {
+      _result.imageId = imageId;
+    }
+    if (name != null) {
+      _result.name = name;
+    }
+    return _result;
+  }
   factory AddEmoteToPackRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory AddEmoteToPackRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -397,7 +481,19 @@ class DeleteEmoteFromPackRequest extends $pb.GeneratedMessage {
   ;
 
   DeleteEmoteFromPackRequest._() : super();
-  factory DeleteEmoteFromPackRequest() => create();
+  factory DeleteEmoteFromPackRequest({
+    $fixnum.Int64 packId,
+    $core.String imageId,
+  }) {
+    final _result = create();
+    if (packId != null) {
+      _result.packId = packId;
+    }
+    if (imageId != null) {
+      _result.imageId = imageId;
+    }
+    return _result;
+  }
   factory DeleteEmoteFromPackRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory DeleteEmoteFromPackRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -445,7 +541,15 @@ class DeleteEmotePackRequest extends $pb.GeneratedMessage {
   ;
 
   DeleteEmotePackRequest._() : super();
-  factory DeleteEmotePackRequest() => create();
+  factory DeleteEmotePackRequest({
+    $fixnum.Int64 packId,
+  }) {
+    final _result = create();
+    if (packId != null) {
+      _result.packId = packId;
+    }
+    return _result;
+  }
   factory DeleteEmotePackRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory DeleteEmotePackRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -484,7 +588,15 @@ class DequipEmotePackRequest extends $pb.GeneratedMessage {
   ;
 
   DequipEmotePackRequest._() : super();
-  factory DequipEmotePackRequest() => create();
+  factory DequipEmotePackRequest({
+    $fixnum.Int64 packId,
+  }) {
+    final _result = create();
+    if (packId != null) {
+      _result.packId = packId;
+    }
+    return _result;
+  }
   factory DequipEmotePackRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory DequipEmotePackRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(

@@ -2,8 +2,10 @@
 //  Generated code. Do not modify.
 //  source: auth/v1/auth.proto
 //
-// @dart = 2.3
+// @dart = 2.7
 // ignore_for_file: annotate_overrides,camel_case_types,unnecessary_const,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type,unnecessary_this,prefer_final_fields
+
+import '../../google/protobuf/empty.pbjson.dart' as $0;
 
 const BeginAuthResponse$json = const {
   '1': 'BeginAuthResponse',
@@ -157,5 +159,39 @@ const LoginFederatedRequest$json = const {
     const {'1': 'auth_token', '3': 1, '4': 1, '5': 9, '10': 'authToken'},
     const {'1': 'domain', '3': 2, '4': 1, '5': 9, '10': 'domain'},
   ],
+};
+
+const AuthServiceBase$json = const {
+  '1': 'AuthService',
+  '2': const [
+    const {'1': 'Federate', '2': '.protocol.auth.v1.FederateRequest', '3': '.protocol.auth.v1.FederateReply'},
+    const {'1': 'LoginFederated', '2': '.protocol.auth.v1.LoginFederatedRequest', '3': '.protocol.auth.v1.Session'},
+    const {'1': 'Key', '2': '.google.protobuf.Empty', '3': '.protocol.auth.v1.KeyReply'},
+    const {'1': 'BeginAuth', '2': '.google.protobuf.Empty', '3': '.protocol.auth.v1.BeginAuthResponse'},
+    const {'1': 'NextStep', '2': '.protocol.auth.v1.NextStepRequest', '3': '.protocol.auth.v1.AuthStep'},
+    const {'1': 'StepBack', '2': '.protocol.auth.v1.StepBackRequest', '3': '.protocol.auth.v1.AuthStep'},
+    const {'1': 'StreamSteps', '2': '.protocol.auth.v1.StreamStepsRequest', '3': '.protocol.auth.v1.AuthStep', '6': true},
+  ],
+};
+
+const AuthServiceBase$messageJson = const {
+  '.protocol.auth.v1.FederateRequest': FederateRequest$json,
+  '.protocol.auth.v1.FederateReply': FederateReply$json,
+  '.protocol.auth.v1.LoginFederatedRequest': LoginFederatedRequest$json,
+  '.protocol.auth.v1.Session': Session$json,
+  '.google.protobuf.Empty': $0.Empty$json,
+  '.protocol.auth.v1.KeyReply': KeyReply$json,
+  '.protocol.auth.v1.BeginAuthResponse': BeginAuthResponse$json,
+  '.protocol.auth.v1.NextStepRequest': NextStepRequest$json,
+  '.protocol.auth.v1.NextStepRequest.Choice': NextStepRequest_Choice$json,
+  '.protocol.auth.v1.NextStepRequest.Form': NextStepRequest_Form$json,
+  '.protocol.auth.v1.NextStepRequest.FormFields': NextStepRequest_FormFields$json,
+  '.protocol.auth.v1.AuthStep': AuthStep$json,
+  '.protocol.auth.v1.AuthStep.Choice': AuthStep_Choice$json,
+  '.protocol.auth.v1.AuthStep.Form': AuthStep_Form$json,
+  '.protocol.auth.v1.AuthStep.Form.FormField': AuthStep_Form_FormField$json,
+  '.protocol.auth.v1.AuthStep.Waiting': AuthStep_Waiting$json,
+  '.protocol.auth.v1.StepBackRequest': StepBackRequest$json,
+  '.protocol.auth.v1.StreamStepsRequest': StreamStepsRequest$json,
 };
 

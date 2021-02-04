@@ -8,9 +8,7 @@ description: >-
   write clients, bots, and other things speaking it.
 dependencies:
   protobuf: ^1.1.0
-  grpc: ^2.8.0
   fixnum: ^0.10.11
   async: ^2.4.2
   tuple: ^1.0.3
-dev_dependencies:
-  build_runner: ^1.10.11
+  http: ^0.12.2

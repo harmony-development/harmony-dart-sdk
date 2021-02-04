@@ -2,7 +2,7 @@
 //  Generated code. Do not modify.
 //  source: harmonytypes/v1/types.proto
 //
-// @dart = 2.3
+// @dart = 2.7
 // ignore_for_file: annotate_overrides,camel_case_types,unnecessary_const,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type,unnecessary_this,prefer_final_fields
 
 import 'dart:core' as $core;
@@ -49,7 +49,39 @@ class Override extends $pb.GeneratedMessage {
   ;
 
   Override._() : super();
-  factory Override() => create();
+  factory Override({
+    $core.String name,
+    $core.String avatar,
+    $core.String userDefined,
+    $0.Empty webhook,
+    $0.Empty systemPlurality,
+    $0.Empty systemMessage,
+    $0.Empty bridge,
+  }) {
+    final _result = create();
+    if (name != null) {
+      _result.name = name;
+    }
+    if (avatar != null) {
+      _result.avatar = avatar;
+    }
+    if (userDefined != null) {
+      _result.userDefined = userDefined;
+    }
+    if (webhook != null) {
+      _result.webhook = webhook;
+    }
+    if (systemPlurality != null) {
+      _result.systemPlurality = systemPlurality;
+    }
+    if (systemMessage != null) {
+      _result.systemMessage = systemMessage;
+    }
+    if (bridge != null) {
+      _result.bridge = bridge;
+    }
+    return _result;
+  }
   factory Override.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Override.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -158,7 +190,35 @@ class Action extends $pb.GeneratedMessage {
   ;
 
   Action._() : super();
-  factory Action() => create();
+  factory Action({
+    $core.String text,
+    $core.String url,
+    $core.String id,
+    ActionType type,
+    ActionPresentation presentation,
+    $core.Iterable<Action> children,
+  }) {
+    final _result = create();
+    if (text != null) {
+      _result.text = text;
+    }
+    if (url != null) {
+      _result.url = url;
+    }
+    if (id != null) {
+      _result.id = id;
+    }
+    if (type != null) {
+      _result.type = type;
+    }
+    if (presentation != null) {
+      _result.presentation = presentation;
+    }
+    if (children != null) {
+      _result.children.addAll(children);
+    }
+    return _result;
+  }
   factory Action.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Action.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -239,7 +299,27 @@ class EmbedHeading extends $pb.GeneratedMessage {
   ;
 
   EmbedHeading._() : super();
-  factory EmbedHeading() => create();
+  factory EmbedHeading({
+    $core.String text,
+    $core.String subtext,
+    $core.String url,
+    $core.String icon,
+  }) {
+    final _result = create();
+    if (text != null) {
+      _result.text = text;
+    }
+    if (subtext != null) {
+      _result.subtext = subtext;
+    }
+    if (url != null) {
+      _result.url = url;
+    }
+    if (icon != null) {
+      _result.icon = icon;
+    }
+    return _result;
+  }
   factory EmbedHeading.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory EmbedHeading.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -310,7 +390,35 @@ class EmbedField extends $pb.GeneratedMessage {
   ;
 
   EmbedField._() : super();
-  factory EmbedField() => create();
+  factory EmbedField({
+    $core.String title,
+    $core.String subtitle,
+    $core.String body,
+    $core.String imageUrl,
+    FieldPresentation presentation,
+    $core.Iterable<Action> actions,
+  }) {
+    final _result = create();
+    if (title != null) {
+      _result.title = title;
+    }
+    if (subtitle != null) {
+      _result.subtitle = subtitle;
+    }
+    if (body != null) {
+      _result.body = body;
+    }
+    if (imageUrl != null) {
+      _result.imageUrl = imageUrl;
+    }
+    if (presentation != null) {
+      _result.presentation = presentation;
+    }
+    if (actions != null) {
+      _result.actions.addAll(actions);
+    }
+    return _result;
+  }
   factory EmbedField.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory EmbedField.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -394,7 +502,39 @@ class Embed extends $pb.GeneratedMessage {
   ;
 
   Embed._() : super();
-  factory Embed() => create();
+  factory Embed({
+    $core.String title,
+    $core.String body,
+    $fixnum.Int64 color,
+    EmbedHeading header,
+    EmbedHeading footer,
+    $core.Iterable<EmbedField> fields,
+    $core.Iterable<Action> actions,
+  }) {
+    final _result = create();
+    if (title != null) {
+      _result.title = title;
+    }
+    if (body != null) {
+      _result.body = body;
+    }
+    if (color != null) {
+      _result.color = color;
+    }
+    if (header != null) {
+      _result.header = header;
+    }
+    if (footer != null) {
+      _result.footer = footer;
+    }
+    if (fields != null) {
+      _result.fields.addAll(fields);
+    }
+    if (actions != null) {
+      _result.actions.addAll(actions);
+    }
+    return _result;
+  }
   factory Embed.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Embed.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -482,7 +622,27 @@ class Attachment extends $pb.GeneratedMessage {
   ;
 
   Attachment._() : super();
-  factory Attachment() => create();
+  factory Attachment({
+    $core.String id,
+    $core.String name,
+    $core.String type,
+    $core.int size,
+  }) {
+    final _result = create();
+    if (id != null) {
+      _result.id = id;
+    }
+    if (name != null) {
+      _result.name = name;
+    }
+    if (type != null) {
+      _result.type = type;
+    }
+    if (size != null) {
+      _result.size = size;
+    }
+    return _result;
+  }
   factory Attachment.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Attachment.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -549,7 +709,19 @@ class Metadata extends $pb.GeneratedMessage {
   ;
 
   Metadata._() : super();
-  factory Metadata() => create();
+  factory Metadata({
+    $core.String kind,
+    $core.Map<$core.String, $1.Any> extension,
+  }) {
+    final _result = create();
+    if (kind != null) {
+      _result.kind = kind;
+    }
+    if (extension != null) {
+      _result.extension.addAll(extension);
+    }
+    return _result;
+  }
   factory Metadata.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Metadata.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -603,7 +775,63 @@ class Message extends $pb.GeneratedMessage {
   ;
 
   Message._() : super();
-  factory Message() => create();
+  factory Message({
+    $fixnum.Int64 guildId,
+    $fixnum.Int64 channelId,
+    $fixnum.Int64 messageId,
+    $fixnum.Int64 authorId,
+    $2.Timestamp createdAt,
+    $2.Timestamp editedAt,
+    $core.String content,
+    $core.Iterable<Embed> embeds,
+    $core.Iterable<Action> actions,
+    $core.Iterable<Attachment> attachments,
+    $fixnum.Int64 inReplyTo,
+    Override overrides,
+    Metadata metadata,
+  }) {
+    final _result = create();
+    if (guildId != null) {
+      _result.guildId = guildId;
+    }
+    if (channelId != null) {
+      _result.channelId = channelId;
+    }
+    if (messageId != null) {
+      _result.messageId = messageId;
+    }
+    if (authorId != null) {
+      _result.authorId = authorId;
+    }
+    if (createdAt != null) {
+      _result.createdAt = createdAt;
+    }
+    if (editedAt != null) {
+      _result.editedAt = editedAt;
+    }
+    if (content != null) {
+      _result.content = content;
+    }
+    if (embeds != null) {
+      _result.embeds.addAll(embeds);
+    }
+    if (actions != null) {
+      _result.actions.addAll(actions);
+    }
+    if (attachments != null) {
+      _result.attachments.addAll(attachments);
+    }
+    if (inReplyTo != null) {
+      _result.inReplyTo = inReplyTo;
+    }
+    if (overrides != null) {
+      _result.overrides = overrides;
+    }
+    if (metadata != null) {
+      _result.metadata = metadata;
+    }
+    return _result;
+  }
   factory Message.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Message.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(

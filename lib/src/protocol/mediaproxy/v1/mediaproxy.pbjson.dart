@@ -2,7 +2,7 @@
 //  Generated code. Do not modify.
 //  source: mediaproxy/v1/mediaproxy.proto
 //
-// @dart = 2.3
+// @dart = 2.7
 // ignore_for_file: annotate_overrides,camel_case_types,unnecessary_const,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type,unnecessary_this,prefer_final_fields
 
 const SiteMetadata$json = const {
@@ -45,5 +45,22 @@ const CanInstantViewResponse$json = const {
   '2': const [
     const {'1': 'can_instant_view', '3': 1, '4': 1, '5': 8, '10': 'canInstantView'},
   ],
+};
+
+const MediaProxyServiceBase$json = const {
+  '1': 'MediaProxyService',
+  '2': const [
+    const {'1': 'FetchLinkMetadata', '2': '.protocol.mediaproxy.v1.FetchLinkMetadataRequest', '3': '.protocol.mediaproxy.v1.SiteMetadata'},
+    const {'1': 'InstantView', '2': '.protocol.mediaproxy.v1.InstantViewRequest', '3': '.protocol.mediaproxy.v1.InstantViewResponse'},
+    const {'1': 'CanInstantView', '2': '.protocol.mediaproxy.v1.InstantViewRequest', '3': '.protocol.mediaproxy.v1.CanInstantViewResponse'},
+  ],
+};
+
+const MediaProxyServiceBase$messageJson = const {
+  '.protocol.mediaproxy.v1.FetchLinkMetadataRequest': FetchLinkMetadataRequest$json,
+  '.protocol.mediaproxy.v1.SiteMetadata': SiteMetadata$json,
+  '.protocol.mediaproxy.v1.InstantViewRequest': InstantViewRequest$json,
+  '.protocol.mediaproxy.v1.InstantViewResponse': InstantViewResponse$json,
+  '.protocol.mediaproxy.v1.CanInstantViewResponse': CanInstantViewResponse$json,
 };
 

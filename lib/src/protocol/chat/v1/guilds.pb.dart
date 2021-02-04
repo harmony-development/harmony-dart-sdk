@@ -2,7 +2,7 @@
 //  Generated code. Do not modify.
 //  source: chat/v1/guilds.proto
 //
-// @dart = 2.3
+// @dart = 2.7
 // ignore_for_file: annotate_overrides,camel_case_types,unnecessary_const,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type,unnecessary_this,prefer_final_fields
 
 import 'dart:core' as $core;
@@ -10,18 +10,34 @@ import 'dart:core' as $core;
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../harmonytypes/v1/types.pb.dart' as $8;
+import '../../harmonytypes/v1/types.pb.dart' as $0;
 
 class CreateGuildRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'CreateGuildRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.chat.v1'), createEmptyInstance: create)
     ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'guildName')
     ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'pictureUrl')
-    ..aOM<$8.Metadata>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'metadata', subBuilder: $8.Metadata.create)
+    ..aOM<$0.Metadata>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'metadata', subBuilder: $0.Metadata.create)
     ..hasRequiredFields = false
   ;
 
   CreateGuildRequest._() : super();
-  factory CreateGuildRequest() => create();
+  factory CreateGuildRequest({
+    $core.String guildName,
+    $core.String pictureUrl,
+    $0.Metadata metadata,
+  }) {
+    final _result = create();
+    if (guildName != null) {
+      _result.guildName = guildName;
+    }
+    if (pictureUrl != null) {
+      _result.pictureUrl = pictureUrl;
+    }
+    if (metadata != null) {
+      _result.metadata = metadata;
+    }
+    return _result;
+  }
   factory CreateGuildRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory CreateGuildRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -62,15 +78,15 @@ class CreateGuildRequest extends $pb.GeneratedMessage {
   void clearPictureUrl() => clearField(2);
 
   @$pb.TagNumber(3)
-  $8.Metadata get metadata => $_getN(2);
+  $0.Metadata get metadata => $_getN(2);
   @$pb.TagNumber(3)
-  set metadata($8.Metadata v) { setField(3, v); }
+  set metadata($0.Metadata v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasMetadata() => $_has(2);
   @$pb.TagNumber(3)
   void clearMetadata() => clearField(3);
   @$pb.TagNumber(3)
-  $8.Metadata ensureMetadata() => $_ensure(2);
+  $0.Metadata ensureMetadata() => $_ensure(2);
 }
 
 class CreateGuildResponse extends $pb.GeneratedMessage {
@@ -80,7 +96,15 @@ class CreateGuildResponse extends $pb.GeneratedMessage {
   ;
 
   CreateGuildResponse._() : super();
-  factory CreateGuildResponse() => create();
+  factory CreateGuildResponse({
+    $fixnum.Int64 guildId,
+  }) {
+    final _result = create();
+    if (guildId != null) {
+      _result.guildId = guildId;
+    }
+    return _result;
+  }
   factory CreateGuildResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory CreateGuildResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -121,7 +145,23 @@ class CreateInviteRequest extends $pb.GeneratedMessage {
   ;
 
   CreateInviteRequest._() : super();
-  factory CreateInviteRequest() => create();
+  factory CreateInviteRequest({
+    $fixnum.Int64 guildId,
+    $core.String name,
+    $core.int possibleUses,
+  }) {
+    final _result = create();
+    if (guildId != null) {
+      _result.guildId = guildId;
+    }
+    if (name != null) {
+      _result.name = name;
+    }
+    if (possibleUses != null) {
+      _result.possibleUses = possibleUses;
+    }
+    return _result;
+  }
   factory CreateInviteRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory CreateInviteRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -178,7 +218,15 @@ class CreateInviteResponse extends $pb.GeneratedMessage {
   ;
 
   CreateInviteResponse._() : super();
-  factory CreateInviteResponse() => create();
+  factory CreateInviteResponse({
+    $core.String name,
+  }) {
+    final _result = create();
+    if (name != null) {
+      _result.name = name;
+    }
+    return _result;
+  }
   factory CreateInviteResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory CreateInviteResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -247,7 +295,19 @@ class GetGuildListResponse_GuildListEntry extends $pb.GeneratedMessage {
   ;
 
   GetGuildListResponse_GuildListEntry._() : super();
-  factory GetGuildListResponse_GuildListEntry() => create();
+  factory GetGuildListResponse_GuildListEntry({
+    $fixnum.Int64 guildId,
+    $core.String host,
+  }) {
+    final _result = create();
+    if (guildId != null) {
+      _result.guildId = guildId;
+    }
+    if (host != null) {
+      _result.host = host;
+    }
+    return _result;
+  }
   factory GetGuildListResponse_GuildListEntry.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetGuildListResponse_GuildListEntry.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -295,7 +355,15 @@ class GetGuildListResponse extends $pb.GeneratedMessage {
   ;
 
   GetGuildListResponse._() : super();
-  factory GetGuildListResponse() => create();
+  factory GetGuildListResponse({
+    $core.Iterable<GetGuildListResponse_GuildListEntry> guilds,
+  }) {
+    final _result = create();
+    if (guilds != null) {
+      _result.guilds.addAll(guilds);
+    }
+    return _result;
+  }
   factory GetGuildListResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetGuildListResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -328,7 +396,15 @@ class GetGuildRequest extends $pb.GeneratedMessage {
   ;
 
   GetGuildRequest._() : super();
-  factory GetGuildRequest() => create();
+  factory GetGuildRequest({
+    $fixnum.Int64 guildId,
+  }) {
+    final _result = create();
+    if (guildId != null) {
+      _result.guildId = guildId;
+    }
+    return _result;
+  }
   factory GetGuildRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetGuildRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -365,12 +441,32 @@ class GetGuildResponse extends $pb.GeneratedMessage {
     ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'guildName')
     ..a<$fixnum.Int64>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'guildOwner', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
     ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'guildPicture')
-    ..aOM<$8.Metadata>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'metadata', subBuilder: $8.Metadata.create)
+    ..aOM<$0.Metadata>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'metadata', subBuilder: $0.Metadata.create)
     ..hasRequiredFields = false
   ;
 
   GetGuildResponse._() : super();
-  factory GetGuildResponse() => create();
+  factory GetGuildResponse({
+    $core.String guildName,
+    $fixnum.Int64 guildOwner,
+    $core.String guildPicture,
+    $0.Metadata metadata,
+  }) {
+    final _result = create();
+    if (guildName != null) {
+      _result.guildName = guildName;
+    }
+    if (guildOwner != null) {
+      _result.guildOwner = guildOwner;
+    }
+    if (guildPicture != null) {
+      _result.guildPicture = guildPicture;
+    }
+    if (metadata != null) {
+      _result.metadata = metadata;
+    }
+    return _result;
+  }
   factory GetGuildResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetGuildResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -420,15 +516,15 @@ class GetGuildResponse extends $pb.GeneratedMessage {
   void clearGuildPicture() => clearField(3);
 
   @$pb.TagNumber(4)
-  $8.Metadata get metadata => $_getN(3);
+  $0.Metadata get metadata => $_getN(3);
   @$pb.TagNumber(4)
-  set metadata($8.Metadata v) { setField(4, v); }
+  set metadata($0.Metadata v) { setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasMetadata() => $_has(3);
   @$pb.TagNumber(4)
   void clearMetadata() => clearField(4);
   @$pb.TagNumber(4)
-  $8.Metadata ensureMetadata() => $_ensure(3);
+  $0.Metadata ensureMetadata() => $_ensure(3);
 }
 
 class GetGuildInvitesRequest extends $pb.GeneratedMessage {
@@ -438,7 +534,15 @@ class GetGuildInvitesRequest extends $pb.GeneratedMessage {
   ;
 
   GetGuildInvitesRequest._() : super();
-  factory GetGuildInvitesRequest() => create();
+  factory GetGuildInvitesRequest({
+    $fixnum.Int64 guildId,
+  }) {
+    final _result = create();
+    if (guildId != null) {
+      _result.guildId = guildId;
+    }
+    return _result;
+  }
   factory GetGuildInvitesRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetGuildInvitesRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -479,7 +583,23 @@ class GetGuildInvitesResponse_Invite extends $pb.GeneratedMessage {
   ;
 
   GetGuildInvitesResponse_Invite._() : super();
-  factory GetGuildInvitesResponse_Invite() => create();
+  factory GetGuildInvitesResponse_Invite({
+    $core.String inviteId,
+    $core.int possibleUses,
+    $core.int useCount,
+  }) {
+    final _result = create();
+    if (inviteId != null) {
+      _result.inviteId = inviteId;
+    }
+    if (possibleUses != null) {
+      _result.possibleUses = possibleUses;
+    }
+    if (useCount != null) {
+      _result.useCount = useCount;
+    }
+    return _result;
+  }
   factory GetGuildInvitesResponse_Invite.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetGuildInvitesResponse_Invite.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -536,7 +656,15 @@ class GetGuildInvitesResponse extends $pb.GeneratedMessage {
   ;
 
   GetGuildInvitesResponse._() : super();
-  factory GetGuildInvitesResponse() => create();
+  factory GetGuildInvitesResponse({
+    $core.Iterable<GetGuildInvitesResponse_Invite> invites,
+  }) {
+    final _result = create();
+    if (invites != null) {
+      _result.invites.addAll(invites);
+    }
+    return _result;
+  }
   factory GetGuildInvitesResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetGuildInvitesResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -569,7 +697,15 @@ class GetGuildMembersRequest extends $pb.GeneratedMessage {
   ;
 
   GetGuildMembersRequest._() : super();
-  factory GetGuildMembersRequest() => create();
+  factory GetGuildMembersRequest({
+    $fixnum.Int64 guildId,
+  }) {
+    final _result = create();
+    if (guildId != null) {
+      _result.guildId = guildId;
+    }
+    return _result;
+  }
   factory GetGuildMembersRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetGuildMembersRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -608,7 +744,15 @@ class GetGuildMembersResponse extends $pb.GeneratedMessage {
   ;
 
   GetGuildMembersResponse._() : super();
-  factory GetGuildMembersResponse() => create();
+  factory GetGuildMembersResponse({
+    $core.Iterable<$fixnum.Int64> members,
+  }) {
+    final _result = create();
+    if (members != null) {
+      _result.members.addAll(members);
+    }
+    return _result;
+  }
   factory GetGuildMembersResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetGuildMembersResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -641,13 +785,45 @@ class UpdateGuildInformationRequest extends $pb.GeneratedMessage {
     ..aOB(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'updateGuildName')
     ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'newGuildPicture')
     ..aOB(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'updateGuildPicture')
-    ..aOM<$8.Metadata>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'metadata', subBuilder: $8.Metadata.create)
+    ..aOM<$0.Metadata>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'metadata', subBuilder: $0.Metadata.create)
     ..aOB(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'updateMetadata')
     ..hasRequiredFields = false
   ;
 
   UpdateGuildInformationRequest._() : super();
-  factory UpdateGuildInformationRequest() => create();
+  factory UpdateGuildInformationRequest({
+    $fixnum.Int64 guildId,
+    $core.String newGuildName,
+    $core.bool updateGuildName,
+    $core.String newGuildPicture,
+    $core.bool updateGuildPicture,
+    $0.Metadata metadata,
+    $core.bool updateMetadata,
+  }) {
+    final _result = create();
+    if (guildId != null) {
+      _result.guildId = guildId;
+    }
+    if (newGuildName != null) {
+      _result.newGuildName = newGuildName;
+    }
+    if (updateGuildName != null) {
+      _result.updateGuildName = updateGuildName;
+    }
+    if (newGuildPicture != null) {
+      _result.newGuildPicture = newGuildPicture;
+    }
+    if (updateGuildPicture != null) {
+      _result.updateGuildPicture = updateGuildPicture;
+    }
+    if (metadata != null) {
+      _result.metadata = metadata;
+    }
+    if (updateMetadata != null) {
+      _result.updateMetadata = updateMetadata;
+    }
+    return _result;
+  }
   factory UpdateGuildInformationRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory UpdateGuildInformationRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -715,15 +891,15 @@ class UpdateGuildInformationRequest extends $pb.GeneratedMessage {
   void clearUpdateGuildPicture() => clearField(5);
 
   @$pb.TagNumber(6)
-  $8.Metadata get metadata => $_getN(5);
+  $0.Metadata get metadata => $_getN(5);
   @$pb.TagNumber(6)
-  set metadata($8.Metadata v) { setField(6, v); }
+  set metadata($0.Metadata v) { setField(6, v); }
   @$pb.TagNumber(6)
   $core.bool hasMetadata() => $_has(5);
   @$pb.TagNumber(6)
   void clearMetadata() => clearField(6);
   @$pb.TagNumber(6)
-  $8.Metadata ensureMetadata() => $_ensure(5);
+  $0.Metadata ensureMetadata() => $_ensure(5);
 
   @$pb.TagNumber(7)
   $core.bool get updateMetadata => $_getBF(6);
@@ -742,7 +918,15 @@ class DeleteGuildRequest extends $pb.GeneratedMessage {
   ;
 
   DeleteGuildRequest._() : super();
-  factory DeleteGuildRequest() => create();
+  factory DeleteGuildRequest({
+    $fixnum.Int64 guildId,
+  }) {
+    final _result = create();
+    if (guildId != null) {
+      _result.guildId = guildId;
+    }
+    return _result;
+  }
   factory DeleteGuildRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory DeleteGuildRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -782,7 +966,19 @@ class DeleteInviteRequest extends $pb.GeneratedMessage {
   ;
 
   DeleteInviteRequest._() : super();
-  factory DeleteInviteRequest() => create();
+  factory DeleteInviteRequest({
+    $fixnum.Int64 guildId,
+    $core.String inviteId,
+  }) {
+    final _result = create();
+    if (guildId != null) {
+      _result.guildId = guildId;
+    }
+    if (inviteId != null) {
+      _result.inviteId = inviteId;
+    }
+    return _result;
+  }
   factory DeleteInviteRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory DeleteInviteRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -830,7 +1026,15 @@ class JoinGuildRequest extends $pb.GeneratedMessage {
   ;
 
   JoinGuildRequest._() : super();
-  factory JoinGuildRequest() => create();
+  factory JoinGuildRequest({
+    $core.String inviteId,
+  }) {
+    final _result = create();
+    if (inviteId != null) {
+      _result.inviteId = inviteId;
+    }
+    return _result;
+  }
   factory JoinGuildRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory JoinGuildRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -869,7 +1073,15 @@ class JoinGuildResponse extends $pb.GeneratedMessage {
   ;
 
   JoinGuildResponse._() : super();
-  factory JoinGuildResponse() => create();
+  factory JoinGuildResponse({
+    $fixnum.Int64 guildId,
+  }) {
+    final _result = create();
+    if (guildId != null) {
+      _result.guildId = guildId;
+    }
+    return _result;
+  }
   factory JoinGuildResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory JoinGuildResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -908,7 +1120,15 @@ class PreviewGuildRequest extends $pb.GeneratedMessage {
   ;
 
   PreviewGuildRequest._() : super();
-  factory PreviewGuildRequest() => create();
+  factory PreviewGuildRequest({
+    $core.String inviteId,
+  }) {
+    final _result = create();
+    if (inviteId != null) {
+      _result.inviteId = inviteId;
+    }
+    return _result;
+  }
   factory PreviewGuildRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory PreviewGuildRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -949,7 +1169,23 @@ class PreviewGuildResponse extends $pb.GeneratedMessage {
   ;
 
   PreviewGuildResponse._() : super();
-  factory PreviewGuildResponse() => create();
+  factory PreviewGuildResponse({
+    $core.String name,
+    $core.String avatar,
+    $fixnum.Int64 memeberCount,
+  }) {
+    final _result = create();
+    if (name != null) {
+      _result.name = name;
+    }
+    if (avatar != null) {
+      _result.avatar = avatar;
+    }
+    if (memeberCount != null) {
+      _result.memeberCount = memeberCount;
+    }
+    return _result;
+  }
   factory PreviewGuildResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory PreviewGuildResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -1006,7 +1242,15 @@ class LeaveGuildRequest extends $pb.GeneratedMessage {
   ;
 
   LeaveGuildRequest._() : super();
-  factory LeaveGuildRequest() => create();
+  factory LeaveGuildRequest({
+    $fixnum.Int64 guildId,
+  }) {
+    final _result = create();
+    if (guildId != null) {
+      _result.guildId = guildId;
+    }
+    return _result;
+  }
   factory LeaveGuildRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory LeaveGuildRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -1046,7 +1290,19 @@ class AddGuildToGuildListRequest extends $pb.GeneratedMessage {
   ;
 
   AddGuildToGuildListRequest._() : super();
-  factory AddGuildToGuildListRequest() => create();
+  factory AddGuildToGuildListRequest({
+    $fixnum.Int64 guildId,
+    $core.String homeserver,
+  }) {
+    final _result = create();
+    if (guildId != null) {
+      _result.guildId = guildId;
+    }
+    if (homeserver != null) {
+      _result.homeserver = homeserver;
+    }
+    return _result;
+  }
   factory AddGuildToGuildListRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory AddGuildToGuildListRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -1124,7 +1380,19 @@ class RemoveGuildFromGuildListRequest extends $pb.GeneratedMessage {
   ;
 
   RemoveGuildFromGuildListRequest._() : super();
-  factory RemoveGuildFromGuildListRequest() => create();
+  factory RemoveGuildFromGuildListRequest({
+    $fixnum.Int64 guildId,
+    $core.String homeserver,
+  }) {
+    final _result = create();
+    if (guildId != null) {
+      _result.guildId = guildId;
+    }
+    if (homeserver != null) {
+      _result.homeserver = homeserver;
+    }
+    return _result;
+  }
   factory RemoveGuildFromGuildListRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory RemoveGuildFromGuildListRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
