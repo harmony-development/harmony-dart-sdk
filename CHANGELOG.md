@@ -1,3 +1,7 @@
+# Harmony SDK 0.0.7
+
+This ports the SDK to hRPC.
+
 # Harmony SDK 0.0.5
 
 This release is full grpc rewrite of SDK

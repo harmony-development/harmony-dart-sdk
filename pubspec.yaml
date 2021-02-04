@@ -1,8 +1,8 @@
 name: harmony_sdk
-version: 0.0.6
+version: 0.0.7
 homepage: https://github.com/harmony-development/harmony-dart-sdk
 environment:
-  sdk: '>=2.3.0 <3.0.0'
+  sdk: '>=2.7.0 <3.0.0'
 description: >-
   An idiomatic dart SDK for the Harmony chat protocol, allowing one to
   write clients, bots, and other things speaking it.
