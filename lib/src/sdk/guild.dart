@@ -1,10 +1,10 @@
 part of 'sdk.dart';
 
 class GuildData {
-  final int id;
+  final Int64 id;
   final String host;
   final String name;
-  final int owner;
+  final Int64 owner;
   final String avatar;
 
   GuildData(this.id, this.host, this.name, this.owner, this.avatar);
@@ -12,9 +12,11 @@ class GuildData {
 
 class Guild {
   final Server server;
-  final int id;
+  final Int64 id;
 
   Guild(this.server, this.id);
+  Guild.fromSnapshot(this.server, this.id, this._name, this._owner, this._avatar,
+      [this._channels, this._members, this._invites]);
 
   static Future<Guild> create(Server server, String name) async {
     var guild = await chat_kit.createGuild(server, name);
@@ -51,6 +53,7 @@ class Guild {
     _avatar = data.avatar;
     _owner = User(server, data.owner);
     _members = await chat_kit.guildMemberList(server, id);
+    print('Guild id');
     _channels = await chat_kit.channelList(server, id);
     ;
     _invites = await chat_kit.listInvites(server, id);

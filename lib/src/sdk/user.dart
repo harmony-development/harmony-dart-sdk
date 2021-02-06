@@ -1,7 +1,7 @@
 part of 'sdk.dart';
 
 class UserData {
-  int id;
+  Int64 id;
   String name;
   String picture;
   UserStatus status;
@@ -11,8 +11,8 @@ class UserData {
 }
 
 class User {
-  final int id;
-  final Homeserver _home;
+  final Int64 id;
+  final Server _home;
 
   Server get home => _home;
 

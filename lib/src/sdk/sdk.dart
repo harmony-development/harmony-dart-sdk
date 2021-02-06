@@ -1,5 +1,7 @@
 import 'dart:async';
 
+import 'package:fixnum/fixnum.dart';
+
 import 'package:harmony_sdk/src/protocol/auth/v1/auth.client.hrpc.dart';
 import 'package:harmony_sdk/src/protocol/chat/v1/chat.client.hrpc.dart';
 import 'package:tuple/tuple.dart';

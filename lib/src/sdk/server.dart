@@ -28,12 +28,12 @@ class Server {
   }
 
   Future<Guild> createGuild(String guildName) => Guild.create(this, guildName);
-  Future<List<Channel>> listChannels(int guildId) => chat_kit.channelList(this, guildId);
-  Future<List<Message>> listMessages(int guildId, int channelId) =>
-      chat_kit.messageList(this, guildId, channelId, 0);
-  Future<void> sendMessage(int guildId, int channelId, String content) =>
+  Future<List<Channel>> listChannels(Int64 guildId) => chat_kit.channelList(this, guildId);
+  Future<List<Message>> listMessages(Int64 guildId, Int64 channelId) =>
+      chat_kit.messageList(this, guildId, channelId, Int64(0));
+  Future<void> sendMessage(Int64 guildId, Int64 channelId, String content) =>
       chat_kit.sendMessage(this, guildId, channelId, content);
-  Tuple2<Stream<GuildEvent>, StreamController> streamEvents(int guildId) =>
+  Tuple2<Stream<GuildEvent>, StreamController> streamEvents(Int64 guildId) =>
       chat_kit.streamEvents(this, guildId);
   Future<Guild> joinGuild(String inviteId) => chat_kit.joinGuild(this, inviteId);
 }

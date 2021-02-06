@@ -2,9 +2,9 @@ part of 'sdk.dart';
 
 class Message {
   final Server server;
-  final int id;
-  final int guild;
-  final int channel;
+  final Int64 id;
+  final Int64 guild;
+  final Int64 channel;
   final User author;
   final DateTime createdAt;
   final DateTime editedAt;

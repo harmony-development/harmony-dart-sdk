@@ -3,14 +3,14 @@ part of 'sdk.dart';
 class GuildEvent {}
 
 class MessageSent extends GuildEvent {
-  int echoId;
+  Int64 echoId;
   Message message;
 }
 
 class MessageUpdated extends GuildEvent {
-  int id;
-  int guild;
-  int channel;
+  Int64 id;
+  Int64 guild;
+  Int64 channel;
   DateTime editedAt;
   String content;
   bool updateContent;
@@ -27,27 +27,27 @@ class MessageUpdated extends GuildEvent {
 }
 
 class MessageDeleted extends GuildEvent {
-  int id;
-  int guild;
-  int channel;
+  Int64 id;
+  Int64 guild;
+  Int64 channel;
 }
 
 class ChannelCreated extends GuildEvent {
-  int id;
-  int guild;
+  Int64 id;
+  Int64 guild;
   String name;
-  int prevId;
-  int nextId;
+  Int64 prevId;
+  Int64 nextId;
   bool isCategory;
   Metadata metadata;
 }
 
 class ChannelUpdated extends GuildEvent {
-  int id;
-  int guild;
+  Int64 id;
+  Int64 guild;
   String name;
-  int prevId;
-  int nextId;
+  Int64 prevId;
+  Int64 nextId;
   Metadata metadata;
   bool updateName;
   bool updateOrder;
@@ -55,12 +55,12 @@ class ChannelUpdated extends GuildEvent {
 }
 
 class ChannelDeleted extends GuildEvent {
-  int id;
-  int guild;
+  Int64 id;
+  Int64 guild;
 }
 
 class GuildUpdated extends GuildEvent {
-  int id;
+  Int64 id;
   String name;
   bool updateName;
   String picture;
@@ -70,44 +70,44 @@ class GuildUpdated extends GuildEvent {
 }
 
 class GuildDeleted extends GuildEvent {
-  int id;
+  Int64 id;
 }
 
 class MemberJoined extends GuildEvent {
-  int id;
-  int guild;
+  Int64 id;
+  Int64 guild;
 }
 
 class MemberLeft extends GuildEvent {
-  int id;
-  int guild;
+  Int64 id;
+  Int64 guild;
 }
 
 class GuildAddedToList {
-  int id;
+  Int64 id;
   String host;
 }
 
 class GuildRemovedFromList {
-  int id;
+  Int64 id;
   String host;
 }
 
 class ActionPerformed {
-  int guild;
-  int channel;
-  int message;
+  Int64 guild;
+  Int64 channel;
+  Int64 message;
   String id;
   String data;
 }
 
 class RoleMoved {
-  int id;
-  int guild;
+  Int64 id;
+  Int64 guild;
 }
 
 class ProfileUpdated {
-  int id;
+  Int64 id;
   String name;
   bool updateName;
   String picture;
@@ -119,7 +119,7 @@ class ProfileUpdated {
 }
 
 class Typing {
-  int user;
-  int guild;
-  int channel;
+  Int64 user;
+  Int64 guild;
+  Int64 channel;
 }

@@ -2,8 +2,8 @@ part of 'sdk.dart';
 
 class Channel {
   final Server server;
-  final int id;
-  final int guild;
+  final Int64 id;
+  final Int64 guild;
   final String name;
   final bool isCategory;
 
