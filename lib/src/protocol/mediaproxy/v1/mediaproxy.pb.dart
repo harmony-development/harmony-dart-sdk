@@ -2,7 +2,7 @@
 //  Generated code. Do not modify.
 //  source: mediaproxy/v1/mediaproxy.proto
 //
-// @dart = 2.7
+// @dart = 2.12
 // ignore_for_file: annotate_overrides,camel_case_types,unnecessary_const,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type,unnecessary_this,prefer_final_fields
 
 import 'dart:async' as $async;
@@ -23,12 +23,12 @@ class SiteMetadata extends $pb.GeneratedMessage {
 
   SiteMetadata._() : super();
   factory SiteMetadata({
-    $core.String siteTitle,
-    $core.String pageTitle,
-    $core.String kind,
-    $core.String description,
-    $core.String url,
-    $core.String image,
+    $core.String? siteTitle,
+    $core.String? pageTitle,
+    $core.String? kind,
+    $core.String? description,
+    $core.String? url,
+    $core.String? image,
   }) {
     final _result = create();
     if (siteTitle != null) {
@@ -62,7 +62,7 @@ class SiteMetadata extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  SiteMetadata copyWith(void Function(SiteMetadata) updates) => super.copyWith((message) => updates(message as SiteMetadata)); // ignore: deprecated_member_use
+  SiteMetadata copyWith(void Function(SiteMetadata) updates) => super.copyWith((message) => updates(message as SiteMetadata)) as SiteMetadata; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static SiteMetadata create() => SiteMetadata._();
@@ -70,7 +70,7 @@ class SiteMetadata extends $pb.GeneratedMessage {
   static $pb.PbList<SiteMetadata> createRepeated() => $pb.PbList<SiteMetadata>();
   @$core.pragma('dart2js:noInline')
   static SiteMetadata getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SiteMetadata>(create);
-  static SiteMetadata _defaultInstance;
+  static SiteMetadata? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.String get siteTitle => $_getSZ(0);
@@ -127,6 +127,67 @@ class SiteMetadata extends $pb.GeneratedMessage {
   void clearImage() => clearField(6);
 }
 
+class MediaMetadata extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'MediaMetadata', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.mediaproxy.v1'), createEmptyInstance: create)
+    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'mimetype')
+    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'filename')
+    ..hasRequiredFields = false
+  ;
+
+  MediaMetadata._() : super();
+  factory MediaMetadata({
+    $core.String? mimetype,
+    $core.String? filename,
+  }) {
+    final _result = create();
+    if (mimetype != null) {
+      _result.mimetype = mimetype;
+    }
+    if (filename != null) {
+      _result.filename = filename;
+    }
+    return _result;
+  }
+  factory MediaMetadata.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory MediaMetadata.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  MediaMetadata clone() => MediaMetadata()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  MediaMetadata copyWith(void Function(MediaMetadata) updates) => super.copyWith((message) => updates(message as MediaMetadata)) as MediaMetadata; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static MediaMetadata create() => MediaMetadata._();
+  MediaMetadata createEmptyInstance() => create();
+  static $pb.PbList<MediaMetadata> createRepeated() => $pb.PbList<MediaMetadata>();
+  @$core.pragma('dart2js:noInline')
+  static MediaMetadata getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<MediaMetadata>(create);
+  static MediaMetadata? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get mimetype => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set mimetype($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasMimetype() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearMimetype() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get filename => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set filename($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasFilename() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearFilename() => clearField(2);
+}
+
 class FetchLinkMetadataRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'FetchLinkMetadataRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.mediaproxy.v1'), createEmptyInstance: create)
     ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'url')
@@ -135,7 +196,7 @@ class FetchLinkMetadataRequest extends $pb.GeneratedMessage {
 
   FetchLinkMetadataRequest._() : super();
   factory FetchLinkMetadataRequest({
-    $core.String url,
+    $core.String? url,
   }) {
     final _result = create();
     if (url != null) {
@@ -154,7 +215,7 @@ class FetchLinkMetadataRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  FetchLinkMetadataRequest copyWith(void Function(FetchLinkMetadataRequest) updates) => super.copyWith((message) => updates(message as FetchLinkMetadataRequest)); // ignore: deprecated_member_use
+  FetchLinkMetadataRequest copyWith(void Function(FetchLinkMetadataRequest) updates) => super.copyWith((message) => updates(message as FetchLinkMetadataRequest)) as FetchLinkMetadataRequest; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static FetchLinkMetadataRequest create() => FetchLinkMetadataRequest._();
@@ -162,7 +223,7 @@ class FetchLinkMetadataRequest extends $pb.GeneratedMessage {
   static $pb.PbList<FetchLinkMetadataRequest> createRepeated() => $pb.PbList<FetchLinkMetadataRequest>();
   @$core.pragma('dart2js:noInline')
   static FetchLinkMetadataRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<FetchLinkMetadataRequest>(create);
-  static FetchLinkMetadataRequest _defaultInstance;
+  static FetchLinkMetadataRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.String get url => $_getSZ(0);
@@ -174,6 +235,86 @@ class FetchLinkMetadataRequest extends $pb.GeneratedMessage {
   void clearUrl() => clearField(1);
 }
 
+enum FetchLinkMetadataResponse_Data {
+  isSite, 
+  isMedia, 
+  notSet
+}
+
+class FetchLinkMetadataResponse extends $pb.GeneratedMessage {
+  static const $core.Map<$core.int, FetchLinkMetadataResponse_Data> _FetchLinkMetadataResponse_DataByTag = {
+    1 : FetchLinkMetadataResponse_Data.isSite,
+    2 : FetchLinkMetadataResponse_Data.isMedia,
+    0 : FetchLinkMetadataResponse_Data.notSet
+  };
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'FetchLinkMetadataResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.mediaproxy.v1'), createEmptyInstance: create)
+    ..oo(0, [1, 2])
+    ..aOM<SiteMetadata>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'isSite', subBuilder: SiteMetadata.create)
+    ..aOM<MediaMetadata>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'isMedia', subBuilder: MediaMetadata.create)
+    ..hasRequiredFields = false
+  ;
+
+  FetchLinkMetadataResponse._() : super();
+  factory FetchLinkMetadataResponse({
+    SiteMetadata? isSite,
+    MediaMetadata? isMedia,
+  }) {
+    final _result = create();
+    if (isSite != null) {
+      _result.isSite = isSite;
+    }
+    if (isMedia != null) {
+      _result.isMedia = isMedia;
+    }
+    return _result;
+  }
+  factory FetchLinkMetadataResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory FetchLinkMetadataResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  FetchLinkMetadataResponse clone() => FetchLinkMetadataResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  FetchLinkMetadataResponse copyWith(void Function(FetchLinkMetadataResponse) updates) => super.copyWith((message) => updates(message as FetchLinkMetadataResponse)) as FetchLinkMetadataResponse; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static FetchLinkMetadataResponse create() => FetchLinkMetadataResponse._();
+  FetchLinkMetadataResponse createEmptyInstance() => create();
+  static $pb.PbList<FetchLinkMetadataResponse> createRepeated() => $pb.PbList<FetchLinkMetadataResponse>();
+  @$core.pragma('dart2js:noInline')
+  static FetchLinkMetadataResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<FetchLinkMetadataResponse>(create);
+  static FetchLinkMetadataResponse? _defaultInstance;
+
+  FetchLinkMetadataResponse_Data whichData() => _FetchLinkMetadataResponse_DataByTag[$_whichOneof(0)]!;
+  void clearData() => clearField($_whichOneof(0));
+
+  @$pb.TagNumber(1)
+  SiteMetadata get isSite => $_getN(0);
+  @$pb.TagNumber(1)
+  set isSite(SiteMetadata v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasIsSite() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearIsSite() => clearField(1);
+  @$pb.TagNumber(1)
+  SiteMetadata ensureIsSite() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  MediaMetadata get isMedia => $_getN(1);
+  @$pb.TagNumber(2)
+  set isMedia(MediaMetadata v) { setField(2, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasIsMedia() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearIsMedia() => clearField(2);
+  @$pb.TagNumber(2)
+  MediaMetadata ensureIsMedia() => $_ensure(1);
+}
+
 class InstantViewRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'InstantViewRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.mediaproxy.v1'), createEmptyInstance: create)
     ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'url')
@@ -182,7 +323,7 @@ class InstantViewRequest extends $pb.GeneratedMessage {
 
   InstantViewRequest._() : super();
   factory InstantViewRequest({
-    $core.String url,
+    $core.String? url,
   }) {
     final _result = create();
     if (url != null) {
@@ -201,7 +342,7 @@ class InstantViewRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  InstantViewRequest copyWith(void Function(InstantViewRequest) updates) => super.copyWith((message) => updates(message as InstantViewRequest)); // ignore: deprecated_member_use
+  InstantViewRequest copyWith(void Function(InstantViewRequest) updates) => super.copyWith((message) => updates(message as InstantViewRequest)) as InstantViewRequest; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static InstantViewRequest create() => InstantViewRequest._();
@@ -209,7 +350,7 @@ class InstantViewRequest extends $pb.GeneratedMessage {
   static $pb.PbList<InstantViewRequest> createRepeated() => $pb.PbList<InstantViewRequest>();
   @$core.pragma('dart2js:noInline')
   static InstantViewRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<InstantViewRequest>(create);
-  static InstantViewRequest _defaultInstance;
+  static InstantViewRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.String get url => $_getSZ(0);
@@ -231,9 +372,9 @@ class InstantViewResponse extends $pb.GeneratedMessage {
 
   InstantViewResponse._() : super();
   factory InstantViewResponse({
-    SiteMetadata metadata,
-    $core.String content,
-    $core.bool isValid,
+    SiteMetadata? metadata,
+    $core.String? content,
+    $core.bool? isValid,
   }) {
     final _result = create();
     if (metadata != null) {
@@ -258,7 +399,7 @@ class InstantViewResponse extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  InstantViewResponse copyWith(void Function(InstantViewResponse) updates) => super.copyWith((message) => updates(message as InstantViewResponse)); // ignore: deprecated_member_use
+  InstantViewResponse copyWith(void Function(InstantViewResponse) updates) => super.copyWith((message) => updates(message as InstantViewResponse)) as InstantViewResponse; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static InstantViewResponse create() => InstantViewResponse._();
@@ -266,7 +407,7 @@ class InstantViewResponse extends $pb.GeneratedMessage {
   static $pb.PbList<InstantViewResponse> createRepeated() => $pb.PbList<InstantViewResponse>();
   @$core.pragma('dart2js:noInline')
   static InstantViewResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<InstantViewResponse>(create);
-  static InstantViewResponse _defaultInstance;
+  static InstantViewResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
   SiteMetadata get metadata => $_getN(0);
@@ -298,6 +439,53 @@ class InstantViewResponse extends $pb.GeneratedMessage {
   void clearIsValid() => clearField(3);
 }
 
+class CanInstantViewRequest extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'CanInstantViewRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.mediaproxy.v1'), createEmptyInstance: create)
+    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'url')
+    ..hasRequiredFields = false
+  ;
+
+  CanInstantViewRequest._() : super();
+  factory CanInstantViewRequest({
+    $core.String? url,
+  }) {
+    final _result = create();
+    if (url != null) {
+      _result.url = url;
+    }
+    return _result;
+  }
+  factory CanInstantViewRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory CanInstantViewRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  CanInstantViewRequest clone() => CanInstantViewRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  CanInstantViewRequest copyWith(void Function(CanInstantViewRequest) updates) => super.copyWith((message) => updates(message as CanInstantViewRequest)) as CanInstantViewRequest; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static CanInstantViewRequest create() => CanInstantViewRequest._();
+  CanInstantViewRequest createEmptyInstance() => create();
+  static $pb.PbList<CanInstantViewRequest> createRepeated() => $pb.PbList<CanInstantViewRequest>();
+  @$core.pragma('dart2js:noInline')
+  static CanInstantViewRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CanInstantViewRequest>(create);
+  static CanInstantViewRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get url => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set url($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasUrl() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearUrl() => clearField(1);
+}
+
 class CanInstantViewResponse extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'CanInstantViewResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.mediaproxy.v1'), createEmptyInstance: create)
     ..aOB(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'canInstantView')
@@ -306,7 +494,7 @@ class CanInstantViewResponse extends $pb.GeneratedMessage {
 
   CanInstantViewResponse._() : super();
   factory CanInstantViewResponse({
-    $core.bool canInstantView,
+    $core.bool? canInstantView,
   }) {
     final _result = create();
     if (canInstantView != null) {
@@ -325,7 +513,7 @@ class CanInstantViewResponse extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  CanInstantViewResponse copyWith(void Function(CanInstantViewResponse) updates) => super.copyWith((message) => updates(message as CanInstantViewResponse)); // ignore: deprecated_member_use
+  CanInstantViewResponse copyWith(void Function(CanInstantViewResponse) updates) => super.copyWith((message) => updates(message as CanInstantViewResponse)) as CanInstantViewResponse; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static CanInstantViewResponse create() => CanInstantViewResponse._();
@@ -333,7 +521,7 @@ class CanInstantViewResponse extends $pb.GeneratedMessage {
   static $pb.PbList<CanInstantViewResponse> createRepeated() => $pb.PbList<CanInstantViewResponse>();
   @$core.pragma('dart2js:noInline')
   static CanInstantViewResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CanInstantViewResponse>(create);
-  static CanInstantViewResponse _defaultInstance;
+  static CanInstantViewResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.bool get canInstantView => $_getBF(0);
@@ -349,15 +537,15 @@ class MediaProxyServiceApi {
   $pb.RpcClient _client;
   MediaProxyServiceApi(this._client);
 
-  $async.Future<SiteMetadata> fetchLinkMetadata($pb.ClientContext ctx, FetchLinkMetadataRequest request) {
-    var emptyResponse = SiteMetadata();
-    return _client.invoke<SiteMetadata>(ctx, 'MediaProxyService', 'FetchLinkMetadata', request, emptyResponse);
+  $async.Future<FetchLinkMetadataResponse> fetchLinkMetadata($pb.ClientContext? ctx, FetchLinkMetadataRequest request) {
+    var emptyResponse = FetchLinkMetadataResponse();
+    return _client.invoke<FetchLinkMetadataResponse>(ctx, 'MediaProxyService', 'FetchLinkMetadata', request, emptyResponse);
   }
-  $async.Future<InstantViewResponse> instantView($pb.ClientContext ctx, InstantViewRequest request) {
+  $async.Future<InstantViewResponse> instantView($pb.ClientContext? ctx, InstantViewRequest request) {
     var emptyResponse = InstantViewResponse();
     return _client.invoke<InstantViewResponse>(ctx, 'MediaProxyService', 'InstantView', request, emptyResponse);
   }
-  $async.Future<CanInstantViewResponse> canInstantView($pb.ClientContext ctx, InstantViewRequest request) {
+  $async.Future<CanInstantViewResponse> canInstantView($pb.ClientContext? ctx, CanInstantViewRequest request) {
     var emptyResponse = CanInstantViewResponse();
     return _client.invoke<CanInstantViewResponse>(ctx, 'MediaProxyService', 'CanInstantView', request, emptyResponse);
   }

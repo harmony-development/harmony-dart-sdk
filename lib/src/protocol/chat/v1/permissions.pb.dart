@@ -2,7 +2,7 @@
 //  Generated code. Do not modify.
 //  source: chat/v1/permissions.proto
 //
-// @dart = 2.7
+// @dart = 2.12
 // ignore_for_file: annotate_overrides,camel_case_types,unnecessary_const,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type,unnecessary_this,prefer_final_fields
 
 import 'dart:core' as $core;
@@ -10,12 +10,223 @@ import 'dart:core' as $core;
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import 'permissions.pbenum.dart';
+import '../../harmonytypes/v1/types.pb.dart' as $0;
 
-export 'permissions.pbenum.dart';
+class Permission extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Permission', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.chat.v1'), createEmptyInstance: create)
+    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'matches')
+    ..aOB(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'ok')
+    ..hasRequiredFields = false
+  ;
 
-class QueryPermissionsRequest extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'QueryPermissionsRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.chat.v1'), createEmptyInstance: create)
+  Permission._() : super();
+  factory Permission({
+    $core.String? matches,
+    $core.bool? ok,
+  }) {
+    final _result = create();
+    if (matches != null) {
+      _result.matches = matches;
+    }
+    if (ok != null) {
+      _result.ok = ok;
+    }
+    return _result;
+  }
+  factory Permission.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory Permission.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  Permission clone() => Permission()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  Permission copyWith(void Function(Permission) updates) => super.copyWith((message) => updates(message as Permission)) as Permission; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static Permission create() => Permission._();
+  Permission createEmptyInstance() => create();
+  static $pb.PbList<Permission> createRepeated() => $pb.PbList<Permission>();
+  @$core.pragma('dart2js:noInline')
+  static Permission getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Permission>(create);
+  static Permission? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get matches => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set matches($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasMatches() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearMatches() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.bool get ok => $_getBF(1);
+  @$pb.TagNumber(2)
+  set ok($core.bool v) { $_setBool(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasOk() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearOk() => clearField(2);
+}
+
+class Role extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Role', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.chat.v1'), createEmptyInstance: create)
+    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'name')
+    ..a<$core.int>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'color', $pb.PbFieldType.O3)
+    ..aOB(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'hoist')
+    ..aOB(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'pingable')
+    ..hasRequiredFields = false
+  ;
+
+  Role._() : super();
+  factory Role({
+    $core.String? name,
+    $core.int? color,
+    $core.bool? hoist,
+    $core.bool? pingable,
+  }) {
+    final _result = create();
+    if (name != null) {
+      _result.name = name;
+    }
+    if (color != null) {
+      _result.color = color;
+    }
+    if (hoist != null) {
+      _result.hoist = hoist;
+    }
+    if (pingable != null) {
+      _result.pingable = pingable;
+    }
+    return _result;
+  }
+  factory Role.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory Role.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  Role clone() => Role()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  Role copyWith(void Function(Role) updates) => super.copyWith((message) => updates(message as Role)) as Role; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static Role create() => Role._();
+  Role createEmptyInstance() => create();
+  static $pb.PbList<Role> createRepeated() => $pb.PbList<Role>();
+  @$core.pragma('dart2js:noInline')
+  static Role getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Role>(create);
+  static Role? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get name => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set name($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasName() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearName() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.int get color => $_getIZ(1);
+  @$pb.TagNumber(2)
+  set color($core.int v) { $_setSignedInt32(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasColor() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearColor() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.bool get hoist => $_getBF(2);
+  @$pb.TagNumber(3)
+  set hoist($core.bool v) { $_setBool(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasHoist() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearHoist() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.bool get pingable => $_getBF(3);
+  @$pb.TagNumber(4)
+  set pingable($core.bool v) { $_setBool(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasPingable() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearPingable() => clearField(4);
+}
+
+class RoleWithId extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'RoleWithId', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.chat.v1'), createEmptyInstance: create)
+    ..a<$fixnum.Int64>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'roleId', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
+    ..aOM<Role>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'role', subBuilder: Role.create)
+    ..hasRequiredFields = false
+  ;
+
+  RoleWithId._() : super();
+  factory RoleWithId({
+    $fixnum.Int64? roleId,
+    Role? role,
+  }) {
+    final _result = create();
+    if (roleId != null) {
+      _result.roleId = roleId;
+    }
+    if (role != null) {
+      _result.role = role;
+    }
+    return _result;
+  }
+  factory RoleWithId.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory RoleWithId.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  RoleWithId clone() => RoleWithId()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  RoleWithId copyWith(void Function(RoleWithId) updates) => super.copyWith((message) => updates(message as RoleWithId)) as RoleWithId; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static RoleWithId create() => RoleWithId._();
+  RoleWithId createEmptyInstance() => create();
+  static $pb.PbList<RoleWithId> createRepeated() => $pb.PbList<RoleWithId>();
+  @$core.pragma('dart2js:noInline')
+  static RoleWithId getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<RoleWithId>(create);
+  static RoleWithId? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $fixnum.Int64 get roleId => $_getI64(0);
+  @$pb.TagNumber(1)
+  set roleId($fixnum.Int64 v) { $_setInt64(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasRoleId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearRoleId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  Role get role => $_getN(1);
+  @$pb.TagNumber(2)
+  set role(Role v) { setField(2, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasRole() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearRole() => clearField(2);
+  @$pb.TagNumber(2)
+  Role ensureRole() => $_ensure(1);
+}
+
+class QueryHasPermissionRequest extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'QueryHasPermissionRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.chat.v1'), createEmptyInstance: create)
     ..a<$fixnum.Int64>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'guildId', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
     ..a<$fixnum.Int64>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'channelId', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
     ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'checkFor')
@@ -23,12 +234,12 @@ class QueryPermissionsRequest extends $pb.GeneratedMessage {
     ..hasRequiredFields = false
   ;
 
-  QueryPermissionsRequest._() : super();
-  factory QueryPermissionsRequest({
-    $fixnum.Int64 guildId,
-    $fixnum.Int64 channelId,
-    $core.String checkFor,
-    $fixnum.Int64 as,
+  QueryHasPermissionRequest._() : super();
+  factory QueryHasPermissionRequest({
+    $fixnum.Int64? guildId,
+    $fixnum.Int64? channelId,
+    $core.String? checkFor,
+    $fixnum.Int64? as,
   }) {
     final _result = create();
     if (guildId != null) {
@@ -45,26 +256,26 @@ class QueryPermissionsRequest extends $pb.GeneratedMessage {
     }
     return _result;
   }
-  factory QueryPermissionsRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory QueryPermissionsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  factory QueryHasPermissionRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory QueryHasPermissionRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
   'Will be removed in next major version')
-  QueryPermissionsRequest clone() => QueryPermissionsRequest()..mergeFromMessage(this);
+  QueryHasPermissionRequest clone() => QueryHasPermissionRequest()..mergeFromMessage(this);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  QueryPermissionsRequest copyWith(void Function(QueryPermissionsRequest) updates) => super.copyWith((message) => updates(message as QueryPermissionsRequest)); // ignore: deprecated_member_use
+  QueryHasPermissionRequest copyWith(void Function(QueryHasPermissionRequest) updates) => super.copyWith((message) => updates(message as QueryHasPermissionRequest)) as QueryHasPermissionRequest; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
-  static QueryPermissionsRequest create() => QueryPermissionsRequest._();
-  QueryPermissionsRequest createEmptyInstance() => create();
-  static $pb.PbList<QueryPermissionsRequest> createRepeated() => $pb.PbList<QueryPermissionsRequest>();
+  static QueryHasPermissionRequest create() => QueryHasPermissionRequest._();
+  QueryHasPermissionRequest createEmptyInstance() => create();
+  static $pb.PbList<QueryHasPermissionRequest> createRepeated() => $pb.PbList<QueryHasPermissionRequest>();
   @$core.pragma('dart2js:noInline')
-  static QueryPermissionsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<QueryPermissionsRequest>(create);
-  static QueryPermissionsRequest _defaultInstance;
+  static QueryHasPermissionRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<QueryHasPermissionRequest>(create);
+  static QueryHasPermissionRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
   $fixnum.Int64 get guildId => $_getI64(0);
@@ -103,15 +314,15 @@ class QueryPermissionsRequest extends $pb.GeneratedMessage {
   void clearAs() => clearField(4);
 }
 
-class QueryPermissionsResponse extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'QueryPermissionsResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.chat.v1'), createEmptyInstance: create)
+class QueryHasPermissionResponse extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'QueryHasPermissionResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.chat.v1'), createEmptyInstance: create)
     ..aOB(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'ok')
     ..hasRequiredFields = false
   ;
 
-  QueryPermissionsResponse._() : super();
-  factory QueryPermissionsResponse({
-    $core.bool ok,
+  QueryHasPermissionResponse._() : super();
+  factory QueryHasPermissionResponse({
+    $core.bool? ok,
   }) {
     final _result = create();
     if (ok != null) {
@@ -119,26 +330,26 @@ class QueryPermissionsResponse extends $pb.GeneratedMessage {
     }
     return _result;
   }
-  factory QueryPermissionsResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory QueryPermissionsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  factory QueryHasPermissionResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory QueryHasPermissionResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
   'Will be removed in next major version')
-  QueryPermissionsResponse clone() => QueryPermissionsResponse()..mergeFromMessage(this);
+  QueryHasPermissionResponse clone() => QueryHasPermissionResponse()..mergeFromMessage(this);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  QueryPermissionsResponse copyWith(void Function(QueryPermissionsResponse) updates) => super.copyWith((message) => updates(message as QueryPermissionsResponse)); // ignore: deprecated_member_use
+  QueryHasPermissionResponse copyWith(void Function(QueryHasPermissionResponse) updates) => super.copyWith((message) => updates(message as QueryHasPermissionResponse)) as QueryHasPermissionResponse; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
-  static QueryPermissionsResponse create() => QueryPermissionsResponse._();
-  QueryPermissionsResponse createEmptyInstance() => create();
-  static $pb.PbList<QueryPermissionsResponse> createRepeated() => $pb.PbList<QueryPermissionsResponse>();
+  static QueryHasPermissionResponse create() => QueryHasPermissionResponse._();
+  QueryHasPermissionResponse createEmptyInstance() => create();
+  static $pb.PbList<QueryHasPermissionResponse> createRepeated() => $pb.PbList<QueryHasPermissionResponse>();
   @$core.pragma('dart2js:noInline')
-  static QueryPermissionsResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<QueryPermissionsResponse>(create);
-  static QueryPermissionsResponse _defaultInstance;
+  static QueryHasPermissionResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<QueryHasPermissionResponse>(create);
+  static QueryHasPermissionResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.bool get ok => $_getBF(0);
@@ -150,123 +361,21 @@ class QueryPermissionsResponse extends $pb.GeneratedMessage {
   void clearOk() => clearField(1);
 }
 
-class Permission extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Permission', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.chat.v1'), createEmptyInstance: create)
-    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'matches')
-    ..e<Permission_Mode>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'mode', $pb.PbFieldType.OE, defaultOrMaker: Permission_Mode.Allow, valueOf: Permission_Mode.valueOf, enumValues: Permission_Mode.values)
-    ..hasRequiredFields = false
-  ;
-
-  Permission._() : super();
-  factory Permission({
-    $core.String matches,
-    Permission_Mode mode,
-  }) {
-    final _result = create();
-    if (matches != null) {
-      _result.matches = matches;
-    }
-    if (mode != null) {
-      _result.mode = mode;
-    }
-    return _result;
-  }
-  factory Permission.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory Permission.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
-  Permission clone() => Permission()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
-  Permission copyWith(void Function(Permission) updates) => super.copyWith((message) => updates(message as Permission)); // ignore: deprecated_member_use
-  $pb.BuilderInfo get info_ => _i;
-  @$core.pragma('dart2js:noInline')
-  static Permission create() => Permission._();
-  Permission createEmptyInstance() => create();
-  static $pb.PbList<Permission> createRepeated() => $pb.PbList<Permission>();
-  @$core.pragma('dart2js:noInline')
-  static Permission getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Permission>(create);
-  static Permission _defaultInstance;
-
-  @$pb.TagNumber(1)
-  $core.String get matches => $_getSZ(0);
-  @$pb.TagNumber(1)
-  set matches($core.String v) { $_setString(0, v); }
-  @$pb.TagNumber(1)
-  $core.bool hasMatches() => $_has(0);
-  @$pb.TagNumber(1)
-  void clearMatches() => clearField(1);
-
-  @$pb.TagNumber(2)
-  Permission_Mode get mode => $_getN(1);
-  @$pb.TagNumber(2)
-  set mode(Permission_Mode v) { setField(2, v); }
-  @$pb.TagNumber(2)
-  $core.bool hasMode() => $_has(1);
-  @$pb.TagNumber(2)
-  void clearMode() => clearField(2);
-}
-
-class PermissionList extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'PermissionList', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.chat.v1'), createEmptyInstance: create)
-    ..pc<Permission>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'permissions', $pb.PbFieldType.PM, subBuilder: Permission.create)
-    ..hasRequiredFields = false
-  ;
-
-  PermissionList._() : super();
-  factory PermissionList({
-    $core.Iterable<Permission> permissions,
-  }) {
-    final _result = create();
-    if (permissions != null) {
-      _result.permissions.addAll(permissions);
-    }
-    return _result;
-  }
-  factory PermissionList.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory PermissionList.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
-  PermissionList clone() => PermissionList()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
-  PermissionList copyWith(void Function(PermissionList) updates) => super.copyWith((message) => updates(message as PermissionList)); // ignore: deprecated_member_use
-  $pb.BuilderInfo get info_ => _i;
-  @$core.pragma('dart2js:noInline')
-  static PermissionList create() => PermissionList._();
-  PermissionList createEmptyInstance() => create();
-  static $pb.PbList<PermissionList> createRepeated() => $pb.PbList<PermissionList>();
-  @$core.pragma('dart2js:noInline')
-  static PermissionList getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<PermissionList>(create);
-  static PermissionList _defaultInstance;
-
-  @$pb.TagNumber(1)
-  $core.List<Permission> get permissions => $_getList(0);
-}
-
 class SetPermissionsRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'SetPermissionsRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.chat.v1'), createEmptyInstance: create)
     ..a<$fixnum.Int64>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'guildId', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
     ..a<$fixnum.Int64>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'channelId', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
     ..a<$fixnum.Int64>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'roleId', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
-    ..aOM<PermissionList>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'perms', subBuilder: PermissionList.create)
+    ..pc<Permission>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'permsToGive', $pb.PbFieldType.PM, subBuilder: Permission.create)
     ..hasRequiredFields = false
   ;
 
   SetPermissionsRequest._() : super();
   factory SetPermissionsRequest({
-    $fixnum.Int64 guildId,
-    $fixnum.Int64 channelId,
-    $fixnum.Int64 roleId,
-    PermissionList perms,
+    $fixnum.Int64? guildId,
+    $fixnum.Int64? channelId,
+    $fixnum.Int64? roleId,
+    $core.Iterable<Permission>? permsToGive,
   }) {
     final _result = create();
     if (guildId != null) {
@@ -278,8 +387,8 @@ class SetPermissionsRequest extends $pb.GeneratedMessage {
     if (roleId != null) {
       _result.roleId = roleId;
     }
-    if (perms != null) {
-      _result.perms = perms;
+    if (permsToGive != null) {
+      _result.permsToGive.addAll(permsToGive);
     }
     return _result;
   }
@@ -294,7 +403,7 @@ class SetPermissionsRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  SetPermissionsRequest copyWith(void Function(SetPermissionsRequest) updates) => super.copyWith((message) => updates(message as SetPermissionsRequest)); // ignore: deprecated_member_use
+  SetPermissionsRequest copyWith(void Function(SetPermissionsRequest) updates) => super.copyWith((message) => updates(message as SetPermissionsRequest)) as SetPermissionsRequest; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static SetPermissionsRequest create() => SetPermissionsRequest._();
@@ -302,7 +411,7 @@ class SetPermissionsRequest extends $pb.GeneratedMessage {
   static $pb.PbList<SetPermissionsRequest> createRepeated() => $pb.PbList<SetPermissionsRequest>();
   @$core.pragma('dart2js:noInline')
   static SetPermissionsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SetPermissionsRequest>(create);
-  static SetPermissionsRequest _defaultInstance;
+  static SetPermissionsRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
   $fixnum.Int64 get guildId => $_getI64(0);
@@ -332,15 +441,36 @@ class SetPermissionsRequest extends $pb.GeneratedMessage {
   void clearRoleId() => clearField(3);
 
   @$pb.TagNumber(4)
-  PermissionList get perms => $_getN(3);
-  @$pb.TagNumber(4)
-  set perms(PermissionList v) { setField(4, v); }
-  @$pb.TagNumber(4)
-  $core.bool hasPerms() => $_has(3);
-  @$pb.TagNumber(4)
-  void clearPerms() => clearField(4);
-  @$pb.TagNumber(4)
-  PermissionList ensurePerms() => $_ensure(3);
+  $core.List<Permission> get permsToGive => $_getList(3);
+}
+
+class SetPermissionsResponse extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'SetPermissionsResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.chat.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  SetPermissionsResponse._() : super();
+  factory SetPermissionsResponse() => create();
+  factory SetPermissionsResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory SetPermissionsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  SetPermissionsResponse clone() => SetPermissionsResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  SetPermissionsResponse copyWith(void Function(SetPermissionsResponse) updates) => super.copyWith((message) => updates(message as SetPermissionsResponse)) as SetPermissionsResponse; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static SetPermissionsResponse create() => SetPermissionsResponse._();
+  SetPermissionsResponse createEmptyInstance() => create();
+  static $pb.PbList<SetPermissionsResponse> createRepeated() => $pb.PbList<SetPermissionsResponse>();
+  @$core.pragma('dart2js:noInline')
+  static SetPermissionsResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SetPermissionsResponse>(create);
+  static SetPermissionsResponse? _defaultInstance;
 }
 
 class GetPermissionsRequest extends $pb.GeneratedMessage {
@@ -353,9 +483,9 @@ class GetPermissionsRequest extends $pb.GeneratedMessage {
 
   GetPermissionsRequest._() : super();
   factory GetPermissionsRequest({
-    $fixnum.Int64 guildId,
-    $fixnum.Int64 channelId,
-    $fixnum.Int64 roleId,
+    $fixnum.Int64? guildId,
+    $fixnum.Int64? channelId,
+    $fixnum.Int64? roleId,
   }) {
     final _result = create();
     if (guildId != null) {
@@ -380,7 +510,7 @@ class GetPermissionsRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  GetPermissionsRequest copyWith(void Function(GetPermissionsRequest) updates) => super.copyWith((message) => updates(message as GetPermissionsRequest)); // ignore: deprecated_member_use
+  GetPermissionsRequest copyWith(void Function(GetPermissionsRequest) updates) => super.copyWith((message) => updates(message as GetPermissionsRequest)) as GetPermissionsRequest; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static GetPermissionsRequest create() => GetPermissionsRequest._();
@@ -388,7 +518,7 @@ class GetPermissionsRequest extends $pb.GeneratedMessage {
   static $pb.PbList<GetPermissionsRequest> createRepeated() => $pb.PbList<GetPermissionsRequest>();
   @$core.pragma('dart2js:noInline')
   static GetPermissionsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetPermissionsRequest>(create);
-  static GetPermissionsRequest _defaultInstance;
+  static GetPermissionsRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
   $fixnum.Int64 get guildId => $_getI64(0);
@@ -420,17 +550,17 @@ class GetPermissionsRequest extends $pb.GeneratedMessage {
 
 class GetPermissionsResponse extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'GetPermissionsResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.chat.v1'), createEmptyInstance: create)
-    ..aOM<PermissionList>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'perms', subBuilder: PermissionList.create)
+    ..pc<Permission>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'perms', $pb.PbFieldType.PM, subBuilder: Permission.create)
     ..hasRequiredFields = false
   ;
 
   GetPermissionsResponse._() : super();
   factory GetPermissionsResponse({
-    PermissionList perms,
+    $core.Iterable<Permission>? perms,
   }) {
     final _result = create();
     if (perms != null) {
-      _result.perms = perms;
+      _result.perms.addAll(perms);
     }
     return _result;
   }
@@ -445,7 +575,7 @@ class GetPermissionsResponse extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  GetPermissionsResponse copyWith(void Function(GetPermissionsResponse) updates) => super.copyWith((message) => updates(message as GetPermissionsResponse)); // ignore: deprecated_member_use
+  GetPermissionsResponse copyWith(void Function(GetPermissionsResponse) updates) => super.copyWith((message) => updates(message as GetPermissionsResponse)) as GetPermissionsResponse; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static GetPermissionsResponse create() => GetPermissionsResponse._();
@@ -453,23 +583,209 @@ class GetPermissionsResponse extends $pb.GeneratedMessage {
   static $pb.PbList<GetPermissionsResponse> createRepeated() => $pb.PbList<GetPermissionsResponse>();
   @$core.pragma('dart2js:noInline')
   static GetPermissionsResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetPermissionsResponse>(create);
-  static GetPermissionsResponse _defaultInstance;
+  static GetPermissionsResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  PermissionList get perms => $_getN(0);
-  @$pb.TagNumber(1)
-  set perms(PermissionList v) { setField(1, v); }
-  @$pb.TagNumber(1)
-  $core.bool hasPerms() => $_has(0);
-  @$pb.TagNumber(1)
-  void clearPerms() => clearField(1);
-  @$pb.TagNumber(1)
-  PermissionList ensurePerms() => $_ensure(0);
+  $core.List<Permission> get perms => $_getList(0);
 }
 
-class Role extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Role', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.chat.v1'), createEmptyInstance: create)
-    ..a<$fixnum.Int64>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'roleId', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
+class MoveRoleRequest extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'MoveRoleRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.chat.v1'), createEmptyInstance: create)
+    ..a<$fixnum.Int64>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'guildId', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
+    ..a<$fixnum.Int64>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'roleId', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
+    ..aOM<$0.ItemPosition>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'newPosition', subBuilder: $0.ItemPosition.create)
+    ..hasRequiredFields = false
+  ;
+
+  MoveRoleRequest._() : super();
+  factory MoveRoleRequest({
+    $fixnum.Int64? guildId,
+    $fixnum.Int64? roleId,
+    $0.ItemPosition? newPosition,
+  }) {
+    final _result = create();
+    if (guildId != null) {
+      _result.guildId = guildId;
+    }
+    if (roleId != null) {
+      _result.roleId = roleId;
+    }
+    if (newPosition != null) {
+      _result.newPosition = newPosition;
+    }
+    return _result;
+  }
+  factory MoveRoleRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory MoveRoleRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  MoveRoleRequest clone() => MoveRoleRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  MoveRoleRequest copyWith(void Function(MoveRoleRequest) updates) => super.copyWith((message) => updates(message as MoveRoleRequest)) as MoveRoleRequest; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static MoveRoleRequest create() => MoveRoleRequest._();
+  MoveRoleRequest createEmptyInstance() => create();
+  static $pb.PbList<MoveRoleRequest> createRepeated() => $pb.PbList<MoveRoleRequest>();
+  @$core.pragma('dart2js:noInline')
+  static MoveRoleRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<MoveRoleRequest>(create);
+  static MoveRoleRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $fixnum.Int64 get guildId => $_getI64(0);
+  @$pb.TagNumber(1)
+  set guildId($fixnum.Int64 v) { $_setInt64(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasGuildId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearGuildId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $fixnum.Int64 get roleId => $_getI64(1);
+  @$pb.TagNumber(2)
+  set roleId($fixnum.Int64 v) { $_setInt64(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasRoleId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearRoleId() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $0.ItemPosition get newPosition => $_getN(2);
+  @$pb.TagNumber(3)
+  set newPosition($0.ItemPosition v) { setField(3, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasNewPosition() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearNewPosition() => clearField(3);
+  @$pb.TagNumber(3)
+  $0.ItemPosition ensureNewPosition() => $_ensure(2);
+}
+
+class MoveRoleResponse extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'MoveRoleResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.chat.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  MoveRoleResponse._() : super();
+  factory MoveRoleResponse() => create();
+  factory MoveRoleResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory MoveRoleResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  MoveRoleResponse clone() => MoveRoleResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  MoveRoleResponse copyWith(void Function(MoveRoleResponse) updates) => super.copyWith((message) => updates(message as MoveRoleResponse)) as MoveRoleResponse; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static MoveRoleResponse create() => MoveRoleResponse._();
+  MoveRoleResponse createEmptyInstance() => create();
+  static $pb.PbList<MoveRoleResponse> createRepeated() => $pb.PbList<MoveRoleResponse>();
+  @$core.pragma('dart2js:noInline')
+  static MoveRoleResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<MoveRoleResponse>(create);
+  static MoveRoleResponse? _defaultInstance;
+}
+
+class GetGuildRolesRequest extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'GetGuildRolesRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.chat.v1'), createEmptyInstance: create)
+    ..a<$fixnum.Int64>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'guildId', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
+    ..hasRequiredFields = false
+  ;
+
+  GetGuildRolesRequest._() : super();
+  factory GetGuildRolesRequest({
+    $fixnum.Int64? guildId,
+  }) {
+    final _result = create();
+    if (guildId != null) {
+      _result.guildId = guildId;
+    }
+    return _result;
+  }
+  factory GetGuildRolesRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetGuildRolesRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetGuildRolesRequest clone() => GetGuildRolesRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetGuildRolesRequest copyWith(void Function(GetGuildRolesRequest) updates) => super.copyWith((message) => updates(message as GetGuildRolesRequest)) as GetGuildRolesRequest; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static GetGuildRolesRequest create() => GetGuildRolesRequest._();
+  GetGuildRolesRequest createEmptyInstance() => create();
+  static $pb.PbList<GetGuildRolesRequest> createRepeated() => $pb.PbList<GetGuildRolesRequest>();
+  @$core.pragma('dart2js:noInline')
+  static GetGuildRolesRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetGuildRolesRequest>(create);
+  static GetGuildRolesRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $fixnum.Int64 get guildId => $_getI64(0);
+  @$pb.TagNumber(1)
+  set guildId($fixnum.Int64 v) { $_setInt64(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasGuildId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearGuildId() => clearField(1);
+}
+
+class GetGuildRolesResponse extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'GetGuildRolesResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.chat.v1'), createEmptyInstance: create)
+    ..pc<RoleWithId>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'roles', $pb.PbFieldType.PM, subBuilder: RoleWithId.create)
+    ..hasRequiredFields = false
+  ;
+
+  GetGuildRolesResponse._() : super();
+  factory GetGuildRolesResponse({
+    $core.Iterable<RoleWithId>? roles,
+  }) {
+    final _result = create();
+    if (roles != null) {
+      _result.roles.addAll(roles);
+    }
+    return _result;
+  }
+  factory GetGuildRolesResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetGuildRolesResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetGuildRolesResponse clone() => GetGuildRolesResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetGuildRolesResponse copyWith(void Function(GetGuildRolesResponse) updates) => super.copyWith((message) => updates(message as GetGuildRolesResponse)) as GetGuildRolesResponse; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static GetGuildRolesResponse create() => GetGuildRolesResponse._();
+  GetGuildRolesResponse createEmptyInstance() => create();
+  static $pb.PbList<GetGuildRolesResponse> createRepeated() => $pb.PbList<GetGuildRolesResponse>();
+  @$core.pragma('dart2js:noInline')
+  static GetGuildRolesResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetGuildRolesResponse>(create);
+  static GetGuildRolesResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.List<RoleWithId> get roles => $_getList(0);
+}
+
+class AddGuildRoleRequest extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'AddGuildRoleRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.chat.v1'), createEmptyInstance: create)
+    ..a<$fixnum.Int64>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'guildId', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
     ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'name')
     ..a<$core.int>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'color', $pb.PbFieldType.O3)
     ..aOB(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'hoist')
@@ -477,17 +793,17 @@ class Role extends $pb.GeneratedMessage {
     ..hasRequiredFields = false
   ;
 
-  Role._() : super();
-  factory Role({
-    $fixnum.Int64 roleId,
-    $core.String name,
-    $core.int color,
-    $core.bool hoist,
-    $core.bool pingable,
+  AddGuildRoleRequest._() : super();
+  factory AddGuildRoleRequest({
+    $fixnum.Int64? guildId,
+    $core.String? name,
+    $core.int? color,
+    $core.bool? hoist,
+    $core.bool? pingable,
   }) {
     final _result = create();
-    if (roleId != null) {
-      _result.roleId = roleId;
+    if (guildId != null) {
+      _result.guildId = guildId;
     }
     if (name != null) {
       _result.name = name;
@@ -503,35 +819,35 @@ class Role extends $pb.GeneratedMessage {
     }
     return _result;
   }
-  factory Role.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory Role.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  factory AddGuildRoleRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory AddGuildRoleRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
   'Will be removed in next major version')
-  Role clone() => Role()..mergeFromMessage(this);
+  AddGuildRoleRequest clone() => AddGuildRoleRequest()..mergeFromMessage(this);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  Role copyWith(void Function(Role) updates) => super.copyWith((message) => updates(message as Role)); // ignore: deprecated_member_use
+  AddGuildRoleRequest copyWith(void Function(AddGuildRoleRequest) updates) => super.copyWith((message) => updates(message as AddGuildRoleRequest)) as AddGuildRoleRequest; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
-  static Role create() => Role._();
-  Role createEmptyInstance() => create();
-  static $pb.PbList<Role> createRepeated() => $pb.PbList<Role>();
+  static AddGuildRoleRequest create() => AddGuildRoleRequest._();
+  AddGuildRoleRequest createEmptyInstance() => create();
+  static $pb.PbList<AddGuildRoleRequest> createRepeated() => $pb.PbList<AddGuildRoleRequest>();
   @$core.pragma('dart2js:noInline')
-  static Role getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Role>(create);
-  static Role _defaultInstance;
+  static AddGuildRoleRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<AddGuildRoleRequest>(create);
+  static AddGuildRoleRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $fixnum.Int64 get roleId => $_getI64(0);
+  $fixnum.Int64 get guildId => $_getI64(0);
   @$pb.TagNumber(1)
-  set roleId($fixnum.Int64 v) { $_setInt64(0, v); }
+  set guildId($fixnum.Int64 v) { $_setInt64(0, v); }
   @$pb.TagNumber(1)
-  $core.bool hasRoleId() => $_has(0);
+  $core.bool hasGuildId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearRoleId() => clearField(1);
+  void clearGuildId() => clearField(1);
 
   @$pb.TagNumber(2)
   $core.String get name => $_getSZ(1);
@@ -570,275 +886,6 @@ class Role extends $pb.GeneratedMessage {
   void clearPingable() => clearField(5);
 }
 
-class MoveRoleRequest extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'MoveRoleRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.chat.v1'), createEmptyInstance: create)
-    ..a<$fixnum.Int64>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'guildId', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
-    ..a<$fixnum.Int64>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'roleId', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
-    ..a<$fixnum.Int64>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'beforeId', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
-    ..a<$fixnum.Int64>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'afterId', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
-    ..hasRequiredFields = false
-  ;
-
-  MoveRoleRequest._() : super();
-  factory MoveRoleRequest({
-    $fixnum.Int64 guildId,
-    $fixnum.Int64 roleId,
-    $fixnum.Int64 beforeId,
-    $fixnum.Int64 afterId,
-  }) {
-    final _result = create();
-    if (guildId != null) {
-      _result.guildId = guildId;
-    }
-    if (roleId != null) {
-      _result.roleId = roleId;
-    }
-    if (beforeId != null) {
-      _result.beforeId = beforeId;
-    }
-    if (afterId != null) {
-      _result.afterId = afterId;
-    }
-    return _result;
-  }
-  factory MoveRoleRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory MoveRoleRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
-  MoveRoleRequest clone() => MoveRoleRequest()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
-  MoveRoleRequest copyWith(void Function(MoveRoleRequest) updates) => super.copyWith((message) => updates(message as MoveRoleRequest)); // ignore: deprecated_member_use
-  $pb.BuilderInfo get info_ => _i;
-  @$core.pragma('dart2js:noInline')
-  static MoveRoleRequest create() => MoveRoleRequest._();
-  MoveRoleRequest createEmptyInstance() => create();
-  static $pb.PbList<MoveRoleRequest> createRepeated() => $pb.PbList<MoveRoleRequest>();
-  @$core.pragma('dart2js:noInline')
-  static MoveRoleRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<MoveRoleRequest>(create);
-  static MoveRoleRequest _defaultInstance;
-
-  @$pb.TagNumber(1)
-  $fixnum.Int64 get guildId => $_getI64(0);
-  @$pb.TagNumber(1)
-  set guildId($fixnum.Int64 v) { $_setInt64(0, v); }
-  @$pb.TagNumber(1)
-  $core.bool hasGuildId() => $_has(0);
-  @$pb.TagNumber(1)
-  void clearGuildId() => clearField(1);
-
-  @$pb.TagNumber(2)
-  $fixnum.Int64 get roleId => $_getI64(1);
-  @$pb.TagNumber(2)
-  set roleId($fixnum.Int64 v) { $_setInt64(1, v); }
-  @$pb.TagNumber(2)
-  $core.bool hasRoleId() => $_has(1);
-  @$pb.TagNumber(2)
-  void clearRoleId() => clearField(2);
-
-  @$pb.TagNumber(3)
-  $fixnum.Int64 get beforeId => $_getI64(2);
-  @$pb.TagNumber(3)
-  set beforeId($fixnum.Int64 v) { $_setInt64(2, v); }
-  @$pb.TagNumber(3)
-  $core.bool hasBeforeId() => $_has(2);
-  @$pb.TagNumber(3)
-  void clearBeforeId() => clearField(3);
-
-  @$pb.TagNumber(4)
-  $fixnum.Int64 get afterId => $_getI64(3);
-  @$pb.TagNumber(4)
-  set afterId($fixnum.Int64 v) { $_setInt64(3, v); }
-  @$pb.TagNumber(4)
-  $core.bool hasAfterId() => $_has(3);
-  @$pb.TagNumber(4)
-  void clearAfterId() => clearField(4);
-}
-
-class MoveRoleResponse extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'MoveRoleResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.chat.v1'), createEmptyInstance: create)
-    ..hasRequiredFields = false
-  ;
-
-  MoveRoleResponse._() : super();
-  factory MoveRoleResponse() => create();
-  factory MoveRoleResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory MoveRoleResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
-  MoveRoleResponse clone() => MoveRoleResponse()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
-  MoveRoleResponse copyWith(void Function(MoveRoleResponse) updates) => super.copyWith((message) => updates(message as MoveRoleResponse)); // ignore: deprecated_member_use
-  $pb.BuilderInfo get info_ => _i;
-  @$core.pragma('dart2js:noInline')
-  static MoveRoleResponse create() => MoveRoleResponse._();
-  MoveRoleResponse createEmptyInstance() => create();
-  static $pb.PbList<MoveRoleResponse> createRepeated() => $pb.PbList<MoveRoleResponse>();
-  @$core.pragma('dart2js:noInline')
-  static MoveRoleResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<MoveRoleResponse>(create);
-  static MoveRoleResponse _defaultInstance;
-}
-
-class GetGuildRolesRequest extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'GetGuildRolesRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.chat.v1'), createEmptyInstance: create)
-    ..a<$fixnum.Int64>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'guildId', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
-    ..hasRequiredFields = false
-  ;
-
-  GetGuildRolesRequest._() : super();
-  factory GetGuildRolesRequest({
-    $fixnum.Int64 guildId,
-  }) {
-    final _result = create();
-    if (guildId != null) {
-      _result.guildId = guildId;
-    }
-    return _result;
-  }
-  factory GetGuildRolesRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory GetGuildRolesRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
-  GetGuildRolesRequest clone() => GetGuildRolesRequest()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
-  GetGuildRolesRequest copyWith(void Function(GetGuildRolesRequest) updates) => super.copyWith((message) => updates(message as GetGuildRolesRequest)); // ignore: deprecated_member_use
-  $pb.BuilderInfo get info_ => _i;
-  @$core.pragma('dart2js:noInline')
-  static GetGuildRolesRequest create() => GetGuildRolesRequest._();
-  GetGuildRolesRequest createEmptyInstance() => create();
-  static $pb.PbList<GetGuildRolesRequest> createRepeated() => $pb.PbList<GetGuildRolesRequest>();
-  @$core.pragma('dart2js:noInline')
-  static GetGuildRolesRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetGuildRolesRequest>(create);
-  static GetGuildRolesRequest _defaultInstance;
-
-  @$pb.TagNumber(1)
-  $fixnum.Int64 get guildId => $_getI64(0);
-  @$pb.TagNumber(1)
-  set guildId($fixnum.Int64 v) { $_setInt64(0, v); }
-  @$pb.TagNumber(1)
-  $core.bool hasGuildId() => $_has(0);
-  @$pb.TagNumber(1)
-  void clearGuildId() => clearField(1);
-}
-
-class GetGuildRolesResponse extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'GetGuildRolesResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.chat.v1'), createEmptyInstance: create)
-    ..pc<Role>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'roles', $pb.PbFieldType.PM, subBuilder: Role.create)
-    ..hasRequiredFields = false
-  ;
-
-  GetGuildRolesResponse._() : super();
-  factory GetGuildRolesResponse({
-    $core.Iterable<Role> roles,
-  }) {
-    final _result = create();
-    if (roles != null) {
-      _result.roles.addAll(roles);
-    }
-    return _result;
-  }
-  factory GetGuildRolesResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory GetGuildRolesResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
-  GetGuildRolesResponse clone() => GetGuildRolesResponse()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
-  GetGuildRolesResponse copyWith(void Function(GetGuildRolesResponse) updates) => super.copyWith((message) => updates(message as GetGuildRolesResponse)); // ignore: deprecated_member_use
-  $pb.BuilderInfo get info_ => _i;
-  @$core.pragma('dart2js:noInline')
-  static GetGuildRolesResponse create() => GetGuildRolesResponse._();
-  GetGuildRolesResponse createEmptyInstance() => create();
-  static $pb.PbList<GetGuildRolesResponse> createRepeated() => $pb.PbList<GetGuildRolesResponse>();
-  @$core.pragma('dart2js:noInline')
-  static GetGuildRolesResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetGuildRolesResponse>(create);
-  static GetGuildRolesResponse _defaultInstance;
-
-  @$pb.TagNumber(1)
-  $core.List<Role> get roles => $_getList(0);
-}
-
-class AddGuildRoleRequest extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'AddGuildRoleRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.chat.v1'), createEmptyInstance: create)
-    ..a<$fixnum.Int64>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'guildId', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
-    ..aOM<Role>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'role', subBuilder: Role.create)
-    ..hasRequiredFields = false
-  ;
-
-  AddGuildRoleRequest._() : super();
-  factory AddGuildRoleRequest({
-    $fixnum.Int64 guildId,
-    Role role,
-  }) {
-    final _result = create();
-    if (guildId != null) {
-      _result.guildId = guildId;
-    }
-    if (role != null) {
-      _result.role = role;
-    }
-    return _result;
-  }
-  factory AddGuildRoleRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory AddGuildRoleRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
-  AddGuildRoleRequest clone() => AddGuildRoleRequest()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
-  AddGuildRoleRequest copyWith(void Function(AddGuildRoleRequest) updates) => super.copyWith((message) => updates(message as AddGuildRoleRequest)); // ignore: deprecated_member_use
-  $pb.BuilderInfo get info_ => _i;
-  @$core.pragma('dart2js:noInline')
-  static AddGuildRoleRequest create() => AddGuildRoleRequest._();
-  AddGuildRoleRequest createEmptyInstance() => create();
-  static $pb.PbList<AddGuildRoleRequest> createRepeated() => $pb.PbList<AddGuildRoleRequest>();
-  @$core.pragma('dart2js:noInline')
-  static AddGuildRoleRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<AddGuildRoleRequest>(create);
-  static AddGuildRoleRequest _defaultInstance;
-
-  @$pb.TagNumber(1)
-  $fixnum.Int64 get guildId => $_getI64(0);
-  @$pb.TagNumber(1)
-  set guildId($fixnum.Int64 v) { $_setInt64(0, v); }
-  @$pb.TagNumber(1)
-  $core.bool hasGuildId() => $_has(0);
-  @$pb.TagNumber(1)
-  void clearGuildId() => clearField(1);
-
-  @$pb.TagNumber(2)
-  Role get role => $_getN(1);
-  @$pb.TagNumber(2)
-  set role(Role v) { setField(2, v); }
-  @$pb.TagNumber(2)
-  $core.bool hasRole() => $_has(1);
-  @$pb.TagNumber(2)
-  void clearRole() => clearField(2);
-  @$pb.TagNumber(2)
-  Role ensureRole() => $_ensure(1);
-}
-
 class AddGuildRoleResponse extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'AddGuildRoleResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.chat.v1'), createEmptyInstance: create)
     ..a<$fixnum.Int64>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'roleId', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
@@ -847,7 +894,7 @@ class AddGuildRoleResponse extends $pb.GeneratedMessage {
 
   AddGuildRoleResponse._() : super();
   factory AddGuildRoleResponse({
-    $fixnum.Int64 roleId,
+    $fixnum.Int64? roleId,
   }) {
     final _result = create();
     if (roleId != null) {
@@ -866,7 +913,7 @@ class AddGuildRoleResponse extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  AddGuildRoleResponse copyWith(void Function(AddGuildRoleResponse) updates) => super.copyWith((message) => updates(message as AddGuildRoleResponse)); // ignore: deprecated_member_use
+  AddGuildRoleResponse copyWith(void Function(AddGuildRoleResponse) updates) => super.copyWith((message) => updates(message as AddGuildRoleResponse)) as AddGuildRoleResponse; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static AddGuildRoleResponse create() => AddGuildRoleResponse._();
@@ -874,7 +921,7 @@ class AddGuildRoleResponse extends $pb.GeneratedMessage {
   static $pb.PbList<AddGuildRoleResponse> createRepeated() => $pb.PbList<AddGuildRoleResponse>();
   @$core.pragma('dart2js:noInline')
   static AddGuildRoleResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<AddGuildRoleResponse>(create);
-  static AddGuildRoleResponse _defaultInstance;
+  static AddGuildRoleResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
   $fixnum.Int64 get roleId => $_getI64(0);
@@ -895,8 +942,8 @@ class DeleteGuildRoleRequest extends $pb.GeneratedMessage {
 
   DeleteGuildRoleRequest._() : super();
   factory DeleteGuildRoleRequest({
-    $fixnum.Int64 guildId,
-    $fixnum.Int64 roleId,
+    $fixnum.Int64? guildId,
+    $fixnum.Int64? roleId,
   }) {
     final _result = create();
     if (guildId != null) {
@@ -918,7 +965,7 @@ class DeleteGuildRoleRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  DeleteGuildRoleRequest copyWith(void Function(DeleteGuildRoleRequest) updates) => super.copyWith((message) => updates(message as DeleteGuildRoleRequest)); // ignore: deprecated_member_use
+  DeleteGuildRoleRequest copyWith(void Function(DeleteGuildRoleRequest) updates) => super.copyWith((message) => updates(message as DeleteGuildRoleRequest)) as DeleteGuildRoleRequest; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static DeleteGuildRoleRequest create() => DeleteGuildRoleRequest._();
@@ -926,7 +973,7 @@ class DeleteGuildRoleRequest extends $pb.GeneratedMessage {
   static $pb.PbList<DeleteGuildRoleRequest> createRepeated() => $pb.PbList<DeleteGuildRoleRequest>();
   @$core.pragma('dart2js:noInline')
   static DeleteGuildRoleRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DeleteGuildRoleRequest>(create);
-  static DeleteGuildRoleRequest _defaultInstance;
+  static DeleteGuildRoleRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
   $fixnum.Int64 get guildId => $_getI64(0);
@@ -947,44 +994,73 @@ class DeleteGuildRoleRequest extends $pb.GeneratedMessage {
   void clearRoleId() => clearField(2);
 }
 
+class DeleteGuildRoleResponse extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'DeleteGuildRoleResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.chat.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  DeleteGuildRoleResponse._() : super();
+  factory DeleteGuildRoleResponse() => create();
+  factory DeleteGuildRoleResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory DeleteGuildRoleResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  DeleteGuildRoleResponse clone() => DeleteGuildRoleResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  DeleteGuildRoleResponse copyWith(void Function(DeleteGuildRoleResponse) updates) => super.copyWith((message) => updates(message as DeleteGuildRoleResponse)) as DeleteGuildRoleResponse; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static DeleteGuildRoleResponse create() => DeleteGuildRoleResponse._();
+  DeleteGuildRoleResponse createEmptyInstance() => create();
+  static $pb.PbList<DeleteGuildRoleResponse> createRepeated() => $pb.PbList<DeleteGuildRoleResponse>();
+  @$core.pragma('dart2js:noInline')
+  static DeleteGuildRoleResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DeleteGuildRoleResponse>(create);
+  static DeleteGuildRoleResponse? _defaultInstance;
+}
+
 class ModifyGuildRoleRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ModifyGuildRoleRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.chat.v1'), createEmptyInstance: create)
     ..a<$fixnum.Int64>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'guildId', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
-    ..aOM<Role>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'role', subBuilder: Role.create)
-    ..aOB(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'modifyName')
-    ..aOB(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'modifyColor')
-    ..aOB(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'modifyHoist')
-    ..aOB(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'modifyPingable')
+    ..a<$fixnum.Int64>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'roleId', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
+    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'newName')
+    ..a<$core.int>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'newColor', $pb.PbFieldType.O3)
+    ..aOB(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'newHoist')
+    ..aOB(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'newPingable')
     ..hasRequiredFields = false
   ;
 
   ModifyGuildRoleRequest._() : super();
   factory ModifyGuildRoleRequest({
-    $fixnum.Int64 guildId,
-    Role role,
-    $core.bool modifyName,
-    $core.bool modifyColor,
-    $core.bool modifyHoist,
-    $core.bool modifyPingable,
+    $fixnum.Int64? guildId,
+    $fixnum.Int64? roleId,
+    $core.String? newName,
+    $core.int? newColor,
+    $core.bool? newHoist,
+    $core.bool? newPingable,
   }) {
     final _result = create();
     if (guildId != null) {
       _result.guildId = guildId;
     }
-    if (role != null) {
-      _result.role = role;
+    if (roleId != null) {
+      _result.roleId = roleId;
     }
-    if (modifyName != null) {
-      _result.modifyName = modifyName;
+    if (newName != null) {
+      _result.newName = newName;
     }
-    if (modifyColor != null) {
-      _result.modifyColor = modifyColor;
+    if (newColor != null) {
+      _result.newColor = newColor;
     }
-    if (modifyHoist != null) {
-      _result.modifyHoist = modifyHoist;
+    if (newHoist != null) {
+      _result.newHoist = newHoist;
     }
-    if (modifyPingable != null) {
-      _result.modifyPingable = modifyPingable;
+    if (newPingable != null) {
+      _result.newPingable = newPingable;
     }
     return _result;
   }
@@ -999,7 +1075,7 @@ class ModifyGuildRoleRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  ModifyGuildRoleRequest copyWith(void Function(ModifyGuildRoleRequest) updates) => super.copyWith((message) => updates(message as ModifyGuildRoleRequest)); // ignore: deprecated_member_use
+  ModifyGuildRoleRequest copyWith(void Function(ModifyGuildRoleRequest) updates) => super.copyWith((message) => updates(message as ModifyGuildRoleRequest)) as ModifyGuildRoleRequest; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static ModifyGuildRoleRequest create() => ModifyGuildRoleRequest._();
@@ -1007,7 +1083,7 @@ class ModifyGuildRoleRequest extends $pb.GeneratedMessage {
   static $pb.PbList<ModifyGuildRoleRequest> createRepeated() => $pb.PbList<ModifyGuildRoleRequest>();
   @$core.pragma('dart2js:noInline')
   static ModifyGuildRoleRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ModifyGuildRoleRequest>(create);
-  static ModifyGuildRoleRequest _defaultInstance;
+  static ModifyGuildRoleRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
   $fixnum.Int64 get guildId => $_getI64(0);
@@ -1019,51 +1095,78 @@ class ModifyGuildRoleRequest extends $pb.GeneratedMessage {
   void clearGuildId() => clearField(1);
 
   @$pb.TagNumber(2)
-  Role get role => $_getN(1);
+  $fixnum.Int64 get roleId => $_getI64(1);
   @$pb.TagNumber(2)
-  set role(Role v) { setField(2, v); }
+  set roleId($fixnum.Int64 v) { $_setInt64(1, v); }
   @$pb.TagNumber(2)
-  $core.bool hasRole() => $_has(1);
+  $core.bool hasRoleId() => $_has(1);
   @$pb.TagNumber(2)
-  void clearRole() => clearField(2);
-  @$pb.TagNumber(2)
-  Role ensureRole() => $_ensure(1);
+  void clearRoleId() => clearField(2);
 
   @$pb.TagNumber(3)
-  $core.bool get modifyName => $_getBF(2);
+  $core.String get newName => $_getSZ(2);
   @$pb.TagNumber(3)
-  set modifyName($core.bool v) { $_setBool(2, v); }
+  set newName($core.String v) { $_setString(2, v); }
   @$pb.TagNumber(3)
-  $core.bool hasModifyName() => $_has(2);
+  $core.bool hasNewName() => $_has(2);
   @$pb.TagNumber(3)
-  void clearModifyName() => clearField(3);
+  void clearNewName() => clearField(3);
 
   @$pb.TagNumber(4)
-  $core.bool get modifyColor => $_getBF(3);
+  $core.int get newColor => $_getIZ(3);
   @$pb.TagNumber(4)
-  set modifyColor($core.bool v) { $_setBool(3, v); }
+  set newColor($core.int v) { $_setSignedInt32(3, v); }
   @$pb.TagNumber(4)
-  $core.bool hasModifyColor() => $_has(3);
+  $core.bool hasNewColor() => $_has(3);
   @$pb.TagNumber(4)
-  void clearModifyColor() => clearField(4);
+  void clearNewColor() => clearField(4);
 
   @$pb.TagNumber(5)
-  $core.bool get modifyHoist => $_getBF(4);
+  $core.bool get newHoist => $_getBF(4);
   @$pb.TagNumber(5)
-  set modifyHoist($core.bool v) { $_setBool(4, v); }
+  set newHoist($core.bool v) { $_setBool(4, v); }
   @$pb.TagNumber(5)
-  $core.bool hasModifyHoist() => $_has(4);
+  $core.bool hasNewHoist() => $_has(4);
   @$pb.TagNumber(5)
-  void clearModifyHoist() => clearField(5);
+  void clearNewHoist() => clearField(5);
 
   @$pb.TagNumber(6)
-  $core.bool get modifyPingable => $_getBF(5);
+  $core.bool get newPingable => $_getBF(5);
   @$pb.TagNumber(6)
-  set modifyPingable($core.bool v) { $_setBool(5, v); }
+  set newPingable($core.bool v) { $_setBool(5, v); }
   @$pb.TagNumber(6)
-  $core.bool hasModifyPingable() => $_has(5);
+  $core.bool hasNewPingable() => $_has(5);
   @$pb.TagNumber(6)
-  void clearModifyPingable() => clearField(6);
+  void clearNewPingable() => clearField(6);
+}
+
+class ModifyGuildRoleResponse extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ModifyGuildRoleResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.chat.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  ModifyGuildRoleResponse._() : super();
+  factory ModifyGuildRoleResponse() => create();
+  factory ModifyGuildRoleResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ModifyGuildRoleResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ModifyGuildRoleResponse clone() => ModifyGuildRoleResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ModifyGuildRoleResponse copyWith(void Function(ModifyGuildRoleResponse) updates) => super.copyWith((message) => updates(message as ModifyGuildRoleResponse)) as ModifyGuildRoleResponse; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static ModifyGuildRoleResponse create() => ModifyGuildRoleResponse._();
+  ModifyGuildRoleResponse createEmptyInstance() => create();
+  static $pb.PbList<ModifyGuildRoleResponse> createRepeated() => $pb.PbList<ModifyGuildRoleResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ModifyGuildRoleResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ModifyGuildRoleResponse>(create);
+  static ModifyGuildRoleResponse? _defaultInstance;
 }
 
 class ManageUserRolesRequest extends $pb.GeneratedMessage {
@@ -1077,10 +1180,10 @@ class ManageUserRolesRequest extends $pb.GeneratedMessage {
 
   ManageUserRolesRequest._() : super();
   factory ManageUserRolesRequest({
-    $fixnum.Int64 guildId,
-    $fixnum.Int64 userId,
-    $core.Iterable<$fixnum.Int64> giveRoleIds,
-    $core.Iterable<$fixnum.Int64> takeRoleIds,
+    $fixnum.Int64? guildId,
+    $fixnum.Int64? userId,
+    $core.Iterable<$fixnum.Int64>? giveRoleIds,
+    $core.Iterable<$fixnum.Int64>? takeRoleIds,
   }) {
     final _result = create();
     if (guildId != null) {
@@ -1108,7 +1211,7 @@ class ManageUserRolesRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  ManageUserRolesRequest copyWith(void Function(ManageUserRolesRequest) updates) => super.copyWith((message) => updates(message as ManageUserRolesRequest)); // ignore: deprecated_member_use
+  ManageUserRolesRequest copyWith(void Function(ManageUserRolesRequest) updates) => super.copyWith((message) => updates(message as ManageUserRolesRequest)) as ManageUserRolesRequest; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static ManageUserRolesRequest create() => ManageUserRolesRequest._();
@@ -1116,7 +1219,7 @@ class ManageUserRolesRequest extends $pb.GeneratedMessage {
   static $pb.PbList<ManageUserRolesRequest> createRepeated() => $pb.PbList<ManageUserRolesRequest>();
   @$core.pragma('dart2js:noInline')
   static ManageUserRolesRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ManageUserRolesRequest>(create);
-  static ManageUserRolesRequest _defaultInstance;
+  static ManageUserRolesRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
   $fixnum.Int64 get guildId => $_getI64(0);
@@ -1143,6 +1246,35 @@ class ManageUserRolesRequest extends $pb.GeneratedMessage {
   $core.List<$fixnum.Int64> get takeRoleIds => $_getList(3);
 }
 
+class ManageUserRolesResponse extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ManageUserRolesResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.chat.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  ManageUserRolesResponse._() : super();
+  factory ManageUserRolesResponse() => create();
+  factory ManageUserRolesResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ManageUserRolesResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ManageUserRolesResponse clone() => ManageUserRolesResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ManageUserRolesResponse copyWith(void Function(ManageUserRolesResponse) updates) => super.copyWith((message) => updates(message as ManageUserRolesResponse)) as ManageUserRolesResponse; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static ManageUserRolesResponse create() => ManageUserRolesResponse._();
+  ManageUserRolesResponse createEmptyInstance() => create();
+  static $pb.PbList<ManageUserRolesResponse> createRepeated() => $pb.PbList<ManageUserRolesResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ManageUserRolesResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ManageUserRolesResponse>(create);
+  static ManageUserRolesResponse? _defaultInstance;
+}
+
 class GetUserRolesRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'GetUserRolesRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.chat.v1'), createEmptyInstance: create)
     ..a<$fixnum.Int64>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'guildId', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
@@ -1152,8 +1284,8 @@ class GetUserRolesRequest extends $pb.GeneratedMessage {
 
   GetUserRolesRequest._() : super();
   factory GetUserRolesRequest({
-    $fixnum.Int64 guildId,
-    $fixnum.Int64 userId,
+    $fixnum.Int64? guildId,
+    $fixnum.Int64? userId,
   }) {
     final _result = create();
     if (guildId != null) {
@@ -1175,7 +1307,7 @@ class GetUserRolesRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  GetUserRolesRequest copyWith(void Function(GetUserRolesRequest) updates) => super.copyWith((message) => updates(message as GetUserRolesRequest)); // ignore: deprecated_member_use
+  GetUserRolesRequest copyWith(void Function(GetUserRolesRequest) updates) => super.copyWith((message) => updates(message as GetUserRolesRequest)) as GetUserRolesRequest; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static GetUserRolesRequest create() => GetUserRolesRequest._();
@@ -1183,7 +1315,7 @@ class GetUserRolesRequest extends $pb.GeneratedMessage {
   static $pb.PbList<GetUserRolesRequest> createRepeated() => $pb.PbList<GetUserRolesRequest>();
   @$core.pragma('dart2js:noInline')
   static GetUserRolesRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetUserRolesRequest>(create);
-  static GetUserRolesRequest _defaultInstance;
+  static GetUserRolesRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
   $fixnum.Int64 get guildId => $_getI64(0);
@@ -1212,7 +1344,7 @@ class GetUserRolesResponse extends $pb.GeneratedMessage {
 
   GetUserRolesResponse._() : super();
   factory GetUserRolesResponse({
-    $core.Iterable<$fixnum.Int64> roles,
+    $core.Iterable<$fixnum.Int64>? roles,
   }) {
     final _result = create();
     if (roles != null) {
@@ -1231,7 +1363,7 @@ class GetUserRolesResponse extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  GetUserRolesResponse copyWith(void Function(GetUserRolesResponse) updates) => super.copyWith((message) => updates(message as GetUserRolesResponse)); // ignore: deprecated_member_use
+  GetUserRolesResponse copyWith(void Function(GetUserRolesResponse) updates) => super.copyWith((message) => updates(message as GetUserRolesResponse)) as GetUserRolesResponse; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static GetUserRolesResponse create() => GetUserRolesResponse._();
@@ -1239,7 +1371,7 @@ class GetUserRolesResponse extends $pb.GeneratedMessage {
   static $pb.PbList<GetUserRolesResponse> createRepeated() => $pb.PbList<GetUserRolesResponse>();
   @$core.pragma('dart2js:noInline')
   static GetUserRolesResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetUserRolesResponse>(create);
-  static GetUserRolesResponse _defaultInstance;
+  static GetUserRolesResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.List<$fixnum.Int64> get roles => $_getList(0);

@@ -1,27 +1,15 @@
-import 'dart:async';
+export '../protocol/emote/v1/emote.client.hrpc.dart';
+export '../protocol/mediaproxy/v1/mediaproxy.client.hrpc.dart';
+export '../protocol/profile/v1/profile.client.hrpc.dart';
+export '../protocol/voice/v1/voice.client.hrpc.dart';
+export '../protocol/chat/v1/chat.client.hrpc.dart';
+export '../protocol/auth/v1/auth.client.hrpc.dart';
 
-import 'package:harmony_sdk/src/protocol/auth/v1/auth.client.hrpc.dart';
-import 'package:harmony_sdk/src/protocol/chat/v1/chat.client.hrpc.dart';
-import 'package:tuple/tuple.dart';
+import '../protocol/emote/v1/emote.client.hrpc.dart';
+import '../protocol/mediaproxy/v1/mediaproxy.client.hrpc.dart';
+import '../protocol/profile/v1/profile.client.hrpc.dart';
+import '../protocol/voice/v1/voice.client.hrpc.dart';
+import '../protocol/chat/v1/chat.client.hrpc.dart';
+import '../protocol/auth/v1/auth.client.hrpc.dart';
 
-import '../api/auth.dart' as auth_kit;
-import '../api/chat.dart' as chat_kit;
-
-part 'action.dart';
-part 'auth.dart';
-part 'embed.dart';
-part 'guild.dart';
-part 'guild_event.dart';
-part 'user.dart';
-part 'channel.dart';
-part 'message.dart';
-part 'invite.dart';
-part 'server.dart';
-
-const int defaultPort = 2289;
-const int callTimeout = 5;
-
-class Metadata {
-  String kind;
-  Map<String, dynamic> extensions;
-}
+part 'client.dart';
