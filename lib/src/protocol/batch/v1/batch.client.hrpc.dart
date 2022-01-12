@@ -9,12 +9,12 @@ class BatchServiceClient {
 	Uri get wsServer => server.hasScheme ? server.replace(scheme: server.scheme == "https" ? "wss" : "ws") : server.replace(scheme: "wss");
 	Future<BatchResponse> Batch(BatchRequest input, {Map<String,String> headers = const {}}) async {
 		var response = await $http.post(this.server.replace(path: "/protocol.batch.v1.BatchService/Batch"), body: input.writeToBuffer(), headers: {"content-type": "application/hrpc"}..addAll(headers)..addAll(this.commonHeaders));
-		if (response.statusCode != 200) { throw response; }
+		if (response.statusCode != 200) { print("hrpc Batch error: ${response.statusCode}"); throw response; }
 		return BatchResponse.fromBuffer(response.bodyBytes);
 	}
 	Future<BatchSameResponse> BatchSame(BatchSameRequest input, {Map<String,String> headers = const {}}) async {
 		var response = await $http.post(this.server.replace(path: "/protocol.batch.v1.BatchService/BatchSame"), body: input.writeToBuffer(), headers: {"content-type": "application/hrpc"}..addAll(headers)..addAll(this.commonHeaders));
-		if (response.statusCode != 200) { throw response; }
+		if (response.statusCode != 200) { print("hrpc BatchSame error: ${response.statusCode}"); throw response; }
 		return BatchSameResponse.fromBuffer(response.bodyBytes);
 	}
 }

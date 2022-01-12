@@ -4,8 +4,8 @@ class Client with AuthServiceClient,
         ChatServiceClient,
         EmoteServiceClient,
         MediaProxyServiceClient,
-        ProfileServiceClient,
-        VoiceServiceClient {
+        ProfileServiceClient {
+        // VoiceServiceClient {
   Session? _token;
 
   Session? get token => _token;

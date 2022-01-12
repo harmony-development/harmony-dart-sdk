@@ -1,7 +1,10 @@
 #!/usr/bin/env bash
 
-IN_DIR=$(readlink -m "./protocol")
+IN_DIR=$(readlink -m "./protocol/stable")
 OUT_DIR=$(readlink -m "./lib/src/protocol/")
+
+rm -rf lib/src/protocol || true
+mkdir lib/src/protocol
 
 for dir in $(find ${IN_DIR} -name '*.proto' -print0 | xargs -0 -n1 dirname | sort | uniq); do
   echo $(find "${dir}" -name '*.proto')

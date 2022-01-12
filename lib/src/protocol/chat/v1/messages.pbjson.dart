@@ -260,8 +260,11 @@ const Content$json = const {
     const {'1': 'embed_message', '3': 2, '4': 1, '5': 11, '6': '.protocol.chat.v1.Content.EmbedContent', '9': 0, '10': 'embedMessage'},
     const {'1': 'attachment_message', '3': 3, '4': 1, '5': 11, '6': '.protocol.chat.v1.Content.AttachmentContent', '9': 0, '10': 'attachmentMessage'},
     const {'1': 'photo_message', '3': 4, '4': 1, '5': 11, '6': '.protocol.chat.v1.Content.PhotoContent', '9': 0, '10': 'photoMessage'},
+    const {'1': 'invite_rejected', '3': 5, '4': 1, '5': 11, '6': '.protocol.chat.v1.Content.InviteRejected', '9': 0, '10': 'inviteRejected'},
+    const {'1': 'invite_accepted', '3': 6, '4': 1, '5': 11, '6': '.protocol.chat.v1.Content.InviteAccepted', '9': 0, '10': 'inviteAccepted'},
+    const {'1': 'room_upgraded_to_guild', '3': 7, '4': 1, '5': 11, '6': '.protocol.chat.v1.Content.RoomUpgradedToGuild', '9': 0, '10': 'roomUpgradedToGuild'},
   ],
-  '3': const [Content_TextContent$json, Content_EmbedContent$json, Content_AttachmentContent$json, Content_PhotoContent$json],
+  '3': const [Content_TextContent$json, Content_EmbedContent$json, Content_AttachmentContent$json, Content_PhotoContent$json, Content_InviteRejected$json, Content_InviteAccepted$json, Content_RoomUpgradedToGuild$json],
   '8': const [
     const {'1': 'content'},
   ],
@@ -279,7 +282,7 @@ const Content_TextContent$json = const {
 const Content_EmbedContent$json = const {
   '1': 'EmbedContent',
   '2': const [
-    const {'1': 'embed', '3': 1, '4': 1, '5': 11, '6': '.protocol.chat.v1.Embed', '10': 'embed'},
+    const {'1': 'embeds', '3': 1, '4': 3, '5': 11, '6': '.protocol.chat.v1.Embed', '10': 'embeds'},
   ],
 };
 
@@ -299,8 +302,34 @@ const Content_PhotoContent$json = const {
   ],
 };
 
+@$core.Deprecated('Use contentDescriptor instead')
+const Content_InviteRejected$json = const {
+  '1': 'InviteRejected',
+  '2': const [
+    const {'1': 'invitee_id', '3': 1, '4': 1, '5': 4, '10': 'inviteeId'},
+    const {'1': 'inviter_id', '3': 2, '4': 1, '5': 4, '10': 'inviterId'},
+  ],
+};
+
+@$core.Deprecated('Use contentDescriptor instead')
+const Content_InviteAccepted$json = const {
+  '1': 'InviteAccepted',
+  '2': const [
+    const {'1': 'invitee_id', '3': 1, '4': 1, '5': 4, '10': 'inviteeId'},
+    const {'1': 'inviter_id', '3': 2, '4': 1, '5': 4, '10': 'inviterId'},
+  ],
+};
+
+@$core.Deprecated('Use contentDescriptor instead')
+const Content_RoomUpgradedToGuild$json = const {
+  '1': 'RoomUpgradedToGuild',
+  '2': const [
+    const {'1': 'upgraded_by', '3': 1, '4': 1, '5': 4, '10': 'upgradedBy'},
+  ],
+};
+
 /// Descriptor for `Content`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List contentDescriptor = $convert.base64Decode('CgdDb250ZW50EkoKDHRleHRfbWVzc2FnZRgBIAEoCzIlLnByb3RvY29sLmNoYXQudjEuQ29udGVudC5UZXh0Q29udGVudEgAUgt0ZXh0TWVzc2FnZRJNCg1lbWJlZF9tZXNzYWdlGAIgASgLMiYucHJvdG9jb2wuY2hhdC52MS5Db250ZW50LkVtYmVkQ29udGVudEgAUgxlbWJlZE1lc3NhZ2USXAoSYXR0YWNobWVudF9tZXNzYWdlGAMgASgLMisucHJvdG9jb2wuY2hhdC52MS5Db250ZW50LkF0dGFjaG1lbnRDb250ZW50SABSEWF0dGFjaG1lbnRNZXNzYWdlEk0KDXBob3RvX21lc3NhZ2UYBCABKAsyJi5wcm90b2NvbC5jaGF0LnYxLkNvbnRlbnQuUGhvdG9Db250ZW50SABSDHBob3RvTWVzc2FnZRpICgtUZXh0Q29udGVudBI5Cgdjb250ZW50GAEgASgLMh8ucHJvdG9jb2wuY2hhdC52MS5Gb3JtYXR0ZWRUZXh0Ugdjb250ZW50Gj0KDEVtYmVkQ29udGVudBItCgVlbWJlZBgBIAEoCzIXLnByb3RvY29sLmNoYXQudjEuRW1iZWRSBWVtYmVkGkcKEUF0dGFjaG1lbnRDb250ZW50EjIKBWZpbGVzGAEgAygLMhwucHJvdG9jb2wuY2hhdC52MS5BdHRhY2htZW50UgVmaWxlcxo/CgxQaG90b0NvbnRlbnQSLwoGcGhvdG9zGAEgAygLMhcucHJvdG9jb2wuY2hhdC52MS5QaG90b1IGcGhvdG9zQgkKB2NvbnRlbnQ=');
+final $typed_data.Uint8List contentDescriptor = $convert.base64Decode('CgdDb250ZW50EkoKDHRleHRfbWVzc2FnZRgBIAEoCzIlLnByb3RvY29sLmNoYXQudjEuQ29udGVudC5UZXh0Q29udGVudEgAUgt0ZXh0TWVzc2FnZRJNCg1lbWJlZF9tZXNzYWdlGAIgASgLMiYucHJvdG9jb2wuY2hhdC52MS5Db250ZW50LkVtYmVkQ29udGVudEgAUgxlbWJlZE1lc3NhZ2USXAoSYXR0YWNobWVudF9tZXNzYWdlGAMgASgLMisucHJvdG9jb2wuY2hhdC52MS5Db250ZW50LkF0dGFjaG1lbnRDb250ZW50SABSEWF0dGFjaG1lbnRNZXNzYWdlEk0KDXBob3RvX21lc3NhZ2UYBCABKAsyJi5wcm90b2NvbC5jaGF0LnYxLkNvbnRlbnQuUGhvdG9Db250ZW50SABSDHBob3RvTWVzc2FnZRJTCg9pbnZpdGVfcmVqZWN0ZWQYBSABKAsyKC5wcm90b2NvbC5jaGF0LnYxLkNvbnRlbnQuSW52aXRlUmVqZWN0ZWRIAFIOaW52aXRlUmVqZWN0ZWQSUwoPaW52aXRlX2FjY2VwdGVkGAYgASgLMigucHJvdG9jb2wuY2hhdC52MS5Db250ZW50Lkludml0ZUFjY2VwdGVkSABSDmludml0ZUFjY2VwdGVkEmQKFnJvb21fdXBncmFkZWRfdG9fZ3VpbGQYByABKAsyLS5wcm90b2NvbC5jaGF0LnYxLkNvbnRlbnQuUm9vbVVwZ3JhZGVkVG9HdWlsZEgAUhNyb29tVXBncmFkZWRUb0d1aWxkGkgKC1RleHRDb250ZW50EjkKB2NvbnRlbnQYASABKAsyHy5wcm90b2NvbC5jaGF0LnYxLkZvcm1hdHRlZFRleHRSB2NvbnRlbnQaPwoMRW1iZWRDb250ZW50Ei8KBmVtYmVkcxgBIAMoCzIXLnByb3RvY29sLmNoYXQudjEuRW1iZWRSBmVtYmVkcxpHChFBdHRhY2htZW50Q29udGVudBIyCgVmaWxlcxgBIAMoCzIcLnByb3RvY29sLmNoYXQudjEuQXR0YWNobWVudFIFZmlsZXMaPwoMUGhvdG9Db250ZW50Ei8KBnBob3RvcxgBIAMoCzIXLnByb3RvY29sLmNoYXQudjEuUGhvdG9SBnBob3RvcxpOCg5JbnZpdGVSZWplY3RlZBIdCgppbnZpdGVlX2lkGAEgASgEUglpbnZpdGVlSWQSHQoKaW52aXRlcl9pZBgCIAEoBFIJaW52aXRlcklkGk4KDkludml0ZUFjY2VwdGVkEh0KCmludml0ZWVfaWQYASABKARSCWludml0ZWVJZBIdCgppbnZpdGVyX2lkGAIgASgEUglpbnZpdGVySWQaNgoTUm9vbVVwZ3JhZGVkVG9HdWlsZBIfCgt1cGdyYWRlZF9ieRgBIAEoBFIKdXBncmFkZWRCeUIJCgdjb250ZW50');
 @$core.Deprecated('Use reactionDescriptor instead')
 const Reaction$json = const {
   '1': 'Reaction',
@@ -331,8 +360,9 @@ const Format$json = const {
     const {'1': 'guild_mention', '3': 13, '4': 1, '5': 11, '6': '.protocol.chat.v1.Format.GuildMention', '9': 0, '10': 'guildMention'},
     const {'1': 'emoji', '3': 14, '4': 1, '5': 11, '6': '.protocol.chat.v1.Format.Emoji', '9': 0, '10': 'emoji'},
     const {'1': 'color', '3': 15, '4': 1, '5': 11, '6': '.protocol.chat.v1.Format.Color', '9': 0, '10': 'color'},
+    const {'1': 'localization', '3': 16, '4': 1, '5': 11, '6': '.protocol.chat.v1.Format.Localization', '9': 0, '10': 'localization'},
   ],
-  '3': const [Format_Bold$json, Format_Italic$json, Format_Underline$json, Format_Monospace$json, Format_Superscript$json, Format_Subscript$json, Format_CodeBlock$json, Format_UserMention$json, Format_RoleMention$json, Format_ChannelMention$json, Format_GuildMention$json, Format_Emoji$json, Format_Color$json],
+  '3': const [Format_Bold$json, Format_Italic$json, Format_Underline$json, Format_Monospace$json, Format_Superscript$json, Format_Subscript$json, Format_CodeBlock$json, Format_UserMention$json, Format_RoleMention$json, Format_ChannelMention$json, Format_GuildMention$json, Format_Emoji$json, Format_Color$json, Format_Localization$json],
   '8': const [
     const {'1': 'format'},
   ],
@@ -440,8 +470,16 @@ const Format_Color_Kind$json = const {
   ],
 };
 
+@$core.Deprecated('Use formatDescriptor instead')
+const Format_Localization$json = const {
+  '1': 'Localization',
+  '2': const [
+    const {'1': 'i18n_code', '3': 1, '4': 1, '5': 9, '10': 'i18nCode'},
+  ],
+};
+
 /// Descriptor for `Format`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List formatDescriptor = $convert.base64Decode('CgZGb3JtYXQSFAoFc3RhcnQYASABKA1SBXN0YXJ0EhYKBmxlbmd0aBgCIAEoDVIGbGVuZ3RoEjMKBGJvbGQYAyABKAsyHS5wcm90b2NvbC5jaGF0LnYxLkZvcm1hdC5Cb2xkSABSBGJvbGQSOQoGaXRhbGljGAQgASgLMh8ucHJvdG9jb2wuY2hhdC52MS5Gb3JtYXQuSXRhbGljSABSBml0YWxpYxJCCgl1bmRlcmxpbmUYBSABKAsyIi5wcm90b2NvbC5jaGF0LnYxLkZvcm1hdC5VbmRlcmxpbmVIAFIJdW5kZXJsaW5lEkIKCW1vbm9zcGFjZRgGIAEoCzIiLnByb3RvY29sLmNoYXQudjEuRm9ybWF0Lk1vbm9zcGFjZUgAUgltb25vc3BhY2USSAoLc3VwZXJzY3JpcHQYByABKAsyJC5wcm90b2NvbC5jaGF0LnYxLkZvcm1hdC5TdXBlcnNjcmlwdEgAUgtzdXBlcnNjcmlwdBJCCglzdWJzY3JpcHQYCCABKAsyIi5wcm90b2NvbC5jaGF0LnYxLkZvcm1hdC5TdWJzY3JpcHRIAFIJc3Vic2NyaXB0EkMKCmNvZGVfYmxvY2sYCSABKAsyIi5wcm90b2NvbC5jaGF0LnYxLkZvcm1hdC5Db2RlQmxvY2tIAFIJY29kZUJsb2NrEkkKDHVzZXJfbWVudGlvbhgKIAEoCzIkLnByb3RvY29sLmNoYXQudjEuRm9ybWF0LlVzZXJNZW50aW9uSABSC3VzZXJNZW50aW9uEkkKDHJvbGVfbWVudGlvbhgLIAEoCzIkLnByb3RvY29sLmNoYXQudjEuRm9ybWF0LlJvbGVNZW50aW9uSABSC3JvbGVNZW50aW9uElIKD2NoYW5uZWxfbWVudGlvbhgMIAEoCzInLnByb3RvY29sLmNoYXQudjEuRm9ybWF0LkNoYW5uZWxNZW50aW9uSABSDmNoYW5uZWxNZW50aW9uEkwKDWd1aWxkX21lbnRpb24YDSABKAsyJS5wcm90b2NvbC5jaGF0LnYxLkZvcm1hdC5HdWlsZE1lbnRpb25IAFIMZ3VpbGRNZW50aW9uEjYKBWVtb2ppGA4gASgLMh4ucHJvdG9jb2wuY2hhdC52MS5Gb3JtYXQuRW1vamlIAFIFZW1vamkSNgoFY29sb3IYDyABKAsyHi5wcm90b2NvbC5jaGF0LnYxLkZvcm1hdC5Db2xvckgAUgVjb2xvchoGCgRCb2xkGggKBkl0YWxpYxoLCglVbmRlcmxpbmUaCwoJTW9ub3NwYWNlGg0KC1N1cGVyc2NyaXB0GgsKCVN1YnNjcmlwdBonCglDb2RlQmxvY2sSGgoIbGFuZ3VhZ2UYASABKAlSCGxhbmd1YWdlGiYKC1VzZXJNZW50aW9uEhcKB3VzZXJfaWQYASABKARSBnVzZXJJZBomCgtSb2xlTWVudGlvbhIXCgdyb2xlX2lkGAEgASgEUgZyb2xlSWQaLwoOQ2hhbm5lbE1lbnRpb24SHQoKY2hhbm5lbF9pZBgBIAEoBFIJY2hhbm5lbElkGkkKDEd1aWxkTWVudGlvbhIZCghndWlsZF9pZBgBIAEoBFIHZ3VpbGRJZBIeCgpob21lc2VydmVyGAIgASgJUgpob21lc2VydmVyGj0KBUVtb2ppEhsKCWltYWdlX2htYxgBIAEoCVIIaW1hZ2VIbWMSFwoHcGFja19pZBgCIAEoBFIGcGFja0lkGroBCgVDb2xvchI3CgRraW5kGAEgASgOMiMucHJvdG9jb2wuY2hhdC52MS5Gb3JtYXQuQ29sb3IuS2luZFIEa2luZCJ4CgRLaW5kEhgKFEtJTkRfRElNX1VOU1BFQ0lGSUVEEAASDwoLS0lORF9CUklHSFQQARIRCg1LSU5EX05FR0FUSVZFEAISEQoNS0lORF9QT1NJVElWRRADEg0KCUtJTkRfSU5GTxAEEhAKDEtJTkRfV0FSTklORxAFQggKBmZvcm1hdA==');
+final $typed_data.Uint8List formatDescriptor = $convert.base64Decode('CgZGb3JtYXQSFAoFc3RhcnQYASABKA1SBXN0YXJ0EhYKBmxlbmd0aBgCIAEoDVIGbGVuZ3RoEjMKBGJvbGQYAyABKAsyHS5wcm90b2NvbC5jaGF0LnYxLkZvcm1hdC5Cb2xkSABSBGJvbGQSOQoGaXRhbGljGAQgASgLMh8ucHJvdG9jb2wuY2hhdC52MS5Gb3JtYXQuSXRhbGljSABSBml0YWxpYxJCCgl1bmRlcmxpbmUYBSABKAsyIi5wcm90b2NvbC5jaGF0LnYxLkZvcm1hdC5VbmRlcmxpbmVIAFIJdW5kZXJsaW5lEkIKCW1vbm9zcGFjZRgGIAEoCzIiLnByb3RvY29sLmNoYXQudjEuRm9ybWF0Lk1vbm9zcGFjZUgAUgltb25vc3BhY2USSAoLc3VwZXJzY3JpcHQYByABKAsyJC5wcm90b2NvbC5jaGF0LnYxLkZvcm1hdC5TdXBlcnNjcmlwdEgAUgtzdXBlcnNjcmlwdBJCCglzdWJzY3JpcHQYCCABKAsyIi5wcm90b2NvbC5jaGF0LnYxLkZvcm1hdC5TdWJzY3JpcHRIAFIJc3Vic2NyaXB0EkMKCmNvZGVfYmxvY2sYCSABKAsyIi5wcm90b2NvbC5jaGF0LnYxLkZvcm1hdC5Db2RlQmxvY2tIAFIJY29kZUJsb2NrEkkKDHVzZXJfbWVudGlvbhgKIAEoCzIkLnByb3RvY29sLmNoYXQudjEuRm9ybWF0LlVzZXJNZW50aW9uSABSC3VzZXJNZW50aW9uEkkKDHJvbGVfbWVudGlvbhgLIAEoCzIkLnByb3RvY29sLmNoYXQudjEuRm9ybWF0LlJvbGVNZW50aW9uSABSC3JvbGVNZW50aW9uElIKD2NoYW5uZWxfbWVudGlvbhgMIAEoCzInLnByb3RvY29sLmNoYXQudjEuRm9ybWF0LkNoYW5uZWxNZW50aW9uSABSDmNoYW5uZWxNZW50aW9uEkwKDWd1aWxkX21lbnRpb24YDSABKAsyJS5wcm90b2NvbC5jaGF0LnYxLkZvcm1hdC5HdWlsZE1lbnRpb25IAFIMZ3VpbGRNZW50aW9uEjYKBWVtb2ppGA4gASgLMh4ucHJvdG9jb2wuY2hhdC52MS5Gb3JtYXQuRW1vamlIAFIFZW1vamkSNgoFY29sb3IYDyABKAsyHi5wcm90b2NvbC5jaGF0LnYxLkZvcm1hdC5Db2xvckgAUgVjb2xvchJLCgxsb2NhbGl6YXRpb24YECABKAsyJS5wcm90b2NvbC5jaGF0LnYxLkZvcm1hdC5Mb2NhbGl6YXRpb25IAFIMbG9jYWxpemF0aW9uGgYKBEJvbGQaCAoGSXRhbGljGgsKCVVuZGVybGluZRoLCglNb25vc3BhY2UaDQoLU3VwZXJzY3JpcHQaCwoJU3Vic2NyaXB0GicKCUNvZGVCbG9jaxIaCghsYW5ndWFnZRgBIAEoCVIIbGFuZ3VhZ2UaJgoLVXNlck1lbnRpb24SFwoHdXNlcl9pZBgBIAEoBFIGdXNlcklkGiYKC1JvbGVNZW50aW9uEhcKB3JvbGVfaWQYASABKARSBnJvbGVJZBovCg5DaGFubmVsTWVudGlvbhIdCgpjaGFubmVsX2lkGAEgASgEUgljaGFubmVsSWQaSQoMR3VpbGRNZW50aW9uEhkKCGd1aWxkX2lkGAEgASgEUgdndWlsZElkEh4KCmhvbWVzZXJ2ZXIYAiABKAlSCmhvbWVzZXJ2ZXIaPQoFRW1vamkSGwoJaW1hZ2VfaG1jGAEgASgJUghpbWFnZUhtYxIXCgdwYWNrX2lkGAIgASgEUgZwYWNrSWQaugEKBUNvbG9yEjcKBGtpbmQYASABKA4yIy5wcm90b2NvbC5jaGF0LnYxLkZvcm1hdC5Db2xvci5LaW5kUgRraW5kIngKBEtpbmQSGAoUS0lORF9ESU1fVU5TUEVDSUZJRUQQABIPCgtLSU5EX0JSSUdIVBABEhEKDUtJTkRfTkVHQVRJVkUQAhIRCg1LSU5EX1BPU0lUSVZFEAMSDQoJS0lORF9JTkZPEAQSEAoMS0lORF9XQVJOSU5HEAUaKwoMTG9jYWxpemF0aW9uEhsKCWkxOG5fY29kZRgBIAEoCVIIaTE4bkNvZGVCCAoGZm9ybWF0');
 @$core.Deprecated('Use formattedTextDescriptor instead')
 const FormattedText$json = const {
   '1': 'FormattedText',
@@ -492,12 +530,13 @@ const GetChannelMessagesRequest$json = const {
   '2': const [
     const {'1': 'guild_id', '3': 1, '4': 1, '5': 4, '10': 'guildId'},
     const {'1': 'channel_id', '3': 2, '4': 1, '5': 4, '10': 'channelId'},
-    const {'1': 'message_id', '3': 3, '4': 1, '5': 4, '10': 'messageId'},
-    const {'1': 'direction', '3': 4, '4': 1, '5': 14, '6': '.protocol.chat.v1.GetChannelMessagesRequest.Direction', '9': 0, '10': 'direction', '17': true},
-    const {'1': 'count', '3': 5, '4': 1, '5': 13, '9': 1, '10': 'count', '17': true},
+    const {'1': 'message_id', '3': 3, '4': 1, '5': 4, '9': 0, '10': 'messageId', '17': true},
+    const {'1': 'direction', '3': 4, '4': 1, '5': 14, '6': '.protocol.chat.v1.GetChannelMessagesRequest.Direction', '9': 1, '10': 'direction', '17': true},
+    const {'1': 'count', '3': 5, '4': 1, '5': 13, '9': 2, '10': 'count', '17': true},
   ],
   '4': const [GetChannelMessagesRequest_Direction$json],
   '8': const [
+    const {'1': '_message_id'},
     const {'1': '_direction'},
     const {'1': '_count'},
   ],
@@ -514,7 +553,7 @@ const GetChannelMessagesRequest_Direction$json = const {
 };
 
 /// Descriptor for `GetChannelMessagesRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List getChannelMessagesRequestDescriptor = $convert.base64Decode('ChlHZXRDaGFubmVsTWVzc2FnZXNSZXF1ZXN0EhkKCGd1aWxkX2lkGAEgASgEUgdndWlsZElkEh0KCmNoYW5uZWxfaWQYAiABKARSCWNoYW5uZWxJZBIdCgptZXNzYWdlX2lkGAMgASgEUgltZXNzYWdlSWQSWAoJZGlyZWN0aW9uGAQgASgOMjUucHJvdG9jb2wuY2hhdC52MS5HZXRDaGFubmVsTWVzc2FnZXNSZXF1ZXN0LkRpcmVjdGlvbkgAUglkaXJlY3Rpb26IAQESGQoFY291bnQYBSABKA1IAVIFY291bnSIAQEiWAoJRGlyZWN0aW9uEiAKHERJUkVDVElPTl9CRUZPUkVfVU5TUEVDSUZJRUQQABIUChBESVJFQ1RJT05fQVJPVU5EEAESEwoPRElSRUNUSU9OX0FGVEVSEAJCDAoKX2RpcmVjdGlvbkIICgZfY291bnQ=');
+final $typed_data.Uint8List getChannelMessagesRequestDescriptor = $convert.base64Decode('ChlHZXRDaGFubmVsTWVzc2FnZXNSZXF1ZXN0EhkKCGd1aWxkX2lkGAEgASgEUgdndWlsZElkEh0KCmNoYW5uZWxfaWQYAiABKARSCWNoYW5uZWxJZBIiCgptZXNzYWdlX2lkGAMgASgESABSCW1lc3NhZ2VJZIgBARJYCglkaXJlY3Rpb24YBCABKA4yNS5wcm90b2NvbC5jaGF0LnYxLkdldENoYW5uZWxNZXNzYWdlc1JlcXVlc3QuRGlyZWN0aW9uSAFSCWRpcmVjdGlvbogBARIZCgVjb3VudBgFIAEoDUgCUgVjb3VudIgBASJYCglEaXJlY3Rpb24SIAocRElSRUNUSU9OX0JFRk9SRV9VTlNQRUNJRklFRBAAEhQKEERJUkVDVElPTl9BUk9VTkQQARITCg9ESVJFQ1RJT05fQUZURVIQAkINCgtfbWVzc2FnZV9pZEIMCgpfZGlyZWN0aW9uQggKBl9jb3VudA==');
 @$core.Deprecated('Use getChannelMessagesResponseDescriptor instead')
 const GetChannelMessagesResponse$json = const {
   '1': 'GetChannelMessagesResponse',

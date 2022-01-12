@@ -25,8 +25,10 @@ const Event$json = const {
   '2': const [
     const {'1': 'user_removed_from_guild', '3': 1, '4': 1, '5': 11, '6': '.protocol.sync.v1.Event.UserRemovedFromGuild', '9': 0, '10': 'userRemovedFromGuild'},
     const {'1': 'user_added_to_guild', '3': 2, '4': 1, '5': 11, '6': '.protocol.sync.v1.Event.UserAddedToGuild', '9': 0, '10': 'userAddedToGuild'},
+    const {'1': 'user_invited', '3': 3, '4': 1, '5': 11, '6': '.protocol.sync.v1.Event.UserInvited', '9': 0, '10': 'userInvited'},
+    const {'1': 'user_rejected_invite', '3': 4, '4': 1, '5': 11, '6': '.protocol.sync.v1.Event.UserRejectedInvite', '9': 0, '10': 'userRejectedInvite'},
   ],
-  '3': const [Event_UserRemovedFromGuild$json, Event_UserAddedToGuild$json],
+  '3': const [Event_UserRemovedFromGuild$json, Event_UserAddedToGuild$json, Event_UserInvited$json, Event_UserRejectedInvite$json],
   '8': const [
     const {'1': 'kind'},
   ],
@@ -50,8 +52,28 @@ const Event_UserAddedToGuild$json = const {
   ],
 };
 
+@$core.Deprecated('Use eventDescriptor instead')
+const Event_UserInvited$json = const {
+  '1': 'UserInvited',
+  '2': const [
+    const {'1': 'user_id', '3': 1, '4': 1, '5': 4, '10': 'userId'},
+    const {'1': 'inviter_id', '3': 2, '4': 1, '5': 4, '10': 'inviterId'},
+    const {'1': 'invite_id', '3': 3, '4': 1, '5': 9, '10': 'inviteId'},
+  ],
+};
+
+@$core.Deprecated('Use eventDescriptor instead')
+const Event_UserRejectedInvite$json = const {
+  '1': 'UserRejectedInvite',
+  '2': const [
+    const {'1': 'guild_id', '3': 1, '4': 1, '5': 4, '10': 'guildId'},
+    const {'1': 'user_id', '3': 2, '4': 1, '5': 4, '10': 'userId'},
+    const {'1': 'invite_id', '3': 3, '4': 1, '5': 9, '10': 'inviteId'},
+  ],
+};
+
 /// Descriptor for `Event`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List eventDescriptor = $convert.base64Decode('CgVFdmVudBJlChd1c2VyX3JlbW92ZWRfZnJvbV9ndWlsZBgBIAEoCzIsLnByb3RvY29sLnN5bmMudjEuRXZlbnQuVXNlclJlbW92ZWRGcm9tR3VpbGRIAFIUdXNlclJlbW92ZWRGcm9tR3VpbGQSWQoTdXNlcl9hZGRlZF90b19ndWlsZBgCIAEoCzIoLnByb3RvY29sLnN5bmMudjEuRXZlbnQuVXNlckFkZGVkVG9HdWlsZEgAUhB1c2VyQWRkZWRUb0d1aWxkGkoKFFVzZXJSZW1vdmVkRnJvbUd1aWxkEhcKB3VzZXJfaWQYASABKARSBnVzZXJJZBIZCghndWlsZF9pZBgCIAEoBFIHZ3VpbGRJZBpGChBVc2VyQWRkZWRUb0d1aWxkEhcKB3VzZXJfaWQYASABKARSBnVzZXJJZBIZCghndWlsZF9pZBgCIAEoBFIHZ3VpbGRJZEIGCgRraW5k');
+final $typed_data.Uint8List eventDescriptor = $convert.base64Decode('CgVFdmVudBJlChd1c2VyX3JlbW92ZWRfZnJvbV9ndWlsZBgBIAEoCzIsLnByb3RvY29sLnN5bmMudjEuRXZlbnQuVXNlclJlbW92ZWRGcm9tR3VpbGRIAFIUdXNlclJlbW92ZWRGcm9tR3VpbGQSWQoTdXNlcl9hZGRlZF90b19ndWlsZBgCIAEoCzIoLnByb3RvY29sLnN5bmMudjEuRXZlbnQuVXNlckFkZGVkVG9HdWlsZEgAUhB1c2VyQWRkZWRUb0d1aWxkEkgKDHVzZXJfaW52aXRlZBgDIAEoCzIjLnByb3RvY29sLnN5bmMudjEuRXZlbnQuVXNlckludml0ZWRIAFILdXNlckludml0ZWQSXgoUdXNlcl9yZWplY3RlZF9pbnZpdGUYBCABKAsyKi5wcm90b2NvbC5zeW5jLnYxLkV2ZW50LlVzZXJSZWplY3RlZEludml0ZUgAUhJ1c2VyUmVqZWN0ZWRJbnZpdGUaSgoUVXNlclJlbW92ZWRGcm9tR3VpbGQSFwoHdXNlcl9pZBgBIAEoBFIGdXNlcklkEhkKCGd1aWxkX2lkGAIgASgEUgdndWlsZElkGkYKEFVzZXJBZGRlZFRvR3VpbGQSFwoHdXNlcl9pZBgBIAEoBFIGdXNlcklkEhkKCGd1aWxkX2lkGAIgASgEUgdndWlsZElkGmIKC1VzZXJJbnZpdGVkEhcKB3VzZXJfaWQYASABKARSBnVzZXJJZBIdCgppbnZpdGVyX2lkGAIgASgEUglpbnZpdGVySWQSGwoJaW52aXRlX2lkGAMgASgJUghpbnZpdGVJZBplChJVc2VyUmVqZWN0ZWRJbnZpdGUSGQoIZ3VpbGRfaWQYASABKARSB2d1aWxkSWQSFwoHdXNlcl9pZBgCIAEoBFIGdXNlcklkEhsKCWludml0ZV9pZBgDIAEoCVIIaW52aXRlSWRCBgoEa2luZA==');
 @$core.Deprecated('Use pullRequestDescriptor instead')
 const PullRequest$json = const {
   '1': 'PullRequest',
@@ -119,6 +141,8 @@ const $core.Map<$core.String, $core.Map<$core.String, $core.dynamic>> PostboxSer
   '.protocol.sync.v1.Event': Event$json,
   '.protocol.sync.v1.Event.UserRemovedFromGuild': Event_UserRemovedFromGuild$json,
   '.protocol.sync.v1.Event.UserAddedToGuild': Event_UserAddedToGuild$json,
+  '.protocol.sync.v1.Event.UserInvited': Event_UserInvited$json,
+  '.protocol.sync.v1.Event.UserRejectedInvite': Event_UserRejectedInvite$json,
   '.protocol.sync.v1.PushRequest': PushRequest$json,
   '.protocol.sync.v1.PushResponse': PushResponse$json,
   '.protocol.sync.v1.NotifyNewIdRequest': NotifyNewIdRequest$json,

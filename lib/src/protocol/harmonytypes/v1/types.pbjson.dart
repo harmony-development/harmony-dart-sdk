@@ -15,11 +15,12 @@ const HarmonyMethodMetadata$json = const {
     const {'1': 'requires_authentication', '3': 1, '4': 1, '5': 8, '10': 'requiresAuthentication'},
     const {'1': 'requires_local', '3': 2, '4': 1, '5': 8, '10': 'requiresLocal'},
     const {'1': 'requires_permission_node', '3': 3, '4': 1, '5': 9, '10': 'requiresPermissionNode'},
+    const {'1': 'requires_owner', '3': 4, '4': 1, '5': 8, '10': 'requiresOwner'},
   ],
 };
 
 /// Descriptor for `HarmonyMethodMetadata`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List harmonyMethodMetadataDescriptor = $convert.base64Decode('ChVIYXJtb255TWV0aG9kTWV0YWRhdGESNwoXcmVxdWlyZXNfYXV0aGVudGljYXRpb24YASABKAhSFnJlcXVpcmVzQXV0aGVudGljYXRpb24SJQoOcmVxdWlyZXNfbG9jYWwYAiABKAhSDXJlcXVpcmVzTG9jYWwSOAoYcmVxdWlyZXNfcGVybWlzc2lvbl9ub2RlGAMgASgJUhZyZXF1aXJlc1Blcm1pc3Npb25Ob2Rl');
+final $typed_data.Uint8List harmonyMethodMetadataDescriptor = $convert.base64Decode('ChVIYXJtb255TWV0aG9kTWV0YWRhdGESNwoXcmVxdWlyZXNfYXV0aGVudGljYXRpb24YASABKAhSFnJlcXVpcmVzQXV0aGVudGljYXRpb24SJQoOcmVxdWlyZXNfbG9jYWwYAiABKAhSDXJlcXVpcmVzTG9jYWwSOAoYcmVxdWlyZXNfcGVybWlzc2lvbl9ub2RlGAMgASgJUhZyZXF1aXJlc1Blcm1pc3Npb25Ob2RlEiUKDnJlcXVpcmVzX293bmVyGAQgASgIUg1yZXF1aXJlc093bmVy');
 @$core.Deprecated('Use anythingDescriptor instead')
 const Anything$json = const {
   '1': 'Anything',

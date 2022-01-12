@@ -19,6 +19,7 @@ class HarmonyMethodMetadata extends $pb.GeneratedMessage {
     ..aOB(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'requiresAuthentication')
     ..aOB(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'requiresLocal')
     ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'requiresPermissionNode')
+    ..aOB(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'requiresOwner')
     ..hasRequiredFields = false
   ;
 
@@ -27,6 +28,7 @@ class HarmonyMethodMetadata extends $pb.GeneratedMessage {
     $core.bool? requiresAuthentication,
     $core.bool? requiresLocal,
     $core.String? requiresPermissionNode,
+    $core.bool? requiresOwner,
   }) {
     final _result = create();
     if (requiresAuthentication != null) {
@@ -37,6 +39,9 @@ class HarmonyMethodMetadata extends $pb.GeneratedMessage {
     }
     if (requiresPermissionNode != null) {
       _result.requiresPermissionNode = requiresPermissionNode;
+    }
+    if (requiresOwner != null) {
+      _result.requiresOwner = requiresOwner;
     }
     return _result;
   }
@@ -87,6 +92,15 @@ class HarmonyMethodMetadata extends $pb.GeneratedMessage {
   $core.bool hasRequiresPermissionNode() => $_has(2);
   @$pb.TagNumber(3)
   void clearRequiresPermissionNode() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.bool get requiresOwner => $_getBF(3);
+  @$pb.TagNumber(4)
+  set requiresOwner($core.bool v) { $_setBool(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasRequiresOwner() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearRequiresOwner() => clearField(4);
 }
 
 class Anything extends $pb.GeneratedMessage {

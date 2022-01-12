@@ -24,6 +24,18 @@ class ChatServiceApi {
     var emptyResponse = $7.CreateGuildResponse();
     return _client.invoke<$7.CreateGuildResponse>(ctx, 'ChatService', 'CreateGuild', request, emptyResponse);
   }
+  $async.Future<$7.CreateRoomResponse> createRoom($pb.ClientContext? ctx, $7.CreateRoomRequest request) {
+    var emptyResponse = $7.CreateRoomResponse();
+    return _client.invoke<$7.CreateRoomResponse>(ctx, 'ChatService', 'CreateRoom', request, emptyResponse);
+  }
+  $async.Future<$7.CreateDirectMessageResponse> createDirectMessage($pb.ClientContext? ctx, $7.CreateDirectMessageRequest request) {
+    var emptyResponse = $7.CreateDirectMessageResponse();
+    return _client.invoke<$7.CreateDirectMessageResponse>(ctx, 'ChatService', 'CreateDirectMessage', request, emptyResponse);
+  }
+  $async.Future<$7.UpgradeRoomToGuildResponse> upgradeRoomToGuild($pb.ClientContext? ctx, $7.UpgradeRoomToGuildRequest request) {
+    var emptyResponse = $7.UpgradeRoomToGuildResponse();
+    return _client.invoke<$7.UpgradeRoomToGuildResponse>(ctx, 'ChatService', 'UpgradeRoomToGuild', request, emptyResponse);
+  }
   $async.Future<$7.CreateInviteResponse> createInvite($pb.ClientContext? ctx, $7.CreateInviteRequest request) {
     var emptyResponse = $7.CreateInviteResponse();
     return _client.invoke<$7.CreateInviteResponse>(ctx, 'ChatService', 'CreateInvite', request, emptyResponse);
@@ -35,6 +47,22 @@ class ChatServiceApi {
   $async.Future<$7.GetGuildListResponse> getGuildList($pb.ClientContext? ctx, $7.GetGuildListRequest request) {
     var emptyResponse = $7.GetGuildListResponse();
     return _client.invoke<$7.GetGuildListResponse>(ctx, 'ChatService', 'GetGuildList', request, emptyResponse);
+  }
+  $async.Future<$7.InviteUserToGuildResponse> inviteUserToGuild($pb.ClientContext? ctx, $7.InviteUserToGuildRequest request) {
+    var emptyResponse = $7.InviteUserToGuildResponse();
+    return _client.invoke<$7.InviteUserToGuildResponse>(ctx, 'ChatService', 'InviteUserToGuild', request, emptyResponse);
+  }
+  $async.Future<$7.GetPendingInvitesResponse> getPendingInvites($pb.ClientContext? ctx, $7.GetPendingInvitesRequest request) {
+    var emptyResponse = $7.GetPendingInvitesResponse();
+    return _client.invoke<$7.GetPendingInvitesResponse>(ctx, 'ChatService', 'GetPendingInvites', request, emptyResponse);
+  }
+  $async.Future<$7.RejectPendingInviteResponse> rejectPendingInvite($pb.ClientContext? ctx, $7.RejectPendingInviteRequest request) {
+    var emptyResponse = $7.RejectPendingInviteResponse();
+    return _client.invoke<$7.RejectPendingInviteResponse>(ctx, 'ChatService', 'RejectPendingInvite', request, emptyResponse);
+  }
+  $async.Future<$7.IgnorePendingInviteResponse> ignorePendingInvite($pb.ClientContext? ctx, $7.IgnorePendingInviteRequest request) {
+    var emptyResponse = $7.IgnorePendingInviteResponse();
+    return _client.invoke<$7.IgnorePendingInviteResponse>(ctx, 'ChatService', 'IgnorePendingInvite', request, emptyResponse);
   }
   $async.Future<$7.GetGuildResponse> getGuild($pb.ClientContext? ctx, $7.GetGuildRequest request) {
     var emptyResponse = $7.GetGuildResponse();
@@ -199,6 +227,14 @@ class ChatServiceApi {
   $async.Future<$4.RemoveReactionResponse> removeReaction($pb.ClientContext? ctx, $4.RemoveReactionRequest request) {
     var emptyResponse = $4.RemoveReactionResponse();
     return _client.invoke<$4.RemoveReactionResponse>(ctx, 'ChatService', 'RemoveReaction', request, emptyResponse);
+  }
+  $async.Future<$7.GrantOwnershipResponse> grantOwnership($pb.ClientContext? ctx, $7.GrantOwnershipRequest request) {
+    var emptyResponse = $7.GrantOwnershipResponse();
+    return _client.invoke<$7.GrantOwnershipResponse>(ctx, 'ChatService', 'GrantOwnership', request, emptyResponse);
+  }
+  $async.Future<$7.GiveUpOwnershipResponse> giveUpOwnership($pb.ClientContext? ctx, $7.GiveUpOwnershipRequest request) {
+    var emptyResponse = $7.GiveUpOwnershipResponse();
+    return _client.invoke<$7.GiveUpOwnershipResponse>(ctx, 'ChatService', 'GiveUpOwnership', request, emptyResponse);
   }
 }
 

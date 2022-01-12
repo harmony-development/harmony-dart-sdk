@@ -21,9 +21,16 @@ export 'chat.pb.dart';
 
 abstract class ChatServiceBase extends $pb.GeneratedService {
   $async.Future<$7.CreateGuildResponse> createGuild($pb.ServerContext ctx, $7.CreateGuildRequest request);
+  $async.Future<$7.CreateRoomResponse> createRoom($pb.ServerContext ctx, $7.CreateRoomRequest request);
+  $async.Future<$7.CreateDirectMessageResponse> createDirectMessage($pb.ServerContext ctx, $7.CreateDirectMessageRequest request);
+  $async.Future<$7.UpgradeRoomToGuildResponse> upgradeRoomToGuild($pb.ServerContext ctx, $7.UpgradeRoomToGuildRequest request);
   $async.Future<$7.CreateInviteResponse> createInvite($pb.ServerContext ctx, $7.CreateInviteRequest request);
   $async.Future<$6.CreateChannelResponse> createChannel($pb.ServerContext ctx, $6.CreateChannelRequest request);
   $async.Future<$7.GetGuildListResponse> getGuildList($pb.ServerContext ctx, $7.GetGuildListRequest request);
+  $async.Future<$7.InviteUserToGuildResponse> inviteUserToGuild($pb.ServerContext ctx, $7.InviteUserToGuildRequest request);
+  $async.Future<$7.GetPendingInvitesResponse> getPendingInvites($pb.ServerContext ctx, $7.GetPendingInvitesRequest request);
+  $async.Future<$7.RejectPendingInviteResponse> rejectPendingInvite($pb.ServerContext ctx, $7.RejectPendingInviteRequest request);
+  $async.Future<$7.IgnorePendingInviteResponse> ignorePendingInvite($pb.ServerContext ctx, $7.IgnorePendingInviteRequest request);
   $async.Future<$7.GetGuildResponse> getGuild($pb.ServerContext ctx, $7.GetGuildRequest request);
   $async.Future<$7.GetGuildInvitesResponse> getGuildInvites($pb.ServerContext ctx, $7.GetGuildInvitesRequest request);
   $async.Future<$7.GetGuildMembersResponse> getGuildMembers($pb.ServerContext ctx, $7.GetGuildMembersRequest request);
@@ -65,13 +72,22 @@ abstract class ChatServiceBase extends $pb.GeneratedService {
   $async.Future<$8.StreamEventsResponse> streamEvents($pb.ServerContext ctx, $8.StreamEventsRequest request);
   $async.Future<$4.AddReactionResponse> addReaction($pb.ServerContext ctx, $4.AddReactionRequest request);
   $async.Future<$4.RemoveReactionResponse> removeReaction($pb.ServerContext ctx, $4.RemoveReactionRequest request);
+  $async.Future<$7.GrantOwnershipResponse> grantOwnership($pb.ServerContext ctx, $7.GrantOwnershipRequest request);
+  $async.Future<$7.GiveUpOwnershipResponse> giveUpOwnership($pb.ServerContext ctx, $7.GiveUpOwnershipRequest request);
 
   $pb.GeneratedMessage createRequest($core.String method) {
     switch (method) {
       case 'CreateGuild': return $7.CreateGuildRequest();
+      case 'CreateRoom': return $7.CreateRoomRequest();
+      case 'CreateDirectMessage': return $7.CreateDirectMessageRequest();
+      case 'UpgradeRoomToGuild': return $7.UpgradeRoomToGuildRequest();
       case 'CreateInvite': return $7.CreateInviteRequest();
       case 'CreateChannel': return $6.CreateChannelRequest();
       case 'GetGuildList': return $7.GetGuildListRequest();
+      case 'InviteUserToGuild': return $7.InviteUserToGuildRequest();
+      case 'GetPendingInvites': return $7.GetPendingInvitesRequest();
+      case 'RejectPendingInvite': return $7.RejectPendingInviteRequest();
+      case 'IgnorePendingInvite': return $7.IgnorePendingInviteRequest();
       case 'GetGuild': return $7.GetGuildRequest();
       case 'GetGuildInvites': return $7.GetGuildInvitesRequest();
       case 'GetGuildMembers': return $7.GetGuildMembersRequest();
@@ -113,6 +129,8 @@ abstract class ChatServiceBase extends $pb.GeneratedService {
       case 'StreamEvents': return $8.StreamEventsRequest();
       case 'AddReaction': return $4.AddReactionRequest();
       case 'RemoveReaction': return $4.RemoveReactionRequest();
+      case 'GrantOwnership': return $7.GrantOwnershipRequest();
+      case 'GiveUpOwnership': return $7.GiveUpOwnershipRequest();
       default: throw $core.ArgumentError('Unknown method: $method');
     }
   }
@@ -120,9 +138,16 @@ abstract class ChatServiceBase extends $pb.GeneratedService {
   $async.Future<$pb.GeneratedMessage> handleCall($pb.ServerContext ctx, $core.String method, $pb.GeneratedMessage request) {
     switch (method) {
       case 'CreateGuild': return this.createGuild(ctx, request as $7.CreateGuildRequest);
+      case 'CreateRoom': return this.createRoom(ctx, request as $7.CreateRoomRequest);
+      case 'CreateDirectMessage': return this.createDirectMessage(ctx, request as $7.CreateDirectMessageRequest);
+      case 'UpgradeRoomToGuild': return this.upgradeRoomToGuild(ctx, request as $7.UpgradeRoomToGuildRequest);
       case 'CreateInvite': return this.createInvite(ctx, request as $7.CreateInviteRequest);
       case 'CreateChannel': return this.createChannel(ctx, request as $6.CreateChannelRequest);
       case 'GetGuildList': return this.getGuildList(ctx, request as $7.GetGuildListRequest);
+      case 'InviteUserToGuild': return this.inviteUserToGuild(ctx, request as $7.InviteUserToGuildRequest);
+      case 'GetPendingInvites': return this.getPendingInvites(ctx, request as $7.GetPendingInvitesRequest);
+      case 'RejectPendingInvite': return this.rejectPendingInvite(ctx, request as $7.RejectPendingInviteRequest);
+      case 'IgnorePendingInvite': return this.ignorePendingInvite(ctx, request as $7.IgnorePendingInviteRequest);
       case 'GetGuild': return this.getGuild(ctx, request as $7.GetGuildRequest);
       case 'GetGuildInvites': return this.getGuildInvites(ctx, request as $7.GetGuildInvitesRequest);
       case 'GetGuildMembers': return this.getGuildMembers(ctx, request as $7.GetGuildMembersRequest);
@@ -164,6 +189,8 @@ abstract class ChatServiceBase extends $pb.GeneratedService {
       case 'StreamEvents': return this.streamEvents(ctx, request as $8.StreamEventsRequest);
       case 'AddReaction': return this.addReaction(ctx, request as $4.AddReactionRequest);
       case 'RemoveReaction': return this.removeReaction(ctx, request as $4.RemoveReactionRequest);
+      case 'GrantOwnership': return this.grantOwnership(ctx, request as $7.GrantOwnershipRequest);
+      case 'GiveUpOwnership': return this.giveUpOwnership(ctx, request as $7.GiveUpOwnershipRequest);
       default: throw $core.ArgumentError('Unknown method: $method');
     }
   }

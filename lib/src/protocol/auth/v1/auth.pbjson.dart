@@ -254,12 +254,15 @@ const TokenData$json = const {
     const {'1': 'user_id', '3': 1, '4': 1, '5': 4, '10': 'userId'},
     const {'1': 'server_id', '3': 2, '4': 1, '5': 9, '10': 'serverId'},
     const {'1': 'username', '3': 3, '4': 1, '5': 9, '10': 'username'},
-    const {'1': 'avatar', '3': 4, '4': 1, '5': 9, '10': 'avatar'},
+    const {'1': 'avatar', '3': 4, '4': 1, '5': 9, '9': 0, '10': 'avatar', '17': true},
+  ],
+  '8': const [
+    const {'1': '_avatar'},
   ],
 };
 
 /// Descriptor for `TokenData`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List tokenDataDescriptor = $convert.base64Decode('CglUb2tlbkRhdGESFwoHdXNlcl9pZBgBIAEoBFIGdXNlcklkEhsKCXNlcnZlcl9pZBgCIAEoCVIIc2VydmVySWQSGgoIdXNlcm5hbWUYAyABKAlSCHVzZXJuYW1lEhYKBmF2YXRhchgEIAEoCVIGYXZhdGFy');
+final $typed_data.Uint8List tokenDataDescriptor = $convert.base64Decode('CglUb2tlbkRhdGESFwoHdXNlcl9pZBgBIAEoBFIGdXNlcklkEhsKCXNlcnZlcl9pZBgCIAEoCVIIc2VydmVySWQSGgoIdXNlcm5hbWUYAyABKAlSCHVzZXJuYW1lEhsKBmF2YXRhchgEIAEoCUgAUgZhdmF0YXKIAQFCCQoHX2F2YXRhcg==');
 @$core.Deprecated('Use checkLoggedInRequestDescriptor instead')
 const CheckLoggedInRequest$json = const {
   '1': 'CheckLoggedInRequest',
