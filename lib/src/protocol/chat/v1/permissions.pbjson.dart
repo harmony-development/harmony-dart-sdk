@@ -43,14 +43,14 @@ const RoleWithId$json = const {
 
 /// Descriptor for `RoleWithId`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List roleWithIdDescriptor = $convert.base64Decode('CgpSb2xlV2l0aElkEhcKB3JvbGVfaWQYASABKARSBnJvbGVJZBIqCgRyb2xlGAIgASgLMhYucHJvdG9jb2wuY2hhdC52MS5Sb2xlUgRyb2xl');
-@$core.Deprecated('Use queryHasPermissionRequestDescriptor instead')
-const QueryHasPermissionRequest$json = const {
-  '1': 'QueryHasPermissionRequest',
+@$core.Deprecated('Use hasPermissionRequestDescriptor instead')
+const HasPermissionRequest$json = const {
+  '1': 'HasPermissionRequest',
   '2': const [
     const {'1': 'guild_id', '3': 1, '4': 1, '5': 4, '10': 'guildId'},
     const {'1': 'channel_id', '3': 2, '4': 1, '5': 4, '9': 0, '10': 'channelId', '17': true},
     const {'1': 'as', '3': 4, '4': 1, '5': 4, '9': 1, '10': 'as', '17': true},
-    const {'1': 'check_for', '3': 3, '4': 1, '5': 9, '10': 'checkFor'},
+    const {'1': 'check_for', '3': 3, '4': 3, '5': 9, '10': 'checkFor'},
   ],
   '8': const [
     const {'1': '_channel_id'},
@@ -58,18 +58,18 @@ const QueryHasPermissionRequest$json = const {
   ],
 };
 
-/// Descriptor for `QueryHasPermissionRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List queryHasPermissionRequestDescriptor = $convert.base64Decode('ChlRdWVyeUhhc1Blcm1pc3Npb25SZXF1ZXN0EhkKCGd1aWxkX2lkGAEgASgEUgdndWlsZElkEiIKCmNoYW5uZWxfaWQYAiABKARIAFIJY2hhbm5lbElkiAEBEhMKAmFzGAQgASgESAFSAmFziAEBEhsKCWNoZWNrX2ZvchgDIAEoCVIIY2hlY2tGb3JCDQoLX2NoYW5uZWxfaWRCBQoDX2Fz');
-@$core.Deprecated('Use queryHasPermissionResponseDescriptor instead')
-const QueryHasPermissionResponse$json = const {
-  '1': 'QueryHasPermissionResponse',
+/// Descriptor for `HasPermissionRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List hasPermissionRequestDescriptor = $convert.base64Decode('ChRIYXNQZXJtaXNzaW9uUmVxdWVzdBIZCghndWlsZF9pZBgBIAEoBFIHZ3VpbGRJZBIiCgpjaGFubmVsX2lkGAIgASgESABSCWNoYW5uZWxJZIgBARITCgJhcxgEIAEoBEgBUgJhc4gBARIbCgljaGVja19mb3IYAyADKAlSCGNoZWNrRm9yQg0KC19jaGFubmVsX2lkQgUKA19hcw==');
+@$core.Deprecated('Use hasPermissionResponseDescriptor instead')
+const HasPermissionResponse$json = const {
+  '1': 'HasPermissionResponse',
   '2': const [
-    const {'1': 'ok', '3': 1, '4': 1, '5': 8, '10': 'ok'},
+    const {'1': 'perms', '3': 1, '4': 3, '5': 11, '6': '.protocol.chat.v1.Permission', '10': 'perms'},
   ],
 };
 
-/// Descriptor for `QueryHasPermissionResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List queryHasPermissionResponseDescriptor = $convert.base64Decode('ChpRdWVyeUhhc1Blcm1pc3Npb25SZXNwb25zZRIOCgJvaxgBIAEoCFICb2s=');
+/// Descriptor for `HasPermissionResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List hasPermissionResponseDescriptor = $convert.base64Decode('ChVIYXNQZXJtaXNzaW9uUmVzcG9uc2USMgoFcGVybXMYASADKAsyHC5wcm90b2NvbC5jaGF0LnYxLlBlcm1pc3Npb25SBXBlcm1z');
 @$core.Deprecated('Use setPermissionsRequestDescriptor instead')
 const SetPermissionsRequest$json = const {
   '1': 'SetPermissionsRequest',
@@ -98,26 +98,43 @@ const GetPermissionsRequest$json = const {
   '1': 'GetPermissionsRequest',
   '2': const [
     const {'1': 'guild_id', '3': 1, '4': 1, '5': 4, '10': 'guildId'},
-    const {'1': 'channel_id', '3': 2, '4': 1, '5': 4, '9': 0, '10': 'channelId', '17': true},
+    const {'1': 'channel_ids', '3': 2, '4': 3, '5': 4, '10': 'channelIds'},
     const {'1': 'role_id', '3': 3, '4': 1, '5': 4, '10': 'roleId'},
-  ],
-  '8': const [
-    const {'1': '_channel_id'},
   ],
 };
 
 /// Descriptor for `GetPermissionsRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List getPermissionsRequestDescriptor = $convert.base64Decode('ChVHZXRQZXJtaXNzaW9uc1JlcXVlc3QSGQoIZ3VpbGRfaWQYASABKARSB2d1aWxkSWQSIgoKY2hhbm5lbF9pZBgCIAEoBEgAUgljaGFubmVsSWSIAQESFwoHcm9sZV9pZBgDIAEoBFIGcm9sZUlkQg0KC19jaGFubmVsX2lk');
+final $typed_data.Uint8List getPermissionsRequestDescriptor = $convert.base64Decode('ChVHZXRQZXJtaXNzaW9uc1JlcXVlc3QSGQoIZ3VpbGRfaWQYASABKARSB2d1aWxkSWQSHwoLY2hhbm5lbF9pZHMYAiADKARSCmNoYW5uZWxJZHMSFwoHcm9sZV9pZBgDIAEoBFIGcm9sZUlk');
 @$core.Deprecated('Use getPermissionsResponseDescriptor instead')
 const GetPermissionsResponse$json = const {
   '1': 'GetPermissionsResponse',
+  '2': const [
+    const {'1': 'guild_perms', '3': 1, '4': 1, '5': 11, '6': '.protocol.chat.v1.GetPermissionsResponse.Permissions', '10': 'guildPerms'},
+    const {'1': 'channel_perms', '3': 2, '4': 3, '5': 11, '6': '.protocol.chat.v1.GetPermissionsResponse.ChannelPermsEntry', '10': 'channelPerms'},
+  ],
+  '3': const [GetPermissionsResponse_Permissions$json, GetPermissionsResponse_ChannelPermsEntry$json],
+};
+
+@$core.Deprecated('Use getPermissionsResponseDescriptor instead')
+const GetPermissionsResponse_Permissions$json = const {
+  '1': 'Permissions',
   '2': const [
     const {'1': 'perms', '3': 1, '4': 3, '5': 11, '6': '.protocol.chat.v1.Permission', '10': 'perms'},
   ],
 };
 
+@$core.Deprecated('Use getPermissionsResponseDescriptor instead')
+const GetPermissionsResponse_ChannelPermsEntry$json = const {
+  '1': 'ChannelPermsEntry',
+  '2': const [
+    const {'1': 'key', '3': 1, '4': 1, '5': 4, '10': 'key'},
+    const {'1': 'value', '3': 2, '4': 1, '5': 11, '6': '.protocol.chat.v1.GetPermissionsResponse.Permissions', '10': 'value'},
+  ],
+  '7': const {'7': true},
+};
+
 /// Descriptor for `GetPermissionsResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List getPermissionsResponseDescriptor = $convert.base64Decode('ChZHZXRQZXJtaXNzaW9uc1Jlc3BvbnNlEjIKBXBlcm1zGAEgAygLMhwucHJvdG9jb2wuY2hhdC52MS5QZXJtaXNzaW9uUgVwZXJtcw==');
+final $typed_data.Uint8List getPermissionsResponseDescriptor = $convert.base64Decode('ChZHZXRQZXJtaXNzaW9uc1Jlc3BvbnNlElUKC2d1aWxkX3Blcm1zGAEgASgLMjQucHJvdG9jb2wuY2hhdC52MS5HZXRQZXJtaXNzaW9uc1Jlc3BvbnNlLlBlcm1pc3Npb25zUgpndWlsZFBlcm1zEl8KDWNoYW5uZWxfcGVybXMYAiADKAsyOi5wcm90b2NvbC5jaGF0LnYxLkdldFBlcm1pc3Npb25zUmVzcG9uc2UuQ2hhbm5lbFBlcm1zRW50cnlSDGNoYW5uZWxQZXJtcxpBCgtQZXJtaXNzaW9ucxIyCgVwZXJtcxgBIAMoCzIcLnByb3RvY29sLmNoYXQudjEuUGVybWlzc2lvblIFcGVybXMadQoRQ2hhbm5lbFBlcm1zRW50cnkSEAoDa2V5GAEgASgEUgNrZXkSSgoFdmFsdWUYAiABKAsyNC5wcm90b2NvbC5jaGF0LnYxLkdldFBlcm1pc3Npb25zUmVzcG9uc2UuUGVybWlzc2lvbnNSBXZhbHVlOgI4AQ==');
 @$core.Deprecated('Use moveRoleRequestDescriptor instead')
 const MoveRoleRequest$json = const {
   '1': 'MoveRoleRequest',
@@ -252,19 +269,38 @@ const GetUserRolesRequest$json = const {
   '1': 'GetUserRolesRequest',
   '2': const [
     const {'1': 'guild_id', '3': 1, '4': 1, '5': 4, '10': 'guildId'},
-    const {'1': 'user_id', '3': 2, '4': 1, '5': 4, '10': 'userId'},
+    const {'1': 'user_ids', '3': 2, '4': 3, '5': 4, '10': 'userIds'},
   ],
 };
 
 /// Descriptor for `GetUserRolesRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List getUserRolesRequestDescriptor = $convert.base64Decode('ChNHZXRVc2VyUm9sZXNSZXF1ZXN0EhkKCGd1aWxkX2lkGAEgASgEUgdndWlsZElkEhcKB3VzZXJfaWQYAiABKARSBnVzZXJJZA==');
+final $typed_data.Uint8List getUserRolesRequestDescriptor = $convert.base64Decode('ChNHZXRVc2VyUm9sZXNSZXF1ZXN0EhkKCGd1aWxkX2lkGAEgASgEUgdndWlsZElkEhkKCHVzZXJfaWRzGAIgAygEUgd1c2VySWRz');
 @$core.Deprecated('Use getUserRolesResponseDescriptor instead')
 const GetUserRolesResponse$json = const {
   '1': 'GetUserRolesResponse',
+  '2': const [
+    const {'1': 'user_roles', '3': 1, '4': 3, '5': 11, '6': '.protocol.chat.v1.GetUserRolesResponse.UserRolesEntry', '10': 'userRoles'},
+  ],
+  '3': const [GetUserRolesResponse_UserRoles$json, GetUserRolesResponse_UserRolesEntry$json],
+};
+
+@$core.Deprecated('Use getUserRolesResponseDescriptor instead')
+const GetUserRolesResponse_UserRoles$json = const {
+  '1': 'UserRoles',
   '2': const [
     const {'1': 'roles', '3': 1, '4': 3, '5': 4, '10': 'roles'},
   ],
 };
 
+@$core.Deprecated('Use getUserRolesResponseDescriptor instead')
+const GetUserRolesResponse_UserRolesEntry$json = const {
+  '1': 'UserRolesEntry',
+  '2': const [
+    const {'1': 'key', '3': 1, '4': 1, '5': 4, '10': 'key'},
+    const {'1': 'value', '3': 2, '4': 1, '5': 11, '6': '.protocol.chat.v1.GetUserRolesResponse.UserRoles', '10': 'value'},
+  ],
+  '7': const {'7': true},
+};
+
 /// Descriptor for `GetUserRolesResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List getUserRolesResponseDescriptor = $convert.base64Decode('ChRHZXRVc2VyUm9sZXNSZXNwb25zZRIUCgVyb2xlcxgBIAMoBFIFcm9sZXM=');
+final $typed_data.Uint8List getUserRolesResponseDescriptor = $convert.base64Decode('ChRHZXRVc2VyUm9sZXNSZXNwb25zZRJUCgp1c2VyX3JvbGVzGAEgAygLMjUucHJvdG9jb2wuY2hhdC52MS5HZXRVc2VyUm9sZXNSZXNwb25zZS5Vc2VyUm9sZXNFbnRyeVIJdXNlclJvbGVzGiEKCVVzZXJSb2xlcxIUCgVyb2xlcxgBIAMoBFIFcm9sZXMabgoOVXNlclJvbGVzRW50cnkSEAoDa2V5GAEgASgEUgNrZXkSRgoFdmFsdWUYAiABKAsyMC5wcm90b2NvbC5jaGF0LnYxLkdldFVzZXJSb2xlc1Jlc3BvbnNlLlVzZXJSb2xlc1IFdmFsdWU6AjgB');

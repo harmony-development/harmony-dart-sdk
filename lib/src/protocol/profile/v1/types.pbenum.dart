@@ -32,3 +32,20 @@ class UserStatus extends $pb.ProtobufEnum {
   const UserStatus._($core.int v, $core.String n) : super(v, n);
 }
 
+class AccountKind extends $pb.ProtobufEnum {
+  static const AccountKind ACCOUNT_KIND_FULL_UNSPECIFIED = AccountKind._(0, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'ACCOUNT_KIND_FULL_UNSPECIFIED');
+  static const AccountKind ACCOUNT_KIND_BOT = AccountKind._(1, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'ACCOUNT_KIND_BOT');
+  static const AccountKind ACCOUNT_KIND_GUEST = AccountKind._(2, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'ACCOUNT_KIND_GUEST');
+
+  static const $core.List<AccountKind> values = <AccountKind> [
+    ACCOUNT_KIND_FULL_UNSPECIFIED,
+    ACCOUNT_KIND_BOT,
+    ACCOUNT_KIND_GUEST,
+  ];
+
+  static final $core.Map<$core.int, AccountKind> _byValue = $pb.ProtobufEnum.initByValue(values);
+  static AccountKind? valueOf($core.int value) => _byValue[value];
+
+  const AccountKind._($core.int v, $core.String n) : super(v, n);
+}
+

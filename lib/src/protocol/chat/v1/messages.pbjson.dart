@@ -144,19 +144,19 @@ final $typed_data.Uint8List actionDescriptor = $convert.base64Decode('CgZBY3Rpb2
 const Embed$json = const {
   '1': 'Embed',
   '2': const [
-    const {'1': 'title', '3': 1, '4': 1, '5': 9, '10': 'title'},
-    const {'1': 'body', '3': 2, '4': 1, '5': 11, '6': '.protocol.chat.v1.FormattedText', '9': 0, '10': 'body', '17': true},
-    const {'1': 'color', '3': 3, '4': 1, '5': 5, '9': 1, '10': 'color', '17': true},
-    const {'1': 'header', '3': 4, '4': 1, '5': 11, '6': '.protocol.chat.v1.Embed.EmbedHeading', '9': 2, '10': 'header', '17': true},
-    const {'1': 'footer', '3': 5, '4': 1, '5': 11, '6': '.protocol.chat.v1.Embed.EmbedHeading', '9': 3, '10': 'footer', '17': true},
-    const {'1': 'fields', '3': 6, '4': 3, '5': 11, '6': '.protocol.chat.v1.Embed.EmbedField', '10': 'fields'},
+    const {'1': 'header', '3': 1, '4': 1, '5': 11, '6': '.protocol.chat.v1.Embed.EmbedHeading', '9': 0, '10': 'header', '17': true},
+    const {'1': 'title', '3': 2, '4': 1, '5': 9, '10': 'title'},
+    const {'1': 'body', '3': 3, '4': 1, '5': 11, '6': '.protocol.chat.v1.FormattedText', '9': 1, '10': 'body', '17': true},
+    const {'1': 'fields', '3': 4, '4': 3, '5': 11, '6': '.protocol.chat.v1.Embed.EmbedField', '10': 'fields'},
+    const {'1': 'footer', '3': 5, '4': 1, '5': 11, '6': '.protocol.chat.v1.Embed.EmbedHeading', '9': 2, '10': 'footer', '17': true},
+    const {'1': 'color', '3': 6, '4': 1, '5': 5, '9': 3, '10': 'color', '17': true},
   ],
   '3': const [Embed_EmbedHeading$json, Embed_EmbedField$json],
   '8': const [
-    const {'1': '_body'},
-    const {'1': '_color'},
     const {'1': '_header'},
+    const {'1': '_body'},
     const {'1': '_footer'},
+    const {'1': '_color'},
   ],
 };
 
@@ -180,18 +180,29 @@ const Embed_EmbedHeading$json = const {
 const Embed_EmbedField$json = const {
   '1': 'EmbedField',
   '2': const [
-    const {'1': 'title', '3': 1, '4': 1, '5': 9, '10': 'title'},
-    const {'1': 'subtitle', '3': 2, '4': 1, '5': 9, '9': 0, '10': 'subtitle', '17': true},
-    const {'1': 'body', '3': 3, '4': 1, '5': 11, '6': '.protocol.chat.v1.FormattedText', '9': 1, '10': 'body', '17': true},
-    const {'1': 'image_url', '3': 4, '4': 1, '5': 9, '9': 2, '10': 'imageUrl', '17': true},
-    const {'1': 'presentation', '3': 5, '4': 1, '5': 14, '6': '.protocol.chat.v1.Embed.EmbedField.Presentation', '10': 'presentation'},
+    const {'1': 'presentation', '3': 1, '4': 1, '5': 14, '6': '.protocol.chat.v1.Embed.EmbedField.Presentation', '10': 'presentation'},
+    const {'1': 'title', '3': 2, '4': 1, '5': 9, '10': 'title'},
+    const {'1': 'subtitle', '3': 3, '4': 1, '5': 9, '9': 0, '10': 'subtitle', '17': true},
+    const {'1': 'body', '3': 4, '4': 1, '5': 11, '6': '.protocol.chat.v1.FormattedText', '9': 1, '10': 'body', '17': true},
+    const {'1': 'image', '3': 5, '4': 1, '5': 11, '6': '.protocol.chat.v1.Embed.EmbedField.Image', '9': 2, '10': 'image', '17': true},
     const {'1': 'actions', '3': 6, '4': 3, '5': 11, '6': '.protocol.chat.v1.Action', '10': 'actions'},
   ],
+  '3': const [Embed_EmbedField_Image$json],
   '4': const [Embed_EmbedField_Presentation$json],
   '8': const [
     const {'1': '_subtitle'},
     const {'1': '_body'},
-    const {'1': '_image_url'},
+    const {'1': '_image'},
+  ],
+};
+
+@$core.Deprecated('Use embedDescriptor instead')
+const Embed_EmbedField_Image$json = const {
+  '1': 'Image',
+  '2': const [
+    const {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    const {'1': 'width', '3': 2, '4': 1, '5': 13, '10': 'width'},
+    const {'1': 'height', '3': 3, '4': 1, '5': 13, '10': 'height'},
   ],
 };
 
@@ -206,7 +217,7 @@ const Embed_EmbedField_Presentation$json = const {
 };
 
 /// Descriptor for `Embed`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List embedDescriptor = $convert.base64Decode('CgVFbWJlZBIUCgV0aXRsZRgBIAEoCVIFdGl0bGUSOAoEYm9keRgCIAEoCzIfLnByb3RvY29sLmNoYXQudjEuRm9ybWF0dGVkVGV4dEgAUgRib2R5iAEBEhkKBWNvbG9yGAMgASgFSAFSBWNvbG9yiAEBEkEKBmhlYWRlchgEIAEoCzIkLnByb3RvY29sLmNoYXQudjEuRW1iZWQuRW1iZWRIZWFkaW5nSAJSBmhlYWRlcogBARJBCgZmb290ZXIYBSABKAsyJC5wcm90b2NvbC5jaGF0LnYxLkVtYmVkLkVtYmVkSGVhZGluZ0gDUgZmb290ZXKIAQESOgoGZmllbGRzGAYgAygLMiIucHJvdG9jb2wuY2hhdC52MS5FbWJlZC5FbWJlZEZpZWxkUgZmaWVsZHMajgEKDEVtYmVkSGVhZGluZxISCgR0ZXh0GAEgASgJUgR0ZXh0Eh0KB3N1YnRleHQYAiABKAlIAFIHc3VidGV4dIgBARIVCgN1cmwYAyABKAlIAVIDdXJsiAEBEhcKBGljb24YBCABKAlIAlIEaWNvbogBAUIKCghfc3VidGV4dEIGCgRfdXJsQgcKBV9pY29uGrcDCgpFbWJlZEZpZWxkEhQKBXRpdGxlGAEgASgJUgV0aXRsZRIfCghzdWJ0aXRsZRgCIAEoCUgAUghzdWJ0aXRsZYgBARI4CgRib2R5GAMgASgLMh8ucHJvdG9jb2wuY2hhdC52MS5Gb3JtYXR0ZWRUZXh0SAFSBGJvZHmIAQESIAoJaW1hZ2VfdXJsGAQgASgJSAJSCGltYWdlVXJsiAEBElMKDHByZXNlbnRhdGlvbhgFIAEoDjIvLnByb3RvY29sLmNoYXQudjEuRW1iZWQuRW1iZWRGaWVsZC5QcmVzZW50YXRpb25SDHByZXNlbnRhdGlvbhIyCgdhY3Rpb25zGAYgAygLMhgucHJvdG9jb2wuY2hhdC52MS5BY3Rpb25SB2FjdGlvbnMiaQoMUHJlc2VudGF0aW9uEiEKHVBSRVNFTlRBVElPTl9EQVRBX1VOU1BFQ0lGSUVEEAASIAocUFJFU0VOVEFUSU9OX0NBUFRJT05FRF9JTUFHRRABEhQKEFBSRVNFTlRBVElPTl9ST1cQAkILCglfc3VidGl0bGVCBwoFX2JvZHlCDAoKX2ltYWdlX3VybEIHCgVfYm9keUIICgZfY29sb3JCCQoHX2hlYWRlckIJCgdfZm9vdGVy');
+final $typed_data.Uint8List embedDescriptor = $convert.base64Decode('CgVFbWJlZBJBCgZoZWFkZXIYASABKAsyJC5wcm90b2NvbC5jaGF0LnYxLkVtYmVkLkVtYmVkSGVhZGluZ0gAUgZoZWFkZXKIAQESFAoFdGl0bGUYAiABKAlSBXRpdGxlEjgKBGJvZHkYAyABKAsyHy5wcm90b2NvbC5jaGF0LnYxLkZvcm1hdHRlZFRleHRIAVIEYm9keYgBARI6CgZmaWVsZHMYBCADKAsyIi5wcm90b2NvbC5jaGF0LnYxLkVtYmVkLkVtYmVkRmllbGRSBmZpZWxkcxJBCgZmb290ZXIYBSABKAsyJC5wcm90b2NvbC5jaGF0LnYxLkVtYmVkLkVtYmVkSGVhZGluZ0gCUgZmb290ZXKIAQESGQoFY29sb3IYBiABKAVIA1IFY29sb3KIAQEajgEKDEVtYmVkSGVhZGluZxISCgR0ZXh0GAEgASgJUgR0ZXh0Eh0KB3N1YnRleHQYAiABKAlIAFIHc3VidGV4dIgBARIVCgN1cmwYAyABKAlIAVIDdXJsiAEBEhcKBGljb24YBCABKAlIAlIEaWNvbogBAUIKCghfc3VidGV4dEIGCgRfdXJsQgcKBV9pY29uGp0ECgpFbWJlZEZpZWxkElMKDHByZXNlbnRhdGlvbhgBIAEoDjIvLnByb3RvY29sLmNoYXQudjEuRW1iZWQuRW1iZWRGaWVsZC5QcmVzZW50YXRpb25SDHByZXNlbnRhdGlvbhIUCgV0aXRsZRgCIAEoCVIFdGl0bGUSHwoIc3VidGl0bGUYAyABKAlIAFIIc3VidGl0bGWIAQESOAoEYm9keRgEIAEoCzIfLnByb3RvY29sLmNoYXQudjEuRm9ybWF0dGVkVGV4dEgBUgRib2R5iAEBEkMKBWltYWdlGAUgASgLMigucHJvdG9jb2wuY2hhdC52MS5FbWJlZC5FbWJlZEZpZWxkLkltYWdlSAJSBWltYWdliAEBEjIKB2FjdGlvbnMYBiADKAsyGC5wcm90b2NvbC5jaGF0LnYxLkFjdGlvblIHYWN0aW9ucxpFCgVJbWFnZRIOCgJpZBgBIAEoCVICaWQSFAoFd2lkdGgYAiABKA1SBXdpZHRoEhYKBmhlaWdodBgDIAEoDVIGaGVpZ2h0ImkKDFByZXNlbnRhdGlvbhIhCh1QUkVTRU5UQVRJT05fREFUQV9VTlNQRUNJRklFRBAAEiAKHFBSRVNFTlRBVElPTl9DQVBUSU9ORURfSU1BR0UQARIUChBQUkVTRU5UQVRJT05fUk9XEAJCCwoJX3N1YnRpdGxlQgcKBV9ib2R5QggKBl9pbWFnZUIJCgdfaGVhZGVyQgcKBV9ib2R5QgkKB19mb290ZXJCCAoGX2NvbG9y');
 @$core.Deprecated('Use minithumbnailDescriptor instead')
 const Minithumbnail$json = const {
   '1': 'Minithumbnail',
@@ -219,22 +230,22 @@ const Minithumbnail$json = const {
 
 /// Descriptor for `Minithumbnail`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List minithumbnailDescriptor = $convert.base64Decode('Cg1NaW5pdGh1bWJuYWlsEhQKBXdpZHRoGAEgASgNUgV3aWR0aBIWCgZoZWlnaHQYAiABKA1SBmhlaWdodBISCgRkYXRhGAMgASgMUgRkYXRh');
-@$core.Deprecated('Use photoDescriptor instead')
-const Photo$json = const {
-  '1': 'Photo',
+@$core.Deprecated('Use imageInfoDescriptor instead')
+const ImageInfo$json = const {
+  '1': 'ImageInfo',
   '2': const [
-    const {'1': 'hmc', '3': 1, '4': 1, '5': 9, '10': 'hmc'},
-    const {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
-    const {'1': 'file_size', '3': 3, '4': 1, '5': 13, '10': 'fileSize'},
-    const {'1': 'height', '3': 4, '4': 1, '5': 13, '10': 'height'},
-    const {'1': 'width', '3': 5, '4': 1, '5': 13, '10': 'width'},
-    const {'1': 'caption', '3': 6, '4': 1, '5': 11, '6': '.protocol.chat.v1.FormattedText', '10': 'caption'},
-    const {'1': 'minithumbnail', '3': 7, '4': 1, '5': 11, '6': '.protocol.chat.v1.Minithumbnail', '10': 'minithumbnail'},
+    const {'1': 'width', '3': 1, '4': 1, '5': 13, '10': 'width'},
+    const {'1': 'height', '3': 2, '4': 1, '5': 13, '10': 'height'},
+    const {'1': 'minithumbnail', '3': 3, '4': 1, '5': 11, '6': '.protocol.chat.v1.Minithumbnail', '10': 'minithumbnail'},
+    const {'1': 'caption', '3': 4, '4': 1, '5': 9, '9': 0, '10': 'caption', '17': true},
+  ],
+  '8': const [
+    const {'1': '_caption'},
   ],
 };
 
-/// Descriptor for `Photo`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List photoDescriptor = $convert.base64Decode('CgVQaG90bxIQCgNobWMYASABKAlSA2htYxISCgRuYW1lGAIgASgJUgRuYW1lEhsKCWZpbGVfc2l6ZRgDIAEoDVIIZmlsZVNpemUSFgoGaGVpZ2h0GAQgASgNUgZoZWlnaHQSFAoFd2lkdGgYBSABKA1SBXdpZHRoEjkKB2NhcHRpb24YBiABKAsyHy5wcm90b2NvbC5jaGF0LnYxLkZvcm1hdHRlZFRleHRSB2NhcHRpb24SRQoNbWluaXRodW1ibmFpbBgHIAEoCzIfLnByb3RvY29sLmNoYXQudjEuTWluaXRodW1ibmFpbFINbWluaXRodW1ibmFpbA==');
+/// Descriptor for `ImageInfo`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List imageInfoDescriptor = $convert.base64Decode('CglJbWFnZUluZm8SFAoFd2lkdGgYASABKA1SBXdpZHRoEhYKBmhlaWdodBgCIAEoDVIGaGVpZ2h0EkUKDW1pbml0aHVtYm5haWwYAyABKAsyHy5wcm90b2NvbC5jaGF0LnYxLk1pbml0aHVtYm5haWxSDW1pbml0aHVtYm5haWwSHQoHY2FwdGlvbhgEIAEoCUgAUgdjYXB0aW9uiAEBQgoKCF9jYXB0aW9u');
 @$core.Deprecated('Use attachmentDescriptor instead')
 const Attachment$json = const {
   '1': 'Attachment',
@@ -243,62 +254,30 @@ const Attachment$json = const {
     const {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
     const {'1': 'mimetype', '3': 3, '4': 1, '5': 9, '10': 'mimetype'},
     const {'1': 'size', '3': 4, '4': 1, '5': 13, '10': 'size'},
-    const {'1': 'caption', '3': 5, '4': 1, '5': 11, '6': '.protocol.chat.v1.FormattedText', '9': 0, '10': 'caption', '17': true},
+    const {'1': 'image', '3': 5, '4': 1, '5': 11, '6': '.protocol.chat.v1.ImageInfo', '9': 0, '10': 'image'},
   ],
   '8': const [
-    const {'1': '_caption'},
+    const {'1': 'info'},
   ],
 };
 
 /// Descriptor for `Attachment`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List attachmentDescriptor = $convert.base64Decode('CgpBdHRhY2htZW50Eg4KAmlkGAEgASgJUgJpZBISCgRuYW1lGAIgASgJUgRuYW1lEhoKCG1pbWV0eXBlGAMgASgJUghtaW1ldHlwZRISCgRzaXplGAQgASgNUgRzaXplEj4KB2NhcHRpb24YBSABKAsyHy5wcm90b2NvbC5jaGF0LnYxLkZvcm1hdHRlZFRleHRIAFIHY2FwdGlvbogBAUIKCghfY2FwdGlvbg==');
+final $typed_data.Uint8List attachmentDescriptor = $convert.base64Decode('CgpBdHRhY2htZW50Eg4KAmlkGAEgASgJUgJpZBISCgRuYW1lGAIgASgJUgRuYW1lEhoKCG1pbWV0eXBlGAMgASgJUghtaW1ldHlwZRISCgRzaXplGAQgASgNUgRzaXplEjMKBWltYWdlGAUgASgLMhsucHJvdG9jb2wuY2hhdC52MS5JbWFnZUluZm9IAFIFaW1hZ2VCBgoEaW5mbw==');
 @$core.Deprecated('Use contentDescriptor instead')
 const Content$json = const {
   '1': 'Content',
   '2': const [
-    const {'1': 'text_message', '3': 1, '4': 1, '5': 11, '6': '.protocol.chat.v1.Content.TextContent', '9': 0, '10': 'textMessage'},
-    const {'1': 'embed_message', '3': 2, '4': 1, '5': 11, '6': '.protocol.chat.v1.Content.EmbedContent', '9': 0, '10': 'embedMessage'},
-    const {'1': 'attachment_message', '3': 3, '4': 1, '5': 11, '6': '.protocol.chat.v1.Content.AttachmentContent', '9': 0, '10': 'attachmentMessage'},
-    const {'1': 'photo_message', '3': 4, '4': 1, '5': 11, '6': '.protocol.chat.v1.Content.PhotoContent', '9': 0, '10': 'photoMessage'},
+    const {'1': 'text', '3': 1, '4': 1, '5': 9, '10': 'text'},
+    const {'1': 'text_formats', '3': 2, '4': 3, '5': 11, '6': '.protocol.chat.v1.Format', '10': 'textFormats'},
+    const {'1': 'embeds', '3': 3, '4': 3, '5': 11, '6': '.protocol.chat.v1.Embed', '10': 'embeds'},
+    const {'1': 'attachments', '3': 4, '4': 3, '5': 11, '6': '.protocol.chat.v1.Attachment', '10': 'attachments'},
     const {'1': 'invite_rejected', '3': 5, '4': 1, '5': 11, '6': '.protocol.chat.v1.Content.InviteRejected', '9': 0, '10': 'inviteRejected'},
     const {'1': 'invite_accepted', '3': 6, '4': 1, '5': 11, '6': '.protocol.chat.v1.Content.InviteAccepted', '9': 0, '10': 'inviteAccepted'},
     const {'1': 'room_upgraded_to_guild', '3': 7, '4': 1, '5': 11, '6': '.protocol.chat.v1.Content.RoomUpgradedToGuild', '9': 0, '10': 'roomUpgradedToGuild'},
   ],
-  '3': const [Content_TextContent$json, Content_EmbedContent$json, Content_AttachmentContent$json, Content_PhotoContent$json, Content_InviteRejected$json, Content_InviteAccepted$json, Content_RoomUpgradedToGuild$json],
+  '3': const [Content_InviteRejected$json, Content_InviteAccepted$json, Content_RoomUpgradedToGuild$json],
   '8': const [
-    const {'1': 'content'},
-  ],
-};
-
-@$core.Deprecated('Use contentDescriptor instead')
-const Content_TextContent$json = const {
-  '1': 'TextContent',
-  '2': const [
-    const {'1': 'content', '3': 1, '4': 1, '5': 11, '6': '.protocol.chat.v1.FormattedText', '10': 'content'},
-  ],
-};
-
-@$core.Deprecated('Use contentDescriptor instead')
-const Content_EmbedContent$json = const {
-  '1': 'EmbedContent',
-  '2': const [
-    const {'1': 'embeds', '3': 1, '4': 3, '5': 11, '6': '.protocol.chat.v1.Embed', '10': 'embeds'},
-  ],
-};
-
-@$core.Deprecated('Use contentDescriptor instead')
-const Content_AttachmentContent$json = const {
-  '1': 'AttachmentContent',
-  '2': const [
-    const {'1': 'files', '3': 1, '4': 3, '5': 11, '6': '.protocol.chat.v1.Attachment', '10': 'files'},
-  ],
-};
-
-@$core.Deprecated('Use contentDescriptor instead')
-const Content_PhotoContent$json = const {
-  '1': 'PhotoContent',
-  '2': const [
-    const {'1': 'photos', '3': 1, '4': 3, '5': 11, '6': '.protocol.chat.v1.Photo', '10': 'photos'},
+    const {'1': 'extra'},
   ],
 };
 
@@ -329,7 +308,7 @@ const Content_RoomUpgradedToGuild$json = const {
 };
 
 /// Descriptor for `Content`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List contentDescriptor = $convert.base64Decode('CgdDb250ZW50EkoKDHRleHRfbWVzc2FnZRgBIAEoCzIlLnByb3RvY29sLmNoYXQudjEuQ29udGVudC5UZXh0Q29udGVudEgAUgt0ZXh0TWVzc2FnZRJNCg1lbWJlZF9tZXNzYWdlGAIgASgLMiYucHJvdG9jb2wuY2hhdC52MS5Db250ZW50LkVtYmVkQ29udGVudEgAUgxlbWJlZE1lc3NhZ2USXAoSYXR0YWNobWVudF9tZXNzYWdlGAMgASgLMisucHJvdG9jb2wuY2hhdC52MS5Db250ZW50LkF0dGFjaG1lbnRDb250ZW50SABSEWF0dGFjaG1lbnRNZXNzYWdlEk0KDXBob3RvX21lc3NhZ2UYBCABKAsyJi5wcm90b2NvbC5jaGF0LnYxLkNvbnRlbnQuUGhvdG9Db250ZW50SABSDHBob3RvTWVzc2FnZRJTCg9pbnZpdGVfcmVqZWN0ZWQYBSABKAsyKC5wcm90b2NvbC5jaGF0LnYxLkNvbnRlbnQuSW52aXRlUmVqZWN0ZWRIAFIOaW52aXRlUmVqZWN0ZWQSUwoPaW52aXRlX2FjY2VwdGVkGAYgASgLMigucHJvdG9jb2wuY2hhdC52MS5Db250ZW50Lkludml0ZUFjY2VwdGVkSABSDmludml0ZUFjY2VwdGVkEmQKFnJvb21fdXBncmFkZWRfdG9fZ3VpbGQYByABKAsyLS5wcm90b2NvbC5jaGF0LnYxLkNvbnRlbnQuUm9vbVVwZ3JhZGVkVG9HdWlsZEgAUhNyb29tVXBncmFkZWRUb0d1aWxkGkgKC1RleHRDb250ZW50EjkKB2NvbnRlbnQYASABKAsyHy5wcm90b2NvbC5jaGF0LnYxLkZvcm1hdHRlZFRleHRSB2NvbnRlbnQaPwoMRW1iZWRDb250ZW50Ei8KBmVtYmVkcxgBIAMoCzIXLnByb3RvY29sLmNoYXQudjEuRW1iZWRSBmVtYmVkcxpHChFBdHRhY2htZW50Q29udGVudBIyCgVmaWxlcxgBIAMoCzIcLnByb3RvY29sLmNoYXQudjEuQXR0YWNobWVudFIFZmlsZXMaPwoMUGhvdG9Db250ZW50Ei8KBnBob3RvcxgBIAMoCzIXLnByb3RvY29sLmNoYXQudjEuUGhvdG9SBnBob3RvcxpOCg5JbnZpdGVSZWplY3RlZBIdCgppbnZpdGVlX2lkGAEgASgEUglpbnZpdGVlSWQSHQoKaW52aXRlcl9pZBgCIAEoBFIJaW52aXRlcklkGk4KDkludml0ZUFjY2VwdGVkEh0KCmludml0ZWVfaWQYASABKARSCWludml0ZWVJZBIdCgppbnZpdGVyX2lkGAIgASgEUglpbnZpdGVySWQaNgoTUm9vbVVwZ3JhZGVkVG9HdWlsZBIfCgt1cGdyYWRlZF9ieRgBIAEoBFIKdXBncmFkZWRCeUIJCgdjb250ZW50');
+final $typed_data.Uint8List contentDescriptor = $convert.base64Decode('CgdDb250ZW50EhIKBHRleHQYASABKAlSBHRleHQSOwoMdGV4dF9mb3JtYXRzGAIgAygLMhgucHJvdG9jb2wuY2hhdC52MS5Gb3JtYXRSC3RleHRGb3JtYXRzEi8KBmVtYmVkcxgDIAMoCzIXLnByb3RvY29sLmNoYXQudjEuRW1iZWRSBmVtYmVkcxI+CgthdHRhY2htZW50cxgEIAMoCzIcLnByb3RvY29sLmNoYXQudjEuQXR0YWNobWVudFILYXR0YWNobWVudHMSUwoPaW52aXRlX3JlamVjdGVkGAUgASgLMigucHJvdG9jb2wuY2hhdC52MS5Db250ZW50Lkludml0ZVJlamVjdGVkSABSDmludml0ZVJlamVjdGVkElMKD2ludml0ZV9hY2NlcHRlZBgGIAEoCzIoLnByb3RvY29sLmNoYXQudjEuQ29udGVudC5JbnZpdGVBY2NlcHRlZEgAUg5pbnZpdGVBY2NlcHRlZBJkChZyb29tX3VwZ3JhZGVkX3RvX2d1aWxkGAcgASgLMi0ucHJvdG9jb2wuY2hhdC52MS5Db250ZW50LlJvb21VcGdyYWRlZFRvR3VpbGRIAFITcm9vbVVwZ3JhZGVkVG9HdWlsZBpOCg5JbnZpdGVSZWplY3RlZBIdCgppbnZpdGVlX2lkGAEgASgEUglpbnZpdGVlSWQSHQoKaW52aXRlcl9pZBgCIAEoBFIJaW52aXRlcklkGk4KDkludml0ZUFjY2VwdGVkEh0KCmludml0ZWVfaWQYASABKARSCWludml0ZWVJZBIdCgppbnZpdGVyX2lkGAIgASgEUglpbnZpdGVySWQaNgoTUm9vbVVwZ3JhZGVkVG9HdWlsZBIfCgt1cGdyYWRlZF9ieRgBIAEoBFIKdXBncmFkZWRCeUIHCgVleHRyYQ==');
 @$core.Deprecated('Use reactionDescriptor instead')
 const Reaction$json = const {
   '1': 'Reaction',
@@ -443,8 +422,7 @@ const Format_GuildMention$json = const {
 const Format_Emoji$json = const {
   '1': 'Emoji',
   '2': const [
-    const {'1': 'image_hmc', '3': 1, '4': 1, '5': 9, '10': 'imageHmc'},
-    const {'1': 'pack_id', '3': 2, '4': 1, '5': 4, '10': 'packId'},
+    const {'1': 'emote', '3': 1, '4': 1, '5': 11, '6': '.protocol.emote.v1.Emote', '10': 'emote'},
   ],
 };
 
@@ -479,7 +457,7 @@ const Format_Localization$json = const {
 };
 
 /// Descriptor for `Format`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List formatDescriptor = $convert.base64Decode('CgZGb3JtYXQSFAoFc3RhcnQYASABKA1SBXN0YXJ0EhYKBmxlbmd0aBgCIAEoDVIGbGVuZ3RoEjMKBGJvbGQYAyABKAsyHS5wcm90b2NvbC5jaGF0LnYxLkZvcm1hdC5Cb2xkSABSBGJvbGQSOQoGaXRhbGljGAQgASgLMh8ucHJvdG9jb2wuY2hhdC52MS5Gb3JtYXQuSXRhbGljSABSBml0YWxpYxJCCgl1bmRlcmxpbmUYBSABKAsyIi5wcm90b2NvbC5jaGF0LnYxLkZvcm1hdC5VbmRlcmxpbmVIAFIJdW5kZXJsaW5lEkIKCW1vbm9zcGFjZRgGIAEoCzIiLnByb3RvY29sLmNoYXQudjEuRm9ybWF0Lk1vbm9zcGFjZUgAUgltb25vc3BhY2USSAoLc3VwZXJzY3JpcHQYByABKAsyJC5wcm90b2NvbC5jaGF0LnYxLkZvcm1hdC5TdXBlcnNjcmlwdEgAUgtzdXBlcnNjcmlwdBJCCglzdWJzY3JpcHQYCCABKAsyIi5wcm90b2NvbC5jaGF0LnYxLkZvcm1hdC5TdWJzY3JpcHRIAFIJc3Vic2NyaXB0EkMKCmNvZGVfYmxvY2sYCSABKAsyIi5wcm90b2NvbC5jaGF0LnYxLkZvcm1hdC5Db2RlQmxvY2tIAFIJY29kZUJsb2NrEkkKDHVzZXJfbWVudGlvbhgKIAEoCzIkLnByb3RvY29sLmNoYXQudjEuRm9ybWF0LlVzZXJNZW50aW9uSABSC3VzZXJNZW50aW9uEkkKDHJvbGVfbWVudGlvbhgLIAEoCzIkLnByb3RvY29sLmNoYXQudjEuRm9ybWF0LlJvbGVNZW50aW9uSABSC3JvbGVNZW50aW9uElIKD2NoYW5uZWxfbWVudGlvbhgMIAEoCzInLnByb3RvY29sLmNoYXQudjEuRm9ybWF0LkNoYW5uZWxNZW50aW9uSABSDmNoYW5uZWxNZW50aW9uEkwKDWd1aWxkX21lbnRpb24YDSABKAsyJS5wcm90b2NvbC5jaGF0LnYxLkZvcm1hdC5HdWlsZE1lbnRpb25IAFIMZ3VpbGRNZW50aW9uEjYKBWVtb2ppGA4gASgLMh4ucHJvdG9jb2wuY2hhdC52MS5Gb3JtYXQuRW1vamlIAFIFZW1vamkSNgoFY29sb3IYDyABKAsyHi5wcm90b2NvbC5jaGF0LnYxLkZvcm1hdC5Db2xvckgAUgVjb2xvchJLCgxsb2NhbGl6YXRpb24YECABKAsyJS5wcm90b2NvbC5jaGF0LnYxLkZvcm1hdC5Mb2NhbGl6YXRpb25IAFIMbG9jYWxpemF0aW9uGgYKBEJvbGQaCAoGSXRhbGljGgsKCVVuZGVybGluZRoLCglNb25vc3BhY2UaDQoLU3VwZXJzY3JpcHQaCwoJU3Vic2NyaXB0GicKCUNvZGVCbG9jaxIaCghsYW5ndWFnZRgBIAEoCVIIbGFuZ3VhZ2UaJgoLVXNlck1lbnRpb24SFwoHdXNlcl9pZBgBIAEoBFIGdXNlcklkGiYKC1JvbGVNZW50aW9uEhcKB3JvbGVfaWQYASABKARSBnJvbGVJZBovCg5DaGFubmVsTWVudGlvbhIdCgpjaGFubmVsX2lkGAEgASgEUgljaGFubmVsSWQaSQoMR3VpbGRNZW50aW9uEhkKCGd1aWxkX2lkGAEgASgEUgdndWlsZElkEh4KCmhvbWVzZXJ2ZXIYAiABKAlSCmhvbWVzZXJ2ZXIaPQoFRW1vamkSGwoJaW1hZ2VfaG1jGAEgASgJUghpbWFnZUhtYxIXCgdwYWNrX2lkGAIgASgEUgZwYWNrSWQaugEKBUNvbG9yEjcKBGtpbmQYASABKA4yIy5wcm90b2NvbC5jaGF0LnYxLkZvcm1hdC5Db2xvci5LaW5kUgRraW5kIngKBEtpbmQSGAoUS0lORF9ESU1fVU5TUEVDSUZJRUQQABIPCgtLSU5EX0JSSUdIVBABEhEKDUtJTkRfTkVHQVRJVkUQAhIRCg1LSU5EX1BPU0lUSVZFEAMSDQoJS0lORF9JTkZPEAQSEAoMS0lORF9XQVJOSU5HEAUaKwoMTG9jYWxpemF0aW9uEhsKCWkxOG5fY29kZRgBIAEoCVIIaTE4bkNvZGVCCAoGZm9ybWF0');
+final $typed_data.Uint8List formatDescriptor = $convert.base64Decode('CgZGb3JtYXQSFAoFc3RhcnQYASABKA1SBXN0YXJ0EhYKBmxlbmd0aBgCIAEoDVIGbGVuZ3RoEjMKBGJvbGQYAyABKAsyHS5wcm90b2NvbC5jaGF0LnYxLkZvcm1hdC5Cb2xkSABSBGJvbGQSOQoGaXRhbGljGAQgASgLMh8ucHJvdG9jb2wuY2hhdC52MS5Gb3JtYXQuSXRhbGljSABSBml0YWxpYxJCCgl1bmRlcmxpbmUYBSABKAsyIi5wcm90b2NvbC5jaGF0LnYxLkZvcm1hdC5VbmRlcmxpbmVIAFIJdW5kZXJsaW5lEkIKCW1vbm9zcGFjZRgGIAEoCzIiLnByb3RvY29sLmNoYXQudjEuRm9ybWF0Lk1vbm9zcGFjZUgAUgltb25vc3BhY2USSAoLc3VwZXJzY3JpcHQYByABKAsyJC5wcm90b2NvbC5jaGF0LnYxLkZvcm1hdC5TdXBlcnNjcmlwdEgAUgtzdXBlcnNjcmlwdBJCCglzdWJzY3JpcHQYCCABKAsyIi5wcm90b2NvbC5jaGF0LnYxLkZvcm1hdC5TdWJzY3JpcHRIAFIJc3Vic2NyaXB0EkMKCmNvZGVfYmxvY2sYCSABKAsyIi5wcm90b2NvbC5jaGF0LnYxLkZvcm1hdC5Db2RlQmxvY2tIAFIJY29kZUJsb2NrEkkKDHVzZXJfbWVudGlvbhgKIAEoCzIkLnByb3RvY29sLmNoYXQudjEuRm9ybWF0LlVzZXJNZW50aW9uSABSC3VzZXJNZW50aW9uEkkKDHJvbGVfbWVudGlvbhgLIAEoCzIkLnByb3RvY29sLmNoYXQudjEuRm9ybWF0LlJvbGVNZW50aW9uSABSC3JvbGVNZW50aW9uElIKD2NoYW5uZWxfbWVudGlvbhgMIAEoCzInLnByb3RvY29sLmNoYXQudjEuRm9ybWF0LkNoYW5uZWxNZW50aW9uSABSDmNoYW5uZWxNZW50aW9uEkwKDWd1aWxkX21lbnRpb24YDSABKAsyJS5wcm90b2NvbC5jaGF0LnYxLkZvcm1hdC5HdWlsZE1lbnRpb25IAFIMZ3VpbGRNZW50aW9uEjYKBWVtb2ppGA4gASgLMh4ucHJvdG9jb2wuY2hhdC52MS5Gb3JtYXQuRW1vamlIAFIFZW1vamkSNgoFY29sb3IYDyABKAsyHi5wcm90b2NvbC5jaGF0LnYxLkZvcm1hdC5Db2xvckgAUgVjb2xvchJLCgxsb2NhbGl6YXRpb24YECABKAsyJS5wcm90b2NvbC5jaGF0LnYxLkZvcm1hdC5Mb2NhbGl6YXRpb25IAFIMbG9jYWxpemF0aW9uGgYKBEJvbGQaCAoGSXRhbGljGgsKCVVuZGVybGluZRoLCglNb25vc3BhY2UaDQoLU3VwZXJzY3JpcHQaCwoJU3Vic2NyaXB0GicKCUNvZGVCbG9jaxIaCghsYW5ndWFnZRgBIAEoCVIIbGFuZ3VhZ2UaJgoLVXNlck1lbnRpb24SFwoHdXNlcl9pZBgBIAEoBFIGdXNlcklkGiYKC1JvbGVNZW50aW9uEhcKB3JvbGVfaWQYASABKARSBnJvbGVJZBovCg5DaGFubmVsTWVudGlvbhIdCgpjaGFubmVsX2lkGAEgASgEUgljaGFubmVsSWQaSQoMR3VpbGRNZW50aW9uEhkKCGd1aWxkX2lkGAEgASgEUgdndWlsZElkEh4KCmhvbWVzZXJ2ZXIYAiABKAlSCmhvbWVzZXJ2ZXIaNwoFRW1vamkSLgoFZW1vdGUYASABKAsyGC5wcm90b2NvbC5lbW90ZS52MS5FbW90ZVIFZW1vdGUaugEKBUNvbG9yEjcKBGtpbmQYASABKA4yIy5wcm90b2NvbC5jaGF0LnYxLkZvcm1hdC5Db2xvci5LaW5kUgRraW5kIngKBEtpbmQSGAoUS0lORF9ESU1fVU5TUEVDSUZJRUQQABIPCgtLSU5EX0JSSUdIVBABEhEKDUtJTkRfTkVHQVRJVkUQAhIRCg1LSU5EX1BPU0lUSVZFEAMSDQoJS0lORF9JTkZPEAQSEAoMS0lORF9XQVJOSU5HEAUaKwoMTG9jYWxpemF0aW9uEhsKCWkxOG5fY29kZRgBIAEoCVIIaTE4bkNvZGVCCAoGZm9ybWF0');
 @$core.Deprecated('Use formattedTextDescriptor instead')
 const FormattedText$json = const {
   '1': 'FormattedText',
@@ -633,12 +611,13 @@ const SendMessageRequest$json = const {
   '2': const [
     const {'1': 'guild_id', '3': 1, '4': 1, '5': 4, '10': 'guildId'},
     const {'1': 'channel_id', '3': 2, '4': 1, '5': 4, '10': 'channelId'},
-    const {'1': 'content', '3': 3, '4': 1, '5': 11, '6': '.protocol.chat.v1.Content', '10': 'content'},
+    const {'1': 'content', '3': 3, '4': 1, '5': 11, '6': '.protocol.chat.v1.SendMessageRequest.Content', '10': 'content'},
     const {'1': 'echo_id', '3': 4, '4': 1, '5': 4, '9': 0, '10': 'echoId', '17': true},
     const {'1': 'overrides', '3': 6, '4': 1, '5': 11, '6': '.protocol.chat.v1.Overrides', '9': 1, '10': 'overrides', '17': true},
     const {'1': 'in_reply_to', '3': 7, '4': 1, '5': 4, '9': 2, '10': 'inReplyTo', '17': true},
     const {'1': 'metadata', '3': 5, '4': 1, '5': 11, '6': '.protocol.harmonytypes.v1.Metadata', '9': 3, '10': 'metadata', '17': true},
   ],
+  '3': const [SendMessageRequest_ImageInfo$json, SendMessageRequest_Attachment$json, SendMessageRequest_Content$json],
   '8': const [
     const {'1': '_echo_id'},
     const {'1': '_overrides'},
@@ -647,8 +626,44 @@ const SendMessageRequest$json = const {
   ],
 };
 
+@$core.Deprecated('Use sendMessageRequestDescriptor instead')
+const SendMessageRequest_ImageInfo$json = const {
+  '1': 'ImageInfo',
+  '2': const [
+    const {'1': 'caption', '3': 1, '4': 1, '5': 9, '9': 0, '10': 'caption', '17': true},
+    const {'1': 'use_original', '3': 2, '4': 1, '5': 8, '10': 'useOriginal'},
+  ],
+  '8': const [
+    const {'1': '_caption'},
+  ],
+};
+
+@$core.Deprecated('Use sendMessageRequestDescriptor instead')
+const SendMessageRequest_Attachment$json = const {
+  '1': 'Attachment',
+  '2': const [
+    const {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    const {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
+    const {'1': 'image', '3': 3, '4': 1, '5': 11, '6': '.protocol.chat.v1.SendMessageRequest.ImageInfo', '9': 0, '10': 'image'},
+  ],
+  '8': const [
+    const {'1': 'info'},
+  ],
+};
+
+@$core.Deprecated('Use sendMessageRequestDescriptor instead')
+const SendMessageRequest_Content$json = const {
+  '1': 'Content',
+  '2': const [
+    const {'1': 'text', '3': 1, '4': 1, '5': 9, '10': 'text'},
+    const {'1': 'text_formats', '3': 2, '4': 3, '5': 11, '6': '.protocol.chat.v1.Format', '10': 'textFormats'},
+    const {'1': 'attachments', '3': 3, '4': 3, '5': 11, '6': '.protocol.chat.v1.SendMessageRequest.Attachment', '10': 'attachments'},
+    const {'1': 'embeds', '3': 4, '4': 3, '5': 11, '6': '.protocol.chat.v1.Embed', '10': 'embeds'},
+  ],
+};
+
 /// Descriptor for `SendMessageRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List sendMessageRequestDescriptor = $convert.base64Decode('ChJTZW5kTWVzc2FnZVJlcXVlc3QSGQoIZ3VpbGRfaWQYASABKARSB2d1aWxkSWQSHQoKY2hhbm5lbF9pZBgCIAEoBFIJY2hhbm5lbElkEjMKB2NvbnRlbnQYAyABKAsyGS5wcm90b2NvbC5jaGF0LnYxLkNvbnRlbnRSB2NvbnRlbnQSHAoHZWNob19pZBgEIAEoBEgAUgZlY2hvSWSIAQESPgoJb3ZlcnJpZGVzGAYgASgLMhsucHJvdG9jb2wuY2hhdC52MS5PdmVycmlkZXNIAVIJb3ZlcnJpZGVziAEBEiMKC2luX3JlcGx5X3RvGAcgASgESAJSCWluUmVwbHlUb4gBARJDCghtZXRhZGF0YRgFIAEoCzIiLnByb3RvY29sLmhhcm1vbnl0eXBlcy52MS5NZXRhZGF0YUgDUghtZXRhZGF0YYgBAUIKCghfZWNob19pZEIMCgpfb3ZlcnJpZGVzQg4KDF9pbl9yZXBseV90b0ILCglfbWV0YWRhdGE=');
+final $typed_data.Uint8List sendMessageRequestDescriptor = $convert.base64Decode('ChJTZW5kTWVzc2FnZVJlcXVlc3QSGQoIZ3VpbGRfaWQYASABKARSB2d1aWxkSWQSHQoKY2hhbm5lbF9pZBgCIAEoBFIJY2hhbm5lbElkEkYKB2NvbnRlbnQYAyABKAsyLC5wcm90b2NvbC5jaGF0LnYxLlNlbmRNZXNzYWdlUmVxdWVzdC5Db250ZW50Ugdjb250ZW50EhwKB2VjaG9faWQYBCABKARIAFIGZWNob0lkiAEBEj4KCW92ZXJyaWRlcxgGIAEoCzIbLnByb3RvY29sLmNoYXQudjEuT3ZlcnJpZGVzSAFSCW92ZXJyaWRlc4gBARIjCgtpbl9yZXBseV90bxgHIAEoBEgCUglpblJlcGx5VG+IAQESQwoIbWV0YWRhdGEYBSABKAsyIi5wcm90b2NvbC5oYXJtb255dHlwZXMudjEuTWV0YWRhdGFIA1IIbWV0YWRhdGGIAQEaWQoJSW1hZ2VJbmZvEh0KB2NhcHRpb24YASABKAlIAFIHY2FwdGlvbogBARIhCgx1c2Vfb3JpZ2luYWwYAiABKAhSC3VzZU9yaWdpbmFsQgoKCF9jYXB0aW9uGoABCgpBdHRhY2htZW50Eg4KAmlkGAEgASgJUgJpZBISCgRuYW1lGAIgASgJUgRuYW1lEkYKBWltYWdlGAMgASgLMi4ucHJvdG9jb2wuY2hhdC52MS5TZW5kTWVzc2FnZVJlcXVlc3QuSW1hZ2VJbmZvSABSBWltYWdlQgYKBGluZm8a3gEKB0NvbnRlbnQSEgoEdGV4dBgBIAEoCVIEdGV4dBI7Cgx0ZXh0X2Zvcm1hdHMYAiADKAsyGC5wcm90b2NvbC5jaGF0LnYxLkZvcm1hdFILdGV4dEZvcm1hdHMSUQoLYXR0YWNobWVudHMYAyADKAsyLy5wcm90b2NvbC5jaGF0LnYxLlNlbmRNZXNzYWdlUmVxdWVzdC5BdHRhY2htZW50UgthdHRhY2htZW50cxIvCgZlbWJlZHMYBCADKAsyFy5wcm90b2NvbC5jaGF0LnYxLkVtYmVkUgZlbWJlZHNCCgoIX2VjaG9faWRCDAoKX292ZXJyaWRlc0IOCgxfaW5fcmVwbHlfdG9CCwoJX21ldGFkYXRh');
 @$core.Deprecated('Use sendMessageResponseDescriptor instead')
 const SendMessageResponse$json = const {
   '1': 'SendMessageResponse',

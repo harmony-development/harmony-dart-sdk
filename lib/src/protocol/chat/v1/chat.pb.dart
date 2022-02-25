@@ -140,9 +140,9 @@ class ChatServiceApi {
     var emptyResponse = $4.SendMessageResponse();
     return _client.invoke<$4.SendMessageResponse>(ctx, 'ChatService', 'SendMessage', request, emptyResponse);
   }
-  $async.Future<$5.QueryHasPermissionResponse> queryHasPermission($pb.ClientContext? ctx, $5.QueryHasPermissionRequest request) {
-    var emptyResponse = $5.QueryHasPermissionResponse();
-    return _client.invoke<$5.QueryHasPermissionResponse>(ctx, 'ChatService', 'QueryHasPermission', request, emptyResponse);
+  $async.Future<$5.HasPermissionResponse> hasPermission($pb.ClientContext? ctx, $5.HasPermissionRequest request) {
+    var emptyResponse = $5.HasPermissionResponse();
+    return _client.invoke<$5.HasPermissionResponse>(ctx, 'ChatService', 'HasPermission', request, emptyResponse);
   }
   $async.Future<$5.SetPermissionsResponse> setPermissions($pb.ClientContext? ctx, $5.SetPermissionsRequest request) {
     var emptyResponse = $5.SetPermissionsResponse();

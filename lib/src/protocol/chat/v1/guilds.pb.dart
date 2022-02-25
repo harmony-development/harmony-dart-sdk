@@ -1191,17 +1191,17 @@ class GetGuildListResponse extends $pb.GeneratedMessage {
 
 class GetGuildRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'GetGuildRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.chat.v1'), createEmptyInstance: create)
-    ..a<$fixnum.Int64>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'guildId', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
+    ..p<$fixnum.Int64>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'guildIds', $pb.PbFieldType.PU6)
     ..hasRequiredFields = false
   ;
 
   GetGuildRequest._() : super();
   factory GetGuildRequest({
-    $fixnum.Int64? guildId,
+    $core.Iterable<$fixnum.Int64>? guildIds,
   }) {
     final _result = create();
-    if (guildId != null) {
-      _result.guildId = guildId;
+    if (guildIds != null) {
+      _result.guildIds.addAll(guildIds);
     }
     return _result;
   }
@@ -1227,28 +1227,22 @@ class GetGuildRequest extends $pb.GeneratedMessage {
   static GetGuildRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $fixnum.Int64 get guildId => $_getI64(0);
-  @$pb.TagNumber(1)
-  set guildId($fixnum.Int64 v) { $_setInt64(0, v); }
-  @$pb.TagNumber(1)
-  $core.bool hasGuildId() => $_has(0);
-  @$pb.TagNumber(1)
-  void clearGuildId() => clearField(1);
+  $core.List<$fixnum.Int64> get guildIds => $_getList(0);
 }
 
 class GetGuildResponse extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'GetGuildResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.chat.v1'), createEmptyInstance: create)
-    ..aOM<Guild>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'guild', subBuilder: Guild.create)
+    ..m<$fixnum.Int64, Guild>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'guild', entryClassName: 'GetGuildResponse.GuildEntry', keyFieldType: $pb.PbFieldType.OU6, valueFieldType: $pb.PbFieldType.OM, valueCreator: Guild.create, packageName: const $pb.PackageName('protocol.chat.v1'))
     ..hasRequiredFields = false
   ;
 
   GetGuildResponse._() : super();
   factory GetGuildResponse({
-    Guild? guild,
+    $core.Map<$fixnum.Int64, Guild>? guild,
   }) {
     final _result = create();
     if (guild != null) {
-      _result.guild = guild;
+      _result.guild.addAll(guild);
     }
     return _result;
   }
@@ -1274,15 +1268,7 @@ class GetGuildResponse extends $pb.GeneratedMessage {
   static GetGuildResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  Guild get guild => $_getN(0);
-  @$pb.TagNumber(1)
-  set guild(Guild v) { setField(1, v); }
-  @$pb.TagNumber(1)
-  $core.bool hasGuild() => $_has(0);
-  @$pb.TagNumber(1)
-  void clearGuild() => clearField(1);
-  @$pb.TagNumber(1)
-  Guild ensureGuild() => $_ensure(0);
+  $core.Map<$fixnum.Int64, Guild> get guild => $_getMap(0);
 }
 
 class GetGuildInvitesRequest extends $pb.GeneratedMessage {

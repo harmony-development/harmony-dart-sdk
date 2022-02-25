@@ -225,20 +225,20 @@ class RoleWithId extends $pb.GeneratedMessage {
   Role ensureRole() => $_ensure(1);
 }
 
-class QueryHasPermissionRequest extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'QueryHasPermissionRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.chat.v1'), createEmptyInstance: create)
+class HasPermissionRequest extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'HasPermissionRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.chat.v1'), createEmptyInstance: create)
     ..a<$fixnum.Int64>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'guildId', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
     ..a<$fixnum.Int64>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'channelId', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
-    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'checkFor')
+    ..pPS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'checkFor')
     ..a<$fixnum.Int64>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'as', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
     ..hasRequiredFields = false
   ;
 
-  QueryHasPermissionRequest._() : super();
-  factory QueryHasPermissionRequest({
+  HasPermissionRequest._() : super();
+  factory HasPermissionRequest({
     $fixnum.Int64? guildId,
     $fixnum.Int64? channelId,
-    $core.String? checkFor,
+    $core.Iterable<$core.String>? checkFor,
     $fixnum.Int64? as,
   }) {
     final _result = create();
@@ -249,33 +249,33 @@ class QueryHasPermissionRequest extends $pb.GeneratedMessage {
       _result.channelId = channelId;
     }
     if (checkFor != null) {
-      _result.checkFor = checkFor;
+      _result.checkFor.addAll(checkFor);
     }
     if (as != null) {
       _result.as = as;
     }
     return _result;
   }
-  factory QueryHasPermissionRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory QueryHasPermissionRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  factory HasPermissionRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory HasPermissionRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
   'Will be removed in next major version')
-  QueryHasPermissionRequest clone() => QueryHasPermissionRequest()..mergeFromMessage(this);
+  HasPermissionRequest clone() => HasPermissionRequest()..mergeFromMessage(this);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  QueryHasPermissionRequest copyWith(void Function(QueryHasPermissionRequest) updates) => super.copyWith((message) => updates(message as QueryHasPermissionRequest)) as QueryHasPermissionRequest; // ignore: deprecated_member_use
+  HasPermissionRequest copyWith(void Function(HasPermissionRequest) updates) => super.copyWith((message) => updates(message as HasPermissionRequest)) as HasPermissionRequest; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
-  static QueryHasPermissionRequest create() => QueryHasPermissionRequest._();
-  QueryHasPermissionRequest createEmptyInstance() => create();
-  static $pb.PbList<QueryHasPermissionRequest> createRepeated() => $pb.PbList<QueryHasPermissionRequest>();
+  static HasPermissionRequest create() => HasPermissionRequest._();
+  HasPermissionRequest createEmptyInstance() => create();
+  static $pb.PbList<HasPermissionRequest> createRepeated() => $pb.PbList<HasPermissionRequest>();
   @$core.pragma('dart2js:noInline')
-  static QueryHasPermissionRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<QueryHasPermissionRequest>(create);
-  static QueryHasPermissionRequest? _defaultInstance;
+  static HasPermissionRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<HasPermissionRequest>(create);
+  static HasPermissionRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
   $fixnum.Int64 get guildId => $_getI64(0);
@@ -296,13 +296,7 @@ class QueryHasPermissionRequest extends $pb.GeneratedMessage {
   void clearChannelId() => clearField(2);
 
   @$pb.TagNumber(3)
-  $core.String get checkFor => $_getSZ(2);
-  @$pb.TagNumber(3)
-  set checkFor($core.String v) { $_setString(2, v); }
-  @$pb.TagNumber(3)
-  $core.bool hasCheckFor() => $_has(2);
-  @$pb.TagNumber(3)
-  void clearCheckFor() => clearField(3);
+  $core.List<$core.String> get checkFor => $_getList(2);
 
   @$pb.TagNumber(4)
   $fixnum.Int64 get as => $_getI64(3);
@@ -314,51 +308,45 @@ class QueryHasPermissionRequest extends $pb.GeneratedMessage {
   void clearAs() => clearField(4);
 }
 
-class QueryHasPermissionResponse extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'QueryHasPermissionResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.chat.v1'), createEmptyInstance: create)
-    ..aOB(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'ok')
+class HasPermissionResponse extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'HasPermissionResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.chat.v1'), createEmptyInstance: create)
+    ..pc<Permission>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'perms', $pb.PbFieldType.PM, subBuilder: Permission.create)
     ..hasRequiredFields = false
   ;
 
-  QueryHasPermissionResponse._() : super();
-  factory QueryHasPermissionResponse({
-    $core.bool? ok,
+  HasPermissionResponse._() : super();
+  factory HasPermissionResponse({
+    $core.Iterable<Permission>? perms,
   }) {
     final _result = create();
-    if (ok != null) {
-      _result.ok = ok;
+    if (perms != null) {
+      _result.perms.addAll(perms);
     }
     return _result;
   }
-  factory QueryHasPermissionResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory QueryHasPermissionResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  factory HasPermissionResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory HasPermissionResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
   'Will be removed in next major version')
-  QueryHasPermissionResponse clone() => QueryHasPermissionResponse()..mergeFromMessage(this);
+  HasPermissionResponse clone() => HasPermissionResponse()..mergeFromMessage(this);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  QueryHasPermissionResponse copyWith(void Function(QueryHasPermissionResponse) updates) => super.copyWith((message) => updates(message as QueryHasPermissionResponse)) as QueryHasPermissionResponse; // ignore: deprecated_member_use
+  HasPermissionResponse copyWith(void Function(HasPermissionResponse) updates) => super.copyWith((message) => updates(message as HasPermissionResponse)) as HasPermissionResponse; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
-  static QueryHasPermissionResponse create() => QueryHasPermissionResponse._();
-  QueryHasPermissionResponse createEmptyInstance() => create();
-  static $pb.PbList<QueryHasPermissionResponse> createRepeated() => $pb.PbList<QueryHasPermissionResponse>();
+  static HasPermissionResponse create() => HasPermissionResponse._();
+  HasPermissionResponse createEmptyInstance() => create();
+  static $pb.PbList<HasPermissionResponse> createRepeated() => $pb.PbList<HasPermissionResponse>();
   @$core.pragma('dart2js:noInline')
-  static QueryHasPermissionResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<QueryHasPermissionResponse>(create);
-  static QueryHasPermissionResponse? _defaultInstance;
+  static HasPermissionResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<HasPermissionResponse>(create);
+  static HasPermissionResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.bool get ok => $_getBF(0);
-  @$pb.TagNumber(1)
-  set ok($core.bool v) { $_setBool(0, v); }
-  @$pb.TagNumber(1)
-  $core.bool hasOk() => $_has(0);
-  @$pb.TagNumber(1)
-  void clearOk() => clearField(1);
+  $core.List<Permission> get perms => $_getList(0);
 }
 
 class SetPermissionsRequest extends $pb.GeneratedMessage {
@@ -476,7 +464,7 @@ class SetPermissionsResponse extends $pb.GeneratedMessage {
 class GetPermissionsRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'GetPermissionsRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.chat.v1'), createEmptyInstance: create)
     ..a<$fixnum.Int64>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'guildId', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
-    ..a<$fixnum.Int64>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'channelId', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
+    ..p<$fixnum.Int64>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'channelIds', $pb.PbFieldType.PU6)
     ..a<$fixnum.Int64>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'roleId', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
     ..hasRequiredFields = false
   ;
@@ -484,15 +472,15 @@ class GetPermissionsRequest extends $pb.GeneratedMessage {
   GetPermissionsRequest._() : super();
   factory GetPermissionsRequest({
     $fixnum.Int64? guildId,
-    $fixnum.Int64? channelId,
+    $core.Iterable<$fixnum.Int64>? channelIds,
     $fixnum.Int64? roleId,
   }) {
     final _result = create();
     if (guildId != null) {
       _result.guildId = guildId;
     }
-    if (channelId != null) {
-      _result.channelId = channelId;
+    if (channelIds != null) {
+      _result.channelIds.addAll(channelIds);
     }
     if (roleId != null) {
       _result.roleId = roleId;
@@ -530,13 +518,7 @@ class GetPermissionsRequest extends $pb.GeneratedMessage {
   void clearGuildId() => clearField(1);
 
   @$pb.TagNumber(2)
-  $fixnum.Int64 get channelId => $_getI64(1);
-  @$pb.TagNumber(2)
-  set channelId($fixnum.Int64 v) { $_setInt64(1, v); }
-  @$pb.TagNumber(2)
-  $core.bool hasChannelId() => $_has(1);
-  @$pb.TagNumber(2)
-  void clearChannelId() => clearField(2);
+  $core.List<$fixnum.Int64> get channelIds => $_getList(1);
 
   @$pb.TagNumber(3)
   $fixnum.Int64 get roleId => $_getI64(2);
@@ -548,19 +530,65 @@ class GetPermissionsRequest extends $pb.GeneratedMessage {
   void clearRoleId() => clearField(3);
 }
 
-class GetPermissionsResponse extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'GetPermissionsResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.chat.v1'), createEmptyInstance: create)
+class GetPermissionsResponse_Permissions extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'GetPermissionsResponse.Permissions', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.chat.v1'), createEmptyInstance: create)
     ..pc<Permission>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'perms', $pb.PbFieldType.PM, subBuilder: Permission.create)
     ..hasRequiredFields = false
   ;
 
-  GetPermissionsResponse._() : super();
-  factory GetPermissionsResponse({
+  GetPermissionsResponse_Permissions._() : super();
+  factory GetPermissionsResponse_Permissions({
     $core.Iterable<Permission>? perms,
   }) {
     final _result = create();
     if (perms != null) {
       _result.perms.addAll(perms);
+    }
+    return _result;
+  }
+  factory GetPermissionsResponse_Permissions.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetPermissionsResponse_Permissions.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetPermissionsResponse_Permissions clone() => GetPermissionsResponse_Permissions()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetPermissionsResponse_Permissions copyWith(void Function(GetPermissionsResponse_Permissions) updates) => super.copyWith((message) => updates(message as GetPermissionsResponse_Permissions)) as GetPermissionsResponse_Permissions; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static GetPermissionsResponse_Permissions create() => GetPermissionsResponse_Permissions._();
+  GetPermissionsResponse_Permissions createEmptyInstance() => create();
+  static $pb.PbList<GetPermissionsResponse_Permissions> createRepeated() => $pb.PbList<GetPermissionsResponse_Permissions>();
+  @$core.pragma('dart2js:noInline')
+  static GetPermissionsResponse_Permissions getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetPermissionsResponse_Permissions>(create);
+  static GetPermissionsResponse_Permissions? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.List<Permission> get perms => $_getList(0);
+}
+
+class GetPermissionsResponse extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'GetPermissionsResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.chat.v1'), createEmptyInstance: create)
+    ..aOM<GetPermissionsResponse_Permissions>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'guildPerms', subBuilder: GetPermissionsResponse_Permissions.create)
+    ..m<$fixnum.Int64, GetPermissionsResponse_Permissions>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'channelPerms', entryClassName: 'GetPermissionsResponse.ChannelPermsEntry', keyFieldType: $pb.PbFieldType.OU6, valueFieldType: $pb.PbFieldType.OM, valueCreator: GetPermissionsResponse_Permissions.create, packageName: const $pb.PackageName('protocol.chat.v1'))
+    ..hasRequiredFields = false
+  ;
+
+  GetPermissionsResponse._() : super();
+  factory GetPermissionsResponse({
+    GetPermissionsResponse_Permissions? guildPerms,
+    $core.Map<$fixnum.Int64, GetPermissionsResponse_Permissions>? channelPerms,
+  }) {
+    final _result = create();
+    if (guildPerms != null) {
+      _result.guildPerms = guildPerms;
+    }
+    if (channelPerms != null) {
+      _result.channelPerms.addAll(channelPerms);
     }
     return _result;
   }
@@ -586,7 +614,18 @@ class GetPermissionsResponse extends $pb.GeneratedMessage {
   static GetPermissionsResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.List<Permission> get perms => $_getList(0);
+  GetPermissionsResponse_Permissions get guildPerms => $_getN(0);
+  @$pb.TagNumber(1)
+  set guildPerms(GetPermissionsResponse_Permissions v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasGuildPerms() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearGuildPerms() => clearField(1);
+  @$pb.TagNumber(1)
+  GetPermissionsResponse_Permissions ensureGuildPerms() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $core.Map<$fixnum.Int64, GetPermissionsResponse_Permissions> get channelPerms => $_getMap(1);
 }
 
 class MoveRoleRequest extends $pb.GeneratedMessage {
@@ -1278,21 +1317,21 @@ class ManageUserRolesResponse extends $pb.GeneratedMessage {
 class GetUserRolesRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'GetUserRolesRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.chat.v1'), createEmptyInstance: create)
     ..a<$fixnum.Int64>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'guildId', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
-    ..a<$fixnum.Int64>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'userId', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
+    ..p<$fixnum.Int64>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'userIds', $pb.PbFieldType.PU6)
     ..hasRequiredFields = false
   ;
 
   GetUserRolesRequest._() : super();
   factory GetUserRolesRequest({
     $fixnum.Int64? guildId,
-    $fixnum.Int64? userId,
+    $core.Iterable<$fixnum.Int64>? userIds,
   }) {
     final _result = create();
     if (guildId != null) {
       _result.guildId = guildId;
     }
-    if (userId != null) {
-      _result.userId = userId;
+    if (userIds != null) {
+      _result.userIds.addAll(userIds);
     }
     return _result;
   }
@@ -1327,28 +1366,63 @@ class GetUserRolesRequest extends $pb.GeneratedMessage {
   void clearGuildId() => clearField(1);
 
   @$pb.TagNumber(2)
-  $fixnum.Int64 get userId => $_getI64(1);
-  @$pb.TagNumber(2)
-  set userId($fixnum.Int64 v) { $_setInt64(1, v); }
-  @$pb.TagNumber(2)
-  $core.bool hasUserId() => $_has(1);
-  @$pb.TagNumber(2)
-  void clearUserId() => clearField(2);
+  $core.List<$fixnum.Int64> get userIds => $_getList(1);
 }
 
-class GetUserRolesResponse extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'GetUserRolesResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.chat.v1'), createEmptyInstance: create)
+class GetUserRolesResponse_UserRoles extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'GetUserRolesResponse.UserRoles', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.chat.v1'), createEmptyInstance: create)
     ..p<$fixnum.Int64>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'roles', $pb.PbFieldType.PU6)
     ..hasRequiredFields = false
   ;
 
-  GetUserRolesResponse._() : super();
-  factory GetUserRolesResponse({
+  GetUserRolesResponse_UserRoles._() : super();
+  factory GetUserRolesResponse_UserRoles({
     $core.Iterable<$fixnum.Int64>? roles,
   }) {
     final _result = create();
     if (roles != null) {
       _result.roles.addAll(roles);
+    }
+    return _result;
+  }
+  factory GetUserRolesResponse_UserRoles.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetUserRolesResponse_UserRoles.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetUserRolesResponse_UserRoles clone() => GetUserRolesResponse_UserRoles()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetUserRolesResponse_UserRoles copyWith(void Function(GetUserRolesResponse_UserRoles) updates) => super.copyWith((message) => updates(message as GetUserRolesResponse_UserRoles)) as GetUserRolesResponse_UserRoles; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static GetUserRolesResponse_UserRoles create() => GetUserRolesResponse_UserRoles._();
+  GetUserRolesResponse_UserRoles createEmptyInstance() => create();
+  static $pb.PbList<GetUserRolesResponse_UserRoles> createRepeated() => $pb.PbList<GetUserRolesResponse_UserRoles>();
+  @$core.pragma('dart2js:noInline')
+  static GetUserRolesResponse_UserRoles getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetUserRolesResponse_UserRoles>(create);
+  static GetUserRolesResponse_UserRoles? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.List<$fixnum.Int64> get roles => $_getList(0);
+}
+
+class GetUserRolesResponse extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'GetUserRolesResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.chat.v1'), createEmptyInstance: create)
+    ..m<$fixnum.Int64, GetUserRolesResponse_UserRoles>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'userRoles', entryClassName: 'GetUserRolesResponse.UserRolesEntry', keyFieldType: $pb.PbFieldType.OU6, valueFieldType: $pb.PbFieldType.OM, valueCreator: GetUserRolesResponse_UserRoles.create, packageName: const $pb.PackageName('protocol.chat.v1'))
+    ..hasRequiredFields = false
+  ;
+
+  GetUserRolesResponse._() : super();
+  factory GetUserRolesResponse({
+    $core.Map<$fixnum.Int64, GetUserRolesResponse_UserRoles>? userRoles,
+  }) {
+    final _result = create();
+    if (userRoles != null) {
+      _result.userRoles.addAll(userRoles);
     }
     return _result;
   }
@@ -1374,6 +1448,6 @@ class GetUserRolesResponse extends $pb.GeneratedMessage {
   static GetUserRolesResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.List<$fixnum.Int64> get roles => $_getList(0);
+  $core.Map<$fixnum.Int64, GetUserRolesResponse_UserRoles> get userRoles => $_getMap(0);
 }
 

@@ -15,11 +15,20 @@ import '../../harmonytypes/v1/types.pb.dart' as $0;
 
 class BeginAuthRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'BeginAuthRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.auth.v1'), createEmptyInstance: create)
+    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'forGuestToken')
     ..hasRequiredFields = false
   ;
 
   BeginAuthRequest._() : super();
-  factory BeginAuthRequest() => create();
+  factory BeginAuthRequest({
+    $core.String? forGuestToken,
+  }) {
+    final _result = create();
+    if (forGuestToken != null) {
+      _result.forGuestToken = forGuestToken;
+    }
+    return _result;
+  }
   factory BeginAuthRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory BeginAuthRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -40,6 +49,15 @@ class BeginAuthRequest extends $pb.GeneratedMessage {
   @$core.pragma('dart2js:noInline')
   static BeginAuthRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<BeginAuthRequest>(create);
   static BeginAuthRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get forGuestToken => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set forGuestToken($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasForGuestToken() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearForGuestToken() => clearField(1);
 }
 
 class BeginAuthResponse extends $pb.GeneratedMessage {
@@ -93,6 +111,7 @@ class Session extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Session', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.auth.v1'), createEmptyInstance: create)
     ..a<$fixnum.Int64>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'userId', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
     ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'sessionToken')
+    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'guestToken')
     ..hasRequiredFields = false
   ;
 
@@ -100,6 +119,7 @@ class Session extends $pb.GeneratedMessage {
   factory Session({
     $fixnum.Int64? userId,
     $core.String? sessionToken,
+    $core.String? guestToken,
   }) {
     final _result = create();
     if (userId != null) {
@@ -107,6 +127,9 @@ class Session extends $pb.GeneratedMessage {
     }
     if (sessionToken != null) {
       _result.sessionToken = sessionToken;
+    }
+    if (guestToken != null) {
+      _result.guestToken = guestToken;
     }
     return _result;
   }
@@ -148,6 +171,15 @@ class Session extends $pb.GeneratedMessage {
   $core.bool hasSessionToken() => $_has(1);
   @$pb.TagNumber(2)
   void clearSessionToken() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get guestToken => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set guestToken($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasGuestToken() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearGuestToken() => clearField(3);
 }
 
 class AuthStep_Choice extends $pb.GeneratedMessage {

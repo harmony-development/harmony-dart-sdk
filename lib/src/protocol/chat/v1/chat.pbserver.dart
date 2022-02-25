@@ -50,7 +50,7 @@ abstract class ChatServiceBase extends $pb.GeneratedService {
   $async.Future<$7.LeaveGuildResponse> leaveGuild($pb.ServerContext ctx, $7.LeaveGuildRequest request);
   $async.Future<$4.TriggerActionResponse> triggerAction($pb.ServerContext ctx, $4.TriggerActionRequest request);
   $async.Future<$4.SendMessageResponse> sendMessage($pb.ServerContext ctx, $4.SendMessageRequest request);
-  $async.Future<$5.QueryHasPermissionResponse> queryHasPermission($pb.ServerContext ctx, $5.QueryHasPermissionRequest request);
+  $async.Future<$5.HasPermissionResponse> hasPermission($pb.ServerContext ctx, $5.HasPermissionRequest request);
   $async.Future<$5.SetPermissionsResponse> setPermissions($pb.ServerContext ctx, $5.SetPermissionsRequest request);
   $async.Future<$5.GetPermissionsResponse> getPermissions($pb.ServerContext ctx, $5.GetPermissionsRequest request);
   $async.Future<$5.MoveRoleResponse> moveRole($pb.ServerContext ctx, $5.MoveRoleRequest request);
@@ -107,7 +107,7 @@ abstract class ChatServiceBase extends $pb.GeneratedService {
       case 'LeaveGuild': return $7.LeaveGuildRequest();
       case 'TriggerAction': return $4.TriggerActionRequest();
       case 'SendMessage': return $4.SendMessageRequest();
-      case 'QueryHasPermission': return $5.QueryHasPermissionRequest();
+      case 'HasPermission': return $5.HasPermissionRequest();
       case 'SetPermissions': return $5.SetPermissionsRequest();
       case 'GetPermissions': return $5.GetPermissionsRequest();
       case 'MoveRole': return $5.MoveRoleRequest();
@@ -167,7 +167,7 @@ abstract class ChatServiceBase extends $pb.GeneratedService {
       case 'LeaveGuild': return this.leaveGuild(ctx, request as $7.LeaveGuildRequest);
       case 'TriggerAction': return this.triggerAction(ctx, request as $4.TriggerActionRequest);
       case 'SendMessage': return this.sendMessage(ctx, request as $4.SendMessageRequest);
-      case 'QueryHasPermission': return this.queryHasPermission(ctx, request as $5.QueryHasPermissionRequest);
+      case 'HasPermission': return this.hasPermission(ctx, request as $5.HasPermissionRequest);
       case 'SetPermissions': return this.setPermissions(ctx, request as $5.SetPermissionsRequest);
       case 'GetPermissions': return this.getPermissions(ctx, request as $5.GetPermissionsRequest);
       case 'MoveRole': return this.moveRole(ctx, request as $5.MoveRoleRequest);

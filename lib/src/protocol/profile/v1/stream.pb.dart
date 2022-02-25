@@ -10,15 +10,15 @@ import 'dart:core' as $core;
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import 'types.pbenum.dart' as $0;
+import 'types.pbenum.dart' as $1;
 
 class ProfileUpdated extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ProfileUpdated', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.profile.v1'), createEmptyInstance: create)
     ..a<$fixnum.Int64>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'userId', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
     ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'newUsername')
     ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'newAvatar')
-    ..e<$0.UserStatus>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'newStatus', $pb.PbFieldType.OE, defaultOrMaker: $0.UserStatus.USER_STATUS_OFFLINE_UNSPECIFIED, valueOf: $0.UserStatus.valueOf, enumValues: $0.UserStatus.values)
-    ..aOB(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'newIsBot')
+    ..e<$1.UserStatus>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'newStatus', $pb.PbFieldType.OE, defaultOrMaker: $1.UserStatus.USER_STATUS_OFFLINE_UNSPECIFIED, valueOf: $1.UserStatus.valueOf, enumValues: $1.UserStatus.values)
+    ..e<$1.AccountKind>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'newAccountKind', $pb.PbFieldType.OE, defaultOrMaker: $1.AccountKind.ACCOUNT_KIND_FULL_UNSPECIFIED, valueOf: $1.AccountKind.valueOf, enumValues: $1.AccountKind.values)
     ..hasRequiredFields = false
   ;
 
@@ -27,8 +27,8 @@ class ProfileUpdated extends $pb.GeneratedMessage {
     $fixnum.Int64? userId,
     $core.String? newUsername,
     $core.String? newAvatar,
-    $0.UserStatus? newStatus,
-    $core.bool? newIsBot,
+    $1.UserStatus? newStatus,
+    $1.AccountKind? newAccountKind,
   }) {
     final _result = create();
     if (userId != null) {
@@ -43,8 +43,8 @@ class ProfileUpdated extends $pb.GeneratedMessage {
     if (newStatus != null) {
       _result.newStatus = newStatus;
     }
-    if (newIsBot != null) {
-      _result.newIsBot = newIsBot;
+    if (newAccountKind != null) {
+      _result.newAccountKind = newAccountKind;
     }
     return _result;
   }
@@ -97,22 +97,22 @@ class ProfileUpdated extends $pb.GeneratedMessage {
   void clearNewAvatar() => clearField(3);
 
   @$pb.TagNumber(4)
-  $0.UserStatus get newStatus => $_getN(3);
+  $1.UserStatus get newStatus => $_getN(3);
   @$pb.TagNumber(4)
-  set newStatus($0.UserStatus v) { setField(4, v); }
+  set newStatus($1.UserStatus v) { setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasNewStatus() => $_has(3);
   @$pb.TagNumber(4)
   void clearNewStatus() => clearField(4);
 
   @$pb.TagNumber(5)
-  $core.bool get newIsBot => $_getBF(4);
+  $1.AccountKind get newAccountKind => $_getN(4);
   @$pb.TagNumber(5)
-  set newIsBot($core.bool v) { $_setBool(4, v); }
+  set newAccountKind($1.AccountKind v) { setField(5, v); }
   @$pb.TagNumber(5)
-  $core.bool hasNewIsBot() => $_has(4);
+  $core.bool hasNewAccountKind() => $_has(4);
   @$pb.TagNumber(5)
-  void clearNewIsBot() => clearField(5);
+  void clearNewAccountKind() => clearField(5);
 }
 
 enum StreamEvent_Event {
@@ -122,12 +122,12 @@ enum StreamEvent_Event {
 
 class StreamEvent extends $pb.GeneratedMessage {
   static const $core.Map<$core.int, StreamEvent_Event> _StreamEvent_EventByTag = {
-    14 : StreamEvent_Event.profileUpdated,
+    1 : StreamEvent_Event.profileUpdated,
     0 : StreamEvent_Event.notSet
   };
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'StreamEvent', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.profile.v1'), createEmptyInstance: create)
-    ..oo(0, [14])
-    ..aOM<ProfileUpdated>(14, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'profileUpdated', subBuilder: ProfileUpdated.create)
+    ..oo(0, [1])
+    ..aOM<ProfileUpdated>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'profileUpdated', subBuilder: ProfileUpdated.create)
     ..hasRequiredFields = false
   ;
 
@@ -165,15 +165,15 @@ class StreamEvent extends $pb.GeneratedMessage {
   StreamEvent_Event whichEvent() => _StreamEvent_EventByTag[$_whichOneof(0)]!;
   void clearEvent() => clearField($_whichOneof(0));
 
-  @$pb.TagNumber(14)
+  @$pb.TagNumber(1)
   ProfileUpdated get profileUpdated => $_getN(0);
-  @$pb.TagNumber(14)
-  set profileUpdated(ProfileUpdated v) { setField(14, v); }
-  @$pb.TagNumber(14)
+  @$pb.TagNumber(1)
+  set profileUpdated(ProfileUpdated v) { setField(1, v); }
+  @$pb.TagNumber(1)
   $core.bool hasProfileUpdated() => $_has(0);
-  @$pb.TagNumber(14)
-  void clearProfileUpdated() => clearField(14);
-  @$pb.TagNumber(14)
+  @$pb.TagNumber(1)
+  void clearProfileUpdated() => clearField(1);
+  @$pb.TagNumber(1)
   ProfileUpdated ensureProfileUpdated() => $_ensure(0);
 }
 

@@ -19,7 +19,7 @@ class Profile extends $pb.GeneratedMessage {
     ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'userName')
     ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'userAvatar')
     ..e<UserStatus>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'userStatus', $pb.PbFieldType.OE, defaultOrMaker: UserStatus.USER_STATUS_OFFLINE_UNSPECIFIED, valueOf: UserStatus.valueOf, enumValues: UserStatus.values)
-    ..aOB(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'isBot')
+    ..e<AccountKind>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'accountKind', $pb.PbFieldType.OE, defaultOrMaker: AccountKind.ACCOUNT_KIND_FULL_UNSPECIFIED, valueOf: AccountKind.valueOf, enumValues: AccountKind.values)
     ..hasRequiredFields = false
   ;
 
@@ -28,7 +28,7 @@ class Profile extends $pb.GeneratedMessage {
     $core.String? userName,
     $core.String? userAvatar,
     UserStatus? userStatus,
-    $core.bool? isBot,
+    AccountKind? accountKind,
   }) {
     final _result = create();
     if (userName != null) {
@@ -40,8 +40,8 @@ class Profile extends $pb.GeneratedMessage {
     if (userStatus != null) {
       _result.userStatus = userStatus;
     }
-    if (isBot != null) {
-      _result.isBot = isBot;
+    if (accountKind != null) {
+      _result.accountKind = accountKind;
     }
     return _result;
   }
@@ -94,28 +94,28 @@ class Profile extends $pb.GeneratedMessage {
   void clearUserStatus() => clearField(3);
 
   @$pb.TagNumber(4)
-  $core.bool get isBot => $_getBF(3);
+  AccountKind get accountKind => $_getN(3);
   @$pb.TagNumber(4)
-  set isBot($core.bool v) { $_setBool(3, v); }
+  set accountKind(AccountKind v) { setField(4, v); }
   @$pb.TagNumber(4)
-  $core.bool hasIsBot() => $_has(3);
+  $core.bool hasAccountKind() => $_has(3);
   @$pb.TagNumber(4)
-  void clearIsBot() => clearField(4);
+  void clearAccountKind() => clearField(4);
 }
 
 class GetProfileRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'GetProfileRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.profile.v1'), createEmptyInstance: create)
-    ..a<$fixnum.Int64>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'userId', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
+    ..p<$fixnum.Int64>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'userId', $pb.PbFieldType.PU6)
     ..hasRequiredFields = false
   ;
 
   GetProfileRequest._() : super();
   factory GetProfileRequest({
-    $fixnum.Int64? userId,
+    $core.Iterable<$fixnum.Int64>? userId,
   }) {
     final _result = create();
     if (userId != null) {
-      _result.userId = userId;
+      _result.userId.addAll(userId);
     }
     return _result;
   }
@@ -141,28 +141,22 @@ class GetProfileRequest extends $pb.GeneratedMessage {
   static GetProfileRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $fixnum.Int64 get userId => $_getI64(0);
-  @$pb.TagNumber(1)
-  set userId($fixnum.Int64 v) { $_setInt64(0, v); }
-  @$pb.TagNumber(1)
-  $core.bool hasUserId() => $_has(0);
-  @$pb.TagNumber(1)
-  void clearUserId() => clearField(1);
+  $core.List<$fixnum.Int64> get userId => $_getList(0);
 }
 
 class GetProfileResponse extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'GetProfileResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.profile.v1'), createEmptyInstance: create)
-    ..aOM<Profile>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'profile', subBuilder: Profile.create)
+    ..m<$fixnum.Int64, Profile>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'profile', entryClassName: 'GetProfileResponse.ProfileEntry', keyFieldType: $pb.PbFieldType.OU6, valueFieldType: $pb.PbFieldType.OM, valueCreator: Profile.create, packageName: const $pb.PackageName('protocol.profile.v1'))
     ..hasRequiredFields = false
   ;
 
   GetProfileResponse._() : super();
   factory GetProfileResponse({
-    Profile? profile,
+    $core.Map<$fixnum.Int64, Profile>? profile,
   }) {
     final _result = create();
     if (profile != null) {
-      _result.profile = profile;
+      _result.profile.addAll(profile);
     }
     return _result;
   }
@@ -188,15 +182,7 @@ class GetProfileResponse extends $pb.GeneratedMessage {
   static GetProfileResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  Profile get profile => $_getN(0);
-  @$pb.TagNumber(1)
-  set profile(Profile v) { setField(1, v); }
-  @$pb.TagNumber(1)
-  $core.bool hasProfile() => $_has(0);
-  @$pb.TagNumber(1)
-  void clearProfile() => clearField(1);
-  @$pb.TagNumber(1)
-  Profile ensureProfile() => $_ensure(0);
+  $core.Map<$fixnum.Int64, Profile> get profile => $_getMap(0);
 }
 
 class UpdateProfileRequest extends $pb.GeneratedMessage {
@@ -204,7 +190,6 @@ class UpdateProfileRequest extends $pb.GeneratedMessage {
     ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'newUserName')
     ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'newUserAvatar')
     ..e<UserStatus>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'newUserStatus', $pb.PbFieldType.OE, defaultOrMaker: UserStatus.USER_STATUS_OFFLINE_UNSPECIFIED, valueOf: UserStatus.valueOf, enumValues: UserStatus.values)
-    ..aOB(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'newIsBot')
     ..hasRequiredFields = false
   ;
 
@@ -213,7 +198,6 @@ class UpdateProfileRequest extends $pb.GeneratedMessage {
     $core.String? newUserName,
     $core.String? newUserAvatar,
     UserStatus? newUserStatus,
-    $core.bool? newIsBot,
   }) {
     final _result = create();
     if (newUserName != null) {
@@ -224,9 +208,6 @@ class UpdateProfileRequest extends $pb.GeneratedMessage {
     }
     if (newUserStatus != null) {
       _result.newUserStatus = newUserStatus;
-    }
-    if (newIsBot != null) {
-      _result.newIsBot = newIsBot;
     }
     return _result;
   }
@@ -277,15 +258,6 @@ class UpdateProfileRequest extends $pb.GeneratedMessage {
   $core.bool hasNewUserStatus() => $_has(2);
   @$pb.TagNumber(3)
   void clearNewUserStatus() => clearField(3);
-
-  @$pb.TagNumber(4)
-  $core.bool get newIsBot => $_getBF(3);
-  @$pb.TagNumber(4)
-  set newIsBot($core.bool v) { $_setBool(3, v); }
-  @$pb.TagNumber(4)
-  $core.bool hasNewIsBot() => $_has(3);
-  @$pb.TagNumber(4)
-  void clearNewIsBot() => clearField(4);
 }
 
 class UpdateProfileResponse extends $pb.GeneratedMessage {

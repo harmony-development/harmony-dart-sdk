@@ -312,17 +312,17 @@ class GetEmotePacksResponse extends $pb.GeneratedMessage {
 
 class GetEmotePackEmotesRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'GetEmotePackEmotesRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.emote.v1'), createEmptyInstance: create)
-    ..a<$fixnum.Int64>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'packId', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
+    ..p<$fixnum.Int64>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'packId', $pb.PbFieldType.PU6)
     ..hasRequiredFields = false
   ;
 
   GetEmotePackEmotesRequest._() : super();
   factory GetEmotePackEmotesRequest({
-    $fixnum.Int64? packId,
+    $core.Iterable<$fixnum.Int64>? packId,
   }) {
     final _result = create();
     if (packId != null) {
-      _result.packId = packId;
+      _result.packId.addAll(packId);
     }
     return _result;
   }
@@ -348,28 +348,63 @@ class GetEmotePackEmotesRequest extends $pb.GeneratedMessage {
   static GetEmotePackEmotesRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $fixnum.Int64 get packId => $_getI64(0);
-  @$pb.TagNumber(1)
-  set packId($fixnum.Int64 v) { $_setInt64(0, v); }
-  @$pb.TagNumber(1)
-  $core.bool hasPackId() => $_has(0);
-  @$pb.TagNumber(1)
-  void clearPackId() => clearField(1);
+  $core.List<$fixnum.Int64> get packId => $_getList(0);
 }
 
-class GetEmotePackEmotesResponse extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'GetEmotePackEmotesResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.emote.v1'), createEmptyInstance: create)
+class GetEmotePackEmotesResponse_EmotePackEmotes extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'GetEmotePackEmotesResponse.EmotePackEmotes', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.emote.v1'), createEmptyInstance: create)
     ..pc<Emote>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'emotes', $pb.PbFieldType.PM, subBuilder: Emote.create)
     ..hasRequiredFields = false
   ;
 
-  GetEmotePackEmotesResponse._() : super();
-  factory GetEmotePackEmotesResponse({
+  GetEmotePackEmotesResponse_EmotePackEmotes._() : super();
+  factory GetEmotePackEmotesResponse_EmotePackEmotes({
     $core.Iterable<Emote>? emotes,
   }) {
     final _result = create();
     if (emotes != null) {
       _result.emotes.addAll(emotes);
+    }
+    return _result;
+  }
+  factory GetEmotePackEmotesResponse_EmotePackEmotes.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetEmotePackEmotesResponse_EmotePackEmotes.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetEmotePackEmotesResponse_EmotePackEmotes clone() => GetEmotePackEmotesResponse_EmotePackEmotes()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetEmotePackEmotesResponse_EmotePackEmotes copyWith(void Function(GetEmotePackEmotesResponse_EmotePackEmotes) updates) => super.copyWith((message) => updates(message as GetEmotePackEmotesResponse_EmotePackEmotes)) as GetEmotePackEmotesResponse_EmotePackEmotes; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static GetEmotePackEmotesResponse_EmotePackEmotes create() => GetEmotePackEmotesResponse_EmotePackEmotes._();
+  GetEmotePackEmotesResponse_EmotePackEmotes createEmptyInstance() => create();
+  static $pb.PbList<GetEmotePackEmotesResponse_EmotePackEmotes> createRepeated() => $pb.PbList<GetEmotePackEmotesResponse_EmotePackEmotes>();
+  @$core.pragma('dart2js:noInline')
+  static GetEmotePackEmotesResponse_EmotePackEmotes getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetEmotePackEmotesResponse_EmotePackEmotes>(create);
+  static GetEmotePackEmotesResponse_EmotePackEmotes? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.List<Emote> get emotes => $_getList(0);
+}
+
+class GetEmotePackEmotesResponse extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'GetEmotePackEmotesResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.emote.v1'), createEmptyInstance: create)
+    ..m<$fixnum.Int64, GetEmotePackEmotesResponse_EmotePackEmotes>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'packEmotes', entryClassName: 'GetEmotePackEmotesResponse.PackEmotesEntry', keyFieldType: $pb.PbFieldType.OU6, valueFieldType: $pb.PbFieldType.OM, valueCreator: GetEmotePackEmotesResponse_EmotePackEmotes.create, packageName: const $pb.PackageName('protocol.emote.v1'))
+    ..hasRequiredFields = false
+  ;
+
+  GetEmotePackEmotesResponse._() : super();
+  factory GetEmotePackEmotesResponse({
+    $core.Map<$fixnum.Int64, GetEmotePackEmotesResponse_EmotePackEmotes>? packEmotes,
+  }) {
+    final _result = create();
+    if (packEmotes != null) {
+      _result.packEmotes.addAll(packEmotes);
     }
     return _result;
   }
@@ -395,27 +430,32 @@ class GetEmotePackEmotesResponse extends $pb.GeneratedMessage {
   static GetEmotePackEmotesResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.List<Emote> get emotes => $_getList(0);
+  $core.Map<$fixnum.Int64, GetEmotePackEmotesResponse_EmotePackEmotes> get packEmotes => $_getMap(0);
 }
 
 class AddEmoteToPackRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'AddEmoteToPackRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.emote.v1'), createEmptyInstance: create)
     ..a<$fixnum.Int64>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'packId', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
-    ..aOM<Emote>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'emote', subBuilder: Emote.create)
+    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'imageId')
+    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'name')
     ..hasRequiredFields = false
   ;
 
   AddEmoteToPackRequest._() : super();
   factory AddEmoteToPackRequest({
     $fixnum.Int64? packId,
-    Emote? emote,
+    $core.String? imageId,
+    $core.String? name,
   }) {
     final _result = create();
     if (packId != null) {
       _result.packId = packId;
     }
-    if (emote != null) {
-      _result.emote = emote;
+    if (imageId != null) {
+      _result.imageId = imageId;
+    }
+    if (name != null) {
+      _result.name = name;
     }
     return _result;
   }
@@ -450,15 +490,22 @@ class AddEmoteToPackRequest extends $pb.GeneratedMessage {
   void clearPackId() => clearField(1);
 
   @$pb.TagNumber(2)
-  Emote get emote => $_getN(1);
+  $core.String get imageId => $_getSZ(1);
   @$pb.TagNumber(2)
-  set emote(Emote v) { setField(2, v); }
+  set imageId($core.String v) { $_setString(1, v); }
   @$pb.TagNumber(2)
-  $core.bool hasEmote() => $_has(1);
+  $core.bool hasImageId() => $_has(1);
   @$pb.TagNumber(2)
-  void clearEmote() => clearField(2);
-  @$pb.TagNumber(2)
-  Emote ensureEmote() => $_ensure(1);
+  void clearImageId() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get name => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set name($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasName() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearName() => clearField(3);
 }
 
 class AddEmoteToPackResponse extends $pb.GeneratedMessage {

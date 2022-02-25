@@ -10,33 +10,33 @@ import 'dart:async' as $async;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 import 'dart:core' as $core;
-import 'types.pb.dart' as $0;
+import 'types.pb.dart' as $1;
 import 'profile.pbjson.dart';
 
 export 'profile.pb.dart';
 
 abstract class ProfileServiceBase extends $pb.GeneratedService {
-  $async.Future<$0.GetProfileResponse> getProfile($pb.ServerContext ctx, $0.GetProfileRequest request);
-  $async.Future<$0.UpdateProfileResponse> updateProfile($pb.ServerContext ctx, $0.UpdateProfileRequest request);
-  $async.Future<$0.GetAppDataResponse> getAppData($pb.ServerContext ctx, $0.GetAppDataRequest request);
-  $async.Future<$0.SetAppDataResponse> setAppData($pb.ServerContext ctx, $0.SetAppDataRequest request);
+  $async.Future<$1.GetProfileResponse> getProfile($pb.ServerContext ctx, $1.GetProfileRequest request);
+  $async.Future<$1.UpdateProfileResponse> updateProfile($pb.ServerContext ctx, $1.UpdateProfileRequest request);
+  $async.Future<$1.GetAppDataResponse> getAppData($pb.ServerContext ctx, $1.GetAppDataRequest request);
+  $async.Future<$1.SetAppDataResponse> setAppData($pb.ServerContext ctx, $1.SetAppDataRequest request);
 
   $pb.GeneratedMessage createRequest($core.String method) {
     switch (method) {
-      case 'GetProfile': return $0.GetProfileRequest();
-      case 'UpdateProfile': return $0.UpdateProfileRequest();
-      case 'GetAppData': return $0.GetAppDataRequest();
-      case 'SetAppData': return $0.SetAppDataRequest();
+      case 'GetProfile': return $1.GetProfileRequest();
+      case 'UpdateProfile': return $1.UpdateProfileRequest();
+      case 'GetAppData': return $1.GetAppDataRequest();
+      case 'SetAppData': return $1.SetAppDataRequest();
       default: throw $core.ArgumentError('Unknown method: $method');
     }
   }
 
   $async.Future<$pb.GeneratedMessage> handleCall($pb.ServerContext ctx, $core.String method, $pb.GeneratedMessage request) {
     switch (method) {
-      case 'GetProfile': return this.getProfile(ctx, request as $0.GetProfileRequest);
-      case 'UpdateProfile': return this.updateProfile(ctx, request as $0.UpdateProfileRequest);
-      case 'GetAppData': return this.getAppData(ctx, request as $0.GetAppDataRequest);
-      case 'SetAppData': return this.setAppData(ctx, request as $0.SetAppDataRequest);
+      case 'GetProfile': return this.getProfile(ctx, request as $1.GetProfileRequest);
+      case 'UpdateProfile': return this.updateProfile(ctx, request as $1.UpdateProfileRequest);
+      case 'GetAppData': return this.getAppData(ctx, request as $1.GetAppDataRequest);
+      case 'SetAppData': return this.setAppData(ctx, request as $1.SetAppDataRequest);
       default: throw $core.ArgumentError('Unknown method: $method');
     }
   }

@@ -33,6 +33,8 @@ const $core.Map<$core.String, $core.Map<$core.String, $core.dynamic>> EmoteServi
   '.protocol.emote.v1.EmotePack': $0.EmotePack$json,
   '.protocol.emote.v1.GetEmotePackEmotesRequest': $0.GetEmotePackEmotesRequest$json,
   '.protocol.emote.v1.GetEmotePackEmotesResponse': $0.GetEmotePackEmotesResponse$json,
+  '.protocol.emote.v1.GetEmotePackEmotesResponse.PackEmotesEntry': $0.GetEmotePackEmotesResponse_PackEmotesEntry$json,
+  '.protocol.emote.v1.GetEmotePackEmotesResponse.EmotePackEmotes': $0.GetEmotePackEmotesResponse_EmotePackEmotes$json,
   '.protocol.emote.v1.Emote': $0.Emote$json,
   '.protocol.emote.v1.AddEmoteToPackRequest': $0.AddEmoteToPackRequest$json,
   '.protocol.emote.v1.AddEmoteToPackResponse': $0.AddEmoteToPackResponse$json,

@@ -13,10 +13,16 @@ import '../../harmonytypes/v1/types.pbjson.dart' as $0;
 @$core.Deprecated('Use beginAuthRequestDescriptor instead')
 const BeginAuthRequest$json = const {
   '1': 'BeginAuthRequest',
+  '2': const [
+    const {'1': 'for_guest_token', '3': 1, '4': 1, '5': 9, '9': 0, '10': 'forGuestToken', '17': true},
+  ],
+  '8': const [
+    const {'1': '_for_guest_token'},
+  ],
 };
 
 /// Descriptor for `BeginAuthRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List beginAuthRequestDescriptor = $convert.base64Decode('ChBCZWdpbkF1dGhSZXF1ZXN0');
+final $typed_data.Uint8List beginAuthRequestDescriptor = $convert.base64Decode('ChBCZWdpbkF1dGhSZXF1ZXN0EisKD2Zvcl9ndWVzdF90b2tlbhgBIAEoCUgAUg1mb3JHdWVzdFRva2VuiAEBQhIKEF9mb3JfZ3Vlc3RfdG9rZW4=');
 @$core.Deprecated('Use beginAuthResponseDescriptor instead')
 const BeginAuthResponse$json = const {
   '1': 'BeginAuthResponse',
@@ -33,11 +39,15 @@ const Session$json = const {
   '2': const [
     const {'1': 'user_id', '3': 1, '4': 1, '5': 4, '10': 'userId'},
     const {'1': 'session_token', '3': 2, '4': 1, '5': 9, '10': 'sessionToken'},
+    const {'1': 'guest_token', '3': 3, '4': 1, '5': 9, '9': 0, '10': 'guestToken', '17': true},
+  ],
+  '8': const [
+    const {'1': '_guest_token'},
   ],
 };
 
 /// Descriptor for `Session`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List sessionDescriptor = $convert.base64Decode('CgdTZXNzaW9uEhcKB3VzZXJfaWQYASABKARSBnVzZXJJZBIjCg1zZXNzaW9uX3Rva2VuGAIgASgJUgxzZXNzaW9uVG9rZW4=');
+final $typed_data.Uint8List sessionDescriptor = $convert.base64Decode('CgdTZXNzaW9uEhcKB3VzZXJfaWQYASABKARSBnVzZXJJZBIjCg1zZXNzaW9uX3Rva2VuGAIgASgJUgxzZXNzaW9uVG9rZW4SJAoLZ3Vlc3RfdG9rZW4YAyABKAlIAFIKZ3Vlc3RUb2tlbogBAUIOCgxfZ3Vlc3RfdG9rZW4=');
 @$core.Deprecated('Use authStepDescriptor instead')
 const AuthStep$json = const {
   '1': 'AuthStep',

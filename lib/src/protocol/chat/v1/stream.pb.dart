@@ -2490,16 +2490,21 @@ class StreamEvent_ReactionUpdated extends $pb.GeneratedMessage {
 class StreamEvent_OwnerAdded extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'StreamEvent.OwnerAdded', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.chat.v1'), createEmptyInstance: create)
     ..a<$fixnum.Int64>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'userId', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
+    ..a<$fixnum.Int64>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'guildId', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
     ..hasRequiredFields = false
   ;
 
   StreamEvent_OwnerAdded._() : super();
   factory StreamEvent_OwnerAdded({
     $fixnum.Int64? userId,
+    $fixnum.Int64? guildId,
   }) {
     final _result = create();
     if (userId != null) {
       _result.userId = userId;
+    }
+    if (guildId != null) {
+      _result.guildId = guildId;
     }
     return _result;
   }
@@ -2532,21 +2537,35 @@ class StreamEvent_OwnerAdded extends $pb.GeneratedMessage {
   $core.bool hasUserId() => $_has(0);
   @$pb.TagNumber(1)
   void clearUserId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $fixnum.Int64 get guildId => $_getI64(1);
+  @$pb.TagNumber(2)
+  set guildId($fixnum.Int64 v) { $_setInt64(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasGuildId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearGuildId() => clearField(2);
 }
 
 class StreamEvent_OwnerRemoved extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'StreamEvent.OwnerRemoved', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.chat.v1'), createEmptyInstance: create)
     ..a<$fixnum.Int64>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'userId', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
+    ..a<$fixnum.Int64>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'guildId', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
     ..hasRequiredFields = false
   ;
 
   StreamEvent_OwnerRemoved._() : super();
   factory StreamEvent_OwnerRemoved({
     $fixnum.Int64? userId,
+    $fixnum.Int64? guildId,
   }) {
     final _result = create();
     if (userId != null) {
       _result.userId = userId;
+    }
+    if (guildId != null) {
+      _result.guildId = guildId;
     }
     return _result;
   }
@@ -2579,6 +2598,15 @@ class StreamEvent_OwnerRemoved extends $pb.GeneratedMessage {
   $core.bool hasUserId() => $_has(0);
   @$pb.TagNumber(1)
   void clearUserId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $fixnum.Int64 get guildId => $_getI64(1);
+  @$pb.TagNumber(2)
+  set guildId($fixnum.Int64 v) { $_setInt64(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasGuildId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearGuildId() => clearField(2);
 }
 
 class StreamEvent_InviteReceived extends $pb.GeneratedMessage {
@@ -2731,6 +2759,217 @@ class StreamEvent_InviteRejected extends $pb.GeneratedMessage {
   void clearUserId() => clearField(3);
 }
 
+class StreamEvent_InviteCreated extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'StreamEvent.InviteCreated', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.chat.v1'), createEmptyInstance: create)
+    ..a<$fixnum.Int64>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'guildId', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
+    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'inviteId')
+    ..a<$core.int>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'possibleUses', $pb.PbFieldType.OU3)
+    ..hasRequiredFields = false
+  ;
+
+  StreamEvent_InviteCreated._() : super();
+  factory StreamEvent_InviteCreated({
+    $fixnum.Int64? guildId,
+    $core.String? inviteId,
+    $core.int? possibleUses,
+  }) {
+    final _result = create();
+    if (guildId != null) {
+      _result.guildId = guildId;
+    }
+    if (inviteId != null) {
+      _result.inviteId = inviteId;
+    }
+    if (possibleUses != null) {
+      _result.possibleUses = possibleUses;
+    }
+    return _result;
+  }
+  factory StreamEvent_InviteCreated.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory StreamEvent_InviteCreated.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  StreamEvent_InviteCreated clone() => StreamEvent_InviteCreated()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  StreamEvent_InviteCreated copyWith(void Function(StreamEvent_InviteCreated) updates) => super.copyWith((message) => updates(message as StreamEvent_InviteCreated)) as StreamEvent_InviteCreated; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static StreamEvent_InviteCreated create() => StreamEvent_InviteCreated._();
+  StreamEvent_InviteCreated createEmptyInstance() => create();
+  static $pb.PbList<StreamEvent_InviteCreated> createRepeated() => $pb.PbList<StreamEvent_InviteCreated>();
+  @$core.pragma('dart2js:noInline')
+  static StreamEvent_InviteCreated getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<StreamEvent_InviteCreated>(create);
+  static StreamEvent_InviteCreated? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $fixnum.Int64 get guildId => $_getI64(0);
+  @$pb.TagNumber(1)
+  set guildId($fixnum.Int64 v) { $_setInt64(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasGuildId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearGuildId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get inviteId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set inviteId($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasInviteId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearInviteId() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.int get possibleUses => $_getIZ(2);
+  @$pb.TagNumber(3)
+  set possibleUses($core.int v) { $_setUnsignedInt32(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasPossibleUses() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearPossibleUses() => clearField(3);
+}
+
+class StreamEvent_InviteDeleted extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'StreamEvent.InviteDeleted', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.chat.v1'), createEmptyInstance: create)
+    ..a<$fixnum.Int64>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'guildId', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
+    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'inviteId')
+    ..hasRequiredFields = false
+  ;
+
+  StreamEvent_InviteDeleted._() : super();
+  factory StreamEvent_InviteDeleted({
+    $fixnum.Int64? guildId,
+    $core.String? inviteId,
+  }) {
+    final _result = create();
+    if (guildId != null) {
+      _result.guildId = guildId;
+    }
+    if (inviteId != null) {
+      _result.inviteId = inviteId;
+    }
+    return _result;
+  }
+  factory StreamEvent_InviteDeleted.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory StreamEvent_InviteDeleted.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  StreamEvent_InviteDeleted clone() => StreamEvent_InviteDeleted()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  StreamEvent_InviteDeleted copyWith(void Function(StreamEvent_InviteDeleted) updates) => super.copyWith((message) => updates(message as StreamEvent_InviteDeleted)) as StreamEvent_InviteDeleted; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static StreamEvent_InviteDeleted create() => StreamEvent_InviteDeleted._();
+  StreamEvent_InviteDeleted createEmptyInstance() => create();
+  static $pb.PbList<StreamEvent_InviteDeleted> createRepeated() => $pb.PbList<StreamEvent_InviteDeleted>();
+  @$core.pragma('dart2js:noInline')
+  static StreamEvent_InviteDeleted getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<StreamEvent_InviteDeleted>(create);
+  static StreamEvent_InviteDeleted? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $fixnum.Int64 get guildId => $_getI64(0);
+  @$pb.TagNumber(1)
+  set guildId($fixnum.Int64 v) { $_setInt64(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasGuildId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearGuildId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get inviteId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set inviteId($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasInviteId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearInviteId() => clearField(2);
+}
+
+class StreamEvent_InviteUsed extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'StreamEvent.InviteUsed', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.chat.v1'), createEmptyInstance: create)
+    ..a<$fixnum.Int64>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'guildId', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
+    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'inviteId')
+    ..a<$fixnum.Int64>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'userId', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
+    ..hasRequiredFields = false
+  ;
+
+  StreamEvent_InviteUsed._() : super();
+  factory StreamEvent_InviteUsed({
+    $fixnum.Int64? guildId,
+    $core.String? inviteId,
+    $fixnum.Int64? userId,
+  }) {
+    final _result = create();
+    if (guildId != null) {
+      _result.guildId = guildId;
+    }
+    if (inviteId != null) {
+      _result.inviteId = inviteId;
+    }
+    if (userId != null) {
+      _result.userId = userId;
+    }
+    return _result;
+  }
+  factory StreamEvent_InviteUsed.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory StreamEvent_InviteUsed.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  StreamEvent_InviteUsed clone() => StreamEvent_InviteUsed()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  StreamEvent_InviteUsed copyWith(void Function(StreamEvent_InviteUsed) updates) => super.copyWith((message) => updates(message as StreamEvent_InviteUsed)) as StreamEvent_InviteUsed; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static StreamEvent_InviteUsed create() => StreamEvent_InviteUsed._();
+  StreamEvent_InviteUsed createEmptyInstance() => create();
+  static $pb.PbList<StreamEvent_InviteUsed> createRepeated() => $pb.PbList<StreamEvent_InviteUsed>();
+  @$core.pragma('dart2js:noInline')
+  static StreamEvent_InviteUsed getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<StreamEvent_InviteUsed>(create);
+  static StreamEvent_InviteUsed? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $fixnum.Int64 get guildId => $_getI64(0);
+  @$pb.TagNumber(1)
+  set guildId($fixnum.Int64 v) { $_setInt64(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasGuildId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearGuildId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get inviteId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set inviteId($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasInviteId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearInviteId() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $fixnum.Int64 get userId => $_getI64(2);
+  @$pb.TagNumber(3)
+  set userId($fixnum.Int64 v) { $_setInt64(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasUserId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearUserId() => clearField(3);
+}
+
 enum StreamEvent_Event {
   guildAddedToList, 
   guildRemovedFromList, 
@@ -2762,6 +3001,9 @@ enum StreamEvent_Event {
   ownerRemoved, 
   inviteReceived, 
   inviteRejected, 
+  inviteCreated, 
+  inviteDeleted, 
+  inviteUsed, 
   notSet
 }
 
@@ -2797,10 +3039,13 @@ class StreamEvent extends $pb.GeneratedMessage {
     28 : StreamEvent_Event.ownerRemoved,
     29 : StreamEvent_Event.inviteReceived,
     30 : StreamEvent_Event.inviteRejected,
+    31 : StreamEvent_Event.inviteCreated,
+    32 : StreamEvent_Event.inviteDeleted,
+    33 : StreamEvent_Event.inviteUsed,
     0 : StreamEvent_Event.notSet
   };
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'StreamEvent', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.chat.v1'), createEmptyInstance: create)
-    ..oo(0, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30])
+    ..oo(0, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33])
     ..aOM<StreamEvent_GuildAddedToList>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'guildAddedToList', subBuilder: StreamEvent_GuildAddedToList.create)
     ..aOM<StreamEvent_GuildRemovedFromList>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'guildRemovedFromList', subBuilder: StreamEvent_GuildRemovedFromList.create)
     ..aOM<StreamEvent_ActionPerformed>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'actionPerformed', subBuilder: StreamEvent_ActionPerformed.create)
@@ -2831,6 +3076,9 @@ class StreamEvent extends $pb.GeneratedMessage {
     ..aOM<StreamEvent_OwnerRemoved>(28, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'ownerRemoved', subBuilder: StreamEvent_OwnerRemoved.create)
     ..aOM<StreamEvent_InviteReceived>(29, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'inviteReceived', subBuilder: StreamEvent_InviteReceived.create)
     ..aOM<StreamEvent_InviteRejected>(30, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'inviteRejected', subBuilder: StreamEvent_InviteRejected.create)
+    ..aOM<StreamEvent_InviteCreated>(31, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'inviteCreated', subBuilder: StreamEvent_InviteCreated.create)
+    ..aOM<StreamEvent_InviteDeleted>(32, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'inviteDeleted', subBuilder: StreamEvent_InviteDeleted.create)
+    ..aOM<StreamEvent_InviteUsed>(33, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'inviteUsed', subBuilder: StreamEvent_InviteUsed.create)
     ..hasRequiredFields = false
   ;
 
@@ -2866,6 +3114,9 @@ class StreamEvent extends $pb.GeneratedMessage {
     StreamEvent_OwnerRemoved? ownerRemoved,
     StreamEvent_InviteReceived? inviteReceived,
     StreamEvent_InviteRejected? inviteRejected,
+    StreamEvent_InviteCreated? inviteCreated,
+    StreamEvent_InviteDeleted? inviteDeleted,
+    StreamEvent_InviteUsed? inviteUsed,
   }) {
     final _result = create();
     if (guildAddedToList != null) {
@@ -2957,6 +3208,15 @@ class StreamEvent extends $pb.GeneratedMessage {
     }
     if (inviteRejected != null) {
       _result.inviteRejected = inviteRejected;
+    }
+    if (inviteCreated != null) {
+      _result.inviteCreated = inviteCreated;
+    }
+    if (inviteDeleted != null) {
+      _result.inviteDeleted = inviteDeleted;
+    }
+    if (inviteUsed != null) {
+      _result.inviteUsed = inviteUsed;
     }
     return _result;
   }
@@ -3313,5 +3573,38 @@ class StreamEvent extends $pb.GeneratedMessage {
   void clearInviteRejected() => clearField(30);
   @$pb.TagNumber(30)
   StreamEvent_InviteRejected ensureInviteRejected() => $_ensure(29);
+
+  @$pb.TagNumber(31)
+  StreamEvent_InviteCreated get inviteCreated => $_getN(30);
+  @$pb.TagNumber(31)
+  set inviteCreated(StreamEvent_InviteCreated v) { setField(31, v); }
+  @$pb.TagNumber(31)
+  $core.bool hasInviteCreated() => $_has(30);
+  @$pb.TagNumber(31)
+  void clearInviteCreated() => clearField(31);
+  @$pb.TagNumber(31)
+  StreamEvent_InviteCreated ensureInviteCreated() => $_ensure(30);
+
+  @$pb.TagNumber(32)
+  StreamEvent_InviteDeleted get inviteDeleted => $_getN(31);
+  @$pb.TagNumber(32)
+  set inviteDeleted(StreamEvent_InviteDeleted v) { setField(32, v); }
+  @$pb.TagNumber(32)
+  $core.bool hasInviteDeleted() => $_has(31);
+  @$pb.TagNumber(32)
+  void clearInviteDeleted() => clearField(32);
+  @$pb.TagNumber(32)
+  StreamEvent_InviteDeleted ensureInviteDeleted() => $_ensure(31);
+
+  @$pb.TagNumber(33)
+  StreamEvent_InviteUsed get inviteUsed => $_getN(32);
+  @$pb.TagNumber(33)
+  set inviteUsed(StreamEvent_InviteUsed v) { setField(33, v); }
+  @$pb.TagNumber(33)
+  $core.bool hasInviteUsed() => $_has(32);
+  @$pb.TagNumber(33)
+  void clearInviteUsed() => clearField(33);
+  @$pb.TagNumber(33)
+  StreamEvent_InviteUsed ensureInviteUsed() => $_ensure(32);
 }
 

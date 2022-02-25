@@ -9,7 +9,7 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../harmonytypes/v1/types.pb.dart' as $1;
+import '../../harmonytypes/v1/types.pb.dart' as $0;
 
 class OverrideTag extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'OverrideTag', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.profile.v1'), createEmptyInstance: create)
@@ -90,7 +90,7 @@ class ProfileOverride extends $pb.GeneratedMessage {
     ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'avatar')
     ..pc<OverrideTag>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'tags', $pb.PbFieldType.PM, subBuilder: OverrideTag.create)
     ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'userDefined')
-    ..aOM<$1.Empty>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'systemPlurality', subBuilder: $1.Empty.create)
+    ..aOM<$0.Empty>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'systemPlurality', subBuilder: $0.Empty.create)
     ..hasRequiredFields = false
   ;
 
@@ -100,7 +100,7 @@ class ProfileOverride extends $pb.GeneratedMessage {
     $core.String? avatar,
     $core.Iterable<OverrideTag>? tags,
     $core.String? userDefined,
-    $1.Empty? systemPlurality,
+    $0.Empty? systemPlurality,
   }) {
     final _result = create();
     if (username != null) {
@@ -175,15 +175,15 @@ class ProfileOverride extends $pb.GeneratedMessage {
   void clearUserDefined() => clearField(4);
 
   @$pb.TagNumber(5)
-  $1.Empty get systemPlurality => $_getN(4);
+  $0.Empty get systemPlurality => $_getN(4);
   @$pb.TagNumber(5)
-  set systemPlurality($1.Empty v) { setField(5, v); }
+  set systemPlurality($0.Empty v) { setField(5, v); }
   @$pb.TagNumber(5)
   $core.bool hasSystemPlurality() => $_has(4);
   @$pb.TagNumber(5)
   void clearSystemPlurality() => clearField(5);
   @$pb.TagNumber(5)
-  $1.Empty ensureSystemPlurality() => $_ensure(4);
+  $0.Empty ensureSystemPlurality() => $_ensure(4);
 }
 
 class AppDataOverrides extends $pb.GeneratedMessage {

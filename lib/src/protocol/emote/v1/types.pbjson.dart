@@ -72,33 +72,53 @@ final $typed_data.Uint8List getEmotePacksResponseDescriptor = $convert.base64Dec
 const GetEmotePackEmotesRequest$json = const {
   '1': 'GetEmotePackEmotesRequest',
   '2': const [
-    const {'1': 'pack_id', '3': 1, '4': 1, '5': 4, '10': 'packId'},
+    const {'1': 'pack_id', '3': 1, '4': 3, '5': 4, '10': 'packId'},
   ],
 };
 
 /// Descriptor for `GetEmotePackEmotesRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List getEmotePackEmotesRequestDescriptor = $convert.base64Decode('ChlHZXRFbW90ZVBhY2tFbW90ZXNSZXF1ZXN0EhcKB3BhY2tfaWQYASABKARSBnBhY2tJZA==');
+final $typed_data.Uint8List getEmotePackEmotesRequestDescriptor = $convert.base64Decode('ChlHZXRFbW90ZVBhY2tFbW90ZXNSZXF1ZXN0EhcKB3BhY2tfaWQYASADKARSBnBhY2tJZA==');
 @$core.Deprecated('Use getEmotePackEmotesResponseDescriptor instead')
 const GetEmotePackEmotesResponse$json = const {
   '1': 'GetEmotePackEmotesResponse',
+  '2': const [
+    const {'1': 'pack_emotes', '3': 1, '4': 3, '5': 11, '6': '.protocol.emote.v1.GetEmotePackEmotesResponse.PackEmotesEntry', '10': 'packEmotes'},
+  ],
+  '3': const [GetEmotePackEmotesResponse_EmotePackEmotes$json, GetEmotePackEmotesResponse_PackEmotesEntry$json],
+};
+
+@$core.Deprecated('Use getEmotePackEmotesResponseDescriptor instead')
+const GetEmotePackEmotesResponse_EmotePackEmotes$json = const {
+  '1': 'EmotePackEmotes',
   '2': const [
     const {'1': 'emotes', '3': 1, '4': 3, '5': 11, '6': '.protocol.emote.v1.Emote', '10': 'emotes'},
   ],
 };
 
+@$core.Deprecated('Use getEmotePackEmotesResponseDescriptor instead')
+const GetEmotePackEmotesResponse_PackEmotesEntry$json = const {
+  '1': 'PackEmotesEntry',
+  '2': const [
+    const {'1': 'key', '3': 1, '4': 1, '5': 4, '10': 'key'},
+    const {'1': 'value', '3': 2, '4': 1, '5': 11, '6': '.protocol.emote.v1.GetEmotePackEmotesResponse.EmotePackEmotes', '10': 'value'},
+  ],
+  '7': const {'7': true},
+};
+
 /// Descriptor for `GetEmotePackEmotesResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List getEmotePackEmotesResponseDescriptor = $convert.base64Decode('ChpHZXRFbW90ZVBhY2tFbW90ZXNSZXNwb25zZRIwCgZlbW90ZXMYASADKAsyGC5wcm90b2NvbC5lbW90ZS52MS5FbW90ZVIGZW1vdGVz');
+final $typed_data.Uint8List getEmotePackEmotesResponseDescriptor = $convert.base64Decode('ChpHZXRFbW90ZVBhY2tFbW90ZXNSZXNwb25zZRJeCgtwYWNrX2Vtb3RlcxgBIAMoCzI9LnByb3RvY29sLmVtb3RlLnYxLkdldEVtb3RlUGFja0Vtb3Rlc1Jlc3BvbnNlLlBhY2tFbW90ZXNFbnRyeVIKcGFja0Vtb3RlcxpDCg9FbW90ZVBhY2tFbW90ZXMSMAoGZW1vdGVzGAEgAygLMhgucHJvdG9jb2wuZW1vdGUudjEuRW1vdGVSBmVtb3Rlcxp8Cg9QYWNrRW1vdGVzRW50cnkSEAoDa2V5GAEgASgEUgNrZXkSUwoFdmFsdWUYAiABKAsyPS5wcm90b2NvbC5lbW90ZS52MS5HZXRFbW90ZVBhY2tFbW90ZXNSZXNwb25zZS5FbW90ZVBhY2tFbW90ZXNSBXZhbHVlOgI4AQ==');
 @$core.Deprecated('Use addEmoteToPackRequestDescriptor instead')
 const AddEmoteToPackRequest$json = const {
   '1': 'AddEmoteToPackRequest',
   '2': const [
     const {'1': 'pack_id', '3': 1, '4': 1, '5': 4, '10': 'packId'},
-    const {'1': 'emote', '3': 2, '4': 1, '5': 11, '6': '.protocol.emote.v1.Emote', '10': 'emote'},
+    const {'1': 'image_id', '3': 2, '4': 1, '5': 9, '10': 'imageId'},
+    const {'1': 'name', '3': 3, '4': 1, '5': 9, '10': 'name'},
   ],
 };
 
 /// Descriptor for `AddEmoteToPackRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List addEmoteToPackRequestDescriptor = $convert.base64Decode('ChVBZGRFbW90ZVRvUGFja1JlcXVlc3QSFwoHcGFja19pZBgBIAEoBFIGcGFja0lkEi4KBWVtb3RlGAIgASgLMhgucHJvdG9jb2wuZW1vdGUudjEuRW1vdGVSBWVtb3Rl');
+final $typed_data.Uint8List addEmoteToPackRequestDescriptor = $convert.base64Decode('ChVBZGRFbW90ZVRvUGFja1JlcXVlc3QSFwoHcGFja19pZBgBIAEoBFIGcGFja0lkEhkKCGltYWdlX2lkGAIgASgJUgdpbWFnZUlkEhIKBG5hbWUYAyABKAlSBG5hbWU=');
 @$core.Deprecated('Use addEmoteToPackResponseDescriptor instead')
 const AddEmoteToPackResponse$json = const {
   '1': 'AddEmoteToPackResponse',

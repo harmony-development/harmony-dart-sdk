@@ -250,22 +250,33 @@ final $typed_data.Uint8List getGuildListResponseDescriptor = $convert.base64Deco
 const GetGuildRequest$json = const {
   '1': 'GetGuildRequest',
   '2': const [
-    const {'1': 'guild_id', '3': 1, '4': 1, '5': 4, '10': 'guildId'},
+    const {'1': 'guild_ids', '3': 1, '4': 3, '5': 4, '10': 'guildIds'},
   ],
 };
 
 /// Descriptor for `GetGuildRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List getGuildRequestDescriptor = $convert.base64Decode('Cg9HZXRHdWlsZFJlcXVlc3QSGQoIZ3VpbGRfaWQYASABKARSB2d1aWxkSWQ=');
+final $typed_data.Uint8List getGuildRequestDescriptor = $convert.base64Decode('Cg9HZXRHdWlsZFJlcXVlc3QSGwoJZ3VpbGRfaWRzGAEgAygEUghndWlsZElkcw==');
 @$core.Deprecated('Use getGuildResponseDescriptor instead')
 const GetGuildResponse$json = const {
   '1': 'GetGuildResponse',
   '2': const [
-    const {'1': 'guild', '3': 1, '4': 1, '5': 11, '6': '.protocol.chat.v1.Guild', '10': 'guild'},
+    const {'1': 'guild', '3': 1, '4': 3, '5': 11, '6': '.protocol.chat.v1.GetGuildResponse.GuildEntry', '10': 'guild'},
   ],
+  '3': const [GetGuildResponse_GuildEntry$json],
+};
+
+@$core.Deprecated('Use getGuildResponseDescriptor instead')
+const GetGuildResponse_GuildEntry$json = const {
+  '1': 'GuildEntry',
+  '2': const [
+    const {'1': 'key', '3': 1, '4': 1, '5': 4, '10': 'key'},
+    const {'1': 'value', '3': 2, '4': 1, '5': 11, '6': '.protocol.chat.v1.Guild', '10': 'value'},
+  ],
+  '7': const {'7': true},
 };
 
 /// Descriptor for `GetGuildResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List getGuildResponseDescriptor = $convert.base64Decode('ChBHZXRHdWlsZFJlc3BvbnNlEi0KBWd1aWxkGAEgASgLMhcucHJvdG9jb2wuY2hhdC52MS5HdWlsZFIFZ3VpbGQ=');
+final $typed_data.Uint8List getGuildResponseDescriptor = $convert.base64Decode('ChBHZXRHdWlsZFJlc3BvbnNlEkMKBWd1aWxkGAEgAygLMi0ucHJvdG9jb2wuY2hhdC52MS5HZXRHdWlsZFJlc3BvbnNlLkd1aWxkRW50cnlSBWd1aWxkGlEKCkd1aWxkRW50cnkSEAoDa2V5GAEgASgEUgNrZXkSLQoFdmFsdWUYAiABKAsyFy5wcm90b2NvbC5jaGF0LnYxLkd1aWxkUgV2YWx1ZToCOAE=');
 @$core.Deprecated('Use getGuildInvitesRequestDescriptor instead')
 const GetGuildInvitesRequest$json = const {
   '1': 'GetGuildInvitesRequest',

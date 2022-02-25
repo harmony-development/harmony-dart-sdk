@@ -54,18 +54,6 @@ const Metadata_ExtensionEntry$json = const {
 
 /// Descriptor for `Metadata`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List metadataDescriptor = $convert.base64Decode('CghNZXRhZGF0YRISCgRraW5kGAEgASgJUgRraW5kEk8KCWV4dGVuc2lvbhgCIAMoCzIxLnByb3RvY29sLmhhcm1vbnl0eXBlcy52MS5NZXRhZGF0YS5FeHRlbnNpb25FbnRyeVIJZXh0ZW5zaW9uGmAKDkV4dGVuc2lvbkVudHJ5EhAKA2tleRgBIAEoCVIDa2V5EjgKBXZhbHVlGAIgASgLMiIucHJvdG9jb2wuaGFybW9ueXR5cGVzLnYxLkFueXRoaW5nUgV2YWx1ZToCOAE=');
-@$core.Deprecated('Use errorDescriptor instead')
-const Error$json = const {
-  '1': 'Error',
-  '2': const [
-    const {'1': 'identifier', '3': 1, '4': 1, '5': 9, '10': 'identifier'},
-    const {'1': 'human_message', '3': 2, '4': 1, '5': 9, '10': 'humanMessage'},
-    const {'1': 'more_details', '3': 3, '4': 1, '5': 12, '10': 'moreDetails'},
-  ],
-};
-
-/// Descriptor for `Error`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List errorDescriptor = $convert.base64Decode('CgVFcnJvchIeCgppZGVudGlmaWVyGAEgASgJUgppZGVudGlmaWVyEiMKDWh1bWFuX21lc3NhZ2UYAiABKAlSDGh1bWFuTWVzc2FnZRIhCgxtb3JlX2RldGFpbHMYAyABKAxSC21vcmVEZXRhaWxz');
 @$core.Deprecated('Use tokenDescriptor instead')
 const Token$json = const {
   '1': 'Token',

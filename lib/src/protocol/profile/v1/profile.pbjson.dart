@@ -8,7 +8,7 @@
 import 'dart:core' as $core;
 import 'dart:convert' as $convert;
 import 'dart:typed_data' as $typed_data;
-import 'types.pbjson.dart' as $0;
+import 'types.pbjson.dart' as $1;
 
 const $core.Map<$core.String, $core.dynamic> ProfileServiceBase$json = const {
   '1': 'ProfileService',
@@ -22,15 +22,16 @@ const $core.Map<$core.String, $core.dynamic> ProfileServiceBase$json = const {
 
 @$core.Deprecated('Use profileServiceDescriptor instead')
 const $core.Map<$core.String, $core.Map<$core.String, $core.dynamic>> ProfileServiceBase$messageJson = const {
-  '.protocol.profile.v1.GetProfileRequest': $0.GetProfileRequest$json,
-  '.protocol.profile.v1.GetProfileResponse': $0.GetProfileResponse$json,
-  '.protocol.profile.v1.Profile': $0.Profile$json,
-  '.protocol.profile.v1.UpdateProfileRequest': $0.UpdateProfileRequest$json,
-  '.protocol.profile.v1.UpdateProfileResponse': $0.UpdateProfileResponse$json,
-  '.protocol.profile.v1.GetAppDataRequest': $0.GetAppDataRequest$json,
-  '.protocol.profile.v1.GetAppDataResponse': $0.GetAppDataResponse$json,
-  '.protocol.profile.v1.SetAppDataRequest': $0.SetAppDataRequest$json,
-  '.protocol.profile.v1.SetAppDataResponse': $0.SetAppDataResponse$json,
+  '.protocol.profile.v1.GetProfileRequest': $1.GetProfileRequest$json,
+  '.protocol.profile.v1.GetProfileResponse': $1.GetProfileResponse$json,
+  '.protocol.profile.v1.GetProfileResponse.ProfileEntry': $1.GetProfileResponse_ProfileEntry$json,
+  '.protocol.profile.v1.Profile': $1.Profile$json,
+  '.protocol.profile.v1.UpdateProfileRequest': $1.UpdateProfileRequest$json,
+  '.protocol.profile.v1.UpdateProfileResponse': $1.UpdateProfileResponse$json,
+  '.protocol.profile.v1.GetAppDataRequest': $1.GetAppDataRequest$json,
+  '.protocol.profile.v1.GetAppDataResponse': $1.GetAppDataResponse$json,
+  '.protocol.profile.v1.SetAppDataRequest': $1.SetAppDataRequest$json,
+  '.protocol.profile.v1.SetAppDataResponse': $1.SetAppDataResponse$json,
 };
 
 /// Descriptor for `ProfileService`. Decode as a `google.protobuf.ServiceDescriptorProto`.

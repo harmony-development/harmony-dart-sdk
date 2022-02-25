@@ -10,6 +10,81 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
+class SiteMetadata_ThumbnailImage extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'SiteMetadata.ThumbnailImage', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.mediaproxy.v1'), createEmptyInstance: create)
+    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'url')
+    ..a<$core.int>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'width', $pb.PbFieldType.OU3)
+    ..a<$core.int>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'height', $pb.PbFieldType.OU3)
+    ..hasRequiredFields = false
+  ;
+
+  SiteMetadata_ThumbnailImage._() : super();
+  factory SiteMetadata_ThumbnailImage({
+    $core.String? url,
+    $core.int? width,
+    $core.int? height,
+  }) {
+    final _result = create();
+    if (url != null) {
+      _result.url = url;
+    }
+    if (width != null) {
+      _result.width = width;
+    }
+    if (height != null) {
+      _result.height = height;
+    }
+    return _result;
+  }
+  factory SiteMetadata_ThumbnailImage.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory SiteMetadata_ThumbnailImage.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  SiteMetadata_ThumbnailImage clone() => SiteMetadata_ThumbnailImage()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  SiteMetadata_ThumbnailImage copyWith(void Function(SiteMetadata_ThumbnailImage) updates) => super.copyWith((message) => updates(message as SiteMetadata_ThumbnailImage)) as SiteMetadata_ThumbnailImage; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static SiteMetadata_ThumbnailImage create() => SiteMetadata_ThumbnailImage._();
+  SiteMetadata_ThumbnailImage createEmptyInstance() => create();
+  static $pb.PbList<SiteMetadata_ThumbnailImage> createRepeated() => $pb.PbList<SiteMetadata_ThumbnailImage>();
+  @$core.pragma('dart2js:noInline')
+  static SiteMetadata_ThumbnailImage getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SiteMetadata_ThumbnailImage>(create);
+  static SiteMetadata_ThumbnailImage? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get url => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set url($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasUrl() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearUrl() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.int get width => $_getIZ(1);
+  @$pb.TagNumber(2)
+  set width($core.int v) { $_setUnsignedInt32(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasWidth() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearWidth() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.int get height => $_getIZ(2);
+  @$pb.TagNumber(3)
+  set height($core.int v) { $_setUnsignedInt32(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasHeight() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearHeight() => clearField(3);
+}
+
 class SiteMetadata extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'SiteMetadata', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.mediaproxy.v1'), createEmptyInstance: create)
     ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'siteTitle')
@@ -17,7 +92,7 @@ class SiteMetadata extends $pb.GeneratedMessage {
     ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'kind')
     ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'description')
     ..aOS(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'url')
-    ..aOS(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'image')
+    ..pc<SiteMetadata_ThumbnailImage>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'thumbnail', $pb.PbFieldType.PM, subBuilder: SiteMetadata_ThumbnailImage.create)
     ..hasRequiredFields = false
   ;
 
@@ -28,7 +103,7 @@ class SiteMetadata extends $pb.GeneratedMessage {
     $core.String? kind,
     $core.String? description,
     $core.String? url,
-    $core.String? image,
+    $core.Iterable<SiteMetadata_ThumbnailImage>? thumbnail,
   }) {
     final _result = create();
     if (siteTitle != null) {
@@ -46,8 +121,8 @@ class SiteMetadata extends $pb.GeneratedMessage {
     if (url != null) {
       _result.url = url;
     }
-    if (image != null) {
-      _result.image = image;
+    if (thumbnail != null) {
+      _result.thumbnail.addAll(thumbnail);
     }
     return _result;
   }
@@ -118,33 +193,113 @@ class SiteMetadata extends $pb.GeneratedMessage {
   void clearUrl() => clearField(5);
 
   @$pb.TagNumber(6)
-  $core.String get image => $_getSZ(5);
-  @$pb.TagNumber(6)
-  set image($core.String v) { $_setString(5, v); }
-  @$pb.TagNumber(6)
-  $core.bool hasImage() => $_has(5);
-  @$pb.TagNumber(6)
-  void clearImage() => clearField(6);
+  $core.List<SiteMetadata_ThumbnailImage> get thumbnail => $_getList(5);
+}
+
+class MediaMetadata_ImageInfo extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'MediaMetadata.ImageInfo', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.mediaproxy.v1'), createEmptyInstance: create)
+    ..a<$core.int>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'width', $pb.PbFieldType.OU3)
+    ..a<$core.int>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'height', $pb.PbFieldType.OU3)
+    ..hasRequiredFields = false
+  ;
+
+  MediaMetadata_ImageInfo._() : super();
+  factory MediaMetadata_ImageInfo({
+    $core.int? width,
+    $core.int? height,
+  }) {
+    final _result = create();
+    if (width != null) {
+      _result.width = width;
+    }
+    if (height != null) {
+      _result.height = height;
+    }
+    return _result;
+  }
+  factory MediaMetadata_ImageInfo.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory MediaMetadata_ImageInfo.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  MediaMetadata_ImageInfo clone() => MediaMetadata_ImageInfo()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  MediaMetadata_ImageInfo copyWith(void Function(MediaMetadata_ImageInfo) updates) => super.copyWith((message) => updates(message as MediaMetadata_ImageInfo)) as MediaMetadata_ImageInfo; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static MediaMetadata_ImageInfo create() => MediaMetadata_ImageInfo._();
+  MediaMetadata_ImageInfo createEmptyInstance() => create();
+  static $pb.PbList<MediaMetadata_ImageInfo> createRepeated() => $pb.PbList<MediaMetadata_ImageInfo>();
+  @$core.pragma('dart2js:noInline')
+  static MediaMetadata_ImageInfo getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<MediaMetadata_ImageInfo>(create);
+  static MediaMetadata_ImageInfo? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.int get width => $_getIZ(0);
+  @$pb.TagNumber(1)
+  set width($core.int v) { $_setUnsignedInt32(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasWidth() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearWidth() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.int get height => $_getIZ(1);
+  @$pb.TagNumber(2)
+  set height($core.int v) { $_setUnsignedInt32(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasHeight() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearHeight() => clearField(2);
+}
+
+enum MediaMetadata_Info {
+  image, 
+  notSet
 }
 
 class MediaMetadata extends $pb.GeneratedMessage {
+  static const $core.Map<$core.int, MediaMetadata_Info> _MediaMetadata_InfoByTag = {
+    5 : MediaMetadata_Info.image,
+    0 : MediaMetadata_Info.notSet
+  };
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'MediaMetadata', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.mediaproxy.v1'), createEmptyInstance: create)
+    ..oo(0, [5])
     ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'mimetype')
-    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'filename')
+    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'name')
+    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id')
+    ..a<$core.int>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'size', $pb.PbFieldType.OU3)
+    ..aOM<MediaMetadata_ImageInfo>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'image', subBuilder: MediaMetadata_ImageInfo.create)
     ..hasRequiredFields = false
   ;
 
   MediaMetadata._() : super();
   factory MediaMetadata({
     $core.String? mimetype,
-    $core.String? filename,
+    $core.String? name,
+    $core.String? id,
+    $core.int? size,
+    MediaMetadata_ImageInfo? image,
   }) {
     final _result = create();
     if (mimetype != null) {
       _result.mimetype = mimetype;
     }
-    if (filename != null) {
-      _result.filename = filename;
+    if (name != null) {
+      _result.name = name;
+    }
+    if (id != null) {
+      _result.id = id;
+    }
+    if (size != null) {
+      _result.size = size;
+    }
+    if (image != null) {
+      _result.image = image;
     }
     return _result;
   }
@@ -169,6 +324,9 @@ class MediaMetadata extends $pb.GeneratedMessage {
   static MediaMetadata getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<MediaMetadata>(create);
   static MediaMetadata? _defaultInstance;
 
+  MediaMetadata_Info whichInfo() => _MediaMetadata_InfoByTag[$_whichOneof(0)]!;
+  void clearInfo() => clearField($_whichOneof(0));
+
   @$pb.TagNumber(1)
   $core.String get mimetype => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -179,28 +337,57 @@ class MediaMetadata extends $pb.GeneratedMessage {
   void clearMimetype() => clearField(1);
 
   @$pb.TagNumber(2)
-  $core.String get filename => $_getSZ(1);
+  $core.String get name => $_getSZ(1);
   @$pb.TagNumber(2)
-  set filename($core.String v) { $_setString(1, v); }
+  set name($core.String v) { $_setString(1, v); }
   @$pb.TagNumber(2)
-  $core.bool hasFilename() => $_has(1);
+  $core.bool hasName() => $_has(1);
   @$pb.TagNumber(2)
-  void clearFilename() => clearField(2);
+  void clearName() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get id => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set id($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearId() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.int get size => $_getIZ(3);
+  @$pb.TagNumber(4)
+  set size($core.int v) { $_setUnsignedInt32(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasSize() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearSize() => clearField(4);
+
+  @$pb.TagNumber(5)
+  MediaMetadata_ImageInfo get image => $_getN(4);
+  @$pb.TagNumber(5)
+  set image(MediaMetadata_ImageInfo v) { setField(5, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasImage() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearImage() => clearField(5);
+  @$pb.TagNumber(5)
+  MediaMetadata_ImageInfo ensureImage() => $_ensure(4);
 }
 
 class FetchLinkMetadataRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'FetchLinkMetadataRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.mediaproxy.v1'), createEmptyInstance: create)
-    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'url')
+    ..pPS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'url')
     ..hasRequiredFields = false
   ;
 
   FetchLinkMetadataRequest._() : super();
   factory FetchLinkMetadataRequest({
-    $core.String? url,
+    $core.Iterable<$core.String>? url,
   }) {
     final _result = create();
     if (url != null) {
-      _result.url = url;
+      _result.url.addAll(url);
     }
     return _result;
   }
@@ -226,36 +413,30 @@ class FetchLinkMetadataRequest extends $pb.GeneratedMessage {
   static FetchLinkMetadataRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.String get url => $_getSZ(0);
-  @$pb.TagNumber(1)
-  set url($core.String v) { $_setString(0, v); }
-  @$pb.TagNumber(1)
-  $core.bool hasUrl() => $_has(0);
-  @$pb.TagNumber(1)
-  void clearUrl() => clearField(1);
+  $core.List<$core.String> get url => $_getList(0);
 }
 
-enum FetchLinkMetadataResponse_Data {
+enum FetchLinkMetadataResponse_Metadata_Data {
   isSite, 
   isMedia, 
   notSet
 }
 
-class FetchLinkMetadataResponse extends $pb.GeneratedMessage {
-  static const $core.Map<$core.int, FetchLinkMetadataResponse_Data> _FetchLinkMetadataResponse_DataByTag = {
-    1 : FetchLinkMetadataResponse_Data.isSite,
-    2 : FetchLinkMetadataResponse_Data.isMedia,
-    0 : FetchLinkMetadataResponse_Data.notSet
+class FetchLinkMetadataResponse_Metadata extends $pb.GeneratedMessage {
+  static const $core.Map<$core.int, FetchLinkMetadataResponse_Metadata_Data> _FetchLinkMetadataResponse_Metadata_DataByTag = {
+    1 : FetchLinkMetadataResponse_Metadata_Data.isSite,
+    2 : FetchLinkMetadataResponse_Metadata_Data.isMedia,
+    0 : FetchLinkMetadataResponse_Metadata_Data.notSet
   };
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'FetchLinkMetadataResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.mediaproxy.v1'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'FetchLinkMetadataResponse.Metadata', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.mediaproxy.v1'), createEmptyInstance: create)
     ..oo(0, [1, 2])
     ..aOM<SiteMetadata>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'isSite', subBuilder: SiteMetadata.create)
     ..aOM<MediaMetadata>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'isMedia', subBuilder: MediaMetadata.create)
     ..hasRequiredFields = false
   ;
 
-  FetchLinkMetadataResponse._() : super();
-  factory FetchLinkMetadataResponse({
+  FetchLinkMetadataResponse_Metadata._() : super();
+  factory FetchLinkMetadataResponse_Metadata({
     SiteMetadata? isSite,
     MediaMetadata? isMedia,
   }) {
@@ -265,6 +446,135 @@ class FetchLinkMetadataResponse extends $pb.GeneratedMessage {
     }
     if (isMedia != null) {
       _result.isMedia = isMedia;
+    }
+    return _result;
+  }
+  factory FetchLinkMetadataResponse_Metadata.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory FetchLinkMetadataResponse_Metadata.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  FetchLinkMetadataResponse_Metadata clone() => FetchLinkMetadataResponse_Metadata()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  FetchLinkMetadataResponse_Metadata copyWith(void Function(FetchLinkMetadataResponse_Metadata) updates) => super.copyWith((message) => updates(message as FetchLinkMetadataResponse_Metadata)) as FetchLinkMetadataResponse_Metadata; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static FetchLinkMetadataResponse_Metadata create() => FetchLinkMetadataResponse_Metadata._();
+  FetchLinkMetadataResponse_Metadata createEmptyInstance() => create();
+  static $pb.PbList<FetchLinkMetadataResponse_Metadata> createRepeated() => $pb.PbList<FetchLinkMetadataResponse_Metadata>();
+  @$core.pragma('dart2js:noInline')
+  static FetchLinkMetadataResponse_Metadata getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<FetchLinkMetadataResponse_Metadata>(create);
+  static FetchLinkMetadataResponse_Metadata? _defaultInstance;
+
+  FetchLinkMetadataResponse_Metadata_Data whichData() => _FetchLinkMetadataResponse_Metadata_DataByTag[$_whichOneof(0)]!;
+  void clearData() => clearField($_whichOneof(0));
+
+  @$pb.TagNumber(1)
+  SiteMetadata get isSite => $_getN(0);
+  @$pb.TagNumber(1)
+  set isSite(SiteMetadata v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasIsSite() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearIsSite() => clearField(1);
+  @$pb.TagNumber(1)
+  SiteMetadata ensureIsSite() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  MediaMetadata get isMedia => $_getN(1);
+  @$pb.TagNumber(2)
+  set isMedia(MediaMetadata v) { setField(2, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasIsMedia() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearIsMedia() => clearField(2);
+  @$pb.TagNumber(2)
+  MediaMetadata ensureIsMedia() => $_ensure(1);
+}
+
+class FetchLinkMetadataResponse_Error extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'FetchLinkMetadataResponse.Error', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.mediaproxy.v1'), createEmptyInstance: create)
+    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'status')
+    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'message')
+    ..hasRequiredFields = false
+  ;
+
+  FetchLinkMetadataResponse_Error._() : super();
+  factory FetchLinkMetadataResponse_Error({
+    $core.String? status,
+    $core.String? message,
+  }) {
+    final _result = create();
+    if (status != null) {
+      _result.status = status;
+    }
+    if (message != null) {
+      _result.message = message;
+    }
+    return _result;
+  }
+  factory FetchLinkMetadataResponse_Error.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory FetchLinkMetadataResponse_Error.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  FetchLinkMetadataResponse_Error clone() => FetchLinkMetadataResponse_Error()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  FetchLinkMetadataResponse_Error copyWith(void Function(FetchLinkMetadataResponse_Error) updates) => super.copyWith((message) => updates(message as FetchLinkMetadataResponse_Error)) as FetchLinkMetadataResponse_Error; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static FetchLinkMetadataResponse_Error create() => FetchLinkMetadataResponse_Error._();
+  FetchLinkMetadataResponse_Error createEmptyInstance() => create();
+  static $pb.PbList<FetchLinkMetadataResponse_Error> createRepeated() => $pb.PbList<FetchLinkMetadataResponse_Error>();
+  @$core.pragma('dart2js:noInline')
+  static FetchLinkMetadataResponse_Error getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<FetchLinkMetadataResponse_Error>(create);
+  static FetchLinkMetadataResponse_Error? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get status => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set status($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasStatus() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearStatus() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get message => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set message($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasMessage() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearMessage() => clearField(2);
+}
+
+class FetchLinkMetadataResponse extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'FetchLinkMetadataResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.mediaproxy.v1'), createEmptyInstance: create)
+    ..m<$core.String, FetchLinkMetadataResponse_Metadata>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'metadata', entryClassName: 'FetchLinkMetadataResponse.MetadataEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OM, valueCreator: FetchLinkMetadataResponse_Metadata.create, packageName: const $pb.PackageName('protocol.mediaproxy.v1'))
+    ..m<$core.String, FetchLinkMetadataResponse_Error>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'errors', entryClassName: 'FetchLinkMetadataResponse.ErrorsEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OM, valueCreator: FetchLinkMetadataResponse_Error.create, packageName: const $pb.PackageName('protocol.mediaproxy.v1'))
+    ..hasRequiredFields = false
+  ;
+
+  FetchLinkMetadataResponse._() : super();
+  factory FetchLinkMetadataResponse({
+    $core.Map<$core.String, FetchLinkMetadataResponse_Metadata>? metadata,
+    $core.Map<$core.String, FetchLinkMetadataResponse_Error>? errors,
+  }) {
+    final _result = create();
+    if (metadata != null) {
+      _result.metadata.addAll(metadata);
+    }
+    if (errors != null) {
+      _result.errors.addAll(errors);
     }
     return _result;
   }
@@ -289,30 +599,11 @@ class FetchLinkMetadataResponse extends $pb.GeneratedMessage {
   static FetchLinkMetadataResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<FetchLinkMetadataResponse>(create);
   static FetchLinkMetadataResponse? _defaultInstance;
 
-  FetchLinkMetadataResponse_Data whichData() => _FetchLinkMetadataResponse_DataByTag[$_whichOneof(0)]!;
-  void clearData() => clearField($_whichOneof(0));
-
   @$pb.TagNumber(1)
-  SiteMetadata get isSite => $_getN(0);
-  @$pb.TagNumber(1)
-  set isSite(SiteMetadata v) { setField(1, v); }
-  @$pb.TagNumber(1)
-  $core.bool hasIsSite() => $_has(0);
-  @$pb.TagNumber(1)
-  void clearIsSite() => clearField(1);
-  @$pb.TagNumber(1)
-  SiteMetadata ensureIsSite() => $_ensure(0);
+  $core.Map<$core.String, FetchLinkMetadataResponse_Metadata> get metadata => $_getMap(0);
 
   @$pb.TagNumber(2)
-  MediaMetadata get isMedia => $_getN(1);
-  @$pb.TagNumber(2)
-  set isMedia(MediaMetadata v) { setField(2, v); }
-  @$pb.TagNumber(2)
-  $core.bool hasIsMedia() => $_has(1);
-  @$pb.TagNumber(2)
-  void clearIsMedia() => clearField(2);
-  @$pb.TagNumber(2)
-  MediaMetadata ensureIsMedia() => $_ensure(1);
+  $core.Map<$core.String, FetchLinkMetadataResponse_Error> get errors => $_getMap(1);
 }
 
 class InstantViewRequest extends $pb.GeneratedMessage {
@@ -441,17 +732,17 @@ class InstantViewResponse extends $pb.GeneratedMessage {
 
 class CanInstantViewRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'CanInstantViewRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.mediaproxy.v1'), createEmptyInstance: create)
-    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'url')
+    ..pPS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'url')
     ..hasRequiredFields = false
   ;
 
   CanInstantViewRequest._() : super();
   factory CanInstantViewRequest({
-    $core.String? url,
+    $core.Iterable<$core.String>? url,
   }) {
     final _result = create();
     if (url != null) {
-      _result.url = url;
+      _result.url.addAll(url);
     }
     return _result;
   }
@@ -477,28 +768,22 @@ class CanInstantViewRequest extends $pb.GeneratedMessage {
   static CanInstantViewRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.String get url => $_getSZ(0);
-  @$pb.TagNumber(1)
-  set url($core.String v) { $_setString(0, v); }
-  @$pb.TagNumber(1)
-  $core.bool hasUrl() => $_has(0);
-  @$pb.TagNumber(1)
-  void clearUrl() => clearField(1);
+  $core.List<$core.String> get url => $_getList(0);
 }
 
 class CanInstantViewResponse extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'CanInstantViewResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.mediaproxy.v1'), createEmptyInstance: create)
-    ..aOB(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'canInstantView')
+    ..m<$core.String, $core.bool>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'canInstantView', entryClassName: 'CanInstantViewResponse.CanInstantViewEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OB, packageName: const $pb.PackageName('protocol.mediaproxy.v1'))
     ..hasRequiredFields = false
   ;
 
   CanInstantViewResponse._() : super();
   factory CanInstantViewResponse({
-    $core.bool? canInstantView,
+    $core.Map<$core.String, $core.bool>? canInstantView,
   }) {
     final _result = create();
     if (canInstantView != null) {
-      _result.canInstantView = canInstantView;
+      _result.canInstantView.addAll(canInstantView);
     }
     return _result;
   }
@@ -524,13 +809,7 @@ class CanInstantViewResponse extends $pb.GeneratedMessage {
   static CanInstantViewResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.bool get canInstantView => $_getBF(0);
-  @$pb.TagNumber(1)
-  set canInstantView($core.bool v) { $_setBool(0, v); }
-  @$pb.TagNumber(1)
-  $core.bool hasCanInstantView() => $_has(0);
-  @$pb.TagNumber(1)
-  void clearCanInstantView() => clearField(1);
+  $core.Map<$core.String, $core.bool> get canInstantView => $_getMap(0);
 }
 
 class MediaProxyServiceApi {
