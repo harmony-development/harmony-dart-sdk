@@ -1,10 +1,13 @@
 export '../../harmonytypes/v1/types.pb.dart';
+import 'package:web_socket_channel/io.dart';
+
 import '../../harmonytypes/v1/types.pb.dart';
 export 'auth.pb.dart';
 import 'auth.pb.dart';
 import 'package:http/http.dart' as $http;
 import 'dart:io' as $io;
 import 'package:async/async.dart' as $async;
+import 'package:web_socket_channel/web_socket_channel.dart';
 class AuthServiceClient {
 	late Uri server;
 	late Map<String,String> commonHeaders;
@@ -40,11 +43,11 @@ class AuthServiceClient {
 		return StepBackResponse.fromBuffer(response.bodyBytes);
 	}
 	Stream<StreamStepsResponse> StreamSteps(StreamStepsRequest input, {Map<String,dynamic> headers = const {}}) async* {
-		var socket = await $io.WebSocket.connect(this.server.replace(path: "/protocol.auth.v1.AuthService/StreamSteps").toString(), headers: headers..addAll(this.commonHeaders));
-		socket.add(input.writeToBuffer());
-		await for (var value in socket) {
+		var socket = await WebSocketChannel.connect(this.wsServer.replace(path: "/protocol.auth.v1.AuthService/StreamSteps"));
+		socket.sink.add(input.writeToBuffer());
+		await for (var value in socket.stream) {
 			if (value is List<int>) {
-				yield StreamStepsResponse.fromBuffer(value);
+				yield StreamStepsResponse.fromBuffer(value.sublist(1));
 			}
 		}
 	}
