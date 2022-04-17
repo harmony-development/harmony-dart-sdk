@@ -173,21 +173,3 @@ const DeleteChannelResponse$json = const {
 
 /// Descriptor for `DeleteChannelResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List deleteChannelResponseDescriptor = $convert.base64Decode('ChVEZWxldGVDaGFubmVsUmVzcG9uc2U=');
-@$core.Deprecated('Use typingRequestDescriptor instead')
-const TypingRequest$json = const {
-  '1': 'TypingRequest',
-  '2': const [
-    const {'1': 'guild_id', '3': 1, '4': 1, '5': 4, '10': 'guildId'},
-    const {'1': 'channel_id', '3': 2, '4': 1, '5': 4, '10': 'channelId'},
-  ],
-};
-
-/// Descriptor for `TypingRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List typingRequestDescriptor = $convert.base64Decode('Cg1UeXBpbmdSZXF1ZXN0EhkKCGd1aWxkX2lkGAEgASgEUgdndWlsZElkEh0KCmNoYW5uZWxfaWQYAiABKARSCWNoYW5uZWxJZA==');
-@$core.Deprecated('Use typingResponseDescriptor instead')
-const TypingResponse$json = const {
-  '1': 'TypingResponse',
-};
-
-/// Descriptor for `TypingResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List typingResponseDescriptor = $convert.base64Decode('Cg5UeXBpbmdSZXNwb25zZQ==');

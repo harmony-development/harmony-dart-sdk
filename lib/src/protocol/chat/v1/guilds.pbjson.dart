@@ -20,40 +20,6 @@ const LeaveReason$json = const {
 
 /// Descriptor for `LeaveReason`. Decode as a `google.protobuf.EnumDescriptorProto`.
 final $typed_data.Uint8List leaveReasonDescriptor = $convert.base64Decode('CgtMZWF2ZVJlYXNvbhImCiJMRUFWRV9SRUFTT05fV0lMTElOR0xZX1VOU1BFQ0lGSUVEEAASFwoTTEVBVkVfUkVBU09OX0JBTk5FRBABEhcKE0xFQVZFX1JFQVNPTl9LSUNLRUQQAg==');
-@$core.Deprecated('Use guildKindDescriptor instead')
-const GuildKind$json = const {
-  '1': 'GuildKind',
-  '2': const [
-    const {'1': 'normal', '3': 1, '4': 1, '5': 11, '6': '.protocol.chat.v1.GuildKind.Normal', '9': 0, '10': 'normal'},
-    const {'1': 'room', '3': 2, '4': 1, '5': 11, '6': '.protocol.chat.v1.GuildKind.Room', '9': 0, '10': 'room'},
-    const {'1': 'direct_message', '3': 3, '4': 1, '5': 11, '6': '.protocol.chat.v1.GuildKind.DirectMessage', '9': 0, '10': 'directMessage'},
-  ],
-  '3': const [GuildKind_Normal$json, GuildKind_Room$json, GuildKind_DirectMessage$json],
-  '8': const [
-    const {'1': 'kind'},
-  ],
-};
-
-@$core.Deprecated('Use guildKindDescriptor instead')
-const GuildKind_Normal$json = const {
-  '1': 'Normal',
-};
-
-@$core.Deprecated('Use guildKindDescriptor instead')
-const GuildKind_Room$json = const {
-  '1': 'Room',
-};
-
-@$core.Deprecated('Use guildKindDescriptor instead')
-const GuildKind_DirectMessage$json = const {
-  '1': 'DirectMessage',
-  '2': const [
-    const {'1': 'rejected', '3': 1, '4': 1, '5': 8, '10': 'rejected'},
-  ],
-};
-
-/// Descriptor for `GuildKind`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List guildKindDescriptor = $convert.base64Decode('CglHdWlsZEtpbmQSPAoGbm9ybWFsGAEgASgLMiIucHJvdG9jb2wuY2hhdC52MS5HdWlsZEtpbmQuTm9ybWFsSABSBm5vcm1hbBI2CgRyb29tGAIgASgLMiAucHJvdG9jb2wuY2hhdC52MS5HdWlsZEtpbmQuUm9vbUgAUgRyb29tElIKDmRpcmVjdF9tZXNzYWdlGAMgASgLMikucHJvdG9jb2wuY2hhdC52MS5HdWlsZEtpbmQuRGlyZWN0TWVzc2FnZUgAUg1kaXJlY3RNZXNzYWdlGggKBk5vcm1hbBoGCgRSb29tGisKDURpcmVjdE1lc3NhZ2USGgoIcmVqZWN0ZWQYASABKAhSCHJlamVjdGVkQgYKBGtpbmQ=');
 @$core.Deprecated('Use guildDescriptor instead')
 const Guild$json = const {
   '1': 'Guild',
@@ -61,8 +27,7 @@ const Guild$json = const {
     const {'1': 'name', '3': 1, '4': 1, '5': 9, '10': 'name'},
     const {'1': 'picture', '3': 2, '4': 1, '5': 9, '9': 0, '10': 'picture', '17': true},
     const {'1': 'owner_ids', '3': 3, '4': 3, '5': 4, '10': 'ownerIds'},
-    const {'1': 'kind', '3': 4, '4': 1, '5': 11, '6': '.protocol.chat.v1.GuildKind', '10': 'kind'},
-    const {'1': 'metadata', '3': 5, '4': 1, '5': 11, '6': '.protocol.harmonytypes.v1.Metadata', '9': 1, '10': 'metadata', '17': true},
+    const {'1': 'metadata', '3': 4, '4': 1, '5': 11, '6': '.protocol.harmonytypes.v1.Metadata', '9': 1, '10': 'metadata', '17': true},
   ],
   '8': const [
     const {'1': '_picture'},
@@ -71,7 +36,7 @@ const Guild$json = const {
 };
 
 /// Descriptor for `Guild`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List guildDescriptor = $convert.base64Decode('CgVHdWlsZBISCgRuYW1lGAEgASgJUgRuYW1lEh0KB3BpY3R1cmUYAiABKAlIAFIHcGljdHVyZYgBARIbCglvd25lcl9pZHMYAyADKARSCG93bmVySWRzEi8KBGtpbmQYBCABKAsyGy5wcm90b2NvbC5jaGF0LnYxLkd1aWxkS2luZFIEa2luZBJDCghtZXRhZGF0YRgFIAEoCzIiLnByb3RvY29sLmhhcm1vbnl0eXBlcy52MS5NZXRhZGF0YUgBUghtZXRhZGF0YYgBAUIKCghfcGljdHVyZUILCglfbWV0YWRhdGE=');
+final $typed_data.Uint8List guildDescriptor = $convert.base64Decode('CgVHdWlsZBISCgRuYW1lGAEgASgJUgRuYW1lEh0KB3BpY3R1cmUYAiABKAlIAFIHcGljdHVyZYgBARIbCglvd25lcl9pZHMYAyADKARSCG93bmVySWRzEkMKCG1ldGFkYXRhGAQgASgLMiIucHJvdG9jb2wuaGFybW9ueXR5cGVzLnYxLk1ldGFkYXRhSAFSCG1ldGFkYXRhiAEBQgoKCF9waWN0dXJlQgsKCV9tZXRhZGF0YQ==');
 @$core.Deprecated('Use guildWithIdDescriptor instead')
 const GuildWithId$json = const {
   '1': 'GuildWithId',
@@ -109,28 +74,33 @@ final $typed_data.Uint8List inviteWithIdDescriptor = $convert.base64Decode('CgxJ
 const PendingInvite$json = const {
   '1': 'PendingInvite',
   '2': const [
-    const {'1': 'invite_id', '3': 1, '4': 1, '5': 9, '10': 'inviteId'},
+    const {'1': 'server_id', '3': 1, '4': 1, '5': 9, '9': 1, '10': 'serverId', '17': true},
+    const {'1': 'inviter_id', '3': 2, '4': 1, '5': 4, '10': 'inviterId'},
+    const {'1': 'guild_invite_id', '3': 3, '4': 1, '5': 9, '9': 0, '10': 'guildInviteId'},
+    const {'1': 'channel_id', '3': 4, '4': 1, '5': 4, '9': 0, '10': 'channelId'},
+  ],
+  '8': const [
+    const {'1': 'location'},
+    const {'1': '_server_id'},
+  ],
+};
+
+/// Descriptor for `PendingInvite`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List pendingInviteDescriptor = $convert.base64Decode('Cg1QZW5kaW5nSW52aXRlEiAKCXNlcnZlcl9pZBgBIAEoCUgBUghzZXJ2ZXJJZIgBARIdCgppbnZpdGVyX2lkGAIgASgEUglpbnZpdGVySWQSKAoPZ3VpbGRfaW52aXRlX2lkGAMgASgJSABSDWd1aWxkSW52aXRlSWQSHwoKY2hhbm5lbF9pZBgEIAEoBEgAUgljaGFubmVsSWRCCgoIbG9jYXRpb25CDAoKX3NlcnZlcl9pZA==');
+@$core.Deprecated('Use guildListEntryDescriptor instead')
+const GuildListEntry$json = const {
+  '1': 'GuildListEntry',
+  '2': const [
+    const {'1': 'guild_id', '3': 1, '4': 1, '5': 4, '10': 'guildId'},
     const {'1': 'server_id', '3': 2, '4': 1, '5': 9, '9': 0, '10': 'serverId', '17': true},
-    const {'1': 'inviter_id', '3': 3, '4': 1, '5': 4, '10': 'inviterId'},
   ],
   '8': const [
     const {'1': '_server_id'},
   ],
 };
 
-/// Descriptor for `PendingInvite`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List pendingInviteDescriptor = $convert.base64Decode('Cg1QZW5kaW5nSW52aXRlEhsKCWludml0ZV9pZBgBIAEoCVIIaW52aXRlSWQSIAoJc2VydmVyX2lkGAIgASgJSABSCHNlcnZlcklkiAEBEh0KCmludml0ZXJfaWQYAyABKARSCWludml0ZXJJZEIMCgpfc2VydmVyX2lk');
-@$core.Deprecated('Use guildListEntryDescriptor instead')
-const GuildListEntry$json = const {
-  '1': 'GuildListEntry',
-  '2': const [
-    const {'1': 'guild_id', '3': 1, '4': 1, '5': 4, '10': 'guildId'},
-    const {'1': 'server_id', '3': 2, '4': 1, '5': 9, '10': 'serverId'},
-  ],
-};
-
 /// Descriptor for `GuildListEntry`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List guildListEntryDescriptor = $convert.base64Decode('Cg5HdWlsZExpc3RFbnRyeRIZCghndWlsZF9pZBgBIAEoBFIHZ3VpbGRJZBIbCglzZXJ2ZXJfaWQYAiABKAlSCHNlcnZlcklk');
+final $typed_data.Uint8List guildListEntryDescriptor = $convert.base64Decode('Cg5HdWlsZExpc3RFbnRyeRIZCghndWlsZF9pZBgBIAEoBFIHZ3VpbGRJZBIgCglzZXJ2ZXJfaWQYAiABKAlIAFIIc2VydmVySWSIAQFCDAoKX3NlcnZlcl9pZA==');
 @$core.Deprecated('Use createGuildRequestDescriptor instead')
 const CreateGuildRequest$json = const {
   '1': 'CreateGuildRequest',
@@ -157,56 +127,6 @@ const CreateGuildResponse$json = const {
 
 /// Descriptor for `CreateGuildResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List createGuildResponseDescriptor = $convert.base64Decode('ChNDcmVhdGVHdWlsZFJlc3BvbnNlEhkKCGd1aWxkX2lkGAEgASgEUgdndWlsZElk');
-@$core.Deprecated('Use createRoomRequestDescriptor instead')
-const CreateRoomRequest$json = const {
-  '1': 'CreateRoomRequest',
-  '2': const [
-    const {'1': 'name', '3': 1, '4': 1, '5': 9, '10': 'name'},
-    const {'1': 'picture', '3': 2, '4': 1, '5': 9, '9': 0, '10': 'picture', '17': true},
-    const {'1': 'metadata', '3': 3, '4': 1, '5': 11, '6': '.protocol.harmonytypes.v1.Metadata', '9': 1, '10': 'metadata', '17': true},
-  ],
-  '8': const [
-    const {'1': '_picture'},
-    const {'1': '_metadata'},
-  ],
-};
-
-/// Descriptor for `CreateRoomRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List createRoomRequestDescriptor = $convert.base64Decode('ChFDcmVhdGVSb29tUmVxdWVzdBISCgRuYW1lGAEgASgJUgRuYW1lEh0KB3BpY3R1cmUYAiABKAlIAFIHcGljdHVyZYgBARJDCghtZXRhZGF0YRgDIAEoCzIiLnByb3RvY29sLmhhcm1vbnl0eXBlcy52MS5NZXRhZGF0YUgBUghtZXRhZGF0YYgBAUIKCghfcGljdHVyZUILCglfbWV0YWRhdGE=');
-@$core.Deprecated('Use createRoomResponseDescriptor instead')
-const CreateRoomResponse$json = const {
-  '1': 'CreateRoomResponse',
-  '2': const [
-    const {'1': 'guild_id', '3': 1, '4': 1, '5': 4, '10': 'guildId'},
-  ],
-};
-
-/// Descriptor for `CreateRoomResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List createRoomResponseDescriptor = $convert.base64Decode('ChJDcmVhdGVSb29tUmVzcG9uc2USGQoIZ3VpbGRfaWQYASABKARSB2d1aWxkSWQ=');
-@$core.Deprecated('Use createDirectMessageRequestDescriptor instead')
-const CreateDirectMessageRequest$json = const {
-  '1': 'CreateDirectMessageRequest',
-  '2': const [
-    const {'1': 'user_name', '3': 1, '4': 1, '5': 9, '10': 'userName'},
-    const {'1': 'server_id', '3': 2, '4': 1, '5': 9, '9': 0, '10': 'serverId', '17': true},
-  ],
-  '8': const [
-    const {'1': '_server_id'},
-  ],
-};
-
-/// Descriptor for `CreateDirectMessageRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List createDirectMessageRequestDescriptor = $convert.base64Decode('ChpDcmVhdGVEaXJlY3RNZXNzYWdlUmVxdWVzdBIbCgl1c2VyX25hbWUYASABKAlSCHVzZXJOYW1lEiAKCXNlcnZlcl9pZBgCIAEoCUgAUghzZXJ2ZXJJZIgBAUIMCgpfc2VydmVyX2lk');
-@$core.Deprecated('Use createDirectMessageResponseDescriptor instead')
-const CreateDirectMessageResponse$json = const {
-  '1': 'CreateDirectMessageResponse',
-  '2': const [
-    const {'1': 'guild_id', '3': 1, '4': 1, '5': 4, '10': 'guildId'},
-  ],
-};
-
-/// Descriptor for `CreateDirectMessageResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List createDirectMessageResponseDescriptor = $convert.base64Decode('ChtDcmVhdGVEaXJlY3RNZXNzYWdlUmVzcG9uc2USGQoIZ3VpbGRfaWQYASABKARSB2d1aWxkSWQ=');
 @$core.Deprecated('Use createInviteRequestDescriptor instead')
 const CreateInviteRequest$json = const {
   '1': 'CreateInviteRequest',
@@ -342,23 +262,6 @@ const UpdateGuildInformationResponse$json = const {
 
 /// Descriptor for `UpdateGuildInformationResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List updateGuildInformationResponseDescriptor = $convert.base64Decode('Ch5VcGRhdGVHdWlsZEluZm9ybWF0aW9uUmVzcG9uc2U=');
-@$core.Deprecated('Use upgradeRoomToGuildRequestDescriptor instead')
-const UpgradeRoomToGuildRequest$json = const {
-  '1': 'UpgradeRoomToGuildRequest',
-  '2': const [
-    const {'1': 'guild_id', '3': 1, '4': 1, '5': 4, '10': 'guildId'},
-  ],
-};
-
-/// Descriptor for `UpgradeRoomToGuildRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List upgradeRoomToGuildRequestDescriptor = $convert.base64Decode('ChlVcGdyYWRlUm9vbVRvR3VpbGRSZXF1ZXN0EhkKCGd1aWxkX2lkGAEgASgEUgdndWlsZElk');
-@$core.Deprecated('Use upgradeRoomToGuildResponseDescriptor instead')
-const UpgradeRoomToGuildResponse$json = const {
-  '1': 'UpgradeRoomToGuildResponse',
-};
-
-/// Descriptor for `UpgradeRoomToGuildResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List upgradeRoomToGuildResponseDescriptor = $convert.base64Decode('ChpVcGdyYWRlUm9vbVRvR3VpbGRSZXNwb25zZQ==');
 @$core.Deprecated('Use deleteGuildRequestDescriptor instead')
 const DeleteGuildRequest$json = const {
   '1': 'DeleteGuildRequest',
@@ -576,26 +479,28 @@ final $typed_data.Uint8List getPendingInvitesRequestDescriptor = $convert.base64
 const GetPendingInvitesResponse$json = const {
   '1': 'GetPendingInvitesResponse',
   '2': const [
-    const {'1': 'pending_invites', '3': 1, '4': 3, '5': 11, '6': '.protocol.chat.v1.PendingInvite', '10': 'pendingInvites'},
+    const {'1': 'invites', '3': 1, '4': 3, '5': 11, '6': '.protocol.chat.v1.PendingInvite', '10': 'invites'},
   ],
 };
 
 /// Descriptor for `GetPendingInvitesResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List getPendingInvitesResponseDescriptor = $convert.base64Decode('ChlHZXRQZW5kaW5nSW52aXRlc1Jlc3BvbnNlEkgKD3BlbmRpbmdfaW52aXRlcxgBIAMoCzIfLnByb3RvY29sLmNoYXQudjEuUGVuZGluZ0ludml0ZVIOcGVuZGluZ0ludml0ZXM=');
+final $typed_data.Uint8List getPendingInvitesResponseDescriptor = $convert.base64Decode('ChlHZXRQZW5kaW5nSW52aXRlc1Jlc3BvbnNlEjkKB2ludml0ZXMYASADKAsyHy5wcm90b2NvbC5jaGF0LnYxLlBlbmRpbmdJbnZpdGVSB2ludml0ZXM=');
 @$core.Deprecated('Use rejectPendingInviteRequestDescriptor instead')
 const RejectPendingInviteRequest$json = const {
   '1': 'RejectPendingInviteRequest',
   '2': const [
-    const {'1': 'invite_id', '3': 1, '4': 1, '5': 9, '10': 'inviteId'},
-    const {'1': 'server_id', '3': 2, '4': 1, '5': 9, '9': 0, '10': 'serverId', '17': true},
+    const {'1': 'server_id', '3': 1, '4': 1, '5': 9, '9': 1, '10': 'serverId', '17': true},
+    const {'1': 'guild_invite_id', '3': 2, '4': 1, '5': 9, '9': 0, '10': 'guildInviteId'},
+    const {'1': 'channel_id', '3': 3, '4': 1, '5': 4, '9': 0, '10': 'channelId'},
   ],
   '8': const [
+    const {'1': 'location'},
     const {'1': '_server_id'},
   ],
 };
 
 /// Descriptor for `RejectPendingInviteRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List rejectPendingInviteRequestDescriptor = $convert.base64Decode('ChpSZWplY3RQZW5kaW5nSW52aXRlUmVxdWVzdBIbCglpbnZpdGVfaWQYASABKAlSCGludml0ZUlkEiAKCXNlcnZlcl9pZBgCIAEoCUgAUghzZXJ2ZXJJZIgBAUIMCgpfc2VydmVyX2lk');
+final $typed_data.Uint8List rejectPendingInviteRequestDescriptor = $convert.base64Decode('ChpSZWplY3RQZW5kaW5nSW52aXRlUmVxdWVzdBIgCglzZXJ2ZXJfaWQYASABKAlIAVIIc2VydmVySWSIAQESKAoPZ3VpbGRfaW52aXRlX2lkGAIgASgJSABSDWd1aWxkSW52aXRlSWQSHwoKY2hhbm5lbF9pZBgDIAEoBEgAUgljaGFubmVsSWRCCgoIbG9jYXRpb25CDAoKX3NlcnZlcl9pZA==');
 @$core.Deprecated('Use rejectPendingInviteResponseDescriptor instead')
 const RejectPendingInviteResponse$json = const {
   '1': 'RejectPendingInviteResponse',
@@ -607,16 +512,18 @@ final $typed_data.Uint8List rejectPendingInviteResponseDescriptor = $convert.bas
 const IgnorePendingInviteRequest$json = const {
   '1': 'IgnorePendingInviteRequest',
   '2': const [
-    const {'1': 'invite_id', '3': 1, '4': 1, '5': 9, '10': 'inviteId'},
-    const {'1': 'server_id', '3': 2, '4': 1, '5': 9, '9': 0, '10': 'serverId', '17': true},
+    const {'1': 'server_id', '3': 1, '4': 1, '5': 9, '9': 1, '10': 'serverId', '17': true},
+    const {'1': 'guild_invite_id', '3': 2, '4': 1, '5': 9, '9': 0, '10': 'guildInviteId'},
+    const {'1': 'channel_id', '3': 3, '4': 1, '5': 4, '9': 0, '10': 'channelId'},
   ],
   '8': const [
+    const {'1': 'location'},
     const {'1': '_server_id'},
   ],
 };
 
 /// Descriptor for `IgnorePendingInviteRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List ignorePendingInviteRequestDescriptor = $convert.base64Decode('ChpJZ25vcmVQZW5kaW5nSW52aXRlUmVxdWVzdBIbCglpbnZpdGVfaWQYASABKAlSCGludml0ZUlkEiAKCXNlcnZlcl9pZBgCIAEoCUgAUghzZXJ2ZXJJZIgBAUIMCgpfc2VydmVyX2lk');
+final $typed_data.Uint8List ignorePendingInviteRequestDescriptor = $convert.base64Decode('ChpJZ25vcmVQZW5kaW5nSW52aXRlUmVxdWVzdBIgCglzZXJ2ZXJfaWQYASABKAlIAVIIc2VydmVySWSIAQESKAoPZ3VpbGRfaW52aXRlX2lkGAIgASgJSABSDWd1aWxkSW52aXRlSWQSHwoKY2hhbm5lbF9pZBgDIAEoBEgAUgljaGFubmVsSWRCCgoIbG9jYXRpb25CDAoKX3NlcnZlcl9pZA==');
 @$core.Deprecated('Use ignorePendingInviteResponseDescriptor instead')
 const IgnorePendingInviteResponse$json = const {
   '1': 'IgnorePendingInviteResponse',

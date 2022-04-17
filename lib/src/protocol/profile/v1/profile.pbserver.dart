@@ -18,6 +18,7 @@ export 'profile.pb.dart';
 abstract class ProfileServiceBase extends $pb.GeneratedService {
   $async.Future<$1.GetProfileResponse> getProfile($pb.ServerContext ctx, $1.GetProfileRequest request);
   $async.Future<$1.UpdateProfileResponse> updateProfile($pb.ServerContext ctx, $1.UpdateProfileRequest request);
+  $async.Future<$1.UpdateStatusResponse> updateStatus($pb.ServerContext ctx, $1.UpdateStatusRequest request);
   $async.Future<$1.GetAppDataResponse> getAppData($pb.ServerContext ctx, $1.GetAppDataRequest request);
   $async.Future<$1.SetAppDataResponse> setAppData($pb.ServerContext ctx, $1.SetAppDataRequest request);
 
@@ -25,6 +26,7 @@ abstract class ProfileServiceBase extends $pb.GeneratedService {
     switch (method) {
       case 'GetProfile': return $1.GetProfileRequest();
       case 'UpdateProfile': return $1.UpdateProfileRequest();
+      case 'UpdateStatus': return $1.UpdateStatusRequest();
       case 'GetAppData': return $1.GetAppDataRequest();
       case 'SetAppData': return $1.SetAppDataRequest();
       default: throw $core.ArgumentError('Unknown method: $method');
@@ -35,6 +37,7 @@ abstract class ProfileServiceBase extends $pb.GeneratedService {
     switch (method) {
       case 'GetProfile': return this.getProfile(ctx, request as $1.GetProfileRequest);
       case 'UpdateProfile': return this.updateProfile(ctx, request as $1.UpdateProfileRequest);
+      case 'UpdateStatus': return this.updateStatus(ctx, request as $1.UpdateStatusRequest);
       case 'GetAppData': return this.getAppData(ctx, request as $1.GetAppDataRequest);
       case 'SetAppData': return this.setAppData(ctx, request as $1.SetAppDataRequest);
       default: throw $core.ArgumentError('Unknown method: $method');

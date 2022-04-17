@@ -21,6 +21,11 @@ class ProfileServiceClient {
 		if (response.statusCode != 200) { throw response; }
 		return UpdateProfileResponse.fromBuffer(response.bodyBytes);
 	}
+	Future<UpdateStatusResponse> UpdateStatus(UpdateStatusRequest input, {Map<String,String> headers = const {}}) async {
+		var response = await $http.post(this.server.replace(path: "/protocol.profile.v1.ProfileService/UpdateStatus"), body: input.writeToBuffer(), headers: {"content-type": "application/hrpc"}..addAll(headers)..addAll(this.commonHeaders));
+		if (response.statusCode != 200) { throw response; }
+		return UpdateStatusResponse.fromBuffer(response.bodyBytes);
+	}
 	Future<GetAppDataResponse> GetAppData(GetAppDataRequest input, {Map<String,String> headers = const {}}) async {
 		var response = await $http.post(this.server.replace(path: "/protocol.profile.v1.ProfileService/GetAppData"), body: input.writeToBuffer(), headers: {"content-type": "application/hrpc"}..addAll(headers)..addAll(this.commonHeaders));
 		if (response.statusCode != 200) { throw response; }

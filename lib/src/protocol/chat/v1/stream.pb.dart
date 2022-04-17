@@ -66,6 +66,53 @@ class StreamEventsRequest_SubscribeToGuild extends $pb.GeneratedMessage {
   void clearGuildId() => clearField(1);
 }
 
+class StreamEventsRequest_SubscribeToPrivateChannel extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'StreamEventsRequest.SubscribeToPrivateChannel', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.chat.v1'), createEmptyInstance: create)
+    ..a<$fixnum.Int64>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'channelId', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
+    ..hasRequiredFields = false
+  ;
+
+  StreamEventsRequest_SubscribeToPrivateChannel._() : super();
+  factory StreamEventsRequest_SubscribeToPrivateChannel({
+    $fixnum.Int64? channelId,
+  }) {
+    final _result = create();
+    if (channelId != null) {
+      _result.channelId = channelId;
+    }
+    return _result;
+  }
+  factory StreamEventsRequest_SubscribeToPrivateChannel.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory StreamEventsRequest_SubscribeToPrivateChannel.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  StreamEventsRequest_SubscribeToPrivateChannel clone() => StreamEventsRequest_SubscribeToPrivateChannel()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  StreamEventsRequest_SubscribeToPrivateChannel copyWith(void Function(StreamEventsRequest_SubscribeToPrivateChannel) updates) => super.copyWith((message) => updates(message as StreamEventsRequest_SubscribeToPrivateChannel)) as StreamEventsRequest_SubscribeToPrivateChannel; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static StreamEventsRequest_SubscribeToPrivateChannel create() => StreamEventsRequest_SubscribeToPrivateChannel._();
+  StreamEventsRequest_SubscribeToPrivateChannel createEmptyInstance() => create();
+  static $pb.PbList<StreamEventsRequest_SubscribeToPrivateChannel> createRepeated() => $pb.PbList<StreamEventsRequest_SubscribeToPrivateChannel>();
+  @$core.pragma('dart2js:noInline')
+  static StreamEventsRequest_SubscribeToPrivateChannel getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<StreamEventsRequest_SubscribeToPrivateChannel>(create);
+  static StreamEventsRequest_SubscribeToPrivateChannel? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $fixnum.Int64 get channelId => $_getI64(0);
+  @$pb.TagNumber(1)
+  set channelId($fixnum.Int64 v) { $_setInt64(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasChannelId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearChannelId() => clearField(1);
+}
+
 class StreamEventsRequest_SubscribeToActions extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'StreamEventsRequest.SubscribeToActions', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.chat.v1'), createEmptyInstance: create)
     ..hasRequiredFields = false
@@ -155,6 +202,7 @@ class StreamEventsRequest_UnsubscribeFromAll extends $pb.GeneratedMessage {
 
 enum StreamEventsRequest_Request {
   subscribeToGuild, 
+  subscribeToPrivateChannel, 
   subscribeToActions, 
   subscribeToHomeserverEvents, 
   unsubscribeFromAll, 
@@ -164,23 +212,26 @@ enum StreamEventsRequest_Request {
 class StreamEventsRequest extends $pb.GeneratedMessage {
   static const $core.Map<$core.int, StreamEventsRequest_Request> _StreamEventsRequest_RequestByTag = {
     1 : StreamEventsRequest_Request.subscribeToGuild,
-    2 : StreamEventsRequest_Request.subscribeToActions,
-    3 : StreamEventsRequest_Request.subscribeToHomeserverEvents,
-    4 : StreamEventsRequest_Request.unsubscribeFromAll,
+    2 : StreamEventsRequest_Request.subscribeToPrivateChannel,
+    3 : StreamEventsRequest_Request.subscribeToActions,
+    4 : StreamEventsRequest_Request.subscribeToHomeserverEvents,
+    5 : StreamEventsRequest_Request.unsubscribeFromAll,
     0 : StreamEventsRequest_Request.notSet
   };
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'StreamEventsRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.chat.v1'), createEmptyInstance: create)
-    ..oo(0, [1, 2, 3, 4])
+    ..oo(0, [1, 2, 3, 4, 5])
     ..aOM<StreamEventsRequest_SubscribeToGuild>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'subscribeToGuild', subBuilder: StreamEventsRequest_SubscribeToGuild.create)
-    ..aOM<StreamEventsRequest_SubscribeToActions>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'subscribeToActions', subBuilder: StreamEventsRequest_SubscribeToActions.create)
-    ..aOM<StreamEventsRequest_SubscribeToHomeserverEvents>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'subscribeToHomeserverEvents', subBuilder: StreamEventsRequest_SubscribeToHomeserverEvents.create)
-    ..aOM<StreamEventsRequest_UnsubscribeFromAll>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'unsubscribeFromAll', subBuilder: StreamEventsRequest_UnsubscribeFromAll.create)
+    ..aOM<StreamEventsRequest_SubscribeToPrivateChannel>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'subscribeToPrivateChannel', subBuilder: StreamEventsRequest_SubscribeToPrivateChannel.create)
+    ..aOM<StreamEventsRequest_SubscribeToActions>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'subscribeToActions', subBuilder: StreamEventsRequest_SubscribeToActions.create)
+    ..aOM<StreamEventsRequest_SubscribeToHomeserverEvents>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'subscribeToHomeserverEvents', subBuilder: StreamEventsRequest_SubscribeToHomeserverEvents.create)
+    ..aOM<StreamEventsRequest_UnsubscribeFromAll>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'unsubscribeFromAll', subBuilder: StreamEventsRequest_UnsubscribeFromAll.create)
     ..hasRequiredFields = false
   ;
 
   StreamEventsRequest._() : super();
   factory StreamEventsRequest({
     StreamEventsRequest_SubscribeToGuild? subscribeToGuild,
+    StreamEventsRequest_SubscribeToPrivateChannel? subscribeToPrivateChannel,
     StreamEventsRequest_SubscribeToActions? subscribeToActions,
     StreamEventsRequest_SubscribeToHomeserverEvents? subscribeToHomeserverEvents,
     StreamEventsRequest_UnsubscribeFromAll? unsubscribeFromAll,
@@ -188,6 +239,9 @@ class StreamEventsRequest extends $pb.GeneratedMessage {
     final _result = create();
     if (subscribeToGuild != null) {
       _result.subscribeToGuild = subscribeToGuild;
+    }
+    if (subscribeToPrivateChannel != null) {
+      _result.subscribeToPrivateChannel = subscribeToPrivateChannel;
     }
     if (subscribeToActions != null) {
       _result.subscribeToActions = subscribeToActions;
@@ -236,37 +290,48 @@ class StreamEventsRequest extends $pb.GeneratedMessage {
   StreamEventsRequest_SubscribeToGuild ensureSubscribeToGuild() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  StreamEventsRequest_SubscribeToActions get subscribeToActions => $_getN(1);
+  StreamEventsRequest_SubscribeToPrivateChannel get subscribeToPrivateChannel => $_getN(1);
   @$pb.TagNumber(2)
-  set subscribeToActions(StreamEventsRequest_SubscribeToActions v) { setField(2, v); }
+  set subscribeToPrivateChannel(StreamEventsRequest_SubscribeToPrivateChannel v) { setField(2, v); }
   @$pb.TagNumber(2)
-  $core.bool hasSubscribeToActions() => $_has(1);
+  $core.bool hasSubscribeToPrivateChannel() => $_has(1);
   @$pb.TagNumber(2)
-  void clearSubscribeToActions() => clearField(2);
+  void clearSubscribeToPrivateChannel() => clearField(2);
   @$pb.TagNumber(2)
-  StreamEventsRequest_SubscribeToActions ensureSubscribeToActions() => $_ensure(1);
+  StreamEventsRequest_SubscribeToPrivateChannel ensureSubscribeToPrivateChannel() => $_ensure(1);
 
   @$pb.TagNumber(3)
-  StreamEventsRequest_SubscribeToHomeserverEvents get subscribeToHomeserverEvents => $_getN(2);
+  StreamEventsRequest_SubscribeToActions get subscribeToActions => $_getN(2);
   @$pb.TagNumber(3)
-  set subscribeToHomeserverEvents(StreamEventsRequest_SubscribeToHomeserverEvents v) { setField(3, v); }
+  set subscribeToActions(StreamEventsRequest_SubscribeToActions v) { setField(3, v); }
   @$pb.TagNumber(3)
-  $core.bool hasSubscribeToHomeserverEvents() => $_has(2);
+  $core.bool hasSubscribeToActions() => $_has(2);
   @$pb.TagNumber(3)
-  void clearSubscribeToHomeserverEvents() => clearField(3);
+  void clearSubscribeToActions() => clearField(3);
   @$pb.TagNumber(3)
-  StreamEventsRequest_SubscribeToHomeserverEvents ensureSubscribeToHomeserverEvents() => $_ensure(2);
+  StreamEventsRequest_SubscribeToActions ensureSubscribeToActions() => $_ensure(2);
 
   @$pb.TagNumber(4)
-  StreamEventsRequest_UnsubscribeFromAll get unsubscribeFromAll => $_getN(3);
+  StreamEventsRequest_SubscribeToHomeserverEvents get subscribeToHomeserverEvents => $_getN(3);
   @$pb.TagNumber(4)
-  set unsubscribeFromAll(StreamEventsRequest_UnsubscribeFromAll v) { setField(4, v); }
+  set subscribeToHomeserverEvents(StreamEventsRequest_SubscribeToHomeserverEvents v) { setField(4, v); }
   @$pb.TagNumber(4)
-  $core.bool hasUnsubscribeFromAll() => $_has(3);
+  $core.bool hasSubscribeToHomeserverEvents() => $_has(3);
   @$pb.TagNumber(4)
-  void clearUnsubscribeFromAll() => clearField(4);
+  void clearSubscribeToHomeserverEvents() => clearField(4);
   @$pb.TagNumber(4)
-  StreamEventsRequest_UnsubscribeFromAll ensureUnsubscribeFromAll() => $_ensure(3);
+  StreamEventsRequest_SubscribeToHomeserverEvents ensureSubscribeToHomeserverEvents() => $_ensure(3);
+
+  @$pb.TagNumber(5)
+  StreamEventsRequest_UnsubscribeFromAll get unsubscribeFromAll => $_getN(4);
+  @$pb.TagNumber(5)
+  set unsubscribeFromAll(StreamEventsRequest_UnsubscribeFromAll v) { setField(5, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasUnsubscribeFromAll() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearUnsubscribeFromAll() => clearField(5);
+  @$pb.TagNumber(5)
+  StreamEventsRequest_UnsubscribeFromAll ensureUnsubscribeFromAll() => $_ensure(4);
 }
 
 enum StreamEventsResponse_Event {
@@ -478,7 +543,7 @@ class StreamEvent_MessageUpdated extends $pb.GeneratedMessage {
     ..a<$fixnum.Int64>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'channelId', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
     ..a<$fixnum.Int64>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'messageId', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
     ..a<$fixnum.Int64>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'editedAt', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
-    ..aOM<$4.FormattedText>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'newContent', subBuilder: $4.FormattedText.create)
+    ..aOM<$4.Content>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'newContent', subBuilder: $4.Content.create)
     ..hasRequiredFields = false
   ;
 
@@ -488,7 +553,7 @@ class StreamEvent_MessageUpdated extends $pb.GeneratedMessage {
     $fixnum.Int64? channelId,
     $fixnum.Int64? messageId,
     $fixnum.Int64? editedAt,
-    $4.FormattedText? newContent,
+    $4.Content? newContent,
   }) {
     final _result = create();
     if (guildId != null) {
@@ -566,15 +631,15 @@ class StreamEvent_MessageUpdated extends $pb.GeneratedMessage {
   void clearEditedAt() => clearField(4);
 
   @$pb.TagNumber(5)
-  $4.FormattedText get newContent => $_getN(4);
+  $4.Content get newContent => $_getN(4);
   @$pb.TagNumber(5)
-  set newContent($4.FormattedText v) { setField(5, v); }
+  set newContent($4.Content v) { setField(5, v); }
   @$pb.TagNumber(5)
   $core.bool hasNewContent() => $_has(4);
   @$pb.TagNumber(5)
   void clearNewContent() => clearField(5);
   @$pb.TagNumber(5)
-  $4.FormattedText ensureNewContent() => $_ensure(4);
+  $4.Content ensureNewContent() => $_ensure(4);
 }
 
 class StreamEvent_MessageDeleted extends $pb.GeneratedMessage {
@@ -1334,21 +1399,21 @@ class StreamEvent_MemberLeft extends $pb.GeneratedMessage {
 class StreamEvent_GuildAddedToList extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'StreamEvent.GuildAddedToList', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.chat.v1'), createEmptyInstance: create)
     ..a<$fixnum.Int64>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'guildId', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
-    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'homeserver')
+    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'serverId')
     ..hasRequiredFields = false
   ;
 
   StreamEvent_GuildAddedToList._() : super();
   factory StreamEvent_GuildAddedToList({
     $fixnum.Int64? guildId,
-    $core.String? homeserver,
+    $core.String? serverId,
   }) {
     final _result = create();
     if (guildId != null) {
       _result.guildId = guildId;
     }
-    if (homeserver != null) {
-      _result.homeserver = homeserver;
+    if (serverId != null) {
+      _result.serverId = serverId;
     }
     return _result;
   }
@@ -1383,33 +1448,33 @@ class StreamEvent_GuildAddedToList extends $pb.GeneratedMessage {
   void clearGuildId() => clearField(1);
 
   @$pb.TagNumber(2)
-  $core.String get homeserver => $_getSZ(1);
+  $core.String get serverId => $_getSZ(1);
   @$pb.TagNumber(2)
-  set homeserver($core.String v) { $_setString(1, v); }
+  set serverId($core.String v) { $_setString(1, v); }
   @$pb.TagNumber(2)
-  $core.bool hasHomeserver() => $_has(1);
+  $core.bool hasServerId() => $_has(1);
   @$pb.TagNumber(2)
-  void clearHomeserver() => clearField(2);
+  void clearServerId() => clearField(2);
 }
 
 class StreamEvent_GuildRemovedFromList extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'StreamEvent.GuildRemovedFromList', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.chat.v1'), createEmptyInstance: create)
     ..a<$fixnum.Int64>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'guildId', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
-    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'homeserver')
+    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'serverId')
     ..hasRequiredFields = false
   ;
 
   StreamEvent_GuildRemovedFromList._() : super();
   factory StreamEvent_GuildRemovedFromList({
     $fixnum.Int64? guildId,
-    $core.String? homeserver,
+    $core.String? serverId,
   }) {
     final _result = create();
     if (guildId != null) {
       _result.guildId = guildId;
     }
-    if (homeserver != null) {
-      _result.homeserver = homeserver;
+    if (serverId != null) {
+      _result.serverId = serverId;
     }
     return _result;
   }
@@ -1444,13 +1509,13 @@ class StreamEvent_GuildRemovedFromList extends $pb.GeneratedMessage {
   void clearGuildId() => clearField(1);
 
   @$pb.TagNumber(2)
-  $core.String get homeserver => $_getSZ(1);
+  $core.String get serverId => $_getSZ(1);
   @$pb.TagNumber(2)
-  set homeserver($core.String v) { $_setString(1, v); }
+  set serverId($core.String v) { $_setString(1, v); }
   @$pb.TagNumber(2)
-  $core.bool hasHomeserver() => $_has(1);
+  $core.bool hasServerId() => $_has(1);
   @$pb.TagNumber(2)
-  void clearHomeserver() => clearField(2);
+  void clearServerId() => clearField(2);
 }
 
 class StreamEvent_ActionPerformed extends $pb.GeneratedMessage {
@@ -1459,7 +1524,8 @@ class StreamEvent_ActionPerformed extends $pb.GeneratedMessage {
     ..a<$fixnum.Int64>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'channelId', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
     ..a<$fixnum.Int64>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'messageId', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
     ..a<$fixnum.Int64>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'userId', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
-    ..aOM<$4.ActionPayload>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'payload', subBuilder: $4.ActionPayload.create)
+    ..a<$core.List<$core.int>>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'info', $pb.PbFieldType.OY)
+    ..a<$core.List<$core.int>>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'payload', $pb.PbFieldType.OY)
     ..hasRequiredFields = false
   ;
 
@@ -1469,7 +1535,8 @@ class StreamEvent_ActionPerformed extends $pb.GeneratedMessage {
     $fixnum.Int64? channelId,
     $fixnum.Int64? messageId,
     $fixnum.Int64? userId,
-    $4.ActionPayload? payload,
+    $core.List<$core.int>? info,
+    $core.List<$core.int>? payload,
   }) {
     final _result = create();
     if (guildId != null) {
@@ -1483,6 +1550,9 @@ class StreamEvent_ActionPerformed extends $pb.GeneratedMessage {
     }
     if (userId != null) {
       _result.userId = userId;
+    }
+    if (info != null) {
+      _result.info = info;
     }
     if (payload != null) {
       _result.payload = payload;
@@ -1547,15 +1617,22 @@ class StreamEvent_ActionPerformed extends $pb.GeneratedMessage {
   void clearUserId() => clearField(4);
 
   @$pb.TagNumber(5)
-  $4.ActionPayload get payload => $_getN(4);
+  $core.List<$core.int> get info => $_getN(4);
   @$pb.TagNumber(5)
-  set payload($4.ActionPayload v) { setField(5, v); }
+  set info($core.List<$core.int> v) { $_setBytes(4, v); }
   @$pb.TagNumber(5)
-  $core.bool hasPayload() => $_has(4);
+  $core.bool hasInfo() => $_has(4);
   @$pb.TagNumber(5)
-  void clearPayload() => clearField(5);
-  @$pb.TagNumber(5)
-  $4.ActionPayload ensurePayload() => $_ensure(4);
+  void clearInfo() => clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.List<$core.int> get payload => $_getN(5);
+  @$pb.TagNumber(6)
+  set payload($core.List<$core.int> v) { $_setBytes(5, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasPayload() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearPayload() => clearField(6);
 }
 
 class StreamEvent_RoleMoved extends $pb.GeneratedMessage {
@@ -2396,8 +2473,8 @@ class StreamEvent_MessageUnpinned extends $pb.GeneratedMessage {
   void clearMessageId() => clearField(3);
 }
 
-class StreamEvent_ReactionUpdated extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'StreamEvent.ReactionUpdated', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.chat.v1'), createEmptyInstance: create)
+class StreamEvent_NewReactionAdded extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'StreamEvent.NewReactionAdded', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.chat.v1'), createEmptyInstance: create)
     ..a<$fixnum.Int64>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'guildId', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
     ..a<$fixnum.Int64>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'channelId', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
     ..a<$fixnum.Int64>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'messageId', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
@@ -2405,8 +2482,8 @@ class StreamEvent_ReactionUpdated extends $pb.GeneratedMessage {
     ..hasRequiredFields = false
   ;
 
-  StreamEvent_ReactionUpdated._() : super();
-  factory StreamEvent_ReactionUpdated({
+  StreamEvent_NewReactionAdded._() : super();
+  factory StreamEvent_NewReactionAdded({
     $fixnum.Int64? guildId,
     $fixnum.Int64? channelId,
     $fixnum.Int64? messageId,
@@ -2427,26 +2504,26 @@ class StreamEvent_ReactionUpdated extends $pb.GeneratedMessage {
     }
     return _result;
   }
-  factory StreamEvent_ReactionUpdated.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory StreamEvent_ReactionUpdated.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  factory StreamEvent_NewReactionAdded.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory StreamEvent_NewReactionAdded.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
   'Will be removed in next major version')
-  StreamEvent_ReactionUpdated clone() => StreamEvent_ReactionUpdated()..mergeFromMessage(this);
+  StreamEvent_NewReactionAdded clone() => StreamEvent_NewReactionAdded()..mergeFromMessage(this);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  StreamEvent_ReactionUpdated copyWith(void Function(StreamEvent_ReactionUpdated) updates) => super.copyWith((message) => updates(message as StreamEvent_ReactionUpdated)) as StreamEvent_ReactionUpdated; // ignore: deprecated_member_use
+  StreamEvent_NewReactionAdded copyWith(void Function(StreamEvent_NewReactionAdded) updates) => super.copyWith((message) => updates(message as StreamEvent_NewReactionAdded)) as StreamEvent_NewReactionAdded; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
-  static StreamEvent_ReactionUpdated create() => StreamEvent_ReactionUpdated._();
-  StreamEvent_ReactionUpdated createEmptyInstance() => create();
-  static $pb.PbList<StreamEvent_ReactionUpdated> createRepeated() => $pb.PbList<StreamEvent_ReactionUpdated>();
+  static StreamEvent_NewReactionAdded create() => StreamEvent_NewReactionAdded._();
+  StreamEvent_NewReactionAdded createEmptyInstance() => create();
+  static $pb.PbList<StreamEvent_NewReactionAdded> createRepeated() => $pb.PbList<StreamEvent_NewReactionAdded>();
   @$core.pragma('dart2js:noInline')
-  static StreamEvent_ReactionUpdated getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<StreamEvent_ReactionUpdated>(create);
-  static StreamEvent_ReactionUpdated? _defaultInstance;
+  static StreamEvent_NewReactionAdded getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<StreamEvent_NewReactionAdded>(create);
+  static StreamEvent_NewReactionAdded? _defaultInstance;
 
   @$pb.TagNumber(1)
   $fixnum.Int64 get guildId => $_getI64(0);
@@ -2485,6 +2562,184 @@ class StreamEvent_ReactionUpdated extends $pb.GeneratedMessage {
   void clearReaction() => clearField(4);
   @$pb.TagNumber(4)
   $4.Reaction ensureReaction() => $_ensure(3);
+}
+
+class StreamEvent_ReactionAdded extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'StreamEvent.ReactionAdded', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.chat.v1'), createEmptyInstance: create)
+    ..a<$fixnum.Int64>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'guildId', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
+    ..a<$fixnum.Int64>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'channelId', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
+    ..a<$fixnum.Int64>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'messageId', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
+    ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'reactionData')
+    ..hasRequiredFields = false
+  ;
+
+  StreamEvent_ReactionAdded._() : super();
+  factory StreamEvent_ReactionAdded({
+    $fixnum.Int64? guildId,
+    $fixnum.Int64? channelId,
+    $fixnum.Int64? messageId,
+    $core.String? reactionData,
+  }) {
+    final _result = create();
+    if (guildId != null) {
+      _result.guildId = guildId;
+    }
+    if (channelId != null) {
+      _result.channelId = channelId;
+    }
+    if (messageId != null) {
+      _result.messageId = messageId;
+    }
+    if (reactionData != null) {
+      _result.reactionData = reactionData;
+    }
+    return _result;
+  }
+  factory StreamEvent_ReactionAdded.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory StreamEvent_ReactionAdded.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  StreamEvent_ReactionAdded clone() => StreamEvent_ReactionAdded()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  StreamEvent_ReactionAdded copyWith(void Function(StreamEvent_ReactionAdded) updates) => super.copyWith((message) => updates(message as StreamEvent_ReactionAdded)) as StreamEvent_ReactionAdded; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static StreamEvent_ReactionAdded create() => StreamEvent_ReactionAdded._();
+  StreamEvent_ReactionAdded createEmptyInstance() => create();
+  static $pb.PbList<StreamEvent_ReactionAdded> createRepeated() => $pb.PbList<StreamEvent_ReactionAdded>();
+  @$core.pragma('dart2js:noInline')
+  static StreamEvent_ReactionAdded getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<StreamEvent_ReactionAdded>(create);
+  static StreamEvent_ReactionAdded? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $fixnum.Int64 get guildId => $_getI64(0);
+  @$pb.TagNumber(1)
+  set guildId($fixnum.Int64 v) { $_setInt64(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasGuildId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearGuildId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $fixnum.Int64 get channelId => $_getI64(1);
+  @$pb.TagNumber(2)
+  set channelId($fixnum.Int64 v) { $_setInt64(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasChannelId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearChannelId() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $fixnum.Int64 get messageId => $_getI64(2);
+  @$pb.TagNumber(3)
+  set messageId($fixnum.Int64 v) { $_setInt64(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasMessageId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearMessageId() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get reactionData => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set reactionData($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasReactionData() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearReactionData() => clearField(4);
+}
+
+class StreamEvent_ReactionRemoved extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'StreamEvent.ReactionRemoved', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.chat.v1'), createEmptyInstance: create)
+    ..a<$fixnum.Int64>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'guildId', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
+    ..a<$fixnum.Int64>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'channelId', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
+    ..a<$fixnum.Int64>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'messageId', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
+    ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'reactionData')
+    ..hasRequiredFields = false
+  ;
+
+  StreamEvent_ReactionRemoved._() : super();
+  factory StreamEvent_ReactionRemoved({
+    $fixnum.Int64? guildId,
+    $fixnum.Int64? channelId,
+    $fixnum.Int64? messageId,
+    $core.String? reactionData,
+  }) {
+    final _result = create();
+    if (guildId != null) {
+      _result.guildId = guildId;
+    }
+    if (channelId != null) {
+      _result.channelId = channelId;
+    }
+    if (messageId != null) {
+      _result.messageId = messageId;
+    }
+    if (reactionData != null) {
+      _result.reactionData = reactionData;
+    }
+    return _result;
+  }
+  factory StreamEvent_ReactionRemoved.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory StreamEvent_ReactionRemoved.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  StreamEvent_ReactionRemoved clone() => StreamEvent_ReactionRemoved()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  StreamEvent_ReactionRemoved copyWith(void Function(StreamEvent_ReactionRemoved) updates) => super.copyWith((message) => updates(message as StreamEvent_ReactionRemoved)) as StreamEvent_ReactionRemoved; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static StreamEvent_ReactionRemoved create() => StreamEvent_ReactionRemoved._();
+  StreamEvent_ReactionRemoved createEmptyInstance() => create();
+  static $pb.PbList<StreamEvent_ReactionRemoved> createRepeated() => $pb.PbList<StreamEvent_ReactionRemoved>();
+  @$core.pragma('dart2js:noInline')
+  static StreamEvent_ReactionRemoved getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<StreamEvent_ReactionRemoved>(create);
+  static StreamEvent_ReactionRemoved? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $fixnum.Int64 get guildId => $_getI64(0);
+  @$pb.TagNumber(1)
+  set guildId($fixnum.Int64 v) { $_setInt64(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasGuildId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearGuildId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $fixnum.Int64 get channelId => $_getI64(1);
+  @$pb.TagNumber(2)
+  set channelId($fixnum.Int64 v) { $_setInt64(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasChannelId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearChannelId() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $fixnum.Int64 get messageId => $_getI64(2);
+  @$pb.TagNumber(3)
+  set messageId($fixnum.Int64 v) { $_setInt64(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasMessageId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearMessageId() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get reactionData => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set reactionData($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasReactionData() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearReactionData() => clearField(4);
 }
 
 class StreamEvent_OwnerAdded extends $pb.GeneratedMessage {
@@ -2609,29 +2864,46 @@ class StreamEvent_OwnerRemoved extends $pb.GeneratedMessage {
   void clearGuildId() => clearField(2);
 }
 
+enum StreamEvent_InviteReceived_Location {
+  guildInviteId, 
+  channelId, 
+  notSet
+}
+
 class StreamEvent_InviteReceived extends $pb.GeneratedMessage {
+  static const $core.Map<$core.int, StreamEvent_InviteReceived_Location> _StreamEvent_InviteReceived_LocationByTag = {
+    3 : StreamEvent_InviteReceived_Location.guildInviteId,
+    4 : StreamEvent_InviteReceived_Location.channelId,
+    0 : StreamEvent_InviteReceived_Location.notSet
+  };
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'StreamEvent.InviteReceived', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.chat.v1'), createEmptyInstance: create)
-    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'inviteId')
+    ..oo(0, [3, 4])
+    ..a<$fixnum.Int64>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'inviterId', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
     ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'serverId')
-    ..a<$fixnum.Int64>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'inviterId', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
+    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'guildInviteId')
+    ..a<$fixnum.Int64>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'channelId', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
     ..hasRequiredFields = false
   ;
 
   StreamEvent_InviteReceived._() : super();
   factory StreamEvent_InviteReceived({
-    $core.String? inviteId,
-    $core.String? serverId,
     $fixnum.Int64? inviterId,
+    $core.String? serverId,
+    $core.String? guildInviteId,
+    $fixnum.Int64? channelId,
   }) {
     final _result = create();
-    if (inviteId != null) {
-      _result.inviteId = inviteId;
+    if (inviterId != null) {
+      _result.inviterId = inviterId;
     }
     if (serverId != null) {
       _result.serverId = serverId;
     }
-    if (inviterId != null) {
-      _result.inviterId = inviterId;
+    if (guildInviteId != null) {
+      _result.guildInviteId = guildInviteId;
+    }
+    if (channelId != null) {
+      _result.channelId = channelId;
     }
     return _result;
   }
@@ -2656,14 +2928,17 @@ class StreamEvent_InviteReceived extends $pb.GeneratedMessage {
   static StreamEvent_InviteReceived getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<StreamEvent_InviteReceived>(create);
   static StreamEvent_InviteReceived? _defaultInstance;
 
+  StreamEvent_InviteReceived_Location whichLocation() => _StreamEvent_InviteReceived_LocationByTag[$_whichOneof(0)]!;
+  void clearLocation() => clearField($_whichOneof(0));
+
   @$pb.TagNumber(1)
-  $core.String get inviteId => $_getSZ(0);
+  $fixnum.Int64 get inviterId => $_getI64(0);
   @$pb.TagNumber(1)
-  set inviteId($core.String v) { $_setString(0, v); }
+  set inviterId($fixnum.Int64 v) { $_setInt64(0, v); }
   @$pb.TagNumber(1)
-  $core.bool hasInviteId() => $_has(0);
+  $core.bool hasInviterId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearInviteId() => clearField(1);
+  void clearInviterId() => clearField(1);
 
   @$pb.TagNumber(2)
   $core.String get serverId => $_getSZ(1);
@@ -2675,38 +2950,64 @@ class StreamEvent_InviteReceived extends $pb.GeneratedMessage {
   void clearServerId() => clearField(2);
 
   @$pb.TagNumber(3)
-  $fixnum.Int64 get inviterId => $_getI64(2);
+  $core.String get guildInviteId => $_getSZ(2);
   @$pb.TagNumber(3)
-  set inviterId($fixnum.Int64 v) { $_setInt64(2, v); }
+  set guildInviteId($core.String v) { $_setString(2, v); }
   @$pb.TagNumber(3)
-  $core.bool hasInviterId() => $_has(2);
+  $core.bool hasGuildInviteId() => $_has(2);
   @$pb.TagNumber(3)
-  void clearInviterId() => clearField(3);
+  void clearGuildInviteId() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $fixnum.Int64 get channelId => $_getI64(3);
+  @$pb.TagNumber(4)
+  set channelId($fixnum.Int64 v) { $_setInt64(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasChannelId() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearChannelId() => clearField(4);
+}
+
+enum StreamEvent_InviteRejected_Location {
+  guildInviteId, 
+  channelId, 
+  notSet
 }
 
 class StreamEvent_InviteRejected extends $pb.GeneratedMessage {
+  static const $core.Map<$core.int, StreamEvent_InviteRejected_Location> _StreamEvent_InviteRejected_LocationByTag = {
+    3 : StreamEvent_InviteRejected_Location.guildInviteId,
+    4 : StreamEvent_InviteRejected_Location.channelId,
+    0 : StreamEvent_InviteRejected_Location.notSet
+  };
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'StreamEvent.InviteRejected', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.chat.v1'), createEmptyInstance: create)
-    ..a<$fixnum.Int64>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'guildId', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
-    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'inviteId')
-    ..a<$fixnum.Int64>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'userId', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
+    ..oo(0, [3, 4])
+    ..a<$fixnum.Int64>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'inviteeId', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
+    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'serverId')
+    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'guildInviteId')
+    ..a<$fixnum.Int64>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'channelId', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
     ..hasRequiredFields = false
   ;
 
   StreamEvent_InviteRejected._() : super();
   factory StreamEvent_InviteRejected({
-    $fixnum.Int64? guildId,
-    $core.String? inviteId,
-    $fixnum.Int64? userId,
+    $fixnum.Int64? inviteeId,
+    $core.String? serverId,
+    $core.String? guildInviteId,
+    $fixnum.Int64? channelId,
   }) {
     final _result = create();
-    if (guildId != null) {
-      _result.guildId = guildId;
+    if (inviteeId != null) {
+      _result.inviteeId = inviteeId;
     }
-    if (inviteId != null) {
-      _result.inviteId = inviteId;
+    if (serverId != null) {
+      _result.serverId = serverId;
     }
-    if (userId != null) {
-      _result.userId = userId;
+    if (guildInviteId != null) {
+      _result.guildInviteId = guildInviteId;
+    }
+    if (channelId != null) {
+      _result.channelId = channelId;
     }
     return _result;
   }
@@ -2731,32 +3032,44 @@ class StreamEvent_InviteRejected extends $pb.GeneratedMessage {
   static StreamEvent_InviteRejected getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<StreamEvent_InviteRejected>(create);
   static StreamEvent_InviteRejected? _defaultInstance;
 
+  StreamEvent_InviteRejected_Location whichLocation() => _StreamEvent_InviteRejected_LocationByTag[$_whichOneof(0)]!;
+  void clearLocation() => clearField($_whichOneof(0));
+
   @$pb.TagNumber(1)
-  $fixnum.Int64 get guildId => $_getI64(0);
+  $fixnum.Int64 get inviteeId => $_getI64(0);
   @$pb.TagNumber(1)
-  set guildId($fixnum.Int64 v) { $_setInt64(0, v); }
+  set inviteeId($fixnum.Int64 v) { $_setInt64(0, v); }
   @$pb.TagNumber(1)
-  $core.bool hasGuildId() => $_has(0);
+  $core.bool hasInviteeId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearGuildId() => clearField(1);
+  void clearInviteeId() => clearField(1);
 
   @$pb.TagNumber(2)
-  $core.String get inviteId => $_getSZ(1);
+  $core.String get serverId => $_getSZ(1);
   @$pb.TagNumber(2)
-  set inviteId($core.String v) { $_setString(1, v); }
+  set serverId($core.String v) { $_setString(1, v); }
   @$pb.TagNumber(2)
-  $core.bool hasInviteId() => $_has(1);
+  $core.bool hasServerId() => $_has(1);
   @$pb.TagNumber(2)
-  void clearInviteId() => clearField(2);
+  void clearServerId() => clearField(2);
 
   @$pb.TagNumber(3)
-  $fixnum.Int64 get userId => $_getI64(2);
+  $core.String get guildInviteId => $_getSZ(2);
   @$pb.TagNumber(3)
-  set userId($fixnum.Int64 v) { $_setInt64(2, v); }
+  set guildInviteId($core.String v) { $_setString(2, v); }
   @$pb.TagNumber(3)
-  $core.bool hasUserId() => $_has(2);
+  $core.bool hasGuildInviteId() => $_has(2);
   @$pb.TagNumber(3)
-  void clearUserId() => clearField(3);
+  void clearGuildInviteId() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $fixnum.Int64 get channelId => $_getI64(3);
+  @$pb.TagNumber(4)
+  set channelId($fixnum.Int64 v) { $_setInt64(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasChannelId() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearChannelId() => clearField(4);
 }
 
 class StreamEvent_InviteCreated extends $pb.GeneratedMessage {
@@ -2970,6 +3283,297 @@ class StreamEvent_InviteUsed extends $pb.GeneratedMessage {
   void clearUserId() => clearField(3);
 }
 
+class StreamEvent_PrivateChannelDeleted extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'StreamEvent.PrivateChannelDeleted', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.chat.v1'), createEmptyInstance: create)
+    ..a<$fixnum.Int64>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'channelId', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
+    ..hasRequiredFields = false
+  ;
+
+  StreamEvent_PrivateChannelDeleted._() : super();
+  factory StreamEvent_PrivateChannelDeleted({
+    $fixnum.Int64? channelId,
+  }) {
+    final _result = create();
+    if (channelId != null) {
+      _result.channelId = channelId;
+    }
+    return _result;
+  }
+  factory StreamEvent_PrivateChannelDeleted.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory StreamEvent_PrivateChannelDeleted.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  StreamEvent_PrivateChannelDeleted clone() => StreamEvent_PrivateChannelDeleted()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  StreamEvent_PrivateChannelDeleted copyWith(void Function(StreamEvent_PrivateChannelDeleted) updates) => super.copyWith((message) => updates(message as StreamEvent_PrivateChannelDeleted)) as StreamEvent_PrivateChannelDeleted; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static StreamEvent_PrivateChannelDeleted create() => StreamEvent_PrivateChannelDeleted._();
+  StreamEvent_PrivateChannelDeleted createEmptyInstance() => create();
+  static $pb.PbList<StreamEvent_PrivateChannelDeleted> createRepeated() => $pb.PbList<StreamEvent_PrivateChannelDeleted>();
+  @$core.pragma('dart2js:noInline')
+  static StreamEvent_PrivateChannelDeleted getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<StreamEvent_PrivateChannelDeleted>(create);
+  static StreamEvent_PrivateChannelDeleted? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $fixnum.Int64 get channelId => $_getI64(0);
+  @$pb.TagNumber(1)
+  set channelId($fixnum.Int64 v) { $_setInt64(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasChannelId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearChannelId() => clearField(1);
+}
+
+class StreamEvent_PrivateChannelAddedToList extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'StreamEvent.PrivateChannelAddedToList', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.chat.v1'), createEmptyInstance: create)
+    ..a<$fixnum.Int64>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'channelId', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
+    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'serverId')
+    ..hasRequiredFields = false
+  ;
+
+  StreamEvent_PrivateChannelAddedToList._() : super();
+  factory StreamEvent_PrivateChannelAddedToList({
+    $fixnum.Int64? channelId,
+    $core.String? serverId,
+  }) {
+    final _result = create();
+    if (channelId != null) {
+      _result.channelId = channelId;
+    }
+    if (serverId != null) {
+      _result.serverId = serverId;
+    }
+    return _result;
+  }
+  factory StreamEvent_PrivateChannelAddedToList.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory StreamEvent_PrivateChannelAddedToList.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  StreamEvent_PrivateChannelAddedToList clone() => StreamEvent_PrivateChannelAddedToList()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  StreamEvent_PrivateChannelAddedToList copyWith(void Function(StreamEvent_PrivateChannelAddedToList) updates) => super.copyWith((message) => updates(message as StreamEvent_PrivateChannelAddedToList)) as StreamEvent_PrivateChannelAddedToList; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static StreamEvent_PrivateChannelAddedToList create() => StreamEvent_PrivateChannelAddedToList._();
+  StreamEvent_PrivateChannelAddedToList createEmptyInstance() => create();
+  static $pb.PbList<StreamEvent_PrivateChannelAddedToList> createRepeated() => $pb.PbList<StreamEvent_PrivateChannelAddedToList>();
+  @$core.pragma('dart2js:noInline')
+  static StreamEvent_PrivateChannelAddedToList getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<StreamEvent_PrivateChannelAddedToList>(create);
+  static StreamEvent_PrivateChannelAddedToList? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $fixnum.Int64 get channelId => $_getI64(0);
+  @$pb.TagNumber(1)
+  set channelId($fixnum.Int64 v) { $_setInt64(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasChannelId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearChannelId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get serverId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set serverId($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasServerId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearServerId() => clearField(2);
+}
+
+class StreamEvent_PrivateChannelRemovedFromList extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'StreamEvent.PrivateChannelRemovedFromList', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.chat.v1'), createEmptyInstance: create)
+    ..a<$fixnum.Int64>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'channelId', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
+    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'serverId')
+    ..hasRequiredFields = false
+  ;
+
+  StreamEvent_PrivateChannelRemovedFromList._() : super();
+  factory StreamEvent_PrivateChannelRemovedFromList({
+    $fixnum.Int64? channelId,
+    $core.String? serverId,
+  }) {
+    final _result = create();
+    if (channelId != null) {
+      _result.channelId = channelId;
+    }
+    if (serverId != null) {
+      _result.serverId = serverId;
+    }
+    return _result;
+  }
+  factory StreamEvent_PrivateChannelRemovedFromList.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory StreamEvent_PrivateChannelRemovedFromList.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  StreamEvent_PrivateChannelRemovedFromList clone() => StreamEvent_PrivateChannelRemovedFromList()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  StreamEvent_PrivateChannelRemovedFromList copyWith(void Function(StreamEvent_PrivateChannelRemovedFromList) updates) => super.copyWith((message) => updates(message as StreamEvent_PrivateChannelRemovedFromList)) as StreamEvent_PrivateChannelRemovedFromList; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static StreamEvent_PrivateChannelRemovedFromList create() => StreamEvent_PrivateChannelRemovedFromList._();
+  StreamEvent_PrivateChannelRemovedFromList createEmptyInstance() => create();
+  static $pb.PbList<StreamEvent_PrivateChannelRemovedFromList> createRepeated() => $pb.PbList<StreamEvent_PrivateChannelRemovedFromList>();
+  @$core.pragma('dart2js:noInline')
+  static StreamEvent_PrivateChannelRemovedFromList getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<StreamEvent_PrivateChannelRemovedFromList>(create);
+  static StreamEvent_PrivateChannelRemovedFromList? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $fixnum.Int64 get channelId => $_getI64(0);
+  @$pb.TagNumber(1)
+  set channelId($fixnum.Int64 v) { $_setInt64(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasChannelId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearChannelId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get serverId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set serverId($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasServerId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearServerId() => clearField(2);
+}
+
+class StreamEvent_UserJoinedPrivateChannel extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'StreamEvent.UserJoinedPrivateChannel', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.chat.v1'), createEmptyInstance: create)
+    ..a<$fixnum.Int64>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'channelId', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
+    ..a<$fixnum.Int64>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'userId', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
+    ..hasRequiredFields = false
+  ;
+
+  StreamEvent_UserJoinedPrivateChannel._() : super();
+  factory StreamEvent_UserJoinedPrivateChannel({
+    $fixnum.Int64? channelId,
+    $fixnum.Int64? userId,
+  }) {
+    final _result = create();
+    if (channelId != null) {
+      _result.channelId = channelId;
+    }
+    if (userId != null) {
+      _result.userId = userId;
+    }
+    return _result;
+  }
+  factory StreamEvent_UserJoinedPrivateChannel.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory StreamEvent_UserJoinedPrivateChannel.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  StreamEvent_UserJoinedPrivateChannel clone() => StreamEvent_UserJoinedPrivateChannel()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  StreamEvent_UserJoinedPrivateChannel copyWith(void Function(StreamEvent_UserJoinedPrivateChannel) updates) => super.copyWith((message) => updates(message as StreamEvent_UserJoinedPrivateChannel)) as StreamEvent_UserJoinedPrivateChannel; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static StreamEvent_UserJoinedPrivateChannel create() => StreamEvent_UserJoinedPrivateChannel._();
+  StreamEvent_UserJoinedPrivateChannel createEmptyInstance() => create();
+  static $pb.PbList<StreamEvent_UserJoinedPrivateChannel> createRepeated() => $pb.PbList<StreamEvent_UserJoinedPrivateChannel>();
+  @$core.pragma('dart2js:noInline')
+  static StreamEvent_UserJoinedPrivateChannel getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<StreamEvent_UserJoinedPrivateChannel>(create);
+  static StreamEvent_UserJoinedPrivateChannel? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $fixnum.Int64 get channelId => $_getI64(0);
+  @$pb.TagNumber(1)
+  set channelId($fixnum.Int64 v) { $_setInt64(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasChannelId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearChannelId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $fixnum.Int64 get userId => $_getI64(1);
+  @$pb.TagNumber(2)
+  set userId($fixnum.Int64 v) { $_setInt64(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasUserId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearUserId() => clearField(2);
+}
+
+class StreamEvent_UserLeftPrivateChannel extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'StreamEvent.UserLeftPrivateChannel', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.chat.v1'), createEmptyInstance: create)
+    ..a<$fixnum.Int64>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'channelId', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
+    ..a<$fixnum.Int64>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'userId', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
+    ..hasRequiredFields = false
+  ;
+
+  StreamEvent_UserLeftPrivateChannel._() : super();
+  factory StreamEvent_UserLeftPrivateChannel({
+    $fixnum.Int64? channelId,
+    $fixnum.Int64? userId,
+  }) {
+    final _result = create();
+    if (channelId != null) {
+      _result.channelId = channelId;
+    }
+    if (userId != null) {
+      _result.userId = userId;
+    }
+    return _result;
+  }
+  factory StreamEvent_UserLeftPrivateChannel.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory StreamEvent_UserLeftPrivateChannel.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  StreamEvent_UserLeftPrivateChannel clone() => StreamEvent_UserLeftPrivateChannel()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  StreamEvent_UserLeftPrivateChannel copyWith(void Function(StreamEvent_UserLeftPrivateChannel) updates) => super.copyWith((message) => updates(message as StreamEvent_UserLeftPrivateChannel)) as StreamEvent_UserLeftPrivateChannel; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static StreamEvent_UserLeftPrivateChannel create() => StreamEvent_UserLeftPrivateChannel._();
+  StreamEvent_UserLeftPrivateChannel createEmptyInstance() => create();
+  static $pb.PbList<StreamEvent_UserLeftPrivateChannel> createRepeated() => $pb.PbList<StreamEvent_UserLeftPrivateChannel>();
+  @$core.pragma('dart2js:noInline')
+  static StreamEvent_UserLeftPrivateChannel getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<StreamEvent_UserLeftPrivateChannel>(create);
+  static StreamEvent_UserLeftPrivateChannel? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $fixnum.Int64 get channelId => $_getI64(0);
+  @$pb.TagNumber(1)
+  set channelId($fixnum.Int64 v) { $_setInt64(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasChannelId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearChannelId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $fixnum.Int64 get userId => $_getI64(1);
+  @$pb.TagNumber(2)
+  set userId($fixnum.Int64 v) { $_setInt64(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasUserId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearUserId() => clearField(2);
+}
+
 enum StreamEvent_Event {
   guildAddedToList, 
   guildRemovedFromList, 
@@ -2996,7 +3600,6 @@ enum StreamEvent_Event {
   editedChannelPosition, 
   messagePinned, 
   messageUnpinned, 
-  reactionUpdated, 
   ownerAdded, 
   ownerRemoved, 
   inviteReceived, 
@@ -3004,6 +3607,14 @@ enum StreamEvent_Event {
   inviteCreated, 
   inviteDeleted, 
   inviteUsed, 
+  newReactionAdded, 
+  reactionAdded, 
+  reactionRemoved, 
+  privateChannelDeleted, 
+  privateChannelAddedToList, 
+  privateChannelRemovedFromList, 
+  userJoinedPrivateChannel, 
+  userLeftPrivateChannel, 
   notSet
 }
 
@@ -3034,18 +3645,25 @@ class StreamEvent extends $pb.GeneratedMessage {
     23 : StreamEvent_Event.editedChannelPosition,
     24 : StreamEvent_Event.messagePinned,
     25 : StreamEvent_Event.messageUnpinned,
-    26 : StreamEvent_Event.reactionUpdated,
-    27 : StreamEvent_Event.ownerAdded,
-    28 : StreamEvent_Event.ownerRemoved,
-    29 : StreamEvent_Event.inviteReceived,
-    30 : StreamEvent_Event.inviteRejected,
-    31 : StreamEvent_Event.inviteCreated,
-    32 : StreamEvent_Event.inviteDeleted,
-    33 : StreamEvent_Event.inviteUsed,
+    26 : StreamEvent_Event.ownerAdded,
+    27 : StreamEvent_Event.ownerRemoved,
+    28 : StreamEvent_Event.inviteReceived,
+    29 : StreamEvent_Event.inviteRejected,
+    30 : StreamEvent_Event.inviteCreated,
+    31 : StreamEvent_Event.inviteDeleted,
+    32 : StreamEvent_Event.inviteUsed,
+    33 : StreamEvent_Event.newReactionAdded,
+    34 : StreamEvent_Event.reactionAdded,
+    35 : StreamEvent_Event.reactionRemoved,
+    36 : StreamEvent_Event.privateChannelDeleted,
+    37 : StreamEvent_Event.privateChannelAddedToList,
+    38 : StreamEvent_Event.privateChannelRemovedFromList,
+    39 : StreamEvent_Event.userJoinedPrivateChannel,
+    40 : StreamEvent_Event.userLeftPrivateChannel,
     0 : StreamEvent_Event.notSet
   };
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'StreamEvent', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.chat.v1'), createEmptyInstance: create)
-    ..oo(0, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33])
+    ..oo(0, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40])
     ..aOM<StreamEvent_GuildAddedToList>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'guildAddedToList', subBuilder: StreamEvent_GuildAddedToList.create)
     ..aOM<StreamEvent_GuildRemovedFromList>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'guildRemovedFromList', subBuilder: StreamEvent_GuildRemovedFromList.create)
     ..aOM<StreamEvent_ActionPerformed>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'actionPerformed', subBuilder: StreamEvent_ActionPerformed.create)
@@ -3071,14 +3689,21 @@ class StreamEvent extends $pb.GeneratedMessage {
     ..aOM<StreamEvent_ChannelPositionUpdated>(23, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'editedChannelPosition', subBuilder: StreamEvent_ChannelPositionUpdated.create)
     ..aOM<StreamEvent_MessagePinned>(24, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'messagePinned', subBuilder: StreamEvent_MessagePinned.create)
     ..aOM<StreamEvent_MessageUnpinned>(25, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'messageUnpinned', subBuilder: StreamEvent_MessageUnpinned.create)
-    ..aOM<StreamEvent_ReactionUpdated>(26, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'reactionUpdated', subBuilder: StreamEvent_ReactionUpdated.create)
-    ..aOM<StreamEvent_OwnerAdded>(27, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'ownerAdded', subBuilder: StreamEvent_OwnerAdded.create)
-    ..aOM<StreamEvent_OwnerRemoved>(28, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'ownerRemoved', subBuilder: StreamEvent_OwnerRemoved.create)
-    ..aOM<StreamEvent_InviteReceived>(29, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'inviteReceived', subBuilder: StreamEvent_InviteReceived.create)
-    ..aOM<StreamEvent_InviteRejected>(30, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'inviteRejected', subBuilder: StreamEvent_InviteRejected.create)
-    ..aOM<StreamEvent_InviteCreated>(31, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'inviteCreated', subBuilder: StreamEvent_InviteCreated.create)
-    ..aOM<StreamEvent_InviteDeleted>(32, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'inviteDeleted', subBuilder: StreamEvent_InviteDeleted.create)
-    ..aOM<StreamEvent_InviteUsed>(33, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'inviteUsed', subBuilder: StreamEvent_InviteUsed.create)
+    ..aOM<StreamEvent_OwnerAdded>(26, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'ownerAdded', subBuilder: StreamEvent_OwnerAdded.create)
+    ..aOM<StreamEvent_OwnerRemoved>(27, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'ownerRemoved', subBuilder: StreamEvent_OwnerRemoved.create)
+    ..aOM<StreamEvent_InviteReceived>(28, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'inviteReceived', subBuilder: StreamEvent_InviteReceived.create)
+    ..aOM<StreamEvent_InviteRejected>(29, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'inviteRejected', subBuilder: StreamEvent_InviteRejected.create)
+    ..aOM<StreamEvent_InviteCreated>(30, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'inviteCreated', subBuilder: StreamEvent_InviteCreated.create)
+    ..aOM<StreamEvent_InviteDeleted>(31, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'inviteDeleted', subBuilder: StreamEvent_InviteDeleted.create)
+    ..aOM<StreamEvent_InviteUsed>(32, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'inviteUsed', subBuilder: StreamEvent_InviteUsed.create)
+    ..aOM<StreamEvent_NewReactionAdded>(33, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'newReactionAdded', subBuilder: StreamEvent_NewReactionAdded.create)
+    ..aOM<StreamEvent_ReactionAdded>(34, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'reactionAdded', subBuilder: StreamEvent_ReactionAdded.create)
+    ..aOM<StreamEvent_ReactionRemoved>(35, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'reactionRemoved', subBuilder: StreamEvent_ReactionRemoved.create)
+    ..aOM<StreamEvent_PrivateChannelDeleted>(36, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'privateChannelDeleted', subBuilder: StreamEvent_PrivateChannelDeleted.create)
+    ..aOM<StreamEvent_PrivateChannelAddedToList>(37, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'privateChannelAddedToList', subBuilder: StreamEvent_PrivateChannelAddedToList.create)
+    ..aOM<StreamEvent_PrivateChannelRemovedFromList>(38, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'privateChannelRemovedFromList', subBuilder: StreamEvent_PrivateChannelRemovedFromList.create)
+    ..aOM<StreamEvent_UserJoinedPrivateChannel>(39, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'userJoinedPrivateChannel', subBuilder: StreamEvent_UserJoinedPrivateChannel.create)
+    ..aOM<StreamEvent_UserLeftPrivateChannel>(40, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'userLeftPrivateChannel', subBuilder: StreamEvent_UserLeftPrivateChannel.create)
     ..hasRequiredFields = false
   ;
 
@@ -3109,7 +3734,6 @@ class StreamEvent extends $pb.GeneratedMessage {
     StreamEvent_ChannelPositionUpdated? editedChannelPosition,
     StreamEvent_MessagePinned? messagePinned,
     StreamEvent_MessageUnpinned? messageUnpinned,
-    StreamEvent_ReactionUpdated? reactionUpdated,
     StreamEvent_OwnerAdded? ownerAdded,
     StreamEvent_OwnerRemoved? ownerRemoved,
     StreamEvent_InviteReceived? inviteReceived,
@@ -3117,6 +3741,14 @@ class StreamEvent extends $pb.GeneratedMessage {
     StreamEvent_InviteCreated? inviteCreated,
     StreamEvent_InviteDeleted? inviteDeleted,
     StreamEvent_InviteUsed? inviteUsed,
+    StreamEvent_NewReactionAdded? newReactionAdded,
+    StreamEvent_ReactionAdded? reactionAdded,
+    StreamEvent_ReactionRemoved? reactionRemoved,
+    StreamEvent_PrivateChannelDeleted? privateChannelDeleted,
+    StreamEvent_PrivateChannelAddedToList? privateChannelAddedToList,
+    StreamEvent_PrivateChannelRemovedFromList? privateChannelRemovedFromList,
+    StreamEvent_UserJoinedPrivateChannel? userJoinedPrivateChannel,
+    StreamEvent_UserLeftPrivateChannel? userLeftPrivateChannel,
   }) {
     final _result = create();
     if (guildAddedToList != null) {
@@ -3194,9 +3826,6 @@ class StreamEvent extends $pb.GeneratedMessage {
     if (messageUnpinned != null) {
       _result.messageUnpinned = messageUnpinned;
     }
-    if (reactionUpdated != null) {
-      _result.reactionUpdated = reactionUpdated;
-    }
     if (ownerAdded != null) {
       _result.ownerAdded = ownerAdded;
     }
@@ -3217,6 +3846,30 @@ class StreamEvent extends $pb.GeneratedMessage {
     }
     if (inviteUsed != null) {
       _result.inviteUsed = inviteUsed;
+    }
+    if (newReactionAdded != null) {
+      _result.newReactionAdded = newReactionAdded;
+    }
+    if (reactionAdded != null) {
+      _result.reactionAdded = reactionAdded;
+    }
+    if (reactionRemoved != null) {
+      _result.reactionRemoved = reactionRemoved;
+    }
+    if (privateChannelDeleted != null) {
+      _result.privateChannelDeleted = privateChannelDeleted;
+    }
+    if (privateChannelAddedToList != null) {
+      _result.privateChannelAddedToList = privateChannelAddedToList;
+    }
+    if (privateChannelRemovedFromList != null) {
+      _result.privateChannelRemovedFromList = privateChannelRemovedFromList;
+    }
+    if (userJoinedPrivateChannel != null) {
+      _result.userJoinedPrivateChannel = userJoinedPrivateChannel;
+    }
+    if (userLeftPrivateChannel != null) {
+      _result.userLeftPrivateChannel = userLeftPrivateChannel;
     }
     return _result;
   }
@@ -3520,91 +4173,168 @@ class StreamEvent extends $pb.GeneratedMessage {
   StreamEvent_MessageUnpinned ensureMessageUnpinned() => $_ensure(24);
 
   @$pb.TagNumber(26)
-  StreamEvent_ReactionUpdated get reactionUpdated => $_getN(25);
+  StreamEvent_OwnerAdded get ownerAdded => $_getN(25);
   @$pb.TagNumber(26)
-  set reactionUpdated(StreamEvent_ReactionUpdated v) { setField(26, v); }
+  set ownerAdded(StreamEvent_OwnerAdded v) { setField(26, v); }
   @$pb.TagNumber(26)
-  $core.bool hasReactionUpdated() => $_has(25);
+  $core.bool hasOwnerAdded() => $_has(25);
   @$pb.TagNumber(26)
-  void clearReactionUpdated() => clearField(26);
+  void clearOwnerAdded() => clearField(26);
   @$pb.TagNumber(26)
-  StreamEvent_ReactionUpdated ensureReactionUpdated() => $_ensure(25);
+  StreamEvent_OwnerAdded ensureOwnerAdded() => $_ensure(25);
 
   @$pb.TagNumber(27)
-  StreamEvent_OwnerAdded get ownerAdded => $_getN(26);
+  StreamEvent_OwnerRemoved get ownerRemoved => $_getN(26);
   @$pb.TagNumber(27)
-  set ownerAdded(StreamEvent_OwnerAdded v) { setField(27, v); }
+  set ownerRemoved(StreamEvent_OwnerRemoved v) { setField(27, v); }
   @$pb.TagNumber(27)
-  $core.bool hasOwnerAdded() => $_has(26);
+  $core.bool hasOwnerRemoved() => $_has(26);
   @$pb.TagNumber(27)
-  void clearOwnerAdded() => clearField(27);
+  void clearOwnerRemoved() => clearField(27);
   @$pb.TagNumber(27)
-  StreamEvent_OwnerAdded ensureOwnerAdded() => $_ensure(26);
+  StreamEvent_OwnerRemoved ensureOwnerRemoved() => $_ensure(26);
 
   @$pb.TagNumber(28)
-  StreamEvent_OwnerRemoved get ownerRemoved => $_getN(27);
+  StreamEvent_InviteReceived get inviteReceived => $_getN(27);
   @$pb.TagNumber(28)
-  set ownerRemoved(StreamEvent_OwnerRemoved v) { setField(28, v); }
+  set inviteReceived(StreamEvent_InviteReceived v) { setField(28, v); }
   @$pb.TagNumber(28)
-  $core.bool hasOwnerRemoved() => $_has(27);
+  $core.bool hasInviteReceived() => $_has(27);
   @$pb.TagNumber(28)
-  void clearOwnerRemoved() => clearField(28);
+  void clearInviteReceived() => clearField(28);
   @$pb.TagNumber(28)
-  StreamEvent_OwnerRemoved ensureOwnerRemoved() => $_ensure(27);
+  StreamEvent_InviteReceived ensureInviteReceived() => $_ensure(27);
 
   @$pb.TagNumber(29)
-  StreamEvent_InviteReceived get inviteReceived => $_getN(28);
+  StreamEvent_InviteRejected get inviteRejected => $_getN(28);
   @$pb.TagNumber(29)
-  set inviteReceived(StreamEvent_InviteReceived v) { setField(29, v); }
+  set inviteRejected(StreamEvent_InviteRejected v) { setField(29, v); }
   @$pb.TagNumber(29)
-  $core.bool hasInviteReceived() => $_has(28);
+  $core.bool hasInviteRejected() => $_has(28);
   @$pb.TagNumber(29)
-  void clearInviteReceived() => clearField(29);
+  void clearInviteRejected() => clearField(29);
   @$pb.TagNumber(29)
-  StreamEvent_InviteReceived ensureInviteReceived() => $_ensure(28);
+  StreamEvent_InviteRejected ensureInviteRejected() => $_ensure(28);
 
   @$pb.TagNumber(30)
-  StreamEvent_InviteRejected get inviteRejected => $_getN(29);
+  StreamEvent_InviteCreated get inviteCreated => $_getN(29);
   @$pb.TagNumber(30)
-  set inviteRejected(StreamEvent_InviteRejected v) { setField(30, v); }
+  set inviteCreated(StreamEvent_InviteCreated v) { setField(30, v); }
   @$pb.TagNumber(30)
-  $core.bool hasInviteRejected() => $_has(29);
+  $core.bool hasInviteCreated() => $_has(29);
   @$pb.TagNumber(30)
-  void clearInviteRejected() => clearField(30);
+  void clearInviteCreated() => clearField(30);
   @$pb.TagNumber(30)
-  StreamEvent_InviteRejected ensureInviteRejected() => $_ensure(29);
+  StreamEvent_InviteCreated ensureInviteCreated() => $_ensure(29);
 
   @$pb.TagNumber(31)
-  StreamEvent_InviteCreated get inviteCreated => $_getN(30);
+  StreamEvent_InviteDeleted get inviteDeleted => $_getN(30);
   @$pb.TagNumber(31)
-  set inviteCreated(StreamEvent_InviteCreated v) { setField(31, v); }
+  set inviteDeleted(StreamEvent_InviteDeleted v) { setField(31, v); }
   @$pb.TagNumber(31)
-  $core.bool hasInviteCreated() => $_has(30);
+  $core.bool hasInviteDeleted() => $_has(30);
   @$pb.TagNumber(31)
-  void clearInviteCreated() => clearField(31);
+  void clearInviteDeleted() => clearField(31);
   @$pb.TagNumber(31)
-  StreamEvent_InviteCreated ensureInviteCreated() => $_ensure(30);
+  StreamEvent_InviteDeleted ensureInviteDeleted() => $_ensure(30);
 
   @$pb.TagNumber(32)
-  StreamEvent_InviteDeleted get inviteDeleted => $_getN(31);
+  StreamEvent_InviteUsed get inviteUsed => $_getN(31);
   @$pb.TagNumber(32)
-  set inviteDeleted(StreamEvent_InviteDeleted v) { setField(32, v); }
+  set inviteUsed(StreamEvent_InviteUsed v) { setField(32, v); }
   @$pb.TagNumber(32)
-  $core.bool hasInviteDeleted() => $_has(31);
+  $core.bool hasInviteUsed() => $_has(31);
   @$pb.TagNumber(32)
-  void clearInviteDeleted() => clearField(32);
+  void clearInviteUsed() => clearField(32);
   @$pb.TagNumber(32)
-  StreamEvent_InviteDeleted ensureInviteDeleted() => $_ensure(31);
+  StreamEvent_InviteUsed ensureInviteUsed() => $_ensure(31);
 
   @$pb.TagNumber(33)
-  StreamEvent_InviteUsed get inviteUsed => $_getN(32);
+  StreamEvent_NewReactionAdded get newReactionAdded => $_getN(32);
   @$pb.TagNumber(33)
-  set inviteUsed(StreamEvent_InviteUsed v) { setField(33, v); }
+  set newReactionAdded(StreamEvent_NewReactionAdded v) { setField(33, v); }
   @$pb.TagNumber(33)
-  $core.bool hasInviteUsed() => $_has(32);
+  $core.bool hasNewReactionAdded() => $_has(32);
   @$pb.TagNumber(33)
-  void clearInviteUsed() => clearField(33);
+  void clearNewReactionAdded() => clearField(33);
   @$pb.TagNumber(33)
-  StreamEvent_InviteUsed ensureInviteUsed() => $_ensure(32);
+  StreamEvent_NewReactionAdded ensureNewReactionAdded() => $_ensure(32);
+
+  @$pb.TagNumber(34)
+  StreamEvent_ReactionAdded get reactionAdded => $_getN(33);
+  @$pb.TagNumber(34)
+  set reactionAdded(StreamEvent_ReactionAdded v) { setField(34, v); }
+  @$pb.TagNumber(34)
+  $core.bool hasReactionAdded() => $_has(33);
+  @$pb.TagNumber(34)
+  void clearReactionAdded() => clearField(34);
+  @$pb.TagNumber(34)
+  StreamEvent_ReactionAdded ensureReactionAdded() => $_ensure(33);
+
+  @$pb.TagNumber(35)
+  StreamEvent_ReactionRemoved get reactionRemoved => $_getN(34);
+  @$pb.TagNumber(35)
+  set reactionRemoved(StreamEvent_ReactionRemoved v) { setField(35, v); }
+  @$pb.TagNumber(35)
+  $core.bool hasReactionRemoved() => $_has(34);
+  @$pb.TagNumber(35)
+  void clearReactionRemoved() => clearField(35);
+  @$pb.TagNumber(35)
+  StreamEvent_ReactionRemoved ensureReactionRemoved() => $_ensure(34);
+
+  @$pb.TagNumber(36)
+  StreamEvent_PrivateChannelDeleted get privateChannelDeleted => $_getN(35);
+  @$pb.TagNumber(36)
+  set privateChannelDeleted(StreamEvent_PrivateChannelDeleted v) { setField(36, v); }
+  @$pb.TagNumber(36)
+  $core.bool hasPrivateChannelDeleted() => $_has(35);
+  @$pb.TagNumber(36)
+  void clearPrivateChannelDeleted() => clearField(36);
+  @$pb.TagNumber(36)
+  StreamEvent_PrivateChannelDeleted ensurePrivateChannelDeleted() => $_ensure(35);
+
+  @$pb.TagNumber(37)
+  StreamEvent_PrivateChannelAddedToList get privateChannelAddedToList => $_getN(36);
+  @$pb.TagNumber(37)
+  set privateChannelAddedToList(StreamEvent_PrivateChannelAddedToList v) { setField(37, v); }
+  @$pb.TagNumber(37)
+  $core.bool hasPrivateChannelAddedToList() => $_has(36);
+  @$pb.TagNumber(37)
+  void clearPrivateChannelAddedToList() => clearField(37);
+  @$pb.TagNumber(37)
+  StreamEvent_PrivateChannelAddedToList ensurePrivateChannelAddedToList() => $_ensure(36);
+
+  @$pb.TagNumber(38)
+  StreamEvent_PrivateChannelRemovedFromList get privateChannelRemovedFromList => $_getN(37);
+  @$pb.TagNumber(38)
+  set privateChannelRemovedFromList(StreamEvent_PrivateChannelRemovedFromList v) { setField(38, v); }
+  @$pb.TagNumber(38)
+  $core.bool hasPrivateChannelRemovedFromList() => $_has(37);
+  @$pb.TagNumber(38)
+  void clearPrivateChannelRemovedFromList() => clearField(38);
+  @$pb.TagNumber(38)
+  StreamEvent_PrivateChannelRemovedFromList ensurePrivateChannelRemovedFromList() => $_ensure(37);
+
+  @$pb.TagNumber(39)
+  StreamEvent_UserJoinedPrivateChannel get userJoinedPrivateChannel => $_getN(38);
+  @$pb.TagNumber(39)
+  set userJoinedPrivateChannel(StreamEvent_UserJoinedPrivateChannel v) { setField(39, v); }
+  @$pb.TagNumber(39)
+  $core.bool hasUserJoinedPrivateChannel() => $_has(38);
+  @$pb.TagNumber(39)
+  void clearUserJoinedPrivateChannel() => clearField(39);
+  @$pb.TagNumber(39)
+  StreamEvent_UserJoinedPrivateChannel ensureUserJoinedPrivateChannel() => $_ensure(38);
+
+  @$pb.TagNumber(40)
+  StreamEvent_UserLeftPrivateChannel get userLeftPrivateChannel => $_getN(39);
+  @$pb.TagNumber(40)
+  set userLeftPrivateChannel(StreamEvent_UserLeftPrivateChannel v) { setField(40, v); }
+  @$pb.TagNumber(40)
+  $core.bool hasUserLeftPrivateChannel() => $_has(39);
+  @$pb.TagNumber(40)
+  void clearUserLeftPrivateChannel() => clearField(40);
+  @$pb.TagNumber(40)
+  StreamEvent_UserLeftPrivateChannel ensureUserLeftPrivateChannel() => $_ensure(39);
 }
 

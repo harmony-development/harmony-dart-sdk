@@ -24,6 +24,10 @@ class ProfileServiceApi {
     var emptyResponse = $1.UpdateProfileResponse();
     return _client.invoke<$1.UpdateProfileResponse>(ctx, 'ProfileService', 'UpdateProfile', request, emptyResponse);
   }
+  $async.Future<$1.UpdateStatusResponse> updateStatus($pb.ClientContext? ctx, $1.UpdateStatusRequest request) {
+    var emptyResponse = $1.UpdateStatusResponse();
+    return _client.invoke<$1.UpdateStatusResponse>(ctx, 'ProfileService', 'UpdateStatus', request, emptyResponse);
+  }
   $async.Future<$1.GetAppDataResponse> getAppData($pb.ClientContext? ctx, $1.GetAppDataRequest request) {
     var emptyResponse = $1.GetAppDataResponse();
     return _client.invoke<$1.GetAppDataResponse>(ctx, 'ProfileService', 'GetAppData', request, emptyResponse);

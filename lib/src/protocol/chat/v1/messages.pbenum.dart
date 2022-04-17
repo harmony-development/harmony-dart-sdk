@@ -9,6 +9,21 @@
 import 'dart:core' as $core;
 import 'package:protobuf/protobuf.dart' as $pb;
 
+class ReactionKind extends $pb.ProtobufEnum {
+  static const ReactionKind REACTION_KIND_IMAGE_UNSPECIFIED = ReactionKind._(0, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'REACTION_KIND_IMAGE_UNSPECIFIED');
+  static const ReactionKind REACTION_KIND_TEXT = ReactionKind._(1, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'REACTION_KIND_TEXT');
+
+  static const $core.List<ReactionKind> values = <ReactionKind> [
+    REACTION_KIND_IMAGE_UNSPECIFIED,
+    REACTION_KIND_TEXT,
+  ];
+
+  static final $core.Map<$core.int, ReactionKind> _byValue = $pb.ProtobufEnum.initByValue(values);
+  static ReactionKind? valueOf($core.int value) => _byValue[value];
+
+  const ReactionKind._($core.int v, $core.String n) : super(v, n);
+}
+
 class Action_Type extends $pb.ProtobufEnum {
   static const Action_Type TYPE_NORMAL_UNSPECIFIED = Action_Type._(0, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'TYPE_NORMAL_UNSPECIFIED');
   static const Action_Type TYPE_PRIMARY = Action_Type._(1, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'TYPE_PRIMARY');
@@ -24,23 +39,6 @@ class Action_Type extends $pb.ProtobufEnum {
   static Action_Type? valueOf($core.int value) => _byValue[value];
 
   const Action_Type._($core.int v, $core.String n) : super(v, n);
-}
-
-class Embed_EmbedField_Presentation extends $pb.ProtobufEnum {
-  static const Embed_EmbedField_Presentation PRESENTATION_DATA_UNSPECIFIED = Embed_EmbedField_Presentation._(0, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'PRESENTATION_DATA_UNSPECIFIED');
-  static const Embed_EmbedField_Presentation PRESENTATION_CAPTIONED_IMAGE = Embed_EmbedField_Presentation._(1, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'PRESENTATION_CAPTIONED_IMAGE');
-  static const Embed_EmbedField_Presentation PRESENTATION_ROW = Embed_EmbedField_Presentation._(2, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'PRESENTATION_ROW');
-
-  static const $core.List<Embed_EmbedField_Presentation> values = <Embed_EmbedField_Presentation> [
-    PRESENTATION_DATA_UNSPECIFIED,
-    PRESENTATION_CAPTIONED_IMAGE,
-    PRESENTATION_ROW,
-  ];
-
-  static final $core.Map<$core.int, Embed_EmbedField_Presentation> _byValue = $pb.ProtobufEnum.initByValue(values);
-  static Embed_EmbedField_Presentation? valueOf($core.int value) => _byValue[value];
-
-  const Embed_EmbedField_Presentation._($core.int v, $core.String n) : super(v, n);
 }
 
 class Format_Color_Kind extends $pb.ProtobufEnum {

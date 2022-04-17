@@ -14,11 +14,280 @@ import 'types.pbenum.dart';
 
 export 'types.pbenum.dart';
 
+class UserStatus_Action extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'UserStatus.Action', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.profile.v1'), createEmptyInstance: create)
+    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'url')
+    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'name')
+    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'icon')
+    ..hasRequiredFields = false
+  ;
+
+  UserStatus_Action._() : super();
+  factory UserStatus_Action({
+    $core.String? url,
+    $core.String? name,
+    $core.String? icon,
+  }) {
+    final _result = create();
+    if (url != null) {
+      _result.url = url;
+    }
+    if (name != null) {
+      _result.name = name;
+    }
+    if (icon != null) {
+      _result.icon = icon;
+    }
+    return _result;
+  }
+  factory UserStatus_Action.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory UserStatus_Action.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  UserStatus_Action clone() => UserStatus_Action()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  UserStatus_Action copyWith(void Function(UserStatus_Action) updates) => super.copyWith((message) => updates(message as UserStatus_Action)) as UserStatus_Action; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static UserStatus_Action create() => UserStatus_Action._();
+  UserStatus_Action createEmptyInstance() => create();
+  static $pb.PbList<UserStatus_Action> createRepeated() => $pb.PbList<UserStatus_Action>();
+  @$core.pragma('dart2js:noInline')
+  static UserStatus_Action getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UserStatus_Action>(create);
+  static UserStatus_Action? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get url => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set url($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasUrl() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearUrl() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get name => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set name($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasName() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearName() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get icon => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set icon($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasIcon() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearIcon() => clearField(3);
+}
+
+class UserStatus_Activity extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'UserStatus.Activity', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.profile.v1'), createEmptyInstance: create)
+    ..a<$fixnum.Int64>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'started', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
+    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'title')
+    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'details')
+    ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'image')
+    ..a<$core.int>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'color', $pb.PbFieldType.OU3)
+    ..pc<UserStatus_Action>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'actions', $pb.PbFieldType.PM, subBuilder: UserStatus_Action.create)
+    ..hasRequiredFields = false
+  ;
+
+  UserStatus_Activity._() : super();
+  factory UserStatus_Activity({
+    $fixnum.Int64? started,
+    $core.String? title,
+    $core.String? details,
+    $core.String? image,
+    $core.int? color,
+    $core.Iterable<UserStatus_Action>? actions,
+  }) {
+    final _result = create();
+    if (started != null) {
+      _result.started = started;
+    }
+    if (title != null) {
+      _result.title = title;
+    }
+    if (details != null) {
+      _result.details = details;
+    }
+    if (image != null) {
+      _result.image = image;
+    }
+    if (color != null) {
+      _result.color = color;
+    }
+    if (actions != null) {
+      _result.actions.addAll(actions);
+    }
+    return _result;
+  }
+  factory UserStatus_Activity.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory UserStatus_Activity.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  UserStatus_Activity clone() => UserStatus_Activity()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  UserStatus_Activity copyWith(void Function(UserStatus_Activity) updates) => super.copyWith((message) => updates(message as UserStatus_Activity)) as UserStatus_Activity; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static UserStatus_Activity create() => UserStatus_Activity._();
+  UserStatus_Activity createEmptyInstance() => create();
+  static $pb.PbList<UserStatus_Activity> createRepeated() => $pb.PbList<UserStatus_Activity>();
+  @$core.pragma('dart2js:noInline')
+  static UserStatus_Activity getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UserStatus_Activity>(create);
+  static UserStatus_Activity? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $fixnum.Int64 get started => $_getI64(0);
+  @$pb.TagNumber(1)
+  set started($fixnum.Int64 v) { $_setInt64(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasStarted() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearStarted() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get title => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set title($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasTitle() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearTitle() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get details => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set details($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasDetails() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearDetails() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get image => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set image($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasImage() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearImage() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.int get color => $_getIZ(4);
+  @$pb.TagNumber(5)
+  set color($core.int v) { $_setUnsignedInt32(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasColor() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearColor() => clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.List<UserStatus_Action> get actions => $_getList(5);
+}
+
+class UserStatus extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'UserStatus', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.profile.v1'), createEmptyInstance: create)
+    ..e<UserStatus_Kind>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'kind', $pb.PbFieldType.OE, defaultOrMaker: UserStatus_Kind.KIND_OFFLINE_UNSPECIFIED, valueOf: UserStatus_Kind.valueOf, enumValues: UserStatus_Kind.values)
+    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'message')
+    ..pc<UserStatus_Activity>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'activities', $pb.PbFieldType.PM, subBuilder: UserStatus_Activity.create)
+    ..e<UserStatus_Platform>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'platform', $pb.PbFieldType.OE, defaultOrMaker: UserStatus_Platform.PLATFORM_DESKTOP_UNSPECIFIED, valueOf: UserStatus_Platform.valueOf, enumValues: UserStatus_Platform.values)
+    ..hasRequiredFields = false
+  ;
+
+  UserStatus._() : super();
+  factory UserStatus({
+    UserStatus_Kind? kind,
+    $core.String? message,
+    $core.Iterable<UserStatus_Activity>? activities,
+    UserStatus_Platform? platform,
+  }) {
+    final _result = create();
+    if (kind != null) {
+      _result.kind = kind;
+    }
+    if (message != null) {
+      _result.message = message;
+    }
+    if (activities != null) {
+      _result.activities.addAll(activities);
+    }
+    if (platform != null) {
+      _result.platform = platform;
+    }
+    return _result;
+  }
+  factory UserStatus.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory UserStatus.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  UserStatus clone() => UserStatus()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  UserStatus copyWith(void Function(UserStatus) updates) => super.copyWith((message) => updates(message as UserStatus)) as UserStatus; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static UserStatus create() => UserStatus._();
+  UserStatus createEmptyInstance() => create();
+  static $pb.PbList<UserStatus> createRepeated() => $pb.PbList<UserStatus>();
+  @$core.pragma('dart2js:noInline')
+  static UserStatus getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UserStatus>(create);
+  static UserStatus? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  UserStatus_Kind get kind => $_getN(0);
+  @$pb.TagNumber(1)
+  set kind(UserStatus_Kind v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasKind() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearKind() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get message => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set message($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasMessage() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearMessage() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.List<UserStatus_Activity> get activities => $_getList(2);
+
+  @$pb.TagNumber(4)
+  UserStatus_Platform get platform => $_getN(3);
+  @$pb.TagNumber(4)
+  set platform(UserStatus_Platform v) { setField(4, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasPlatform() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearPlatform() => clearField(4);
+}
+
 class Profile extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Profile', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.profile.v1'), createEmptyInstance: create)
     ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'userName')
     ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'userAvatar')
-    ..e<UserStatus>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'userStatus', $pb.PbFieldType.OE, defaultOrMaker: UserStatus.USER_STATUS_OFFLINE_UNSPECIFIED, valueOf: UserStatus.valueOf, enumValues: UserStatus.values)
+    ..aOM<UserStatus>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'userStatus', subBuilder: UserStatus.create)
     ..e<AccountKind>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'accountKind', $pb.PbFieldType.OE, defaultOrMaker: AccountKind.ACCOUNT_KIND_FULL_UNSPECIFIED, valueOf: AccountKind.valueOf, enumValues: AccountKind.values)
     ..hasRequiredFields = false
   ;
@@ -92,6 +361,8 @@ class Profile extends $pb.GeneratedMessage {
   $core.bool hasUserStatus() => $_has(2);
   @$pb.TagNumber(3)
   void clearUserStatus() => clearField(3);
+  @$pb.TagNumber(3)
+  UserStatus ensureUserStatus() => $_ensure(2);
 
   @$pb.TagNumber(4)
   AccountKind get accountKind => $_getN(3);
@@ -189,7 +460,6 @@ class UpdateProfileRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'UpdateProfileRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.profile.v1'), createEmptyInstance: create)
     ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'newUserName')
     ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'newUserAvatar')
-    ..e<UserStatus>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'newUserStatus', $pb.PbFieldType.OE, defaultOrMaker: UserStatus.USER_STATUS_OFFLINE_UNSPECIFIED, valueOf: UserStatus.valueOf, enumValues: UserStatus.values)
     ..hasRequiredFields = false
   ;
 
@@ -197,7 +467,6 @@ class UpdateProfileRequest extends $pb.GeneratedMessage {
   factory UpdateProfileRequest({
     $core.String? newUserName,
     $core.String? newUserAvatar,
-    UserStatus? newUserStatus,
   }) {
     final _result = create();
     if (newUserName != null) {
@@ -205,9 +474,6 @@ class UpdateProfileRequest extends $pb.GeneratedMessage {
     }
     if (newUserAvatar != null) {
       _result.newUserAvatar = newUserAvatar;
-    }
-    if (newUserStatus != null) {
-      _result.newUserStatus = newUserStatus;
     }
     return _result;
   }
@@ -249,15 +515,6 @@ class UpdateProfileRequest extends $pb.GeneratedMessage {
   $core.bool hasNewUserAvatar() => $_has(1);
   @$pb.TagNumber(2)
   void clearNewUserAvatar() => clearField(2);
-
-  @$pb.TagNumber(3)
-  UserStatus get newUserStatus => $_getN(2);
-  @$pb.TagNumber(3)
-  set newUserStatus(UserStatus v) { setField(3, v); }
-  @$pb.TagNumber(3)
-  $core.bool hasNewUserStatus() => $_has(2);
-  @$pb.TagNumber(3)
-  void clearNewUserStatus() => clearField(3);
 }
 
 class UpdateProfileResponse extends $pb.GeneratedMessage {
@@ -287,6 +544,84 @@ class UpdateProfileResponse extends $pb.GeneratedMessage {
   @$core.pragma('dart2js:noInline')
   static UpdateProfileResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpdateProfileResponse>(create);
   static UpdateProfileResponse? _defaultInstance;
+}
+
+class UpdateStatusRequest extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'UpdateStatusRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.profile.v1'), createEmptyInstance: create)
+    ..aOM<UserStatus>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'newStatus', subBuilder: UserStatus.create)
+    ..hasRequiredFields = false
+  ;
+
+  UpdateStatusRequest._() : super();
+  factory UpdateStatusRequest({
+    UserStatus? newStatus,
+  }) {
+    final _result = create();
+    if (newStatus != null) {
+      _result.newStatus = newStatus;
+    }
+    return _result;
+  }
+  factory UpdateStatusRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory UpdateStatusRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  UpdateStatusRequest clone() => UpdateStatusRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  UpdateStatusRequest copyWith(void Function(UpdateStatusRequest) updates) => super.copyWith((message) => updates(message as UpdateStatusRequest)) as UpdateStatusRequest; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static UpdateStatusRequest create() => UpdateStatusRequest._();
+  UpdateStatusRequest createEmptyInstance() => create();
+  static $pb.PbList<UpdateStatusRequest> createRepeated() => $pb.PbList<UpdateStatusRequest>();
+  @$core.pragma('dart2js:noInline')
+  static UpdateStatusRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpdateStatusRequest>(create);
+  static UpdateStatusRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  UserStatus get newStatus => $_getN(0);
+  @$pb.TagNumber(1)
+  set newStatus(UserStatus v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasNewStatus() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearNewStatus() => clearField(1);
+  @$pb.TagNumber(1)
+  UserStatus ensureNewStatus() => $_ensure(0);
+}
+
+class UpdateStatusResponse extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'UpdateStatusResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.profile.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  UpdateStatusResponse._() : super();
+  factory UpdateStatusResponse() => create();
+  factory UpdateStatusResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory UpdateStatusResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  UpdateStatusResponse clone() => UpdateStatusResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  UpdateStatusResponse copyWith(void Function(UpdateStatusResponse) updates) => super.copyWith((message) => updates(message as UpdateStatusResponse)) as UpdateStatusResponse; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static UpdateStatusResponse create() => UpdateStatusResponse._();
+  UpdateStatusResponse createEmptyInstance() => create();
+  static $pb.PbList<UpdateStatusResponse> createRepeated() => $pb.PbList<UpdateStatusResponse>();
+  @$core.pragma('dart2js:noInline')
+  static UpdateStatusResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpdateStatusResponse>(create);
+  static UpdateStatusResponse? _defaultInstance;
 }
 
 class GetAppDataRequest extends $pb.GeneratedMessage {

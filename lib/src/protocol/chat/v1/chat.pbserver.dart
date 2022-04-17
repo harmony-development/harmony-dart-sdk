@@ -11,22 +11,28 @@ import 'package:protobuf/protobuf.dart' as $pb;
 
 import 'dart:core' as $core;
 import 'guilds.pb.dart' as $7;
+import 'private_channel.pb.dart' as $8;
 import 'channels.pb.dart' as $6;
 import 'messages.pb.dart' as $4;
 import 'permissions.pb.dart' as $5;
-import 'stream.pb.dart' as $8;
+import 'stream.pb.dart' as $9;
 import 'chat.pbjson.dart';
 
 export 'chat.pb.dart';
 
 abstract class ChatServiceBase extends $pb.GeneratedService {
   $async.Future<$7.CreateGuildResponse> createGuild($pb.ServerContext ctx, $7.CreateGuildRequest request);
-  $async.Future<$7.CreateRoomResponse> createRoom($pb.ServerContext ctx, $7.CreateRoomRequest request);
-  $async.Future<$7.CreateDirectMessageResponse> createDirectMessage($pb.ServerContext ctx, $7.CreateDirectMessageRequest request);
-  $async.Future<$7.UpgradeRoomToGuildResponse> upgradeRoomToGuild($pb.ServerContext ctx, $7.UpgradeRoomToGuildRequest request);
+  $async.Future<$8.CreatePrivateChannelResponse> createPrivateChannel($pb.ServerContext ctx, $8.CreatePrivateChannelRequest request);
+  $async.Future<$8.UpdatePrivateChannelMembersResponse> updatePrivateChannelMembers($pb.ServerContext ctx, $8.UpdatePrivateChannelMembersRequest request);
+  $async.Future<$8.UpdatePrivateChannelNameResponse> updatePrivateChannelName($pb.ServerContext ctx, $8.UpdatePrivateChannelNameRequest request);
+  $async.Future<$8.DeletePrivateChannelResponse> deletePrivateChannel($pb.ServerContext ctx, $8.DeletePrivateChannelRequest request);
+  $async.Future<$8.JoinPrivateChannelResponse> joinPrivateChannel($pb.ServerContext ctx, $8.JoinPrivateChannelRequest request);
+  $async.Future<$8.LeavePrivateChannelResponse> leavePrivateChannel($pb.ServerContext ctx, $8.LeavePrivateChannelRequest request);
   $async.Future<$7.CreateInviteResponse> createInvite($pb.ServerContext ctx, $7.CreateInviteRequest request);
   $async.Future<$6.CreateChannelResponse> createChannel($pb.ServerContext ctx, $6.CreateChannelRequest request);
   $async.Future<$7.GetGuildListResponse> getGuildList($pb.ServerContext ctx, $7.GetGuildListRequest request);
+  $async.Future<$8.GetPrivateChannelListResponse> getPrivateChannelList($pb.ServerContext ctx, $8.GetPrivateChannelListRequest request);
+  $async.Future<$8.GetPrivateChannelResponse> getPrivateChannel($pb.ServerContext ctx, $8.GetPrivateChannelRequest request);
   $async.Future<$7.InviteUserToGuildResponse> inviteUserToGuild($pb.ServerContext ctx, $7.InviteUserToGuildRequest request);
   $async.Future<$7.GetPendingInvitesResponse> getPendingInvites($pb.ServerContext ctx, $7.GetPendingInvitesRequest request);
   $async.Future<$7.RejectPendingInviteResponse> rejectPendingInvite($pb.ServerContext ctx, $7.RejectPendingInviteRequest request);
@@ -41,7 +47,7 @@ abstract class ChatServiceBase extends $pb.GeneratedService {
   $async.Future<$6.UpdateChannelInformationResponse> updateChannelInformation($pb.ServerContext ctx, $6.UpdateChannelInformationRequest request);
   $async.Future<$6.UpdateChannelOrderResponse> updateChannelOrder($pb.ServerContext ctx, $6.UpdateChannelOrderRequest request);
   $async.Future<$6.UpdateAllChannelOrderResponse> updateAllChannelOrder($pb.ServerContext ctx, $6.UpdateAllChannelOrderRequest request);
-  $async.Future<$4.UpdateMessageTextResponse> updateMessageText($pb.ServerContext ctx, $4.UpdateMessageTextRequest request);
+  $async.Future<$4.UpdateMessageContentResponse> updateMessageContent($pb.ServerContext ctx, $4.UpdateMessageContentRequest request);
   $async.Future<$7.DeleteGuildResponse> deleteGuild($pb.ServerContext ctx, $7.DeleteGuildRequest request);
   $async.Future<$7.DeleteInviteResponse> deleteInvite($pb.ServerContext ctx, $7.DeleteInviteRequest request);
   $async.Future<$6.DeleteChannelResponse> deleteChannel($pb.ServerContext ctx, $6.DeleteChannelRequest request);
@@ -60,7 +66,7 @@ abstract class ChatServiceBase extends $pb.GeneratedService {
   $async.Future<$5.DeleteGuildRoleResponse> deleteGuildRole($pb.ServerContext ctx, $5.DeleteGuildRoleRequest request);
   $async.Future<$5.ManageUserRolesResponse> manageUserRoles($pb.ServerContext ctx, $5.ManageUserRolesRequest request);
   $async.Future<$5.GetUserRolesResponse> getUserRoles($pb.ServerContext ctx, $5.GetUserRolesRequest request);
-  $async.Future<$6.TypingResponse> typing($pb.ServerContext ctx, $6.TypingRequest request);
+  $async.Future<$4.TypingResponse> typing($pb.ServerContext ctx, $4.TypingRequest request);
   $async.Future<$7.PreviewGuildResponse> previewGuild($pb.ServerContext ctx, $7.PreviewGuildRequest request);
   $async.Future<$7.GetBannedUsersResponse> getBannedUsers($pb.ServerContext ctx, $7.GetBannedUsersRequest request);
   $async.Future<$7.BanUserResponse> banUser($pb.ServerContext ctx, $7.BanUserRequest request);
@@ -69,7 +75,7 @@ abstract class ChatServiceBase extends $pb.GeneratedService {
   $async.Future<$4.GetPinnedMessagesResponse> getPinnedMessages($pb.ServerContext ctx, $4.GetPinnedMessagesRequest request);
   $async.Future<$4.PinMessageResponse> pinMessage($pb.ServerContext ctx, $4.PinMessageRequest request);
   $async.Future<$4.UnpinMessageResponse> unpinMessage($pb.ServerContext ctx, $4.UnpinMessageRequest request);
-  $async.Future<$8.StreamEventsResponse> streamEvents($pb.ServerContext ctx, $8.StreamEventsRequest request);
+  $async.Future<$9.StreamEventsResponse> streamEvents($pb.ServerContext ctx, $9.StreamEventsRequest request);
   $async.Future<$4.AddReactionResponse> addReaction($pb.ServerContext ctx, $4.AddReactionRequest request);
   $async.Future<$4.RemoveReactionResponse> removeReaction($pb.ServerContext ctx, $4.RemoveReactionRequest request);
   $async.Future<$7.GrantOwnershipResponse> grantOwnership($pb.ServerContext ctx, $7.GrantOwnershipRequest request);
@@ -78,12 +84,17 @@ abstract class ChatServiceBase extends $pb.GeneratedService {
   $pb.GeneratedMessage createRequest($core.String method) {
     switch (method) {
       case 'CreateGuild': return $7.CreateGuildRequest();
-      case 'CreateRoom': return $7.CreateRoomRequest();
-      case 'CreateDirectMessage': return $7.CreateDirectMessageRequest();
-      case 'UpgradeRoomToGuild': return $7.UpgradeRoomToGuildRequest();
+      case 'CreatePrivateChannel': return $8.CreatePrivateChannelRequest();
+      case 'UpdatePrivateChannelMembers': return $8.UpdatePrivateChannelMembersRequest();
+      case 'UpdatePrivateChannelName': return $8.UpdatePrivateChannelNameRequest();
+      case 'DeletePrivateChannel': return $8.DeletePrivateChannelRequest();
+      case 'JoinPrivateChannel': return $8.JoinPrivateChannelRequest();
+      case 'LeavePrivateChannel': return $8.LeavePrivateChannelRequest();
       case 'CreateInvite': return $7.CreateInviteRequest();
       case 'CreateChannel': return $6.CreateChannelRequest();
       case 'GetGuildList': return $7.GetGuildListRequest();
+      case 'GetPrivateChannelList': return $8.GetPrivateChannelListRequest();
+      case 'GetPrivateChannel': return $8.GetPrivateChannelRequest();
       case 'InviteUserToGuild': return $7.InviteUserToGuildRequest();
       case 'GetPendingInvites': return $7.GetPendingInvitesRequest();
       case 'RejectPendingInvite': return $7.RejectPendingInviteRequest();
@@ -98,7 +109,7 @@ abstract class ChatServiceBase extends $pb.GeneratedService {
       case 'UpdateChannelInformation': return $6.UpdateChannelInformationRequest();
       case 'UpdateChannelOrder': return $6.UpdateChannelOrderRequest();
       case 'UpdateAllChannelOrder': return $6.UpdateAllChannelOrderRequest();
-      case 'UpdateMessageText': return $4.UpdateMessageTextRequest();
+      case 'UpdateMessageContent': return $4.UpdateMessageContentRequest();
       case 'DeleteGuild': return $7.DeleteGuildRequest();
       case 'DeleteInvite': return $7.DeleteInviteRequest();
       case 'DeleteChannel': return $6.DeleteChannelRequest();
@@ -117,7 +128,7 @@ abstract class ChatServiceBase extends $pb.GeneratedService {
       case 'DeleteGuildRole': return $5.DeleteGuildRoleRequest();
       case 'ManageUserRoles': return $5.ManageUserRolesRequest();
       case 'GetUserRoles': return $5.GetUserRolesRequest();
-      case 'Typing': return $6.TypingRequest();
+      case 'Typing': return $4.TypingRequest();
       case 'PreviewGuild': return $7.PreviewGuildRequest();
       case 'GetBannedUsers': return $7.GetBannedUsersRequest();
       case 'BanUser': return $7.BanUserRequest();
@@ -126,7 +137,7 @@ abstract class ChatServiceBase extends $pb.GeneratedService {
       case 'GetPinnedMessages': return $4.GetPinnedMessagesRequest();
       case 'PinMessage': return $4.PinMessageRequest();
       case 'UnpinMessage': return $4.UnpinMessageRequest();
-      case 'StreamEvents': return $8.StreamEventsRequest();
+      case 'StreamEvents': return $9.StreamEventsRequest();
       case 'AddReaction': return $4.AddReactionRequest();
       case 'RemoveReaction': return $4.RemoveReactionRequest();
       case 'GrantOwnership': return $7.GrantOwnershipRequest();
@@ -138,12 +149,17 @@ abstract class ChatServiceBase extends $pb.GeneratedService {
   $async.Future<$pb.GeneratedMessage> handleCall($pb.ServerContext ctx, $core.String method, $pb.GeneratedMessage request) {
     switch (method) {
       case 'CreateGuild': return this.createGuild(ctx, request as $7.CreateGuildRequest);
-      case 'CreateRoom': return this.createRoom(ctx, request as $7.CreateRoomRequest);
-      case 'CreateDirectMessage': return this.createDirectMessage(ctx, request as $7.CreateDirectMessageRequest);
-      case 'UpgradeRoomToGuild': return this.upgradeRoomToGuild(ctx, request as $7.UpgradeRoomToGuildRequest);
+      case 'CreatePrivateChannel': return this.createPrivateChannel(ctx, request as $8.CreatePrivateChannelRequest);
+      case 'UpdatePrivateChannelMembers': return this.updatePrivateChannelMembers(ctx, request as $8.UpdatePrivateChannelMembersRequest);
+      case 'UpdatePrivateChannelName': return this.updatePrivateChannelName(ctx, request as $8.UpdatePrivateChannelNameRequest);
+      case 'DeletePrivateChannel': return this.deletePrivateChannel(ctx, request as $8.DeletePrivateChannelRequest);
+      case 'JoinPrivateChannel': return this.joinPrivateChannel(ctx, request as $8.JoinPrivateChannelRequest);
+      case 'LeavePrivateChannel': return this.leavePrivateChannel(ctx, request as $8.LeavePrivateChannelRequest);
       case 'CreateInvite': return this.createInvite(ctx, request as $7.CreateInviteRequest);
       case 'CreateChannel': return this.createChannel(ctx, request as $6.CreateChannelRequest);
       case 'GetGuildList': return this.getGuildList(ctx, request as $7.GetGuildListRequest);
+      case 'GetPrivateChannelList': return this.getPrivateChannelList(ctx, request as $8.GetPrivateChannelListRequest);
+      case 'GetPrivateChannel': return this.getPrivateChannel(ctx, request as $8.GetPrivateChannelRequest);
       case 'InviteUserToGuild': return this.inviteUserToGuild(ctx, request as $7.InviteUserToGuildRequest);
       case 'GetPendingInvites': return this.getPendingInvites(ctx, request as $7.GetPendingInvitesRequest);
       case 'RejectPendingInvite': return this.rejectPendingInvite(ctx, request as $7.RejectPendingInviteRequest);
@@ -158,7 +174,7 @@ abstract class ChatServiceBase extends $pb.GeneratedService {
       case 'UpdateChannelInformation': return this.updateChannelInformation(ctx, request as $6.UpdateChannelInformationRequest);
       case 'UpdateChannelOrder': return this.updateChannelOrder(ctx, request as $6.UpdateChannelOrderRequest);
       case 'UpdateAllChannelOrder': return this.updateAllChannelOrder(ctx, request as $6.UpdateAllChannelOrderRequest);
-      case 'UpdateMessageText': return this.updateMessageText(ctx, request as $4.UpdateMessageTextRequest);
+      case 'UpdateMessageContent': return this.updateMessageContent(ctx, request as $4.UpdateMessageContentRequest);
       case 'DeleteGuild': return this.deleteGuild(ctx, request as $7.DeleteGuildRequest);
       case 'DeleteInvite': return this.deleteInvite(ctx, request as $7.DeleteInviteRequest);
       case 'DeleteChannel': return this.deleteChannel(ctx, request as $6.DeleteChannelRequest);
@@ -177,7 +193,7 @@ abstract class ChatServiceBase extends $pb.GeneratedService {
       case 'DeleteGuildRole': return this.deleteGuildRole(ctx, request as $5.DeleteGuildRoleRequest);
       case 'ManageUserRoles': return this.manageUserRoles(ctx, request as $5.ManageUserRolesRequest);
       case 'GetUserRoles': return this.getUserRoles(ctx, request as $5.GetUserRolesRequest);
-      case 'Typing': return this.typing(ctx, request as $6.TypingRequest);
+      case 'Typing': return this.typing(ctx, request as $4.TypingRequest);
       case 'PreviewGuild': return this.previewGuild(ctx, request as $7.PreviewGuildRequest);
       case 'GetBannedUsers': return this.getBannedUsers(ctx, request as $7.GetBannedUsersRequest);
       case 'BanUser': return this.banUser(ctx, request as $7.BanUserRequest);
@@ -186,7 +202,7 @@ abstract class ChatServiceBase extends $pb.GeneratedService {
       case 'GetPinnedMessages': return this.getPinnedMessages(ctx, request as $4.GetPinnedMessagesRequest);
       case 'PinMessage': return this.pinMessage(ctx, request as $4.PinMessageRequest);
       case 'UnpinMessage': return this.unpinMessage(ctx, request as $4.UnpinMessageRequest);
-      case 'StreamEvents': return this.streamEvents(ctx, request as $8.StreamEventsRequest);
+      case 'StreamEvents': return this.streamEvents(ctx, request as $9.StreamEventsRequest);
       case 'AddReaction': return this.addReaction(ctx, request as $4.AddReactionRequest);
       case 'RemoveReaction': return this.removeReaction(ctx, request as $4.RemoveReactionRequest);
       case 'GrantOwnership': return this.grantOwnership(ctx, request as $7.GrantOwnershipRequest);

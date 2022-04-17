@@ -48,3 +48,24 @@ const AppDataOverrides$json = const {
 
 /// Descriptor for `AppDataOverrides`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List appDataOverridesDescriptor = $convert.base64Decode('ChBBcHBEYXRhT3ZlcnJpZGVzEkIKCW92ZXJyaWRlcxgBIAMoCzIkLnByb3RvY29sLnByb2ZpbGUudjEuUHJvZmlsZU92ZXJyaWRlUglvdmVycmlkZXM=');
+@$core.Deprecated('Use appDataUserNotesDescriptor instead')
+const AppDataUserNotes$json = const {
+  '1': 'AppDataUserNotes',
+  '2': const [
+    const {'1': 'notes', '3': 1, '4': 3, '5': 11, '6': '.protocol.profile.v1.AppDataUserNotes.NotesEntry', '10': 'notes'},
+  ],
+  '3': const [AppDataUserNotes_NotesEntry$json],
+};
+
+@$core.Deprecated('Use appDataUserNotesDescriptor instead')
+const AppDataUserNotes_NotesEntry$json = const {
+  '1': 'NotesEntry',
+  '2': const [
+    const {'1': 'key', '3': 1, '4': 1, '5': 4, '10': 'key'},
+    const {'1': 'value', '3': 2, '4': 1, '5': 9, '10': 'value'},
+  ],
+  '7': const {'7': true},
+};
+
+/// Descriptor for `AppDataUserNotes`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List appDataUserNotesDescriptor = $convert.base64Decode('ChBBcHBEYXRhVXNlck5vdGVzEkYKBW5vdGVzGAEgAygLMjAucHJvdG9jb2wucHJvZmlsZS52MS5BcHBEYXRhVXNlck5vdGVzLk5vdGVzRW50cnlSBW5vdGVzGjgKCk5vdGVzRW50cnkSEAoDa2V5GAEgASgEUgNrZXkSFAoFdmFsdWUYAiABKAlSBXZhbHVlOgI4AQ==');

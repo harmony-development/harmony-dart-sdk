@@ -15,6 +15,7 @@ const $core.Map<$core.String, $core.dynamic> ProfileServiceBase$json = const {
   '2': const [
     const {'1': 'GetProfile', '2': '.protocol.profile.v1.GetProfileRequest', '3': '.protocol.profile.v1.GetProfileResponse', '4': const {}},
     const {'1': 'UpdateProfile', '2': '.protocol.profile.v1.UpdateProfileRequest', '3': '.protocol.profile.v1.UpdateProfileResponse', '4': const {}},
+    const {'1': 'UpdateStatus', '2': '.protocol.profile.v1.UpdateStatusRequest', '3': '.protocol.profile.v1.UpdateStatusResponse', '4': const {}},
     const {'1': 'GetAppData', '2': '.protocol.profile.v1.GetAppDataRequest', '3': '.protocol.profile.v1.GetAppDataResponse', '4': const {}},
     const {'1': 'SetAppData', '2': '.protocol.profile.v1.SetAppDataRequest', '3': '.protocol.profile.v1.SetAppDataResponse', '4': const {}},
   ],
@@ -26,8 +27,13 @@ const $core.Map<$core.String, $core.Map<$core.String, $core.dynamic>> ProfileSer
   '.protocol.profile.v1.GetProfileResponse': $1.GetProfileResponse$json,
   '.protocol.profile.v1.GetProfileResponse.ProfileEntry': $1.GetProfileResponse_ProfileEntry$json,
   '.protocol.profile.v1.Profile': $1.Profile$json,
+  '.protocol.profile.v1.UserStatus': $1.UserStatus$json,
+  '.protocol.profile.v1.UserStatus.Activity': $1.UserStatus_Activity$json,
+  '.protocol.profile.v1.UserStatus.Action': $1.UserStatus_Action$json,
   '.protocol.profile.v1.UpdateProfileRequest': $1.UpdateProfileRequest$json,
   '.protocol.profile.v1.UpdateProfileResponse': $1.UpdateProfileResponse$json,
+  '.protocol.profile.v1.UpdateStatusRequest': $1.UpdateStatusRequest$json,
+  '.protocol.profile.v1.UpdateStatusResponse': $1.UpdateStatusResponse$json,
   '.protocol.profile.v1.GetAppDataRequest': $1.GetAppDataRequest$json,
   '.protocol.profile.v1.GetAppDataResponse': $1.GetAppDataResponse$json,
   '.protocol.profile.v1.SetAppDataRequest': $1.SetAppDataRequest$json,
@@ -35,4 +41,4 @@ const $core.Map<$core.String, $core.Map<$core.String, $core.dynamic>> ProfileSer
 };
 
 /// Descriptor for `ProfileService`. Decode as a `google.protobuf.ServiceDescriptorProto`.
-final $typed_data.Uint8List profileServiceDescriptor = $convert.base64Decode('Cg5Qcm9maWxlU2VydmljZRJkCgpHZXRQcm9maWxlEiYucHJvdG9jb2wucHJvZmlsZS52MS5HZXRQcm9maWxlUmVxdWVzdBonLnByb3RvY29sLnByb2ZpbGUudjEuR2V0UHJvZmlsZVJlc3BvbnNlIgWaRAIIARJtCg1VcGRhdGVQcm9maWxlEikucHJvdG9jb2wucHJvZmlsZS52MS5VcGRhdGVQcm9maWxlUmVxdWVzdBoqLnByb3RvY29sLnByb2ZpbGUudjEuVXBkYXRlUHJvZmlsZVJlc3BvbnNlIgWaRAIIARJkCgpHZXRBcHBEYXRhEiYucHJvdG9jb2wucHJvZmlsZS52MS5HZXRBcHBEYXRhUmVxdWVzdBonLnByb3RvY29sLnByb2ZpbGUudjEuR2V0QXBwRGF0YVJlc3BvbnNlIgWaRAIIARJkCgpTZXRBcHBEYXRhEiYucHJvdG9jb2wucHJvZmlsZS52MS5TZXRBcHBEYXRhUmVxdWVzdBonLnByb3RvY29sLnByb2ZpbGUudjEuU2V0QXBwRGF0YVJlc3BvbnNlIgWaRAIIAQ==');
+final $typed_data.Uint8List profileServiceDescriptor = $convert.base64Decode('Cg5Qcm9maWxlU2VydmljZRJkCgpHZXRQcm9maWxlEiYucHJvdG9jb2wucHJvZmlsZS52MS5HZXRQcm9maWxlUmVxdWVzdBonLnByb3RvY29sLnByb2ZpbGUudjEuR2V0UHJvZmlsZVJlc3BvbnNlIgWaRAIIARJtCg1VcGRhdGVQcm9maWxlEikucHJvdG9jb2wucHJvZmlsZS52MS5VcGRhdGVQcm9maWxlUmVxdWVzdBoqLnByb3RvY29sLnByb2ZpbGUudjEuVXBkYXRlUHJvZmlsZVJlc3BvbnNlIgWaRAIIARJqCgxVcGRhdGVTdGF0dXMSKC5wcm90b2NvbC5wcm9maWxlLnYxLlVwZGF0ZVN0YXR1c1JlcXVlc3QaKS5wcm90b2NvbC5wcm9maWxlLnYxLlVwZGF0ZVN0YXR1c1Jlc3BvbnNlIgWaRAIIARJkCgpHZXRBcHBEYXRhEiYucHJvdG9jb2wucHJvZmlsZS52MS5HZXRBcHBEYXRhUmVxdWVzdBonLnByb3RvY29sLnByb2ZpbGUudjEuR2V0QXBwRGF0YVJlc3BvbnNlIgWaRAIIARJkCgpTZXRBcHBEYXRhEiYucHJvdG9jb2wucHJvZmlsZS52MS5TZXRBcHBEYXRhUmVxdWVzdBonLnByb3RvY29sLnByb2ZpbGUudjEuU2V0QXBwRGF0YVJlc3BvbnNlIgWaRAIIAQ==');

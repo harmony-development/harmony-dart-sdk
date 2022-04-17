@@ -14,216 +14,12 @@ import '../../harmonytypes/v1/types.pb.dart' as $0;
 
 export 'guilds.pbenum.dart';
 
-class GuildKind_Normal extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'GuildKind.Normal', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.chat.v1'), createEmptyInstance: create)
-    ..hasRequiredFields = false
-  ;
-
-  GuildKind_Normal._() : super();
-  factory GuildKind_Normal() => create();
-  factory GuildKind_Normal.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory GuildKind_Normal.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
-  GuildKind_Normal clone() => GuildKind_Normal()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
-  GuildKind_Normal copyWith(void Function(GuildKind_Normal) updates) => super.copyWith((message) => updates(message as GuildKind_Normal)) as GuildKind_Normal; // ignore: deprecated_member_use
-  $pb.BuilderInfo get info_ => _i;
-  @$core.pragma('dart2js:noInline')
-  static GuildKind_Normal create() => GuildKind_Normal._();
-  GuildKind_Normal createEmptyInstance() => create();
-  static $pb.PbList<GuildKind_Normal> createRepeated() => $pb.PbList<GuildKind_Normal>();
-  @$core.pragma('dart2js:noInline')
-  static GuildKind_Normal getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GuildKind_Normal>(create);
-  static GuildKind_Normal? _defaultInstance;
-}
-
-class GuildKind_Room extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'GuildKind.Room', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.chat.v1'), createEmptyInstance: create)
-    ..hasRequiredFields = false
-  ;
-
-  GuildKind_Room._() : super();
-  factory GuildKind_Room() => create();
-  factory GuildKind_Room.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory GuildKind_Room.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
-  GuildKind_Room clone() => GuildKind_Room()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
-  GuildKind_Room copyWith(void Function(GuildKind_Room) updates) => super.copyWith((message) => updates(message as GuildKind_Room)) as GuildKind_Room; // ignore: deprecated_member_use
-  $pb.BuilderInfo get info_ => _i;
-  @$core.pragma('dart2js:noInline')
-  static GuildKind_Room create() => GuildKind_Room._();
-  GuildKind_Room createEmptyInstance() => create();
-  static $pb.PbList<GuildKind_Room> createRepeated() => $pb.PbList<GuildKind_Room>();
-  @$core.pragma('dart2js:noInline')
-  static GuildKind_Room getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GuildKind_Room>(create);
-  static GuildKind_Room? _defaultInstance;
-}
-
-class GuildKind_DirectMessage extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'GuildKind.DirectMessage', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.chat.v1'), createEmptyInstance: create)
-    ..aOB(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'rejected')
-    ..hasRequiredFields = false
-  ;
-
-  GuildKind_DirectMessage._() : super();
-  factory GuildKind_DirectMessage({
-    $core.bool? rejected,
-  }) {
-    final _result = create();
-    if (rejected != null) {
-      _result.rejected = rejected;
-    }
-    return _result;
-  }
-  factory GuildKind_DirectMessage.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory GuildKind_DirectMessage.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
-  GuildKind_DirectMessage clone() => GuildKind_DirectMessage()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
-  GuildKind_DirectMessage copyWith(void Function(GuildKind_DirectMessage) updates) => super.copyWith((message) => updates(message as GuildKind_DirectMessage)) as GuildKind_DirectMessage; // ignore: deprecated_member_use
-  $pb.BuilderInfo get info_ => _i;
-  @$core.pragma('dart2js:noInline')
-  static GuildKind_DirectMessage create() => GuildKind_DirectMessage._();
-  GuildKind_DirectMessage createEmptyInstance() => create();
-  static $pb.PbList<GuildKind_DirectMessage> createRepeated() => $pb.PbList<GuildKind_DirectMessage>();
-  @$core.pragma('dart2js:noInline')
-  static GuildKind_DirectMessage getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GuildKind_DirectMessage>(create);
-  static GuildKind_DirectMessage? _defaultInstance;
-
-  @$pb.TagNumber(1)
-  $core.bool get rejected => $_getBF(0);
-  @$pb.TagNumber(1)
-  set rejected($core.bool v) { $_setBool(0, v); }
-  @$pb.TagNumber(1)
-  $core.bool hasRejected() => $_has(0);
-  @$pb.TagNumber(1)
-  void clearRejected() => clearField(1);
-}
-
-enum GuildKind_Kind {
-  normal, 
-  room, 
-  directMessage, 
-  notSet
-}
-
-class GuildKind extends $pb.GeneratedMessage {
-  static const $core.Map<$core.int, GuildKind_Kind> _GuildKind_KindByTag = {
-    1 : GuildKind_Kind.normal,
-    2 : GuildKind_Kind.room,
-    3 : GuildKind_Kind.directMessage,
-    0 : GuildKind_Kind.notSet
-  };
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'GuildKind', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.chat.v1'), createEmptyInstance: create)
-    ..oo(0, [1, 2, 3])
-    ..aOM<GuildKind_Normal>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'normal', subBuilder: GuildKind_Normal.create)
-    ..aOM<GuildKind_Room>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'room', subBuilder: GuildKind_Room.create)
-    ..aOM<GuildKind_DirectMessage>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'directMessage', subBuilder: GuildKind_DirectMessage.create)
-    ..hasRequiredFields = false
-  ;
-
-  GuildKind._() : super();
-  factory GuildKind({
-    GuildKind_Normal? normal,
-    GuildKind_Room? room,
-    GuildKind_DirectMessage? directMessage,
-  }) {
-    final _result = create();
-    if (normal != null) {
-      _result.normal = normal;
-    }
-    if (room != null) {
-      _result.room = room;
-    }
-    if (directMessage != null) {
-      _result.directMessage = directMessage;
-    }
-    return _result;
-  }
-  factory GuildKind.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory GuildKind.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
-  GuildKind clone() => GuildKind()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
-  GuildKind copyWith(void Function(GuildKind) updates) => super.copyWith((message) => updates(message as GuildKind)) as GuildKind; // ignore: deprecated_member_use
-  $pb.BuilderInfo get info_ => _i;
-  @$core.pragma('dart2js:noInline')
-  static GuildKind create() => GuildKind._();
-  GuildKind createEmptyInstance() => create();
-  static $pb.PbList<GuildKind> createRepeated() => $pb.PbList<GuildKind>();
-  @$core.pragma('dart2js:noInline')
-  static GuildKind getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GuildKind>(create);
-  static GuildKind? _defaultInstance;
-
-  GuildKind_Kind whichKind() => _GuildKind_KindByTag[$_whichOneof(0)]!;
-  void clearKind() => clearField($_whichOneof(0));
-
-  @$pb.TagNumber(1)
-  GuildKind_Normal get normal => $_getN(0);
-  @$pb.TagNumber(1)
-  set normal(GuildKind_Normal v) { setField(1, v); }
-  @$pb.TagNumber(1)
-  $core.bool hasNormal() => $_has(0);
-  @$pb.TagNumber(1)
-  void clearNormal() => clearField(1);
-  @$pb.TagNumber(1)
-  GuildKind_Normal ensureNormal() => $_ensure(0);
-
-  @$pb.TagNumber(2)
-  GuildKind_Room get room => $_getN(1);
-  @$pb.TagNumber(2)
-  set room(GuildKind_Room v) { setField(2, v); }
-  @$pb.TagNumber(2)
-  $core.bool hasRoom() => $_has(1);
-  @$pb.TagNumber(2)
-  void clearRoom() => clearField(2);
-  @$pb.TagNumber(2)
-  GuildKind_Room ensureRoom() => $_ensure(1);
-
-  @$pb.TagNumber(3)
-  GuildKind_DirectMessage get directMessage => $_getN(2);
-  @$pb.TagNumber(3)
-  set directMessage(GuildKind_DirectMessage v) { setField(3, v); }
-  @$pb.TagNumber(3)
-  $core.bool hasDirectMessage() => $_has(2);
-  @$pb.TagNumber(3)
-  void clearDirectMessage() => clearField(3);
-  @$pb.TagNumber(3)
-  GuildKind_DirectMessage ensureDirectMessage() => $_ensure(2);
-}
-
 class Guild extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Guild', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.chat.v1'), createEmptyInstance: create)
     ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'name')
     ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'picture')
     ..p<$fixnum.Int64>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'ownerIds', $pb.PbFieldType.PU6)
-    ..aOM<GuildKind>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'kind', subBuilder: GuildKind.create)
-    ..aOM<$0.Metadata>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'metadata', subBuilder: $0.Metadata.create)
+    ..aOM<$0.Metadata>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'metadata', subBuilder: $0.Metadata.create)
     ..hasRequiredFields = false
   ;
 
@@ -232,7 +28,6 @@ class Guild extends $pb.GeneratedMessage {
     $core.String? name,
     $core.String? picture,
     $core.Iterable<$fixnum.Int64>? ownerIds,
-    GuildKind? kind,
     $0.Metadata? metadata,
   }) {
     final _result = create();
@@ -244,9 +39,6 @@ class Guild extends $pb.GeneratedMessage {
     }
     if (ownerIds != null) {
       _result.ownerIds.addAll(ownerIds);
-    }
-    if (kind != null) {
-      _result.kind = kind;
     }
     if (metadata != null) {
       _result.metadata = metadata;
@@ -296,26 +88,15 @@ class Guild extends $pb.GeneratedMessage {
   $core.List<$fixnum.Int64> get ownerIds => $_getList(2);
 
   @$pb.TagNumber(4)
-  GuildKind get kind => $_getN(3);
+  $0.Metadata get metadata => $_getN(3);
   @$pb.TagNumber(4)
-  set kind(GuildKind v) { setField(4, v); }
+  set metadata($0.Metadata v) { setField(4, v); }
   @$pb.TagNumber(4)
-  $core.bool hasKind() => $_has(3);
+  $core.bool hasMetadata() => $_has(3);
   @$pb.TagNumber(4)
-  void clearKind() => clearField(4);
+  void clearMetadata() => clearField(4);
   @$pb.TagNumber(4)
-  GuildKind ensureKind() => $_ensure(3);
-
-  @$pb.TagNumber(5)
-  $0.Metadata get metadata => $_getN(4);
-  @$pb.TagNumber(5)
-  set metadata($0.Metadata v) { setField(5, v); }
-  @$pb.TagNumber(5)
-  $core.bool hasMetadata() => $_has(4);
-  @$pb.TagNumber(5)
-  void clearMetadata() => clearField(5);
-  @$pb.TagNumber(5)
-  $0.Metadata ensureMetadata() => $_ensure(4);
+  $0.Metadata ensureMetadata() => $_ensure(3);
 }
 
 class GuildWithId extends $pb.GeneratedMessage {
@@ -505,29 +286,46 @@ class InviteWithId extends $pb.GeneratedMessage {
   Invite ensureInvite() => $_ensure(1);
 }
 
+enum PendingInvite_Location {
+  guildInviteId, 
+  channelId, 
+  notSet
+}
+
 class PendingInvite extends $pb.GeneratedMessage {
+  static const $core.Map<$core.int, PendingInvite_Location> _PendingInvite_LocationByTag = {
+    3 : PendingInvite_Location.guildInviteId,
+    4 : PendingInvite_Location.channelId,
+    0 : PendingInvite_Location.notSet
+  };
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'PendingInvite', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.chat.v1'), createEmptyInstance: create)
-    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'inviteId')
-    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'serverId')
-    ..a<$fixnum.Int64>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'inviterId', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
+    ..oo(0, [3, 4])
+    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'serverId')
+    ..a<$fixnum.Int64>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'inviterId', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
+    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'guildInviteId')
+    ..a<$fixnum.Int64>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'channelId', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
     ..hasRequiredFields = false
   ;
 
   PendingInvite._() : super();
   factory PendingInvite({
-    $core.String? inviteId,
     $core.String? serverId,
     $fixnum.Int64? inviterId,
+    $core.String? guildInviteId,
+    $fixnum.Int64? channelId,
   }) {
     final _result = create();
-    if (inviteId != null) {
-      _result.inviteId = inviteId;
-    }
     if (serverId != null) {
       _result.serverId = serverId;
     }
     if (inviterId != null) {
       _result.inviterId = inviterId;
+    }
+    if (guildInviteId != null) {
+      _result.guildInviteId = guildInviteId;
+    }
+    if (channelId != null) {
+      _result.channelId = channelId;
     }
     return _result;
   }
@@ -552,32 +350,44 @@ class PendingInvite extends $pb.GeneratedMessage {
   static PendingInvite getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<PendingInvite>(create);
   static PendingInvite? _defaultInstance;
 
+  PendingInvite_Location whichLocation() => _PendingInvite_LocationByTag[$_whichOneof(0)]!;
+  void clearLocation() => clearField($_whichOneof(0));
+
   @$pb.TagNumber(1)
-  $core.String get inviteId => $_getSZ(0);
+  $core.String get serverId => $_getSZ(0);
   @$pb.TagNumber(1)
-  set inviteId($core.String v) { $_setString(0, v); }
+  set serverId($core.String v) { $_setString(0, v); }
   @$pb.TagNumber(1)
-  $core.bool hasInviteId() => $_has(0);
+  $core.bool hasServerId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearInviteId() => clearField(1);
+  void clearServerId() => clearField(1);
 
   @$pb.TagNumber(2)
-  $core.String get serverId => $_getSZ(1);
+  $fixnum.Int64 get inviterId => $_getI64(1);
   @$pb.TagNumber(2)
-  set serverId($core.String v) { $_setString(1, v); }
+  set inviterId($fixnum.Int64 v) { $_setInt64(1, v); }
   @$pb.TagNumber(2)
-  $core.bool hasServerId() => $_has(1);
+  $core.bool hasInviterId() => $_has(1);
   @$pb.TagNumber(2)
-  void clearServerId() => clearField(2);
+  void clearInviterId() => clearField(2);
 
   @$pb.TagNumber(3)
-  $fixnum.Int64 get inviterId => $_getI64(2);
+  $core.String get guildInviteId => $_getSZ(2);
   @$pb.TagNumber(3)
-  set inviterId($fixnum.Int64 v) { $_setInt64(2, v); }
+  set guildInviteId($core.String v) { $_setString(2, v); }
   @$pb.TagNumber(3)
-  $core.bool hasInviterId() => $_has(2);
+  $core.bool hasGuildInviteId() => $_has(2);
   @$pb.TagNumber(3)
-  void clearInviterId() => clearField(3);
+  void clearGuildInviteId() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $fixnum.Int64 get channelId => $_getI64(3);
+  @$pb.TagNumber(4)
+  set channelId($fixnum.Int64 v) { $_setInt64(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasChannelId() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearChannelId() => clearField(4);
 }
 
 class GuildListEntry extends $pb.GeneratedMessage {
@@ -754,238 +564,6 @@ class CreateGuildResponse extends $pb.GeneratedMessage {
   @$core.pragma('dart2js:noInline')
   static CreateGuildResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CreateGuildResponse>(create);
   static CreateGuildResponse? _defaultInstance;
-
-  @$pb.TagNumber(1)
-  $fixnum.Int64 get guildId => $_getI64(0);
-  @$pb.TagNumber(1)
-  set guildId($fixnum.Int64 v) { $_setInt64(0, v); }
-  @$pb.TagNumber(1)
-  $core.bool hasGuildId() => $_has(0);
-  @$pb.TagNumber(1)
-  void clearGuildId() => clearField(1);
-}
-
-class CreateRoomRequest extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'CreateRoomRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.chat.v1'), createEmptyInstance: create)
-    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'name')
-    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'picture')
-    ..aOM<$0.Metadata>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'metadata', subBuilder: $0.Metadata.create)
-    ..hasRequiredFields = false
-  ;
-
-  CreateRoomRequest._() : super();
-  factory CreateRoomRequest({
-    $core.String? name,
-    $core.String? picture,
-    $0.Metadata? metadata,
-  }) {
-    final _result = create();
-    if (name != null) {
-      _result.name = name;
-    }
-    if (picture != null) {
-      _result.picture = picture;
-    }
-    if (metadata != null) {
-      _result.metadata = metadata;
-    }
-    return _result;
-  }
-  factory CreateRoomRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory CreateRoomRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
-  CreateRoomRequest clone() => CreateRoomRequest()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
-  CreateRoomRequest copyWith(void Function(CreateRoomRequest) updates) => super.copyWith((message) => updates(message as CreateRoomRequest)) as CreateRoomRequest; // ignore: deprecated_member_use
-  $pb.BuilderInfo get info_ => _i;
-  @$core.pragma('dart2js:noInline')
-  static CreateRoomRequest create() => CreateRoomRequest._();
-  CreateRoomRequest createEmptyInstance() => create();
-  static $pb.PbList<CreateRoomRequest> createRepeated() => $pb.PbList<CreateRoomRequest>();
-  @$core.pragma('dart2js:noInline')
-  static CreateRoomRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CreateRoomRequest>(create);
-  static CreateRoomRequest? _defaultInstance;
-
-  @$pb.TagNumber(1)
-  $core.String get name => $_getSZ(0);
-  @$pb.TagNumber(1)
-  set name($core.String v) { $_setString(0, v); }
-  @$pb.TagNumber(1)
-  $core.bool hasName() => $_has(0);
-  @$pb.TagNumber(1)
-  void clearName() => clearField(1);
-
-  @$pb.TagNumber(2)
-  $core.String get picture => $_getSZ(1);
-  @$pb.TagNumber(2)
-  set picture($core.String v) { $_setString(1, v); }
-  @$pb.TagNumber(2)
-  $core.bool hasPicture() => $_has(1);
-  @$pb.TagNumber(2)
-  void clearPicture() => clearField(2);
-
-  @$pb.TagNumber(3)
-  $0.Metadata get metadata => $_getN(2);
-  @$pb.TagNumber(3)
-  set metadata($0.Metadata v) { setField(3, v); }
-  @$pb.TagNumber(3)
-  $core.bool hasMetadata() => $_has(2);
-  @$pb.TagNumber(3)
-  void clearMetadata() => clearField(3);
-  @$pb.TagNumber(3)
-  $0.Metadata ensureMetadata() => $_ensure(2);
-}
-
-class CreateRoomResponse extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'CreateRoomResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.chat.v1'), createEmptyInstance: create)
-    ..a<$fixnum.Int64>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'guildId', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
-    ..hasRequiredFields = false
-  ;
-
-  CreateRoomResponse._() : super();
-  factory CreateRoomResponse({
-    $fixnum.Int64? guildId,
-  }) {
-    final _result = create();
-    if (guildId != null) {
-      _result.guildId = guildId;
-    }
-    return _result;
-  }
-  factory CreateRoomResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory CreateRoomResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
-  CreateRoomResponse clone() => CreateRoomResponse()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
-  CreateRoomResponse copyWith(void Function(CreateRoomResponse) updates) => super.copyWith((message) => updates(message as CreateRoomResponse)) as CreateRoomResponse; // ignore: deprecated_member_use
-  $pb.BuilderInfo get info_ => _i;
-  @$core.pragma('dart2js:noInline')
-  static CreateRoomResponse create() => CreateRoomResponse._();
-  CreateRoomResponse createEmptyInstance() => create();
-  static $pb.PbList<CreateRoomResponse> createRepeated() => $pb.PbList<CreateRoomResponse>();
-  @$core.pragma('dart2js:noInline')
-  static CreateRoomResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CreateRoomResponse>(create);
-  static CreateRoomResponse? _defaultInstance;
-
-  @$pb.TagNumber(1)
-  $fixnum.Int64 get guildId => $_getI64(0);
-  @$pb.TagNumber(1)
-  set guildId($fixnum.Int64 v) { $_setInt64(0, v); }
-  @$pb.TagNumber(1)
-  $core.bool hasGuildId() => $_has(0);
-  @$pb.TagNumber(1)
-  void clearGuildId() => clearField(1);
-}
-
-class CreateDirectMessageRequest extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'CreateDirectMessageRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.chat.v1'), createEmptyInstance: create)
-    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'userName')
-    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'serverId')
-    ..hasRequiredFields = false
-  ;
-
-  CreateDirectMessageRequest._() : super();
-  factory CreateDirectMessageRequest({
-    $core.String? userName,
-    $core.String? serverId,
-  }) {
-    final _result = create();
-    if (userName != null) {
-      _result.userName = userName;
-    }
-    if (serverId != null) {
-      _result.serverId = serverId;
-    }
-    return _result;
-  }
-  factory CreateDirectMessageRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory CreateDirectMessageRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
-  CreateDirectMessageRequest clone() => CreateDirectMessageRequest()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
-  CreateDirectMessageRequest copyWith(void Function(CreateDirectMessageRequest) updates) => super.copyWith((message) => updates(message as CreateDirectMessageRequest)) as CreateDirectMessageRequest; // ignore: deprecated_member_use
-  $pb.BuilderInfo get info_ => _i;
-  @$core.pragma('dart2js:noInline')
-  static CreateDirectMessageRequest create() => CreateDirectMessageRequest._();
-  CreateDirectMessageRequest createEmptyInstance() => create();
-  static $pb.PbList<CreateDirectMessageRequest> createRepeated() => $pb.PbList<CreateDirectMessageRequest>();
-  @$core.pragma('dart2js:noInline')
-  static CreateDirectMessageRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CreateDirectMessageRequest>(create);
-  static CreateDirectMessageRequest? _defaultInstance;
-
-  @$pb.TagNumber(1)
-  $core.String get userName => $_getSZ(0);
-  @$pb.TagNumber(1)
-  set userName($core.String v) { $_setString(0, v); }
-  @$pb.TagNumber(1)
-  $core.bool hasUserName() => $_has(0);
-  @$pb.TagNumber(1)
-  void clearUserName() => clearField(1);
-
-  @$pb.TagNumber(2)
-  $core.String get serverId => $_getSZ(1);
-  @$pb.TagNumber(2)
-  set serverId($core.String v) { $_setString(1, v); }
-  @$pb.TagNumber(2)
-  $core.bool hasServerId() => $_has(1);
-  @$pb.TagNumber(2)
-  void clearServerId() => clearField(2);
-}
-
-class CreateDirectMessageResponse extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'CreateDirectMessageResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.chat.v1'), createEmptyInstance: create)
-    ..a<$fixnum.Int64>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'guildId', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
-    ..hasRequiredFields = false
-  ;
-
-  CreateDirectMessageResponse._() : super();
-  factory CreateDirectMessageResponse({
-    $fixnum.Int64? guildId,
-  }) {
-    final _result = create();
-    if (guildId != null) {
-      _result.guildId = guildId;
-    }
-    return _result;
-  }
-  factory CreateDirectMessageResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory CreateDirectMessageResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
-  CreateDirectMessageResponse clone() => CreateDirectMessageResponse()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
-  CreateDirectMessageResponse copyWith(void Function(CreateDirectMessageResponse) updates) => super.copyWith((message) => updates(message as CreateDirectMessageResponse)) as CreateDirectMessageResponse; // ignore: deprecated_member_use
-  $pb.BuilderInfo get info_ => _i;
-  @$core.pragma('dart2js:noInline')
-  static CreateDirectMessageResponse create() => CreateDirectMessageResponse._();
-  CreateDirectMessageResponse createEmptyInstance() => create();
-  static $pb.PbList<CreateDirectMessageResponse> createRepeated() => $pb.PbList<CreateDirectMessageResponse>();
-  @$core.pragma('dart2js:noInline')
-  static CreateDirectMessageResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CreateDirectMessageResponse>(create);
-  static CreateDirectMessageResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
   $fixnum.Int64 get guildId => $_getI64(0);
@@ -1565,82 +1143,6 @@ class UpdateGuildInformationResponse extends $pb.GeneratedMessage {
   @$core.pragma('dart2js:noInline')
   static UpdateGuildInformationResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpdateGuildInformationResponse>(create);
   static UpdateGuildInformationResponse? _defaultInstance;
-}
-
-class UpgradeRoomToGuildRequest extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'UpgradeRoomToGuildRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.chat.v1'), createEmptyInstance: create)
-    ..a<$fixnum.Int64>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'guildId', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
-    ..hasRequiredFields = false
-  ;
-
-  UpgradeRoomToGuildRequest._() : super();
-  factory UpgradeRoomToGuildRequest({
-    $fixnum.Int64? guildId,
-  }) {
-    final _result = create();
-    if (guildId != null) {
-      _result.guildId = guildId;
-    }
-    return _result;
-  }
-  factory UpgradeRoomToGuildRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory UpgradeRoomToGuildRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
-  UpgradeRoomToGuildRequest clone() => UpgradeRoomToGuildRequest()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
-  UpgradeRoomToGuildRequest copyWith(void Function(UpgradeRoomToGuildRequest) updates) => super.copyWith((message) => updates(message as UpgradeRoomToGuildRequest)) as UpgradeRoomToGuildRequest; // ignore: deprecated_member_use
-  $pb.BuilderInfo get info_ => _i;
-  @$core.pragma('dart2js:noInline')
-  static UpgradeRoomToGuildRequest create() => UpgradeRoomToGuildRequest._();
-  UpgradeRoomToGuildRequest createEmptyInstance() => create();
-  static $pb.PbList<UpgradeRoomToGuildRequest> createRepeated() => $pb.PbList<UpgradeRoomToGuildRequest>();
-  @$core.pragma('dart2js:noInline')
-  static UpgradeRoomToGuildRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpgradeRoomToGuildRequest>(create);
-  static UpgradeRoomToGuildRequest? _defaultInstance;
-
-  @$pb.TagNumber(1)
-  $fixnum.Int64 get guildId => $_getI64(0);
-  @$pb.TagNumber(1)
-  set guildId($fixnum.Int64 v) { $_setInt64(0, v); }
-  @$pb.TagNumber(1)
-  $core.bool hasGuildId() => $_has(0);
-  @$pb.TagNumber(1)
-  void clearGuildId() => clearField(1);
-}
-
-class UpgradeRoomToGuildResponse extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'UpgradeRoomToGuildResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.chat.v1'), createEmptyInstance: create)
-    ..hasRequiredFields = false
-  ;
-
-  UpgradeRoomToGuildResponse._() : super();
-  factory UpgradeRoomToGuildResponse() => create();
-  factory UpgradeRoomToGuildResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory UpgradeRoomToGuildResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
-  UpgradeRoomToGuildResponse clone() => UpgradeRoomToGuildResponse()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
-  UpgradeRoomToGuildResponse copyWith(void Function(UpgradeRoomToGuildResponse) updates) => super.copyWith((message) => updates(message as UpgradeRoomToGuildResponse)) as UpgradeRoomToGuildResponse; // ignore: deprecated_member_use
-  $pb.BuilderInfo get info_ => _i;
-  @$core.pragma('dart2js:noInline')
-  static UpgradeRoomToGuildResponse create() => UpgradeRoomToGuildResponse._();
-  UpgradeRoomToGuildResponse createEmptyInstance() => create();
-  static $pb.PbList<UpgradeRoomToGuildResponse> createRepeated() => $pb.PbList<UpgradeRoomToGuildResponse>();
-  @$core.pragma('dart2js:noInline')
-  static UpgradeRoomToGuildResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpgradeRoomToGuildResponse>(create);
-  static UpgradeRoomToGuildResponse? _defaultInstance;
 }
 
 class DeleteGuildRequest extends $pb.GeneratedMessage {
@@ -2656,17 +2158,17 @@ class GetPendingInvitesRequest extends $pb.GeneratedMessage {
 
 class GetPendingInvitesResponse extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'GetPendingInvitesResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.chat.v1'), createEmptyInstance: create)
-    ..pc<PendingInvite>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'pendingInvites', $pb.PbFieldType.PM, subBuilder: PendingInvite.create)
+    ..pc<PendingInvite>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'invites', $pb.PbFieldType.PM, subBuilder: PendingInvite.create)
     ..hasRequiredFields = false
   ;
 
   GetPendingInvitesResponse._() : super();
   factory GetPendingInvitesResponse({
-    $core.Iterable<PendingInvite>? pendingInvites,
+    $core.Iterable<PendingInvite>? invites,
   }) {
     final _result = create();
-    if (pendingInvites != null) {
-      _result.pendingInvites.addAll(pendingInvites);
+    if (invites != null) {
+      _result.invites.addAll(invites);
     }
     return _result;
   }
@@ -2692,27 +2194,44 @@ class GetPendingInvitesResponse extends $pb.GeneratedMessage {
   static GetPendingInvitesResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.List<PendingInvite> get pendingInvites => $_getList(0);
+  $core.List<PendingInvite> get invites => $_getList(0);
+}
+
+enum RejectPendingInviteRequest_Location {
+  guildInviteId, 
+  channelId, 
+  notSet
 }
 
 class RejectPendingInviteRequest extends $pb.GeneratedMessage {
+  static const $core.Map<$core.int, RejectPendingInviteRequest_Location> _RejectPendingInviteRequest_LocationByTag = {
+    2 : RejectPendingInviteRequest_Location.guildInviteId,
+    3 : RejectPendingInviteRequest_Location.channelId,
+    0 : RejectPendingInviteRequest_Location.notSet
+  };
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'RejectPendingInviteRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.chat.v1'), createEmptyInstance: create)
-    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'inviteId')
-    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'serverId')
+    ..oo(0, [2, 3])
+    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'serverId')
+    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'guildInviteId')
+    ..a<$fixnum.Int64>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'channelId', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
     ..hasRequiredFields = false
   ;
 
   RejectPendingInviteRequest._() : super();
   factory RejectPendingInviteRequest({
-    $core.String? inviteId,
     $core.String? serverId,
+    $core.String? guildInviteId,
+    $fixnum.Int64? channelId,
   }) {
     final _result = create();
-    if (inviteId != null) {
-      _result.inviteId = inviteId;
-    }
     if (serverId != null) {
       _result.serverId = serverId;
+    }
+    if (guildInviteId != null) {
+      _result.guildInviteId = guildInviteId;
+    }
+    if (channelId != null) {
+      _result.channelId = channelId;
     }
     return _result;
   }
@@ -2737,23 +2256,35 @@ class RejectPendingInviteRequest extends $pb.GeneratedMessage {
   static RejectPendingInviteRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<RejectPendingInviteRequest>(create);
   static RejectPendingInviteRequest? _defaultInstance;
 
+  RejectPendingInviteRequest_Location whichLocation() => _RejectPendingInviteRequest_LocationByTag[$_whichOneof(0)]!;
+  void clearLocation() => clearField($_whichOneof(0));
+
   @$pb.TagNumber(1)
-  $core.String get inviteId => $_getSZ(0);
+  $core.String get serverId => $_getSZ(0);
   @$pb.TagNumber(1)
-  set inviteId($core.String v) { $_setString(0, v); }
+  set serverId($core.String v) { $_setString(0, v); }
   @$pb.TagNumber(1)
-  $core.bool hasInviteId() => $_has(0);
+  $core.bool hasServerId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearInviteId() => clearField(1);
+  void clearServerId() => clearField(1);
 
   @$pb.TagNumber(2)
-  $core.String get serverId => $_getSZ(1);
+  $core.String get guildInviteId => $_getSZ(1);
   @$pb.TagNumber(2)
-  set serverId($core.String v) { $_setString(1, v); }
+  set guildInviteId($core.String v) { $_setString(1, v); }
   @$pb.TagNumber(2)
-  $core.bool hasServerId() => $_has(1);
+  $core.bool hasGuildInviteId() => $_has(1);
   @$pb.TagNumber(2)
-  void clearServerId() => clearField(2);
+  void clearGuildInviteId() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $fixnum.Int64 get channelId => $_getI64(2);
+  @$pb.TagNumber(3)
+  set channelId($fixnum.Int64 v) { $_setInt64(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasChannelId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearChannelId() => clearField(3);
 }
 
 class RejectPendingInviteResponse extends $pb.GeneratedMessage {
@@ -2785,24 +2316,41 @@ class RejectPendingInviteResponse extends $pb.GeneratedMessage {
   static RejectPendingInviteResponse? _defaultInstance;
 }
 
+enum IgnorePendingInviteRequest_Location {
+  guildInviteId, 
+  channelId, 
+  notSet
+}
+
 class IgnorePendingInviteRequest extends $pb.GeneratedMessage {
+  static const $core.Map<$core.int, IgnorePendingInviteRequest_Location> _IgnorePendingInviteRequest_LocationByTag = {
+    2 : IgnorePendingInviteRequest_Location.guildInviteId,
+    3 : IgnorePendingInviteRequest_Location.channelId,
+    0 : IgnorePendingInviteRequest_Location.notSet
+  };
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'IgnorePendingInviteRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.chat.v1'), createEmptyInstance: create)
-    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'inviteId')
-    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'serverId')
+    ..oo(0, [2, 3])
+    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'serverId')
+    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'guildInviteId')
+    ..a<$fixnum.Int64>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'channelId', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
     ..hasRequiredFields = false
   ;
 
   IgnorePendingInviteRequest._() : super();
   factory IgnorePendingInviteRequest({
-    $core.String? inviteId,
     $core.String? serverId,
+    $core.String? guildInviteId,
+    $fixnum.Int64? channelId,
   }) {
     final _result = create();
-    if (inviteId != null) {
-      _result.inviteId = inviteId;
-    }
     if (serverId != null) {
       _result.serverId = serverId;
+    }
+    if (guildInviteId != null) {
+      _result.guildInviteId = guildInviteId;
+    }
+    if (channelId != null) {
+      _result.channelId = channelId;
     }
     return _result;
   }
@@ -2827,23 +2375,35 @@ class IgnorePendingInviteRequest extends $pb.GeneratedMessage {
   static IgnorePendingInviteRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<IgnorePendingInviteRequest>(create);
   static IgnorePendingInviteRequest? _defaultInstance;
 
+  IgnorePendingInviteRequest_Location whichLocation() => _IgnorePendingInviteRequest_LocationByTag[$_whichOneof(0)]!;
+  void clearLocation() => clearField($_whichOneof(0));
+
   @$pb.TagNumber(1)
-  $core.String get inviteId => $_getSZ(0);
+  $core.String get serverId => $_getSZ(0);
   @$pb.TagNumber(1)
-  set inviteId($core.String v) { $_setString(0, v); }
+  set serverId($core.String v) { $_setString(0, v); }
   @$pb.TagNumber(1)
-  $core.bool hasInviteId() => $_has(0);
+  $core.bool hasServerId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearInviteId() => clearField(1);
+  void clearServerId() => clearField(1);
 
   @$pb.TagNumber(2)
-  $core.String get serverId => $_getSZ(1);
+  $core.String get guildInviteId => $_getSZ(1);
   @$pb.TagNumber(2)
-  set serverId($core.String v) { $_setString(1, v); }
+  set guildInviteId($core.String v) { $_setString(1, v); }
   @$pb.TagNumber(2)
-  $core.bool hasServerId() => $_has(1);
+  $core.bool hasGuildInviteId() => $_has(1);
   @$pb.TagNumber(2)
-  void clearServerId() => clearField(2);
+  void clearGuildInviteId() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $fixnum.Int64 get channelId => $_getI64(2);
+  @$pb.TagNumber(3)
+  set channelId($fixnum.Int64 v) { $_setInt64(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasChannelId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearChannelId() => clearField(3);
 }
 
 class IgnorePendingInviteResponse extends $pb.GeneratedMessage {

@@ -10,6 +10,8 @@ export '../../chat/v1/permissions.pb.dart';
 import '../../chat/v1/permissions.pb.dart';
 export '../../chat/v1/stream.pb.dart';
 import '../../chat/v1/stream.pb.dart';
+export '../../chat/v1/private_channel.pb.dart';
+import '../../chat/v1/private_channel.pb.dart';
 export 'chat.pb.dart';
 import 'chat.pb.dart';
 import 'package:http/http.dart' as $http;
@@ -24,20 +26,35 @@ class ChatServiceClient {
 		if (response.statusCode != 200) { throw response; }
 		return CreateGuildResponse.fromBuffer(response.bodyBytes);
 	}
-	Future<CreateRoomResponse> CreateRoom(CreateRoomRequest input, {Map<String,String> headers = const {}}) async {
-		var response = await $http.post(this.server.replace(path: "/protocol.chat.v1.ChatService/CreateRoom"), body: input.writeToBuffer(), headers: {"content-type": "application/hrpc"}..addAll(headers)..addAll(this.commonHeaders));
+	Future<CreatePrivateChannelResponse> CreatePrivateChannel(CreatePrivateChannelRequest input, {Map<String,String> headers = const {}}) async {
+		var response = await $http.post(this.server.replace(path: "/protocol.chat.v1.ChatService/CreatePrivateChannel"), body: input.writeToBuffer(), headers: {"content-type": "application/hrpc"}..addAll(headers)..addAll(this.commonHeaders));
 		if (response.statusCode != 200) { throw response; }
-		return CreateRoomResponse.fromBuffer(response.bodyBytes);
+		return CreatePrivateChannelResponse.fromBuffer(response.bodyBytes);
 	}
-	Future<CreateDirectMessageResponse> CreateDirectMessage(CreateDirectMessageRequest input, {Map<String,String> headers = const {}}) async {
-		var response = await $http.post(this.server.replace(path: "/protocol.chat.v1.ChatService/CreateDirectMessage"), body: input.writeToBuffer(), headers: {"content-type": "application/hrpc"}..addAll(headers)..addAll(this.commonHeaders));
+	Future<UpdatePrivateChannelMembersResponse> UpdatePrivateChannelMembers(UpdatePrivateChannelMembersRequest input, {Map<String,String> headers = const {}}) async {
+		var response = await $http.post(this.server.replace(path: "/protocol.chat.v1.ChatService/UpdatePrivateChannelMembers"), body: input.writeToBuffer(), headers: {"content-type": "application/hrpc"}..addAll(headers)..addAll(this.commonHeaders));
 		if (response.statusCode != 200) { throw response; }
-		return CreateDirectMessageResponse.fromBuffer(response.bodyBytes);
+		return UpdatePrivateChannelMembersResponse.fromBuffer(response.bodyBytes);
 	}
-	Future<UpgradeRoomToGuildResponse> UpgradeRoomToGuild(UpgradeRoomToGuildRequest input, {Map<String,String> headers = const {}}) async {
-		var response = await $http.post(this.server.replace(path: "/protocol.chat.v1.ChatService/UpgradeRoomToGuild"), body: input.writeToBuffer(), headers: {"content-type": "application/hrpc"}..addAll(headers)..addAll(this.commonHeaders));
+	Future<UpdatePrivateChannelNameResponse> UpdatePrivateChannelName(UpdatePrivateChannelNameRequest input, {Map<String,String> headers = const {}}) async {
+		var response = await $http.post(this.server.replace(path: "/protocol.chat.v1.ChatService/UpdatePrivateChannelName"), body: input.writeToBuffer(), headers: {"content-type": "application/hrpc"}..addAll(headers)..addAll(this.commonHeaders));
 		if (response.statusCode != 200) { throw response; }
-		return UpgradeRoomToGuildResponse.fromBuffer(response.bodyBytes);
+		return UpdatePrivateChannelNameResponse.fromBuffer(response.bodyBytes);
+	}
+	Future<DeletePrivateChannelResponse> DeletePrivateChannel(DeletePrivateChannelRequest input, {Map<String,String> headers = const {}}) async {
+		var response = await $http.post(this.server.replace(path: "/protocol.chat.v1.ChatService/DeletePrivateChannel"), body: input.writeToBuffer(), headers: {"content-type": "application/hrpc"}..addAll(headers)..addAll(this.commonHeaders));
+		if (response.statusCode != 200) { throw response; }
+		return DeletePrivateChannelResponse.fromBuffer(response.bodyBytes);
+	}
+	Future<JoinPrivateChannelResponse> JoinPrivateChannel(JoinPrivateChannelRequest input, {Map<String,String> headers = const {}}) async {
+		var response = await $http.post(this.server.replace(path: "/protocol.chat.v1.ChatService/JoinPrivateChannel"), body: input.writeToBuffer(), headers: {"content-type": "application/hrpc"}..addAll(headers)..addAll(this.commonHeaders));
+		if (response.statusCode != 200) { throw response; }
+		return JoinPrivateChannelResponse.fromBuffer(response.bodyBytes);
+	}
+	Future<LeavePrivateChannelResponse> LeavePrivateChannel(LeavePrivateChannelRequest input, {Map<String,String> headers = const {}}) async {
+		var response = await $http.post(this.server.replace(path: "/protocol.chat.v1.ChatService/LeavePrivateChannel"), body: input.writeToBuffer(), headers: {"content-type": "application/hrpc"}..addAll(headers)..addAll(this.commonHeaders));
+		if (response.statusCode != 200) { throw response; }
+		return LeavePrivateChannelResponse.fromBuffer(response.bodyBytes);
 	}
 	Future<CreateInviteResponse> CreateInvite(CreateInviteRequest input, {Map<String,String> headers = const {}}) async {
 		var response = await $http.post(this.server.replace(path: "/protocol.chat.v1.ChatService/CreateInvite"), body: input.writeToBuffer(), headers: {"content-type": "application/hrpc"}..addAll(headers)..addAll(this.commonHeaders));
@@ -53,6 +70,16 @@ class ChatServiceClient {
 		var response = await $http.post(this.server.replace(path: "/protocol.chat.v1.ChatService/GetGuildList"), body: input.writeToBuffer(), headers: {"content-type": "application/hrpc"}..addAll(headers)..addAll(this.commonHeaders));
 		if (response.statusCode != 200) { throw response; }
 		return GetGuildListResponse.fromBuffer(response.bodyBytes);
+	}
+	Future<GetPrivateChannelListResponse> GetPrivateChannelList(GetPrivateChannelListRequest input, {Map<String,String> headers = const {}}) async {
+		var response = await $http.post(this.server.replace(path: "/protocol.chat.v1.ChatService/GetPrivateChannelList"), body: input.writeToBuffer(), headers: {"content-type": "application/hrpc"}..addAll(headers)..addAll(this.commonHeaders));
+		if (response.statusCode != 200) { throw response; }
+		return GetPrivateChannelListResponse.fromBuffer(response.bodyBytes);
+	}
+	Future<GetPrivateChannelResponse> GetPrivateChannel(GetPrivateChannelRequest input, {Map<String,String> headers = const {}}) async {
+		var response = await $http.post(this.server.replace(path: "/protocol.chat.v1.ChatService/GetPrivateChannel"), body: input.writeToBuffer(), headers: {"content-type": "application/hrpc"}..addAll(headers)..addAll(this.commonHeaders));
+		if (response.statusCode != 200) { throw response; }
+		return GetPrivateChannelResponse.fromBuffer(response.bodyBytes);
 	}
 	Future<InviteUserToGuildResponse> InviteUserToGuild(InviteUserToGuildRequest input, {Map<String,String> headers = const {}}) async {
 		var response = await $http.post(this.server.replace(path: "/protocol.chat.v1.ChatService/InviteUserToGuild"), body: input.writeToBuffer(), headers: {"content-type": "application/hrpc"}..addAll(headers)..addAll(this.commonHeaders));
@@ -124,10 +151,10 @@ class ChatServiceClient {
 		if (response.statusCode != 200) { throw response; }
 		return UpdateAllChannelOrderResponse.fromBuffer(response.bodyBytes);
 	}
-	Future<UpdateMessageTextResponse> UpdateMessageText(UpdateMessageTextRequest input, {Map<String,String> headers = const {}}) async {
-		var response = await $http.post(this.server.replace(path: "/protocol.chat.v1.ChatService/UpdateMessageText"), body: input.writeToBuffer(), headers: {"content-type": "application/hrpc"}..addAll(headers)..addAll(this.commonHeaders));
+	Future<UpdateMessageContentResponse> UpdateMessageContent(UpdateMessageContentRequest input, {Map<String,String> headers = const {}}) async {
+		var response = await $http.post(this.server.replace(path: "/protocol.chat.v1.ChatService/UpdateMessageContent"), body: input.writeToBuffer(), headers: {"content-type": "application/hrpc"}..addAll(headers)..addAll(this.commonHeaders));
 		if (response.statusCode != 200) { throw response; }
-		return UpdateMessageTextResponse.fromBuffer(response.bodyBytes);
+		return UpdateMessageContentResponse.fromBuffer(response.bodyBytes);
 	}
 	Future<DeleteGuildResponse> DeleteGuild(DeleteGuildRequest input, {Map<String,String> headers = const {}}) async {
 		var response = await $http.post(this.server.replace(path: "/protocol.chat.v1.ChatService/DeleteGuild"), body: input.writeToBuffer(), headers: {"content-type": "application/hrpc"}..addAll(headers)..addAll(this.commonHeaders));

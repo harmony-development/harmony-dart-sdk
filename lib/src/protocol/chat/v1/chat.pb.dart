@@ -11,10 +11,11 @@ import 'dart:core' as $core;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 import 'guilds.pb.dart' as $7;
+import 'private_channel.pb.dart' as $8;
 import 'channels.pb.dart' as $6;
 import 'messages.pb.dart' as $4;
 import 'permissions.pb.dart' as $5;
-import 'stream.pb.dart' as $8;
+import 'stream.pb.dart' as $9;
 
 class ChatServiceApi {
   $pb.RpcClient _client;
@@ -24,17 +25,29 @@ class ChatServiceApi {
     var emptyResponse = $7.CreateGuildResponse();
     return _client.invoke<$7.CreateGuildResponse>(ctx, 'ChatService', 'CreateGuild', request, emptyResponse);
   }
-  $async.Future<$7.CreateRoomResponse> createRoom($pb.ClientContext? ctx, $7.CreateRoomRequest request) {
-    var emptyResponse = $7.CreateRoomResponse();
-    return _client.invoke<$7.CreateRoomResponse>(ctx, 'ChatService', 'CreateRoom', request, emptyResponse);
+  $async.Future<$8.CreatePrivateChannelResponse> createPrivateChannel($pb.ClientContext? ctx, $8.CreatePrivateChannelRequest request) {
+    var emptyResponse = $8.CreatePrivateChannelResponse();
+    return _client.invoke<$8.CreatePrivateChannelResponse>(ctx, 'ChatService', 'CreatePrivateChannel', request, emptyResponse);
   }
-  $async.Future<$7.CreateDirectMessageResponse> createDirectMessage($pb.ClientContext? ctx, $7.CreateDirectMessageRequest request) {
-    var emptyResponse = $7.CreateDirectMessageResponse();
-    return _client.invoke<$7.CreateDirectMessageResponse>(ctx, 'ChatService', 'CreateDirectMessage', request, emptyResponse);
+  $async.Future<$8.UpdatePrivateChannelMembersResponse> updatePrivateChannelMembers($pb.ClientContext? ctx, $8.UpdatePrivateChannelMembersRequest request) {
+    var emptyResponse = $8.UpdatePrivateChannelMembersResponse();
+    return _client.invoke<$8.UpdatePrivateChannelMembersResponse>(ctx, 'ChatService', 'UpdatePrivateChannelMembers', request, emptyResponse);
   }
-  $async.Future<$7.UpgradeRoomToGuildResponse> upgradeRoomToGuild($pb.ClientContext? ctx, $7.UpgradeRoomToGuildRequest request) {
-    var emptyResponse = $7.UpgradeRoomToGuildResponse();
-    return _client.invoke<$7.UpgradeRoomToGuildResponse>(ctx, 'ChatService', 'UpgradeRoomToGuild', request, emptyResponse);
+  $async.Future<$8.UpdatePrivateChannelNameResponse> updatePrivateChannelName($pb.ClientContext? ctx, $8.UpdatePrivateChannelNameRequest request) {
+    var emptyResponse = $8.UpdatePrivateChannelNameResponse();
+    return _client.invoke<$8.UpdatePrivateChannelNameResponse>(ctx, 'ChatService', 'UpdatePrivateChannelName', request, emptyResponse);
+  }
+  $async.Future<$8.DeletePrivateChannelResponse> deletePrivateChannel($pb.ClientContext? ctx, $8.DeletePrivateChannelRequest request) {
+    var emptyResponse = $8.DeletePrivateChannelResponse();
+    return _client.invoke<$8.DeletePrivateChannelResponse>(ctx, 'ChatService', 'DeletePrivateChannel', request, emptyResponse);
+  }
+  $async.Future<$8.JoinPrivateChannelResponse> joinPrivateChannel($pb.ClientContext? ctx, $8.JoinPrivateChannelRequest request) {
+    var emptyResponse = $8.JoinPrivateChannelResponse();
+    return _client.invoke<$8.JoinPrivateChannelResponse>(ctx, 'ChatService', 'JoinPrivateChannel', request, emptyResponse);
+  }
+  $async.Future<$8.LeavePrivateChannelResponse> leavePrivateChannel($pb.ClientContext? ctx, $8.LeavePrivateChannelRequest request) {
+    var emptyResponse = $8.LeavePrivateChannelResponse();
+    return _client.invoke<$8.LeavePrivateChannelResponse>(ctx, 'ChatService', 'LeavePrivateChannel', request, emptyResponse);
   }
   $async.Future<$7.CreateInviteResponse> createInvite($pb.ClientContext? ctx, $7.CreateInviteRequest request) {
     var emptyResponse = $7.CreateInviteResponse();
@@ -47,6 +60,14 @@ class ChatServiceApi {
   $async.Future<$7.GetGuildListResponse> getGuildList($pb.ClientContext? ctx, $7.GetGuildListRequest request) {
     var emptyResponse = $7.GetGuildListResponse();
     return _client.invoke<$7.GetGuildListResponse>(ctx, 'ChatService', 'GetGuildList', request, emptyResponse);
+  }
+  $async.Future<$8.GetPrivateChannelListResponse> getPrivateChannelList($pb.ClientContext? ctx, $8.GetPrivateChannelListRequest request) {
+    var emptyResponse = $8.GetPrivateChannelListResponse();
+    return _client.invoke<$8.GetPrivateChannelListResponse>(ctx, 'ChatService', 'GetPrivateChannelList', request, emptyResponse);
+  }
+  $async.Future<$8.GetPrivateChannelResponse> getPrivateChannel($pb.ClientContext? ctx, $8.GetPrivateChannelRequest request) {
+    var emptyResponse = $8.GetPrivateChannelResponse();
+    return _client.invoke<$8.GetPrivateChannelResponse>(ctx, 'ChatService', 'GetPrivateChannel', request, emptyResponse);
   }
   $async.Future<$7.InviteUserToGuildResponse> inviteUserToGuild($pb.ClientContext? ctx, $7.InviteUserToGuildRequest request) {
     var emptyResponse = $7.InviteUserToGuildResponse();
@@ -104,9 +125,9 @@ class ChatServiceApi {
     var emptyResponse = $6.UpdateAllChannelOrderResponse();
     return _client.invoke<$6.UpdateAllChannelOrderResponse>(ctx, 'ChatService', 'UpdateAllChannelOrder', request, emptyResponse);
   }
-  $async.Future<$4.UpdateMessageTextResponse> updateMessageText($pb.ClientContext? ctx, $4.UpdateMessageTextRequest request) {
-    var emptyResponse = $4.UpdateMessageTextResponse();
-    return _client.invoke<$4.UpdateMessageTextResponse>(ctx, 'ChatService', 'UpdateMessageText', request, emptyResponse);
+  $async.Future<$4.UpdateMessageContentResponse> updateMessageContent($pb.ClientContext? ctx, $4.UpdateMessageContentRequest request) {
+    var emptyResponse = $4.UpdateMessageContentResponse();
+    return _client.invoke<$4.UpdateMessageContentResponse>(ctx, 'ChatService', 'UpdateMessageContent', request, emptyResponse);
   }
   $async.Future<$7.DeleteGuildResponse> deleteGuild($pb.ClientContext? ctx, $7.DeleteGuildRequest request) {
     var emptyResponse = $7.DeleteGuildResponse();
@@ -180,9 +201,9 @@ class ChatServiceApi {
     var emptyResponse = $5.GetUserRolesResponse();
     return _client.invoke<$5.GetUserRolesResponse>(ctx, 'ChatService', 'GetUserRoles', request, emptyResponse);
   }
-  $async.Future<$6.TypingResponse> typing($pb.ClientContext? ctx, $6.TypingRequest request) {
-    var emptyResponse = $6.TypingResponse();
-    return _client.invoke<$6.TypingResponse>(ctx, 'ChatService', 'Typing', request, emptyResponse);
+  $async.Future<$4.TypingResponse> typing($pb.ClientContext? ctx, $4.TypingRequest request) {
+    var emptyResponse = $4.TypingResponse();
+    return _client.invoke<$4.TypingResponse>(ctx, 'ChatService', 'Typing', request, emptyResponse);
   }
   $async.Future<$7.PreviewGuildResponse> previewGuild($pb.ClientContext? ctx, $7.PreviewGuildRequest request) {
     var emptyResponse = $7.PreviewGuildResponse();
@@ -216,9 +237,9 @@ class ChatServiceApi {
     var emptyResponse = $4.UnpinMessageResponse();
     return _client.invoke<$4.UnpinMessageResponse>(ctx, 'ChatService', 'UnpinMessage', request, emptyResponse);
   }
-  $async.Future<$8.StreamEventsResponse> streamEvents($pb.ClientContext? ctx, $8.StreamEventsRequest request) {
-    var emptyResponse = $8.StreamEventsResponse();
-    return _client.invoke<$8.StreamEventsResponse>(ctx, 'ChatService', 'StreamEvents', request, emptyResponse);
+  $async.Future<$9.StreamEventsResponse> streamEvents($pb.ClientContext? ctx, $9.StreamEventsRequest request) {
+    var emptyResponse = $9.StreamEventsResponse();
+    return _client.invoke<$9.StreamEventsResponse>(ctx, 'ChatService', 'StreamEvents', request, emptyResponse);
   }
   $async.Future<$4.AddReactionResponse> addReaction($pb.ClientContext? ctx, $4.AddReactionRequest request) {
     var emptyResponse = $4.AddReactionResponse();

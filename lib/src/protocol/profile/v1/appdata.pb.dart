@@ -7,6 +7,7 @@
 
 import 'dart:core' as $core;
 
+import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 import '../../harmonytypes/v1/types.pb.dart' as $0;
@@ -225,5 +226,46 @@ class AppDataOverrides extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(1)
   $core.List<ProfileOverride> get overrides => $_getList(0);
+}
+
+class AppDataUserNotes extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'AppDataUserNotes', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.profile.v1'), createEmptyInstance: create)
+    ..m<$fixnum.Int64, $core.String>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'notes', entryClassName: 'AppDataUserNotes.NotesEntry', keyFieldType: $pb.PbFieldType.OU6, valueFieldType: $pb.PbFieldType.OS, packageName: const $pb.PackageName('protocol.profile.v1'))
+    ..hasRequiredFields = false
+  ;
+
+  AppDataUserNotes._() : super();
+  factory AppDataUserNotes({
+    $core.Map<$fixnum.Int64, $core.String>? notes,
+  }) {
+    final _result = create();
+    if (notes != null) {
+      _result.notes.addAll(notes);
+    }
+    return _result;
+  }
+  factory AppDataUserNotes.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory AppDataUserNotes.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  AppDataUserNotes clone() => AppDataUserNotes()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  AppDataUserNotes copyWith(void Function(AppDataUserNotes) updates) => super.copyWith((message) => updates(message as AppDataUserNotes)) as AppDataUserNotes; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static AppDataUserNotes create() => AppDataUserNotes._();
+  AppDataUserNotes createEmptyInstance() => create();
+  static $pb.PbList<AppDataUserNotes> createRepeated() => $pb.PbList<AppDataUserNotes>();
+  @$core.pragma('dart2js:noInline')
+  static AppDataUserNotes getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<AppDataUserNotes>(create);
+  static AppDataUserNotes? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.Map<$fixnum.Int64, $core.String> get notes => $_getMap(0);
 }
 

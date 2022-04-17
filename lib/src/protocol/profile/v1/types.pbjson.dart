@@ -8,21 +8,6 @@
 import 'dart:core' as $core;
 import 'dart:convert' as $convert;
 import 'dart:typed_data' as $typed_data;
-@$core.Deprecated('Use userStatusDescriptor instead')
-const UserStatus$json = const {
-  '1': 'UserStatus',
-  '2': const [
-    const {'1': 'USER_STATUS_OFFLINE_UNSPECIFIED', '2': 0},
-    const {'1': 'USER_STATUS_ONLINE', '2': 1},
-    const {'1': 'USER_STATUS_IDLE', '2': 2},
-    const {'1': 'USER_STATUS_DO_NOT_DISTURB', '2': 3},
-    const {'1': 'USER_STATUS_MOBILE', '2': 4},
-    const {'1': 'USER_STATUS_STREAMING', '2': 5},
-  ],
-};
-
-/// Descriptor for `UserStatus`. Decode as a `google.protobuf.EnumDescriptorProto`.
-final $typed_data.Uint8List userStatusDescriptor = $convert.base64Decode('CgpVc2VyU3RhdHVzEiMKH1VTRVJfU1RBVFVTX09GRkxJTkVfVU5TUEVDSUZJRUQQABIWChJVU0VSX1NUQVRVU19PTkxJTkUQARIUChBVU0VSX1NUQVRVU19JRExFEAISHgoaVVNFUl9TVEFUVVNfRE9fTk9UX0RJU1RVUkIQAxIWChJVU0VSX1NUQVRVU19NT0JJTEUQBBIZChVVU0VSX1NUQVRVU19TVFJFQU1JTkcQBQ==');
 @$core.Deprecated('Use accountKindDescriptor instead')
 const AccountKind$json = const {
   '1': 'AccountKind',
@@ -35,13 +20,80 @@ const AccountKind$json = const {
 
 /// Descriptor for `AccountKind`. Decode as a `google.protobuf.EnumDescriptorProto`.
 final $typed_data.Uint8List accountKindDescriptor = $convert.base64Decode('CgtBY2NvdW50S2luZBIhCh1BQ0NPVU5UX0tJTkRfRlVMTF9VTlNQRUNJRklFRBAAEhQKEEFDQ09VTlRfS0lORF9CT1QQARIWChJBQ0NPVU5UX0tJTkRfR1VFU1QQAg==');
+@$core.Deprecated('Use userStatusDescriptor instead')
+const UserStatus$json = const {
+  '1': 'UserStatus',
+  '2': const [
+    const {'1': 'kind', '3': 1, '4': 1, '5': 14, '6': '.protocol.profile.v1.UserStatus.Kind', '10': 'kind'},
+    const {'1': 'message', '3': 2, '4': 1, '5': 9, '10': 'message'},
+    const {'1': 'activities', '3': 3, '4': 3, '5': 11, '6': '.protocol.profile.v1.UserStatus.Activity', '10': 'activities'},
+    const {'1': 'platform', '3': 4, '4': 1, '5': 14, '6': '.protocol.profile.v1.UserStatus.Platform', '10': 'platform'},
+  ],
+  '3': const [UserStatus_Action$json, UserStatus_Activity$json],
+  '4': const [UserStatus_Kind$json, UserStatus_Platform$json],
+};
+
+@$core.Deprecated('Use userStatusDescriptor instead')
+const UserStatus_Action$json = const {
+  '1': 'Action',
+  '2': const [
+    const {'1': 'url', '3': 1, '4': 1, '5': 9, '10': 'url'},
+    const {'1': 'name', '3': 2, '4': 1, '5': 9, '9': 0, '10': 'name', '17': true},
+    const {'1': 'icon', '3': 3, '4': 1, '5': 9, '9': 1, '10': 'icon', '17': true},
+  ],
+  '8': const [
+    const {'1': '_name'},
+    const {'1': '_icon'},
+  ],
+};
+
+@$core.Deprecated('Use userStatusDescriptor instead')
+const UserStatus_Activity$json = const {
+  '1': 'Activity',
+  '2': const [
+    const {'1': 'started', '3': 1, '4': 1, '5': 4, '10': 'started'},
+    const {'1': 'title', '3': 2, '4': 1, '5': 9, '10': 'title'},
+    const {'1': 'details', '3': 3, '4': 1, '5': 9, '9': 0, '10': 'details', '17': true},
+    const {'1': 'image', '3': 4, '4': 1, '5': 9, '9': 1, '10': 'image', '17': true},
+    const {'1': 'color', '3': 5, '4': 1, '5': 13, '9': 2, '10': 'color', '17': true},
+    const {'1': 'actions', '3': 6, '4': 3, '5': 11, '6': '.protocol.profile.v1.UserStatus.Action', '10': 'actions'},
+  ],
+  '8': const [
+    const {'1': '_details'},
+    const {'1': '_image'},
+    const {'1': '_color'},
+  ],
+};
+
+@$core.Deprecated('Use userStatusDescriptor instead')
+const UserStatus_Kind$json = const {
+  '1': 'Kind',
+  '2': const [
+    const {'1': 'KIND_OFFLINE_UNSPECIFIED', '2': 0},
+    const {'1': 'KIND_ONLINE', '2': 1},
+    const {'1': 'KIND_IDLE', '2': 2},
+    const {'1': 'KIND_DO_NOT_DISTURB', '2': 3},
+  ],
+};
+
+@$core.Deprecated('Use userStatusDescriptor instead')
+const UserStatus_Platform$json = const {
+  '1': 'Platform',
+  '2': const [
+    const {'1': 'PLATFORM_DESKTOP_UNSPECIFIED', '2': 0},
+    const {'1': 'PLATFORM_MOBILE', '2': 1},
+  ],
+};
+
+/// Descriptor for `UserStatus`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List userStatusDescriptor = $convert.base64Decode('CgpVc2VyU3RhdHVzEjgKBGtpbmQYASABKA4yJC5wcm90b2NvbC5wcm9maWxlLnYxLlVzZXJTdGF0dXMuS2luZFIEa2luZBIYCgdtZXNzYWdlGAIgASgJUgdtZXNzYWdlEkgKCmFjdGl2aXRpZXMYAyADKAsyKC5wcm90b2NvbC5wcm9maWxlLnYxLlVzZXJTdGF0dXMuQWN0aXZpdHlSCmFjdGl2aXRpZXMSRAoIcGxhdGZvcm0YBCABKA4yKC5wcm90b2NvbC5wcm9maWxlLnYxLlVzZXJTdGF0dXMuUGxhdGZvcm1SCHBsYXRmb3JtGl4KBkFjdGlvbhIQCgN1cmwYASABKAlSA3VybBIXCgRuYW1lGAIgASgJSABSBG5hbWWIAQESFwoEaWNvbhgDIAEoCUgBUgRpY29uiAEBQgcKBV9uYW1lQgcKBV9pY29uGvEBCghBY3Rpdml0eRIYCgdzdGFydGVkGAEgASgEUgdzdGFydGVkEhQKBXRpdGxlGAIgASgJUgV0aXRsZRIdCgdkZXRhaWxzGAMgASgJSABSB2RldGFpbHOIAQESGQoFaW1hZ2UYBCABKAlIAVIFaW1hZ2WIAQESGQoFY29sb3IYBSABKA1IAlIFY29sb3KIAQESQAoHYWN0aW9ucxgGIAMoCzImLnByb3RvY29sLnByb2ZpbGUudjEuVXNlclN0YXR1cy5BY3Rpb25SB2FjdGlvbnNCCgoIX2RldGFpbHNCCAoGX2ltYWdlQggKBl9jb2xvciJdCgRLaW5kEhwKGEtJTkRfT0ZGTElORV9VTlNQRUNJRklFRBAAEg8KC0tJTkRfT05MSU5FEAESDQoJS0lORF9JRExFEAISFwoTS0lORF9ET19OT1RfRElTVFVSQhADIkEKCFBsYXRmb3JtEiAKHFBMQVRGT1JNX0RFU0tUT1BfVU5TUEVDSUZJRUQQABITCg9QTEFURk9STV9NT0JJTEUQAQ==');
 @$core.Deprecated('Use profileDescriptor instead')
 const Profile$json = const {
   '1': 'Profile',
   '2': const [
     const {'1': 'user_name', '3': 1, '4': 1, '5': 9, '10': 'userName'},
     const {'1': 'user_avatar', '3': 2, '4': 1, '5': 9, '9': 0, '10': 'userAvatar', '17': true},
-    const {'1': 'user_status', '3': 3, '4': 1, '5': 14, '6': '.protocol.profile.v1.UserStatus', '10': 'userStatus'},
+    const {'1': 'user_status', '3': 3, '4': 1, '5': 11, '6': '.protocol.profile.v1.UserStatus', '10': 'userStatus'},
     const {'1': 'account_kind', '3': 4, '4': 1, '5': 14, '6': '.protocol.profile.v1.AccountKind', '10': 'accountKind'},
   ],
   '8': const [
@@ -50,7 +102,7 @@ const Profile$json = const {
 };
 
 /// Descriptor for `Profile`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List profileDescriptor = $convert.base64Decode('CgdQcm9maWxlEhsKCXVzZXJfbmFtZRgBIAEoCVIIdXNlck5hbWUSJAoLdXNlcl9hdmF0YXIYAiABKAlIAFIKdXNlckF2YXRhcogBARJACgt1c2VyX3N0YXR1cxgDIAEoDjIfLnByb3RvY29sLnByb2ZpbGUudjEuVXNlclN0YXR1c1IKdXNlclN0YXR1cxJDCgxhY2NvdW50X2tpbmQYBCABKA4yIC5wcm90b2NvbC5wcm9maWxlLnYxLkFjY291bnRLaW5kUgthY2NvdW50S2luZEIOCgxfdXNlcl9hdmF0YXI=');
+final $typed_data.Uint8List profileDescriptor = $convert.base64Decode('CgdQcm9maWxlEhsKCXVzZXJfbmFtZRgBIAEoCVIIdXNlck5hbWUSJAoLdXNlcl9hdmF0YXIYAiABKAlIAFIKdXNlckF2YXRhcogBARJACgt1c2VyX3N0YXR1cxgDIAEoCzIfLnByb3RvY29sLnByb2ZpbGUudjEuVXNlclN0YXR1c1IKdXNlclN0YXR1cxJDCgxhY2NvdW50X2tpbmQYBCABKA4yIC5wcm90b2NvbC5wcm9maWxlLnYxLkFjY291bnRLaW5kUgthY2NvdW50S2luZEIOCgxfdXNlcl9hdmF0YXI=');
 @$core.Deprecated('Use getProfileRequestDescriptor instead')
 const GetProfileRequest$json = const {
   '1': 'GetProfileRequest',
@@ -88,17 +140,15 @@ const UpdateProfileRequest$json = const {
   '2': const [
     const {'1': 'new_user_name', '3': 1, '4': 1, '5': 9, '9': 0, '10': 'newUserName', '17': true},
     const {'1': 'new_user_avatar', '3': 2, '4': 1, '5': 9, '9': 1, '10': 'newUserAvatar', '17': true},
-    const {'1': 'new_user_status', '3': 3, '4': 1, '5': 14, '6': '.protocol.profile.v1.UserStatus', '9': 2, '10': 'newUserStatus', '17': true},
   ],
   '8': const [
     const {'1': '_new_user_name'},
     const {'1': '_new_user_avatar'},
-    const {'1': '_new_user_status'},
   ],
 };
 
 /// Descriptor for `UpdateProfileRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List updateProfileRequestDescriptor = $convert.base64Decode('ChRVcGRhdGVQcm9maWxlUmVxdWVzdBInCg1uZXdfdXNlcl9uYW1lGAEgASgJSABSC25ld1VzZXJOYW1liAEBEisKD25ld191c2VyX2F2YXRhchgCIAEoCUgBUg1uZXdVc2VyQXZhdGFyiAEBEkwKD25ld191c2VyX3N0YXR1cxgDIAEoDjIfLnByb3RvY29sLnByb2ZpbGUudjEuVXNlclN0YXR1c0gCUg1uZXdVc2VyU3RhdHVziAEBQhAKDl9uZXdfdXNlcl9uYW1lQhIKEF9uZXdfdXNlcl9hdmF0YXJCEgoQX25ld191c2VyX3N0YXR1cw==');
+final $typed_data.Uint8List updateProfileRequestDescriptor = $convert.base64Decode('ChRVcGRhdGVQcm9maWxlUmVxdWVzdBInCg1uZXdfdXNlcl9uYW1lGAEgASgJSABSC25ld1VzZXJOYW1liAEBEisKD25ld191c2VyX2F2YXRhchgCIAEoCUgBUg1uZXdVc2VyQXZhdGFyiAEBQhAKDl9uZXdfdXNlcl9uYW1lQhIKEF9uZXdfdXNlcl9hdmF0YXI=');
 @$core.Deprecated('Use updateProfileResponseDescriptor instead')
 const UpdateProfileResponse$json = const {
   '1': 'UpdateProfileResponse',
@@ -106,6 +156,23 @@ const UpdateProfileResponse$json = const {
 
 /// Descriptor for `UpdateProfileResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List updateProfileResponseDescriptor = $convert.base64Decode('ChVVcGRhdGVQcm9maWxlUmVzcG9uc2U=');
+@$core.Deprecated('Use updateStatusRequestDescriptor instead')
+const UpdateStatusRequest$json = const {
+  '1': 'UpdateStatusRequest',
+  '2': const [
+    const {'1': 'new_status', '3': 1, '4': 1, '5': 11, '6': '.protocol.profile.v1.UserStatus', '10': 'newStatus'},
+  ],
+};
+
+/// Descriptor for `UpdateStatusRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List updateStatusRequestDescriptor = $convert.base64Decode('ChNVcGRhdGVTdGF0dXNSZXF1ZXN0Ej4KCm5ld19zdGF0dXMYASABKAsyHy5wcm90b2NvbC5wcm9maWxlLnYxLlVzZXJTdGF0dXNSCW5ld1N0YXR1cw==');
+@$core.Deprecated('Use updateStatusResponseDescriptor instead')
+const UpdateStatusResponse$json = const {
+  '1': 'UpdateStatusResponse',
+};
+
+/// Descriptor for `UpdateStatusResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List updateStatusResponseDescriptor = $convert.base64Decode('ChRVcGRhdGVTdGF0dXNSZXNwb25zZQ==');
 @$core.Deprecated('Use getAppDataRequestDescriptor instead')
 const GetAppDataRequest$json = const {
   '1': 'GetAppDataRequest',

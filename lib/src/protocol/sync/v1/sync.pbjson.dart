@@ -25,10 +25,12 @@ const Event$json = const {
   '2': const [
     const {'1': 'user_removed_from_guild', '3': 1, '4': 1, '5': 11, '6': '.protocol.sync.v1.Event.UserRemovedFromGuild', '9': 0, '10': 'userRemovedFromGuild'},
     const {'1': 'user_added_to_guild', '3': 2, '4': 1, '5': 11, '6': '.protocol.sync.v1.Event.UserAddedToGuild', '9': 0, '10': 'userAddedToGuild'},
-    const {'1': 'user_invited', '3': 3, '4': 1, '5': 11, '6': '.protocol.sync.v1.Event.UserInvited', '9': 0, '10': 'userInvited'},
-    const {'1': 'user_rejected_invite', '3': 4, '4': 1, '5': 11, '6': '.protocol.sync.v1.Event.UserRejectedInvite', '9': 0, '10': 'userRejectedInvite'},
+    const {'1': 'user_removed_from_channel', '3': 3, '4': 1, '5': 11, '6': '.protocol.sync.v1.Event.UserRemovedFromChannel', '9': 0, '10': 'userRemovedFromChannel'},
+    const {'1': 'user_added_to_channel', '3': 4, '4': 1, '5': 11, '6': '.protocol.sync.v1.Event.UserAddedToChannel', '9': 0, '10': 'userAddedToChannel'},
+    const {'1': 'user_invited', '3': 5, '4': 1, '5': 11, '6': '.protocol.sync.v1.Event.UserInvited', '9': 0, '10': 'userInvited'},
+    const {'1': 'user_rejected_invite', '3': 6, '4': 1, '5': 11, '6': '.protocol.sync.v1.Event.UserRejectedInvite', '9': 0, '10': 'userRejectedInvite'},
   ],
-  '3': const [Event_UserRemovedFromGuild$json, Event_UserAddedToGuild$json, Event_UserInvited$json, Event_UserRejectedInvite$json],
+  '3': const [Event_UserRemovedFromGuild$json, Event_UserAddedToGuild$json, Event_UserRemovedFromChannel$json, Event_UserAddedToChannel$json, Event_UserInvited$json, Event_UserRejectedInvite$json],
   '8': const [
     const {'1': 'kind'},
   ],
@@ -53,12 +55,34 @@ const Event_UserAddedToGuild$json = const {
 };
 
 @$core.Deprecated('Use eventDescriptor instead')
+const Event_UserRemovedFromChannel$json = const {
+  '1': 'UserRemovedFromChannel',
+  '2': const [
+    const {'1': 'user_id', '3': 1, '4': 1, '5': 4, '10': 'userId'},
+    const {'1': 'channel_id', '3': 2, '4': 1, '5': 4, '10': 'channelId'},
+  ],
+};
+
+@$core.Deprecated('Use eventDescriptor instead')
+const Event_UserAddedToChannel$json = const {
+  '1': 'UserAddedToChannel',
+  '2': const [
+    const {'1': 'user_id', '3': 1, '4': 1, '5': 4, '10': 'userId'},
+    const {'1': 'channel_id', '3': 2, '4': 1, '5': 4, '10': 'channelId'},
+  ],
+};
+
+@$core.Deprecated('Use eventDescriptor instead')
 const Event_UserInvited$json = const {
   '1': 'UserInvited',
   '2': const [
     const {'1': 'user_id', '3': 1, '4': 1, '5': 4, '10': 'userId'},
     const {'1': 'inviter_id', '3': 2, '4': 1, '5': 4, '10': 'inviterId'},
-    const {'1': 'invite_id', '3': 3, '4': 1, '5': 9, '10': 'inviteId'},
+    const {'1': 'guild_invite_id', '3': 3, '4': 1, '5': 9, '9': 0, '10': 'guildInviteId'},
+    const {'1': 'channel_id', '3': 4, '4': 1, '5': 4, '9': 0, '10': 'channelId'},
+  ],
+  '8': const [
+    const {'1': 'location'},
   ],
 };
 
@@ -66,14 +90,18 @@ const Event_UserInvited$json = const {
 const Event_UserRejectedInvite$json = const {
   '1': 'UserRejectedInvite',
   '2': const [
-    const {'1': 'guild_id', '3': 1, '4': 1, '5': 4, '10': 'guildId'},
-    const {'1': 'user_id', '3': 2, '4': 1, '5': 4, '10': 'userId'},
-    const {'1': 'invite_id', '3': 3, '4': 1, '5': 9, '10': 'inviteId'},
+    const {'1': 'user_id', '3': 1, '4': 1, '5': 4, '10': 'userId'},
+    const {'1': 'inviter_id', '3': 2, '4': 1, '5': 4, '10': 'inviterId'},
+    const {'1': 'guild_invite_id', '3': 3, '4': 1, '5': 9, '9': 0, '10': 'guildInviteId'},
+    const {'1': 'channel_id', '3': 4, '4': 1, '5': 4, '9': 0, '10': 'channelId'},
+  ],
+  '8': const [
+    const {'1': 'location'},
   ],
 };
 
 /// Descriptor for `Event`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List eventDescriptor = $convert.base64Decode('CgVFdmVudBJlChd1c2VyX3JlbW92ZWRfZnJvbV9ndWlsZBgBIAEoCzIsLnByb3RvY29sLnN5bmMudjEuRXZlbnQuVXNlclJlbW92ZWRGcm9tR3VpbGRIAFIUdXNlclJlbW92ZWRGcm9tR3VpbGQSWQoTdXNlcl9hZGRlZF90b19ndWlsZBgCIAEoCzIoLnByb3RvY29sLnN5bmMudjEuRXZlbnQuVXNlckFkZGVkVG9HdWlsZEgAUhB1c2VyQWRkZWRUb0d1aWxkEkgKDHVzZXJfaW52aXRlZBgDIAEoCzIjLnByb3RvY29sLnN5bmMudjEuRXZlbnQuVXNlckludml0ZWRIAFILdXNlckludml0ZWQSXgoUdXNlcl9yZWplY3RlZF9pbnZpdGUYBCABKAsyKi5wcm90b2NvbC5zeW5jLnYxLkV2ZW50LlVzZXJSZWplY3RlZEludml0ZUgAUhJ1c2VyUmVqZWN0ZWRJbnZpdGUaSgoUVXNlclJlbW92ZWRGcm9tR3VpbGQSFwoHdXNlcl9pZBgBIAEoBFIGdXNlcklkEhkKCGd1aWxkX2lkGAIgASgEUgdndWlsZElkGkYKEFVzZXJBZGRlZFRvR3VpbGQSFwoHdXNlcl9pZBgBIAEoBFIGdXNlcklkEhkKCGd1aWxkX2lkGAIgASgEUgdndWlsZElkGmIKC1VzZXJJbnZpdGVkEhcKB3VzZXJfaWQYASABKARSBnVzZXJJZBIdCgppbnZpdGVyX2lkGAIgASgEUglpbnZpdGVySWQSGwoJaW52aXRlX2lkGAMgASgJUghpbnZpdGVJZBplChJVc2VyUmVqZWN0ZWRJbnZpdGUSGQoIZ3VpbGRfaWQYASABKARSB2d1aWxkSWQSFwoHdXNlcl9pZBgCIAEoBFIGdXNlcklkEhsKCWludml0ZV9pZBgDIAEoCVIIaW52aXRlSWRCBgoEa2luZA==');
+final $typed_data.Uint8List eventDescriptor = $convert.base64Decode('CgVFdmVudBJlChd1c2VyX3JlbW92ZWRfZnJvbV9ndWlsZBgBIAEoCzIsLnByb3RvY29sLnN5bmMudjEuRXZlbnQuVXNlclJlbW92ZWRGcm9tR3VpbGRIAFIUdXNlclJlbW92ZWRGcm9tR3VpbGQSWQoTdXNlcl9hZGRlZF90b19ndWlsZBgCIAEoCzIoLnByb3RvY29sLnN5bmMudjEuRXZlbnQuVXNlckFkZGVkVG9HdWlsZEgAUhB1c2VyQWRkZWRUb0d1aWxkEmsKGXVzZXJfcmVtb3ZlZF9mcm9tX2NoYW5uZWwYAyABKAsyLi5wcm90b2NvbC5zeW5jLnYxLkV2ZW50LlVzZXJSZW1vdmVkRnJvbUNoYW5uZWxIAFIWdXNlclJlbW92ZWRGcm9tQ2hhbm5lbBJfChV1c2VyX2FkZGVkX3RvX2NoYW5uZWwYBCABKAsyKi5wcm90b2NvbC5zeW5jLnYxLkV2ZW50LlVzZXJBZGRlZFRvQ2hhbm5lbEgAUhJ1c2VyQWRkZWRUb0NoYW5uZWwSSAoMdXNlcl9pbnZpdGVkGAUgASgLMiMucHJvdG9jb2wuc3luYy52MS5FdmVudC5Vc2VySW52aXRlZEgAUgt1c2VySW52aXRlZBJeChR1c2VyX3JlamVjdGVkX2ludml0ZRgGIAEoCzIqLnByb3RvY29sLnN5bmMudjEuRXZlbnQuVXNlclJlamVjdGVkSW52aXRlSABSEnVzZXJSZWplY3RlZEludml0ZRpKChRVc2VyUmVtb3ZlZEZyb21HdWlsZBIXCgd1c2VyX2lkGAEgASgEUgZ1c2VySWQSGQoIZ3VpbGRfaWQYAiABKARSB2d1aWxkSWQaRgoQVXNlckFkZGVkVG9HdWlsZBIXCgd1c2VyX2lkGAEgASgEUgZ1c2VySWQSGQoIZ3VpbGRfaWQYAiABKARSB2d1aWxkSWQaUAoWVXNlclJlbW92ZWRGcm9tQ2hhbm5lbBIXCgd1c2VyX2lkGAEgASgEUgZ1c2VySWQSHQoKY2hhbm5lbF9pZBgCIAEoBFIJY2hhbm5lbElkGkwKElVzZXJBZGRlZFRvQ2hhbm5lbBIXCgd1c2VyX2lkGAEgASgEUgZ1c2VySWQSHQoKY2hhbm5lbF9pZBgCIAEoBFIJY2hhbm5lbElkGpwBCgtVc2VySW52aXRlZBIXCgd1c2VyX2lkGAEgASgEUgZ1c2VySWQSHQoKaW52aXRlcl9pZBgCIAEoBFIJaW52aXRlcklkEigKD2d1aWxkX2ludml0ZV9pZBgDIAEoCUgAUg1ndWlsZEludml0ZUlkEh8KCmNoYW5uZWxfaWQYBCABKARIAFIJY2hhbm5lbElkQgoKCGxvY2F0aW9uGqMBChJVc2VyUmVqZWN0ZWRJbnZpdGUSFwoHdXNlcl9pZBgBIAEoBFIGdXNlcklkEh0KCmludml0ZXJfaWQYAiABKARSCWludml0ZXJJZBIoCg9ndWlsZF9pbnZpdGVfaWQYAyABKAlIAFINZ3VpbGRJbnZpdGVJZBIfCgpjaGFubmVsX2lkGAQgASgESABSCWNoYW5uZWxJZEIKCghsb2NhdGlvbkIGCgRraW5k');
 @$core.Deprecated('Use pullRequestDescriptor instead')
 const PullRequest$json = const {
   '1': 'PullRequest',
@@ -141,6 +169,8 @@ const $core.Map<$core.String, $core.Map<$core.String, $core.dynamic>> PostboxSer
   '.protocol.sync.v1.Event': Event$json,
   '.protocol.sync.v1.Event.UserRemovedFromGuild': Event_UserRemovedFromGuild$json,
   '.protocol.sync.v1.Event.UserAddedToGuild': Event_UserAddedToGuild$json,
+  '.protocol.sync.v1.Event.UserRemovedFromChannel': Event_UserRemovedFromChannel$json,
+  '.protocol.sync.v1.Event.UserAddedToChannel': Event_UserAddedToChannel$json,
   '.protocol.sync.v1.Event.UserInvited': Event_UserInvited$json,
   '.protocol.sync.v1.Event.UserRejectedInvite': Event_UserRejectedInvite$json,
   '.protocol.sync.v1.PushRequest': PushRequest$json,

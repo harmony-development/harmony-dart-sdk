@@ -177,279 +177,21 @@ class Overrides extends $pb.GeneratedMessage {
   $0.Empty ensureBridge() => $_ensure(6);
 }
 
-class ActionPayload_Button extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ActionPayload.Button', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.chat.v1'), createEmptyInstance: create)
-    ..a<$core.List<$core.int>>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'data', $pb.PbFieldType.OY)
-    ..hasRequiredFields = false
-  ;
-
-  ActionPayload_Button._() : super();
-  factory ActionPayload_Button({
-    $core.List<$core.int>? data,
-  }) {
-    final _result = create();
-    if (data != null) {
-      _result.data = data;
-    }
-    return _result;
-  }
-  factory ActionPayload_Button.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory ActionPayload_Button.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
-  ActionPayload_Button clone() => ActionPayload_Button()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
-  ActionPayload_Button copyWith(void Function(ActionPayload_Button) updates) => super.copyWith((message) => updates(message as ActionPayload_Button)) as ActionPayload_Button; // ignore: deprecated_member_use
-  $pb.BuilderInfo get info_ => _i;
-  @$core.pragma('dart2js:noInline')
-  static ActionPayload_Button create() => ActionPayload_Button._();
-  ActionPayload_Button createEmptyInstance() => create();
-  static $pb.PbList<ActionPayload_Button> createRepeated() => $pb.PbList<ActionPayload_Button>();
-  @$core.pragma('dart2js:noInline')
-  static ActionPayload_Button getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ActionPayload_Button>(create);
-  static ActionPayload_Button? _defaultInstance;
-
-  @$pb.TagNumber(1)
-  $core.List<$core.int> get data => $_getN(0);
-  @$pb.TagNumber(1)
-  set data($core.List<$core.int> v) { $_setBytes(0, v); }
-  @$pb.TagNumber(1)
-  $core.bool hasData() => $_has(0);
-  @$pb.TagNumber(1)
-  void clearData() => clearField(1);
-}
-
-class ActionPayload_Dropdown extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ActionPayload.Dropdown', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.chat.v1'), createEmptyInstance: create)
-    ..a<$core.List<$core.int>>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'choice', $pb.PbFieldType.OY)
-    ..hasRequiredFields = false
-  ;
-
-  ActionPayload_Dropdown._() : super();
-  factory ActionPayload_Dropdown({
-    $core.List<$core.int>? choice,
-  }) {
-    final _result = create();
-    if (choice != null) {
-      _result.choice = choice;
-    }
-    return _result;
-  }
-  factory ActionPayload_Dropdown.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory ActionPayload_Dropdown.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
-  ActionPayload_Dropdown clone() => ActionPayload_Dropdown()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
-  ActionPayload_Dropdown copyWith(void Function(ActionPayload_Dropdown) updates) => super.copyWith((message) => updates(message as ActionPayload_Dropdown)) as ActionPayload_Dropdown; // ignore: deprecated_member_use
-  $pb.BuilderInfo get info_ => _i;
-  @$core.pragma('dart2js:noInline')
-  static ActionPayload_Dropdown create() => ActionPayload_Dropdown._();
-  ActionPayload_Dropdown createEmptyInstance() => create();
-  static $pb.PbList<ActionPayload_Dropdown> createRepeated() => $pb.PbList<ActionPayload_Dropdown>();
-  @$core.pragma('dart2js:noInline')
-  static ActionPayload_Dropdown getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ActionPayload_Dropdown>(create);
-  static ActionPayload_Dropdown? _defaultInstance;
-
-  @$pb.TagNumber(1)
-  $core.List<$core.int> get choice => $_getN(0);
-  @$pb.TagNumber(1)
-  set choice($core.List<$core.int> v) { $_setBytes(0, v); }
-  @$pb.TagNumber(1)
-  $core.bool hasChoice() => $_has(0);
-  @$pb.TagNumber(1)
-  void clearChoice() => clearField(1);
-}
-
-class ActionPayload_Input extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ActionPayload.Input', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.chat.v1'), createEmptyInstance: create)
-    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'input')
-    ..a<$core.List<$core.int>>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'data', $pb.PbFieldType.OY)
-    ..hasRequiredFields = false
-  ;
-
-  ActionPayload_Input._() : super();
-  factory ActionPayload_Input({
-    $core.String? input,
-    $core.List<$core.int>? data,
-  }) {
-    final _result = create();
-    if (input != null) {
-      _result.input = input;
-    }
-    if (data != null) {
-      _result.data = data;
-    }
-    return _result;
-  }
-  factory ActionPayload_Input.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory ActionPayload_Input.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
-  ActionPayload_Input clone() => ActionPayload_Input()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
-  ActionPayload_Input copyWith(void Function(ActionPayload_Input) updates) => super.copyWith((message) => updates(message as ActionPayload_Input)) as ActionPayload_Input; // ignore: deprecated_member_use
-  $pb.BuilderInfo get info_ => _i;
-  @$core.pragma('dart2js:noInline')
-  static ActionPayload_Input create() => ActionPayload_Input._();
-  ActionPayload_Input createEmptyInstance() => create();
-  static $pb.PbList<ActionPayload_Input> createRepeated() => $pb.PbList<ActionPayload_Input>();
-  @$core.pragma('dart2js:noInline')
-  static ActionPayload_Input getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ActionPayload_Input>(create);
-  static ActionPayload_Input? _defaultInstance;
-
-  @$pb.TagNumber(1)
-  $core.String get input => $_getSZ(0);
-  @$pb.TagNumber(1)
-  set input($core.String v) { $_setString(0, v); }
-  @$pb.TagNumber(1)
-  $core.bool hasInput() => $_has(0);
-  @$pb.TagNumber(1)
-  void clearInput() => clearField(1);
-
-  @$pb.TagNumber(2)
-  $core.List<$core.int> get data => $_getN(1);
-  @$pb.TagNumber(2)
-  set data($core.List<$core.int> v) { $_setBytes(1, v); }
-  @$pb.TagNumber(2)
-  $core.bool hasData() => $_has(1);
-  @$pb.TagNumber(2)
-  void clearData() => clearField(2);
-}
-
-enum ActionPayload_Payload {
-  button, 
-  dropdown, 
-  input, 
-  notSet
-}
-
-class ActionPayload extends $pb.GeneratedMessage {
-  static const $core.Map<$core.int, ActionPayload_Payload> _ActionPayload_PayloadByTag = {
-    1 : ActionPayload_Payload.button,
-    2 : ActionPayload_Payload.dropdown,
-    3 : ActionPayload_Payload.input,
-    0 : ActionPayload_Payload.notSet
-  };
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ActionPayload', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.chat.v1'), createEmptyInstance: create)
-    ..oo(0, [1, 2, 3])
-    ..aOM<ActionPayload_Button>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'button', subBuilder: ActionPayload_Button.create)
-    ..aOM<ActionPayload_Dropdown>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'dropdown', subBuilder: ActionPayload_Dropdown.create)
-    ..aOM<ActionPayload_Input>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'input', subBuilder: ActionPayload_Input.create)
-    ..hasRequiredFields = false
-  ;
-
-  ActionPayload._() : super();
-  factory ActionPayload({
-    ActionPayload_Button? button,
-    ActionPayload_Dropdown? dropdown,
-    ActionPayload_Input? input,
-  }) {
-    final _result = create();
-    if (button != null) {
-      _result.button = button;
-    }
-    if (dropdown != null) {
-      _result.dropdown = dropdown;
-    }
-    if (input != null) {
-      _result.input = input;
-    }
-    return _result;
-  }
-  factory ActionPayload.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory ActionPayload.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
-  ActionPayload clone() => ActionPayload()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
-  ActionPayload copyWith(void Function(ActionPayload) updates) => super.copyWith((message) => updates(message as ActionPayload)) as ActionPayload; // ignore: deprecated_member_use
-  $pb.BuilderInfo get info_ => _i;
-  @$core.pragma('dart2js:noInline')
-  static ActionPayload create() => ActionPayload._();
-  ActionPayload createEmptyInstance() => create();
-  static $pb.PbList<ActionPayload> createRepeated() => $pb.PbList<ActionPayload>();
-  @$core.pragma('dart2js:noInline')
-  static ActionPayload getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ActionPayload>(create);
-  static ActionPayload? _defaultInstance;
-
-  ActionPayload_Payload whichPayload() => _ActionPayload_PayloadByTag[$_whichOneof(0)]!;
-  void clearPayload() => clearField($_whichOneof(0));
-
-  @$pb.TagNumber(1)
-  ActionPayload_Button get button => $_getN(0);
-  @$pb.TagNumber(1)
-  set button(ActionPayload_Button v) { setField(1, v); }
-  @$pb.TagNumber(1)
-  $core.bool hasButton() => $_has(0);
-  @$pb.TagNumber(1)
-  void clearButton() => clearField(1);
-  @$pb.TagNumber(1)
-  ActionPayload_Button ensureButton() => $_ensure(0);
-
-  @$pb.TagNumber(2)
-  ActionPayload_Dropdown get dropdown => $_getN(1);
-  @$pb.TagNumber(2)
-  set dropdown(ActionPayload_Dropdown v) { setField(2, v); }
-  @$pb.TagNumber(2)
-  $core.bool hasDropdown() => $_has(1);
-  @$pb.TagNumber(2)
-  void clearDropdown() => clearField(2);
-  @$pb.TagNumber(2)
-  ActionPayload_Dropdown ensureDropdown() => $_ensure(1);
-
-  @$pb.TagNumber(3)
-  ActionPayload_Input get input => $_getN(2);
-  @$pb.TagNumber(3)
-  set input(ActionPayload_Input v) { setField(3, v); }
-  @$pb.TagNumber(3)
-  $core.bool hasInput() => $_has(2);
-  @$pb.TagNumber(3)
-  void clearInput() => clearField(3);
-  @$pb.TagNumber(3)
-  ActionPayload_Input ensureInput() => $_ensure(2);
-}
-
 class Action_Button extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Action.Button', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.chat.v1'), createEmptyInstance: create)
     ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'text')
-    ..a<$core.List<$core.int>>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'data', $pb.PbFieldType.OY)
-    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'url')
+    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'url')
     ..hasRequiredFields = false
   ;
 
   Action_Button._() : super();
   factory Action_Button({
     $core.String? text,
-    $core.List<$core.int>? data,
     $core.String? url,
   }) {
     final _result = create();
     if (text != null) {
       _result.text = text;
-    }
-    if (data != null) {
-      _result.data = data;
     }
     if (url != null) {
       _result.url = url;
@@ -487,22 +229,13 @@ class Action_Button extends $pb.GeneratedMessage {
   void clearText() => clearField(1);
 
   @$pb.TagNumber(2)
-  $core.List<$core.int> get data => $_getN(1);
+  $core.String get url => $_getSZ(1);
   @$pb.TagNumber(2)
-  set data($core.List<$core.int> v) { $_setBytes(1, v); }
+  set url($core.String v) { $_setString(1, v); }
   @$pb.TagNumber(2)
-  $core.bool hasData() => $_has(1);
+  $core.bool hasUrl() => $_has(1);
   @$pb.TagNumber(2)
-  void clearData() => clearField(2);
-
-  @$pb.TagNumber(3)
-  $core.String get url => $_getSZ(2);
-  @$pb.TagNumber(3)
-  set url($core.String v) { $_setString(2, v); }
-  @$pb.TagNumber(3)
-  $core.bool hasUrl() => $_has(2);
-  @$pb.TagNumber(3)
-  void clearUrl() => clearField(3);
+  void clearUrl() => clearField(2);
 }
 
 class Action_Dropdown_Entry extends $pb.GeneratedMessage {
@@ -625,7 +358,7 @@ class Action_Input extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Action.Input', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.chat.v1'), createEmptyInstance: create)
     ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'label')
     ..aOB(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'multiline')
-    ..a<$core.List<$core.int>>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'data', $pb.PbFieldType.OY)
+    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'default')
     ..hasRequiredFields = false
   ;
 
@@ -633,7 +366,7 @@ class Action_Input extends $pb.GeneratedMessage {
   factory Action_Input({
     $core.String? label,
     $core.bool? multiline,
-    $core.List<$core.int>? data,
+    $core.String? default_3,
   }) {
     final _result = create();
     if (label != null) {
@@ -642,8 +375,8 @@ class Action_Input extends $pb.GeneratedMessage {
     if (multiline != null) {
       _result.multiline = multiline;
     }
-    if (data != null) {
-      _result.data = data;
+    if (default_3 != null) {
+      _result.default_3 = default_3;
     }
     return _result;
   }
@@ -687,13 +420,13 @@ class Action_Input extends $pb.GeneratedMessage {
   void clearMultiline() => clearField(2);
 
   @$pb.TagNumber(3)
-  $core.List<$core.int> get data => $_getN(2);
+  $core.String get default_3 => $_getSZ(2);
   @$pb.TagNumber(3)
-  set data($core.List<$core.int> v) { $_setBytes(2, v); }
+  set default_3($core.String v) { $_setString(2, v); }
   @$pb.TagNumber(3)
-  $core.bool hasData() => $_has(2);
+  $core.bool hasDefault_3() => $_has(2);
   @$pb.TagNumber(3)
-  void clearData() => clearField(3);
+  void clearDefault_3() => clearField(3);
 }
 
 enum Action_Kind {
@@ -705,23 +438,25 @@ enum Action_Kind {
 
 class Action extends $pb.GeneratedMessage {
   static const $core.Map<$core.int, Action_Kind> _Action_KindByTag = {
-    2 : Action_Kind.button,
-    3 : Action_Kind.dropdown,
-    4 : Action_Kind.input,
+    3 : Action_Kind.button,
+    4 : Action_Kind.dropdown,
+    5 : Action_Kind.input,
     0 : Action_Kind.notSet
   };
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Action', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.chat.v1'), createEmptyInstance: create)
-    ..oo(0, [2, 3, 4])
+    ..oo(0, [3, 4, 5])
     ..e<Action_Type>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'actionType', $pb.PbFieldType.OE, defaultOrMaker: Action_Type.TYPE_NORMAL_UNSPECIFIED, valueOf: Action_Type.valueOf, enumValues: Action_Type.values)
-    ..aOM<Action_Button>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'button', subBuilder: Action_Button.create)
-    ..aOM<Action_Dropdown>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'dropdown', subBuilder: Action_Dropdown.create)
-    ..aOM<Action_Input>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'input', subBuilder: Action_Input.create)
+    ..a<$core.List<$core.int>>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'info', $pb.PbFieldType.OY)
+    ..aOM<Action_Button>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'button', subBuilder: Action_Button.create)
+    ..aOM<Action_Dropdown>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'dropdown', subBuilder: Action_Dropdown.create)
+    ..aOM<Action_Input>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'input', subBuilder: Action_Input.create)
     ..hasRequiredFields = false
   ;
 
   Action._() : super();
   factory Action({
     Action_Type? actionType,
+    $core.List<$core.int>? info,
     Action_Button? button,
     Action_Dropdown? dropdown,
     Action_Input? input,
@@ -729,6 +464,9 @@ class Action extends $pb.GeneratedMessage {
     final _result = create();
     if (actionType != null) {
       _result.actionType = actionType;
+    }
+    if (info != null) {
+      _result.info = info;
     }
     if (button != null) {
       _result.button = button;
@@ -775,61 +513,65 @@ class Action extends $pb.GeneratedMessage {
   void clearActionType() => clearField(1);
 
   @$pb.TagNumber(2)
-  Action_Button get button => $_getN(1);
+  $core.List<$core.int> get info => $_getN(1);
   @$pb.TagNumber(2)
-  set button(Action_Button v) { setField(2, v); }
+  set info($core.List<$core.int> v) { $_setBytes(1, v); }
   @$pb.TagNumber(2)
-  $core.bool hasButton() => $_has(1);
+  $core.bool hasInfo() => $_has(1);
   @$pb.TagNumber(2)
-  void clearButton() => clearField(2);
-  @$pb.TagNumber(2)
-  Action_Button ensureButton() => $_ensure(1);
+  void clearInfo() => clearField(2);
 
   @$pb.TagNumber(3)
-  Action_Dropdown get dropdown => $_getN(2);
+  Action_Button get button => $_getN(2);
   @$pb.TagNumber(3)
-  set dropdown(Action_Dropdown v) { setField(3, v); }
+  set button(Action_Button v) { setField(3, v); }
   @$pb.TagNumber(3)
-  $core.bool hasDropdown() => $_has(2);
+  $core.bool hasButton() => $_has(2);
   @$pb.TagNumber(3)
-  void clearDropdown() => clearField(3);
+  void clearButton() => clearField(3);
   @$pb.TagNumber(3)
-  Action_Dropdown ensureDropdown() => $_ensure(2);
+  Action_Button ensureButton() => $_ensure(2);
 
   @$pb.TagNumber(4)
-  Action_Input get input => $_getN(3);
+  Action_Dropdown get dropdown => $_getN(3);
   @$pb.TagNumber(4)
-  set input(Action_Input v) { setField(4, v); }
+  set dropdown(Action_Dropdown v) { setField(4, v); }
   @$pb.TagNumber(4)
-  $core.bool hasInput() => $_has(3);
+  $core.bool hasDropdown() => $_has(3);
   @$pb.TagNumber(4)
-  void clearInput() => clearField(4);
+  void clearDropdown() => clearField(4);
   @$pb.TagNumber(4)
-  Action_Input ensureInput() => $_ensure(3);
+  Action_Dropdown ensureDropdown() => $_ensure(3);
+
+  @$pb.TagNumber(5)
+  Action_Input get input => $_getN(4);
+  @$pb.TagNumber(5)
+  set input(Action_Input v) { setField(5, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasInput() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearInput() => clearField(5);
+  @$pb.TagNumber(5)
+  Action_Input ensureInput() => $_ensure(4);
 }
 
-class Embed_EmbedHeading extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Embed.EmbedHeading', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.chat.v1'), createEmptyInstance: create)
+class Embed_Heading extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Embed.Heading', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.chat.v1'), createEmptyInstance: create)
     ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'text')
-    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'subtext')
-    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'url')
-    ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'icon')
+    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'url')
+    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'icon')
     ..hasRequiredFields = false
   ;
 
-  Embed_EmbedHeading._() : super();
-  factory Embed_EmbedHeading({
+  Embed_Heading._() : super();
+  factory Embed_Heading({
     $core.String? text,
-    $core.String? subtext,
     $core.String? url,
     $core.String? icon,
   }) {
     final _result = create();
     if (text != null) {
       _result.text = text;
-    }
-    if (subtext != null) {
-      _result.subtext = subtext;
     }
     if (url != null) {
       _result.url = url;
@@ -839,26 +581,26 @@ class Embed_EmbedHeading extends $pb.GeneratedMessage {
     }
     return _result;
   }
-  factory Embed_EmbedHeading.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory Embed_EmbedHeading.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  factory Embed_Heading.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory Embed_Heading.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
   'Will be removed in next major version')
-  Embed_EmbedHeading clone() => Embed_EmbedHeading()..mergeFromMessage(this);
+  Embed_Heading clone() => Embed_Heading()..mergeFromMessage(this);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  Embed_EmbedHeading copyWith(void Function(Embed_EmbedHeading) updates) => super.copyWith((message) => updates(message as Embed_EmbedHeading)) as Embed_EmbedHeading; // ignore: deprecated_member_use
+  Embed_Heading copyWith(void Function(Embed_Heading) updates) => super.copyWith((message) => updates(message as Embed_Heading)) as Embed_Heading; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
-  static Embed_EmbedHeading create() => Embed_EmbedHeading._();
-  Embed_EmbedHeading createEmptyInstance() => create();
-  static $pb.PbList<Embed_EmbedHeading> createRepeated() => $pb.PbList<Embed_EmbedHeading>();
+  static Embed_Heading create() => Embed_Heading._();
+  Embed_Heading createEmptyInstance() => create();
+  static $pb.PbList<Embed_Heading> createRepeated() => $pb.PbList<Embed_Heading>();
   @$core.pragma('dart2js:noInline')
-  static Embed_EmbedHeading getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Embed_EmbedHeading>(create);
-  static Embed_EmbedHeading? _defaultInstance;
+  static Embed_Heading getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Embed_Heading>(create);
+  static Embed_Heading? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.String get text => $_getSZ(0);
@@ -870,43 +612,95 @@ class Embed_EmbedHeading extends $pb.GeneratedMessage {
   void clearText() => clearField(1);
 
   @$pb.TagNumber(2)
-  $core.String get subtext => $_getSZ(1);
+  $core.String get url => $_getSZ(1);
   @$pb.TagNumber(2)
-  set subtext($core.String v) { $_setString(1, v); }
+  set url($core.String v) { $_setString(1, v); }
   @$pb.TagNumber(2)
-  $core.bool hasSubtext() => $_has(1);
+  $core.bool hasUrl() => $_has(1);
   @$pb.TagNumber(2)
-  void clearSubtext() => clearField(2);
+  void clearUrl() => clearField(2);
 
   @$pb.TagNumber(3)
-  $core.String get url => $_getSZ(2);
+  $core.String get icon => $_getSZ(2);
   @$pb.TagNumber(3)
-  set url($core.String v) { $_setString(2, v); }
+  set icon($core.String v) { $_setString(2, v); }
   @$pb.TagNumber(3)
-  $core.bool hasUrl() => $_has(2);
+  $core.bool hasIcon() => $_has(2);
   @$pb.TagNumber(3)
-  void clearUrl() => clearField(3);
-
-  @$pb.TagNumber(4)
-  $core.String get icon => $_getSZ(3);
-  @$pb.TagNumber(4)
-  set icon($core.String v) { $_setString(3, v); }
-  @$pb.TagNumber(4)
-  $core.bool hasIcon() => $_has(3);
-  @$pb.TagNumber(4)
-  void clearIcon() => clearField(4);
+  void clearIcon() => clearField(3);
 }
 
-class Embed_EmbedField_Image extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Embed.EmbedField.Image', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.chat.v1'), createEmptyInstance: create)
+class Embed_Field extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Embed.Field', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.chat.v1'), createEmptyInstance: create)
+    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'title')
+    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'body')
+    ..hasRequiredFields = false
+  ;
+
+  Embed_Field._() : super();
+  factory Embed_Field({
+    $core.String? title,
+    $core.String? body,
+  }) {
+    final _result = create();
+    if (title != null) {
+      _result.title = title;
+    }
+    if (body != null) {
+      _result.body = body;
+    }
+    return _result;
+  }
+  factory Embed_Field.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory Embed_Field.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  Embed_Field clone() => Embed_Field()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  Embed_Field copyWith(void Function(Embed_Field) updates) => super.copyWith((message) => updates(message as Embed_Field)) as Embed_Field; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static Embed_Field create() => Embed_Field._();
+  Embed_Field createEmptyInstance() => create();
+  static $pb.PbList<Embed_Field> createRepeated() => $pb.PbList<Embed_Field>();
+  @$core.pragma('dart2js:noInline')
+  static Embed_Field getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Embed_Field>(create);
+  static Embed_Field? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get title => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set title($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasTitle() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearTitle() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get body => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set body($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasBody() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearBody() => clearField(2);
+}
+
+class Embed_Image extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Embed.Image', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.chat.v1'), createEmptyInstance: create)
     ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id')
     ..a<$core.int>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'width', $pb.PbFieldType.OU3)
     ..a<$core.int>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'height', $pb.PbFieldType.OU3)
     ..hasRequiredFields = false
   ;
 
-  Embed_EmbedField_Image._() : super();
-  factory Embed_EmbedField_Image({
+  Embed_Image._() : super();
+  factory Embed_Image({
     $core.String? id,
     $core.int? width,
     $core.int? height,
@@ -923,26 +717,26 @@ class Embed_EmbedField_Image extends $pb.GeneratedMessage {
     }
     return _result;
   }
-  factory Embed_EmbedField_Image.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory Embed_EmbedField_Image.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  factory Embed_Image.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory Embed_Image.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
   'Will be removed in next major version')
-  Embed_EmbedField_Image clone() => Embed_EmbedField_Image()..mergeFromMessage(this);
+  Embed_Image clone() => Embed_Image()..mergeFromMessage(this);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  Embed_EmbedField_Image copyWith(void Function(Embed_EmbedField_Image) updates) => super.copyWith((message) => updates(message as Embed_EmbedField_Image)) as Embed_EmbedField_Image; // ignore: deprecated_member_use
+  Embed_Image copyWith(void Function(Embed_Image) updates) => super.copyWith((message) => updates(message as Embed_Image)) as Embed_Image; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
-  static Embed_EmbedField_Image create() => Embed_EmbedField_Image._();
-  Embed_EmbedField_Image createEmptyInstance() => create();
-  static $pb.PbList<Embed_EmbedField_Image> createRepeated() => $pb.PbList<Embed_EmbedField_Image>();
+  static Embed_Image create() => Embed_Image._();
+  Embed_Image createEmptyInstance() => create();
+  static $pb.PbList<Embed_Image> createRepeated() => $pb.PbList<Embed_Image>();
   @$core.pragma('dart2js:noInline')
-  static Embed_EmbedField_Image getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Embed_EmbedField_Image>(create);
-  static Embed_EmbedField_Image? _defaultInstance;
+  static Embed_Image getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Embed_Image>(create);
+  static Embed_Image? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.String get id => $_getSZ(0);
@@ -972,139 +766,28 @@ class Embed_EmbedField_Image extends $pb.GeneratedMessage {
   void clearHeight() => clearField(3);
 }
 
-class Embed_EmbedField extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Embed.EmbedField', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.chat.v1'), createEmptyInstance: create)
-    ..e<Embed_EmbedField_Presentation>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'presentation', $pb.PbFieldType.OE, defaultOrMaker: Embed_EmbedField_Presentation.PRESENTATION_DATA_UNSPECIFIED, valueOf: Embed_EmbedField_Presentation.valueOf, enumValues: Embed_EmbedField_Presentation.values)
-    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'title')
-    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'subtitle')
-    ..aOM<FormattedText>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'body', subBuilder: FormattedText.create)
-    ..aOM<Embed_EmbedField_Image>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'image', subBuilder: Embed_EmbedField_Image.create)
-    ..pc<Action>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'actions', $pb.PbFieldType.PM, subBuilder: Action.create)
-    ..hasRequiredFields = false
-  ;
-
-  Embed_EmbedField._() : super();
-  factory Embed_EmbedField({
-    Embed_EmbedField_Presentation? presentation,
-    $core.String? title,
-    $core.String? subtitle,
-    FormattedText? body,
-    Embed_EmbedField_Image? image,
-    $core.Iterable<Action>? actions,
-  }) {
-    final _result = create();
-    if (presentation != null) {
-      _result.presentation = presentation;
-    }
-    if (title != null) {
-      _result.title = title;
-    }
-    if (subtitle != null) {
-      _result.subtitle = subtitle;
-    }
-    if (body != null) {
-      _result.body = body;
-    }
-    if (image != null) {
-      _result.image = image;
-    }
-    if (actions != null) {
-      _result.actions.addAll(actions);
-    }
-    return _result;
-  }
-  factory Embed_EmbedField.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory Embed_EmbedField.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
-  Embed_EmbedField clone() => Embed_EmbedField()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
-  Embed_EmbedField copyWith(void Function(Embed_EmbedField) updates) => super.copyWith((message) => updates(message as Embed_EmbedField)) as Embed_EmbedField; // ignore: deprecated_member_use
-  $pb.BuilderInfo get info_ => _i;
-  @$core.pragma('dart2js:noInline')
-  static Embed_EmbedField create() => Embed_EmbedField._();
-  Embed_EmbedField createEmptyInstance() => create();
-  static $pb.PbList<Embed_EmbedField> createRepeated() => $pb.PbList<Embed_EmbedField>();
-  @$core.pragma('dart2js:noInline')
-  static Embed_EmbedField getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Embed_EmbedField>(create);
-  static Embed_EmbedField? _defaultInstance;
-
-  @$pb.TagNumber(1)
-  Embed_EmbedField_Presentation get presentation => $_getN(0);
-  @$pb.TagNumber(1)
-  set presentation(Embed_EmbedField_Presentation v) { setField(1, v); }
-  @$pb.TagNumber(1)
-  $core.bool hasPresentation() => $_has(0);
-  @$pb.TagNumber(1)
-  void clearPresentation() => clearField(1);
-
-  @$pb.TagNumber(2)
-  $core.String get title => $_getSZ(1);
-  @$pb.TagNumber(2)
-  set title($core.String v) { $_setString(1, v); }
-  @$pb.TagNumber(2)
-  $core.bool hasTitle() => $_has(1);
-  @$pb.TagNumber(2)
-  void clearTitle() => clearField(2);
-
-  @$pb.TagNumber(3)
-  $core.String get subtitle => $_getSZ(2);
-  @$pb.TagNumber(3)
-  set subtitle($core.String v) { $_setString(2, v); }
-  @$pb.TagNumber(3)
-  $core.bool hasSubtitle() => $_has(2);
-  @$pb.TagNumber(3)
-  void clearSubtitle() => clearField(3);
-
-  @$pb.TagNumber(4)
-  FormattedText get body => $_getN(3);
-  @$pb.TagNumber(4)
-  set body(FormattedText v) { setField(4, v); }
-  @$pb.TagNumber(4)
-  $core.bool hasBody() => $_has(3);
-  @$pb.TagNumber(4)
-  void clearBody() => clearField(4);
-  @$pb.TagNumber(4)
-  FormattedText ensureBody() => $_ensure(3);
-
-  @$pb.TagNumber(5)
-  Embed_EmbedField_Image get image => $_getN(4);
-  @$pb.TagNumber(5)
-  set image(Embed_EmbedField_Image v) { setField(5, v); }
-  @$pb.TagNumber(5)
-  $core.bool hasImage() => $_has(4);
-  @$pb.TagNumber(5)
-  void clearImage() => clearField(5);
-  @$pb.TagNumber(5)
-  Embed_EmbedField_Image ensureImage() => $_ensure(4);
-
-  @$pb.TagNumber(6)
-  $core.List<Action> get actions => $_getList(5);
-}
-
 class Embed extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Embed', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.chat.v1'), createEmptyInstance: create)
-    ..aOM<Embed_EmbedHeading>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'header', subBuilder: Embed_EmbedHeading.create)
+    ..aOM<Embed_Heading>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'header', subBuilder: Embed_Heading.create)
     ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'title')
     ..aOM<FormattedText>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'body', subBuilder: FormattedText.create)
-    ..pc<Embed_EmbedField>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'fields', $pb.PbFieldType.PM, subBuilder: Embed_EmbedField.create)
-    ..aOM<Embed_EmbedHeading>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'footer', subBuilder: Embed_EmbedHeading.create)
-    ..a<$core.int>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'color', $pb.PbFieldType.O3)
+    ..pc<Embed_Field>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'fields', $pb.PbFieldType.PM, subBuilder: Embed_Field.create)
+    ..aOM<Embed_Image>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'image', subBuilder: Embed_Image.create)
+    ..pc<Action>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'actions', $pb.PbFieldType.PM, subBuilder: Action.create)
+    ..aOM<Embed_Heading>(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'footer', subBuilder: Embed_Heading.create)
+    ..a<$core.int>(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'color', $pb.PbFieldType.O3)
     ..hasRequiredFields = false
   ;
 
   Embed._() : super();
   factory Embed({
-    Embed_EmbedHeading? header,
+    Embed_Heading? header,
     $core.String? title,
     FormattedText? body,
-    $core.Iterable<Embed_EmbedField>? fields,
-    Embed_EmbedHeading? footer,
+    $core.Iterable<Embed_Field>? fields,
+    Embed_Image? image,
+    $core.Iterable<Action>? actions,
+    Embed_Heading? footer,
     $core.int? color,
   }) {
     final _result = create();
@@ -1119,6 +802,12 @@ class Embed extends $pb.GeneratedMessage {
     }
     if (fields != null) {
       _result.fields.addAll(fields);
+    }
+    if (image != null) {
+      _result.image = image;
+    }
+    if (actions != null) {
+      _result.actions.addAll(actions);
     }
     if (footer != null) {
       _result.footer = footer;
@@ -1150,15 +839,15 @@ class Embed extends $pb.GeneratedMessage {
   static Embed? _defaultInstance;
 
   @$pb.TagNumber(1)
-  Embed_EmbedHeading get header => $_getN(0);
+  Embed_Heading get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header(Embed_EmbedHeading v) { setField(1, v); }
+  set header(Embed_Heading v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  Embed_EmbedHeading ensureHeader() => $_ensure(0);
+  Embed_Heading ensureHeader() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $core.String get title => $_getSZ(1);
@@ -1181,27 +870,41 @@ class Embed extends $pb.GeneratedMessage {
   FormattedText ensureBody() => $_ensure(2);
 
   @$pb.TagNumber(4)
-  $core.List<Embed_EmbedField> get fields => $_getList(3);
+  $core.List<Embed_Field> get fields => $_getList(3);
 
   @$pb.TagNumber(5)
-  Embed_EmbedHeading get footer => $_getN(4);
+  Embed_Image get image => $_getN(4);
   @$pb.TagNumber(5)
-  set footer(Embed_EmbedHeading v) { setField(5, v); }
+  set image(Embed_Image v) { setField(5, v); }
   @$pb.TagNumber(5)
-  $core.bool hasFooter() => $_has(4);
+  $core.bool hasImage() => $_has(4);
   @$pb.TagNumber(5)
-  void clearFooter() => clearField(5);
+  void clearImage() => clearField(5);
   @$pb.TagNumber(5)
-  Embed_EmbedHeading ensureFooter() => $_ensure(4);
+  Embed_Image ensureImage() => $_ensure(4);
 
   @$pb.TagNumber(6)
-  $core.int get color => $_getIZ(5);
-  @$pb.TagNumber(6)
-  set color($core.int v) { $_setSignedInt32(5, v); }
-  @$pb.TagNumber(6)
-  $core.bool hasColor() => $_has(5);
-  @$pb.TagNumber(6)
-  void clearColor() => clearField(6);
+  $core.List<Action> get actions => $_getList(5);
+
+  @$pb.TagNumber(7)
+  Embed_Heading get footer => $_getN(6);
+  @$pb.TagNumber(7)
+  set footer(Embed_Heading v) { setField(7, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasFooter() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearFooter() => clearField(7);
+  @$pb.TagNumber(7)
+  Embed_Heading ensureFooter() => $_ensure(6);
+
+  @$pb.TagNumber(8)
+  $core.int get color => $_getIZ(7);
+  @$pb.TagNumber(8)
+  set color($core.int v) { $_setSignedInt32(7, v); }
+  @$pb.TagNumber(8)
+  $core.bool hasColor() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearColor() => clearField(8);
 }
 
 class Minithumbnail extends $pb.GeneratedMessage {
@@ -1279,8 +982,8 @@ class Minithumbnail extends $pb.GeneratedMessage {
   void clearData() => clearField(3);
 }
 
-class ImageInfo extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ImageInfo', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.chat.v1'), createEmptyInstance: create)
+class Attachment_ImageInfo extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Attachment.ImageInfo', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.chat.v1'), createEmptyInstance: create)
     ..a<$core.int>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'width', $pb.PbFieldType.OU3)
     ..a<$core.int>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'height', $pb.PbFieldType.OU3)
     ..aOM<Minithumbnail>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'minithumbnail', subBuilder: Minithumbnail.create)
@@ -1288,8 +991,8 @@ class ImageInfo extends $pb.GeneratedMessage {
     ..hasRequiredFields = false
   ;
 
-  ImageInfo._() : super();
-  factory ImageInfo({
+  Attachment_ImageInfo._() : super();
+  factory Attachment_ImageInfo({
     $core.int? width,
     $core.int? height,
     Minithumbnail? minithumbnail,
@@ -1310,26 +1013,26 @@ class ImageInfo extends $pb.GeneratedMessage {
     }
     return _result;
   }
-  factory ImageInfo.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory ImageInfo.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  factory Attachment_ImageInfo.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory Attachment_ImageInfo.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
   'Will be removed in next major version')
-  ImageInfo clone() => ImageInfo()..mergeFromMessage(this);
+  Attachment_ImageInfo clone() => Attachment_ImageInfo()..mergeFromMessage(this);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  ImageInfo copyWith(void Function(ImageInfo) updates) => super.copyWith((message) => updates(message as ImageInfo)) as ImageInfo; // ignore: deprecated_member_use
+  Attachment_ImageInfo copyWith(void Function(Attachment_ImageInfo) updates) => super.copyWith((message) => updates(message as Attachment_ImageInfo)) as Attachment_ImageInfo; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
-  static ImageInfo create() => ImageInfo._();
-  ImageInfo createEmptyInstance() => create();
-  static $pb.PbList<ImageInfo> createRepeated() => $pb.PbList<ImageInfo>();
+  static Attachment_ImageInfo create() => Attachment_ImageInfo._();
+  Attachment_ImageInfo createEmptyInstance() => create();
+  static $pb.PbList<Attachment_ImageInfo> createRepeated() => $pb.PbList<Attachment_ImageInfo>();
   @$core.pragma('dart2js:noInline')
-  static ImageInfo getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ImageInfo>(create);
-  static ImageInfo? _defaultInstance;
+  static Attachment_ImageInfo getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Attachment_ImageInfo>(create);
+  static Attachment_ImageInfo? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.int get width => $_getIZ(0);
@@ -1386,7 +1089,7 @@ class Attachment extends $pb.GeneratedMessage {
     ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'name')
     ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'mimetype')
     ..a<$core.int>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'size', $pb.PbFieldType.OU3)
-    ..aOM<ImageInfo>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'image', subBuilder: ImageInfo.create)
+    ..aOM<Attachment_ImageInfo>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'image', subBuilder: Attachment_ImageInfo.create)
     ..hasRequiredFields = false
   ;
 
@@ -1396,7 +1099,7 @@ class Attachment extends $pb.GeneratedMessage {
     $core.String? name,
     $core.String? mimetype,
     $core.int? size,
-    ImageInfo? image,
+    Attachment_ImageInfo? image,
   }) {
     final _result = create();
     if (id != null) {
@@ -1477,15 +1180,15 @@ class Attachment extends $pb.GeneratedMessage {
   void clearSize() => clearField(4);
 
   @$pb.TagNumber(5)
-  ImageInfo get image => $_getN(4);
+  Attachment_ImageInfo get image => $_getN(4);
   @$pb.TagNumber(5)
-  set image(ImageInfo v) { setField(5, v); }
+  set image(Attachment_ImageInfo v) { setField(5, v); }
   @$pb.TagNumber(5)
   $core.bool hasImage() => $_has(4);
   @$pb.TagNumber(5)
   void clearImage() => clearField(5);
   @$pb.TagNumber(5)
-  ImageInfo ensureImage() => $_ensure(4);
+  Attachment_ImageInfo ensureImage() => $_ensure(4);
 }
 
 class Content_InviteRejected extends $pb.GeneratedMessage {
@@ -1795,19 +1498,29 @@ class Content extends $pb.GeneratedMessage {
 
 class Reaction extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Reaction', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.chat.v1'), createEmptyInstance: create)
-    ..aOM<$1.Emote>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'emote', subBuilder: $1.Emote.create)
-    ..a<$core.int>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'count', $pb.PbFieldType.OU3)
+    ..e<ReactionKind>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'kind', $pb.PbFieldType.OE, defaultOrMaker: ReactionKind.REACTION_KIND_IMAGE_UNSPECIFIED, valueOf: ReactionKind.valueOf, enumValues: ReactionKind.values)
+    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'data')
+    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'name')
+    ..a<$core.int>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'count', $pb.PbFieldType.OU3)
     ..hasRequiredFields = false
   ;
 
   Reaction._() : super();
   factory Reaction({
-    $1.Emote? emote,
+    ReactionKind? kind,
+    $core.String? data,
+    $core.String? name,
     $core.int? count,
   }) {
     final _result = create();
-    if (emote != null) {
-      _result.emote = emote;
+    if (kind != null) {
+      _result.kind = kind;
+    }
+    if (data != null) {
+      _result.data = data;
+    }
+    if (name != null) {
+      _result.name = name;
     }
     if (count != null) {
       _result.count = count;
@@ -1836,24 +1549,40 @@ class Reaction extends $pb.GeneratedMessage {
   static Reaction? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $1.Emote get emote => $_getN(0);
+  ReactionKind get kind => $_getN(0);
   @$pb.TagNumber(1)
-  set emote($1.Emote v) { setField(1, v); }
+  set kind(ReactionKind v) { setField(1, v); }
   @$pb.TagNumber(1)
-  $core.bool hasEmote() => $_has(0);
+  $core.bool hasKind() => $_has(0);
   @$pb.TagNumber(1)
-  void clearEmote() => clearField(1);
-  @$pb.TagNumber(1)
-  $1.Emote ensureEmote() => $_ensure(0);
+  void clearKind() => clearField(1);
 
   @$pb.TagNumber(2)
-  $core.int get count => $_getIZ(1);
+  $core.String get data => $_getSZ(1);
   @$pb.TagNumber(2)
-  set count($core.int v) { $_setUnsignedInt32(1, v); }
+  set data($core.String v) { $_setString(1, v); }
   @$pb.TagNumber(2)
-  $core.bool hasCount() => $_has(1);
+  $core.bool hasData() => $_has(1);
   @$pb.TagNumber(2)
-  void clearCount() => clearField(2);
+  void clearData() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get name => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set name($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasName() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearName() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.int get count => $_getIZ(3);
+  @$pb.TagNumber(4)
+  set count($core.int v) { $_setUnsignedInt32(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasCount() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearCount() => clearField(4);
 }
 
 class Format_Bold extends $pb.GeneratedMessage {
@@ -2282,16 +2011,21 @@ class Format_GuildMention extends $pb.GeneratedMessage {
 class Format_Emoji extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Format.Emoji', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.chat.v1'), createEmptyInstance: create)
     ..aOM<$1.Emote>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'emote', subBuilder: $1.Emote.create)
+    ..a<$fixnum.Int64>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'packId', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
     ..hasRequiredFields = false
   ;
 
   Format_Emoji._() : super();
   factory Format_Emoji({
     $1.Emote? emote,
+    $fixnum.Int64? packId,
   }) {
     final _result = create();
     if (emote != null) {
       _result.emote = emote;
+    }
+    if (packId != null) {
+      _result.packId = packId;
     }
     return _result;
   }
@@ -2326,6 +2060,15 @@ class Format_Emoji extends $pb.GeneratedMessage {
   void clearEmote() => clearField(1);
   @$pb.TagNumber(1)
   $1.Emote ensureEmote() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $fixnum.Int64 get packId => $_getI64(1);
+  @$pb.TagNumber(2)
+  set packId($fixnum.Int64 v) { $_setInt64(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasPackId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearPackId() => clearField(2);
 }
 
 class Format_Color extends $pb.GeneratedMessage {
@@ -2375,53 +2118,6 @@ class Format_Color extends $pb.GeneratedMessage {
   void clearKind() => clearField(1);
 }
 
-class Format_Localization extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Format.Localization', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.chat.v1'), createEmptyInstance: create)
-    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'i18nCode')
-    ..hasRequiredFields = false
-  ;
-
-  Format_Localization._() : super();
-  factory Format_Localization({
-    $core.String? i18nCode,
-  }) {
-    final _result = create();
-    if (i18nCode != null) {
-      _result.i18nCode = i18nCode;
-    }
-    return _result;
-  }
-  factory Format_Localization.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory Format_Localization.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
-  Format_Localization clone() => Format_Localization()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
-  Format_Localization copyWith(void Function(Format_Localization) updates) => super.copyWith((message) => updates(message as Format_Localization)) as Format_Localization; // ignore: deprecated_member_use
-  $pb.BuilderInfo get info_ => _i;
-  @$core.pragma('dart2js:noInline')
-  static Format_Localization create() => Format_Localization._();
-  Format_Localization createEmptyInstance() => create();
-  static $pb.PbList<Format_Localization> createRepeated() => $pb.PbList<Format_Localization>();
-  @$core.pragma('dart2js:noInline')
-  static Format_Localization getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Format_Localization>(create);
-  static Format_Localization? _defaultInstance;
-
-  @$pb.TagNumber(1)
-  $core.String get i18nCode => $_getSZ(0);
-  @$pb.TagNumber(1)
-  set i18nCode($core.String v) { $_setString(0, v); }
-  @$pb.TagNumber(1)
-  $core.bool hasI18nCode() => $_has(0);
-  @$pb.TagNumber(1)
-  void clearI18nCode() => clearField(1);
-}
-
 enum Format_Format {
   bold, 
   italic, 
@@ -2436,7 +2132,6 @@ enum Format_Format {
   guildMention, 
   emoji, 
   color, 
-  localization, 
   notSet
 }
 
@@ -2455,11 +2150,10 @@ class Format extends $pb.GeneratedMessage {
     13 : Format_Format.guildMention,
     14 : Format_Format.emoji,
     15 : Format_Format.color,
-    16 : Format_Format.localization,
     0 : Format_Format.notSet
   };
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Format', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.chat.v1'), createEmptyInstance: create)
-    ..oo(0, [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16])
+    ..oo(0, [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15])
     ..a<$core.int>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'start', $pb.PbFieldType.OU3)
     ..a<$core.int>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'length', $pb.PbFieldType.OU3)
     ..aOM<Format_Bold>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'bold', subBuilder: Format_Bold.create)
@@ -2475,7 +2169,6 @@ class Format extends $pb.GeneratedMessage {
     ..aOM<Format_GuildMention>(13, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'guildMention', subBuilder: Format_GuildMention.create)
     ..aOM<Format_Emoji>(14, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'emoji', subBuilder: Format_Emoji.create)
     ..aOM<Format_Color>(15, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'color', subBuilder: Format_Color.create)
-    ..aOM<Format_Localization>(16, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'localization', subBuilder: Format_Localization.create)
     ..hasRequiredFields = false
   ;
 
@@ -2496,7 +2189,6 @@ class Format extends $pb.GeneratedMessage {
     Format_GuildMention? guildMention,
     Format_Emoji? emoji,
     Format_Color? color,
-    Format_Localization? localization,
   }) {
     final _result = create();
     if (start != null) {
@@ -2543,9 +2235,6 @@ class Format extends $pb.GeneratedMessage {
     }
     if (color != null) {
       _result.color = color;
-    }
-    if (localization != null) {
-      _result.localization = localization;
     }
     return _result;
   }
@@ -2733,17 +2422,6 @@ class Format extends $pb.GeneratedMessage {
   void clearColor() => clearField(15);
   @$pb.TagNumber(15)
   Format_Color ensureColor() => $_ensure(14);
-
-  @$pb.TagNumber(16)
-  Format_Localization get localization => $_getN(15);
-  @$pb.TagNumber(16)
-  set localization(Format_Localization v) { setField(16, v); }
-  @$pb.TagNumber(16)
-  $core.bool hasLocalization() => $_has(15);
-  @$pb.TagNumber(16)
-  void clearLocalization() => clearField(16);
-  @$pb.TagNumber(16)
-  Format_Localization ensureLocalization() => $_ensure(15);
 }
 
 class FormattedText extends $pb.GeneratedMessage {
@@ -2811,6 +2489,7 @@ class Message extends $pb.GeneratedMessage {
     ..a<$fixnum.Int64>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'inReplyTo', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
     ..aOM<Content>(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'content', subBuilder: Content.create)
     ..pc<Reaction>(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'reactions', $pb.PbFieldType.PM, subBuilder: Reaction.create)
+    ..pc<Action>(9, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'actions', $pb.PbFieldType.PM, subBuilder: Action.create)
     ..hasRequiredFields = false
   ;
 
@@ -2824,6 +2503,7 @@ class Message extends $pb.GeneratedMessage {
     $fixnum.Int64? inReplyTo,
     Content? content,
     $core.Iterable<Reaction>? reactions,
+    $core.Iterable<Action>? actions,
   }) {
     final _result = create();
     if (metadata != null) {
@@ -2849,6 +2529,9 @@ class Message extends $pb.GeneratedMessage {
     }
     if (reactions != null) {
       _result.reactions.addAll(reactions);
+    }
+    if (actions != null) {
+      _result.actions.addAll(actions);
     }
     return _result;
   }
@@ -2944,6 +2627,9 @@ class Message extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(8)
   $core.List<Reaction> get reactions => $_getList(7);
+
+  @$pb.TagNumber(9)
+  $core.List<Action> get actions => $_getList(8);
 }
 
 class MessageWithId extends $pb.GeneratedMessage {
@@ -3414,7 +3100,8 @@ class TriggerActionRequest extends $pb.GeneratedMessage {
     ..a<$fixnum.Int64>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'guildId', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
     ..a<$fixnum.Int64>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'channelId', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
     ..a<$fixnum.Int64>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'messageId', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
-    ..aOM<ActionPayload>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'payload', subBuilder: ActionPayload.create)
+    ..a<$core.List<$core.int>>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'info', $pb.PbFieldType.OY)
+    ..a<$core.List<$core.int>>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'payload', $pb.PbFieldType.OY)
     ..hasRequiredFields = false
   ;
 
@@ -3423,7 +3110,8 @@ class TriggerActionRequest extends $pb.GeneratedMessage {
     $fixnum.Int64? guildId,
     $fixnum.Int64? channelId,
     $fixnum.Int64? messageId,
-    ActionPayload? payload,
+    $core.List<$core.int>? info,
+    $core.List<$core.int>? payload,
   }) {
     final _result = create();
     if (guildId != null) {
@@ -3434,6 +3122,9 @@ class TriggerActionRequest extends $pb.GeneratedMessage {
     }
     if (messageId != null) {
       _result.messageId = messageId;
+    }
+    if (info != null) {
+      _result.info = info;
     }
     if (payload != null) {
       _result.payload = payload;
@@ -3489,15 +3180,22 @@ class TriggerActionRequest extends $pb.GeneratedMessage {
   void clearMessageId() => clearField(3);
 
   @$pb.TagNumber(4)
-  ActionPayload get payload => $_getN(3);
+  $core.List<$core.int> get info => $_getN(3);
   @$pb.TagNumber(4)
-  set payload(ActionPayload v) { setField(4, v); }
+  set info($core.List<$core.int> v) { $_setBytes(3, v); }
   @$pb.TagNumber(4)
-  $core.bool hasPayload() => $_has(3);
+  $core.bool hasInfo() => $_has(3);
   @$pb.TagNumber(4)
-  void clearPayload() => clearField(4);
-  @$pb.TagNumber(4)
-  ActionPayload ensurePayload() => $_ensure(3);
+  void clearInfo() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.List<$core.int> get payload => $_getN(4);
+  @$pb.TagNumber(5)
+  set payload($core.List<$core.int> v) { $_setBytes(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasPayload() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearPayload() => clearField(5);
 }
 
 class TriggerActionResponse extends $pb.GeneratedMessage {
@@ -3529,15 +3227,15 @@ class TriggerActionResponse extends $pb.GeneratedMessage {
   static TriggerActionResponse? _defaultInstance;
 }
 
-class SendMessageRequest_ImageInfo extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'SendMessageRequest.ImageInfo', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.chat.v1'), createEmptyInstance: create)
+class SendMessageRequest_Attachment_ImageInfo extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'SendMessageRequest.Attachment.ImageInfo', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.chat.v1'), createEmptyInstance: create)
     ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'caption')
     ..aOB(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'useOriginal')
     ..hasRequiredFields = false
   ;
 
-  SendMessageRequest_ImageInfo._() : super();
-  factory SendMessageRequest_ImageInfo({
+  SendMessageRequest_Attachment_ImageInfo._() : super();
+  factory SendMessageRequest_Attachment_ImageInfo({
     $core.String? caption,
     $core.bool? useOriginal,
   }) {
@@ -3550,26 +3248,26 @@ class SendMessageRequest_ImageInfo extends $pb.GeneratedMessage {
     }
     return _result;
   }
-  factory SendMessageRequest_ImageInfo.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory SendMessageRequest_ImageInfo.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  factory SendMessageRequest_Attachment_ImageInfo.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory SendMessageRequest_Attachment_ImageInfo.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
   'Will be removed in next major version')
-  SendMessageRequest_ImageInfo clone() => SendMessageRequest_ImageInfo()..mergeFromMessage(this);
+  SendMessageRequest_Attachment_ImageInfo clone() => SendMessageRequest_Attachment_ImageInfo()..mergeFromMessage(this);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  SendMessageRequest_ImageInfo copyWith(void Function(SendMessageRequest_ImageInfo) updates) => super.copyWith((message) => updates(message as SendMessageRequest_ImageInfo)) as SendMessageRequest_ImageInfo; // ignore: deprecated_member_use
+  SendMessageRequest_Attachment_ImageInfo copyWith(void Function(SendMessageRequest_Attachment_ImageInfo) updates) => super.copyWith((message) => updates(message as SendMessageRequest_Attachment_ImageInfo)) as SendMessageRequest_Attachment_ImageInfo; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
-  static SendMessageRequest_ImageInfo create() => SendMessageRequest_ImageInfo._();
-  SendMessageRequest_ImageInfo createEmptyInstance() => create();
-  static $pb.PbList<SendMessageRequest_ImageInfo> createRepeated() => $pb.PbList<SendMessageRequest_ImageInfo>();
+  static SendMessageRequest_Attachment_ImageInfo create() => SendMessageRequest_Attachment_ImageInfo._();
+  SendMessageRequest_Attachment_ImageInfo createEmptyInstance() => create();
+  static $pb.PbList<SendMessageRequest_Attachment_ImageInfo> createRepeated() => $pb.PbList<SendMessageRequest_Attachment_ImageInfo>();
   @$core.pragma('dart2js:noInline')
-  static SendMessageRequest_ImageInfo getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SendMessageRequest_ImageInfo>(create);
-  static SendMessageRequest_ImageInfo? _defaultInstance;
+  static SendMessageRequest_Attachment_ImageInfo getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SendMessageRequest_Attachment_ImageInfo>(create);
+  static SendMessageRequest_Attachment_ImageInfo? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.String get caption => $_getSZ(0);
@@ -3604,7 +3302,7 @@ class SendMessageRequest_Attachment extends $pb.GeneratedMessage {
     ..oo(0, [3])
     ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id')
     ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'name')
-    ..aOM<SendMessageRequest_ImageInfo>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'image', subBuilder: SendMessageRequest_ImageInfo.create)
+    ..aOM<SendMessageRequest_Attachment_ImageInfo>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'image', subBuilder: SendMessageRequest_Attachment_ImageInfo.create)
     ..hasRequiredFields = false
   ;
 
@@ -3612,7 +3310,7 @@ class SendMessageRequest_Attachment extends $pb.GeneratedMessage {
   factory SendMessageRequest_Attachment({
     $core.String? id,
     $core.String? name,
-    SendMessageRequest_ImageInfo? image,
+    SendMessageRequest_Attachment_ImageInfo? image,
   }) {
     final _result = create();
     if (id != null) {
@@ -3669,15 +3367,15 @@ class SendMessageRequest_Attachment extends $pb.GeneratedMessage {
   void clearName() => clearField(2);
 
   @$pb.TagNumber(3)
-  SendMessageRequest_ImageInfo get image => $_getN(2);
+  SendMessageRequest_Attachment_ImageInfo get image => $_getN(2);
   @$pb.TagNumber(3)
-  set image(SendMessageRequest_ImageInfo v) { setField(3, v); }
+  set image(SendMessageRequest_Attachment_ImageInfo v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasImage() => $_has(2);
   @$pb.TagNumber(3)
   void clearImage() => clearField(3);
   @$pb.TagNumber(3)
-  SendMessageRequest_ImageInfo ensureImage() => $_ensure(2);
+  SendMessageRequest_Attachment_ImageInfo ensureImage() => $_ensure(2);
 }
 
 class SendMessageRequest_Content extends $pb.GeneratedMessage {
@@ -3760,6 +3458,7 @@ class SendMessageRequest extends $pb.GeneratedMessage {
     ..aOM<$0.Metadata>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'metadata', subBuilder: $0.Metadata.create)
     ..aOM<Overrides>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'overrides', subBuilder: Overrides.create)
     ..a<$fixnum.Int64>(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'inReplyTo', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
+    ..pc<Action>(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'actions', $pb.PbFieldType.PM, subBuilder: Action.create)
     ..hasRequiredFields = false
   ;
 
@@ -3772,6 +3471,7 @@ class SendMessageRequest extends $pb.GeneratedMessage {
     $0.Metadata? metadata,
     Overrides? overrides,
     $fixnum.Int64? inReplyTo,
+    $core.Iterable<Action>? actions,
   }) {
     final _result = create();
     if (guildId != null) {
@@ -3794,6 +3494,9 @@ class SendMessageRequest extends $pb.GeneratedMessage {
     }
     if (inReplyTo != null) {
       _result.inReplyTo = inReplyTo;
+    }
+    if (actions != null) {
+      _result.actions.addAll(actions);
     }
     return _result;
   }
@@ -3886,6 +3589,9 @@ class SendMessageRequest extends $pb.GeneratedMessage {
   $core.bool hasInReplyTo() => $_has(6);
   @$pb.TagNumber(7)
   void clearInReplyTo() => clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.List<Action> get actions => $_getList(7);
 }
 
 class SendMessageResponse extends $pb.GeneratedMessage {
@@ -3935,21 +3641,21 @@ class SendMessageResponse extends $pb.GeneratedMessage {
   void clearMessageId() => clearField(1);
 }
 
-class UpdateMessageTextRequest extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'UpdateMessageTextRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.chat.v1'), createEmptyInstance: create)
+class UpdateMessageContentRequest extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'UpdateMessageContentRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.chat.v1'), createEmptyInstance: create)
     ..a<$fixnum.Int64>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'guildId', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
     ..a<$fixnum.Int64>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'channelId', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
     ..a<$fixnum.Int64>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'messageId', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
-    ..aOM<FormattedText>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'newContent', subBuilder: FormattedText.create)
+    ..aOM<SendMessageRequest_Content>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'newContent', subBuilder: SendMessageRequest_Content.create)
     ..hasRequiredFields = false
   ;
 
-  UpdateMessageTextRequest._() : super();
-  factory UpdateMessageTextRequest({
+  UpdateMessageContentRequest._() : super();
+  factory UpdateMessageContentRequest({
     $fixnum.Int64? guildId,
     $fixnum.Int64? channelId,
     $fixnum.Int64? messageId,
-    FormattedText? newContent,
+    SendMessageRequest_Content? newContent,
   }) {
     final _result = create();
     if (guildId != null) {
@@ -3966,26 +3672,26 @@ class UpdateMessageTextRequest extends $pb.GeneratedMessage {
     }
     return _result;
   }
-  factory UpdateMessageTextRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory UpdateMessageTextRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  factory UpdateMessageContentRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory UpdateMessageContentRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
   'Will be removed in next major version')
-  UpdateMessageTextRequest clone() => UpdateMessageTextRequest()..mergeFromMessage(this);
+  UpdateMessageContentRequest clone() => UpdateMessageContentRequest()..mergeFromMessage(this);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  UpdateMessageTextRequest copyWith(void Function(UpdateMessageTextRequest) updates) => super.copyWith((message) => updates(message as UpdateMessageTextRequest)) as UpdateMessageTextRequest; // ignore: deprecated_member_use
+  UpdateMessageContentRequest copyWith(void Function(UpdateMessageContentRequest) updates) => super.copyWith((message) => updates(message as UpdateMessageContentRequest)) as UpdateMessageContentRequest; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
-  static UpdateMessageTextRequest create() => UpdateMessageTextRequest._();
-  UpdateMessageTextRequest createEmptyInstance() => create();
-  static $pb.PbList<UpdateMessageTextRequest> createRepeated() => $pb.PbList<UpdateMessageTextRequest>();
+  static UpdateMessageContentRequest create() => UpdateMessageContentRequest._();
+  UpdateMessageContentRequest createEmptyInstance() => create();
+  static $pb.PbList<UpdateMessageContentRequest> createRepeated() => $pb.PbList<UpdateMessageContentRequest>();
   @$core.pragma('dart2js:noInline')
-  static UpdateMessageTextRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpdateMessageTextRequest>(create);
-  static UpdateMessageTextRequest? _defaultInstance;
+  static UpdateMessageContentRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpdateMessageContentRequest>(create);
+  static UpdateMessageContentRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
   $fixnum.Int64 get guildId => $_getI64(0);
@@ -4015,44 +3721,44 @@ class UpdateMessageTextRequest extends $pb.GeneratedMessage {
   void clearMessageId() => clearField(3);
 
   @$pb.TagNumber(4)
-  FormattedText get newContent => $_getN(3);
+  SendMessageRequest_Content get newContent => $_getN(3);
   @$pb.TagNumber(4)
-  set newContent(FormattedText v) { setField(4, v); }
+  set newContent(SendMessageRequest_Content v) { setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasNewContent() => $_has(3);
   @$pb.TagNumber(4)
   void clearNewContent() => clearField(4);
   @$pb.TagNumber(4)
-  FormattedText ensureNewContent() => $_ensure(3);
+  SendMessageRequest_Content ensureNewContent() => $_ensure(3);
 }
 
-class UpdateMessageTextResponse extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'UpdateMessageTextResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.chat.v1'), createEmptyInstance: create)
+class UpdateMessageContentResponse extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'UpdateMessageContentResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.chat.v1'), createEmptyInstance: create)
     ..hasRequiredFields = false
   ;
 
-  UpdateMessageTextResponse._() : super();
-  factory UpdateMessageTextResponse() => create();
-  factory UpdateMessageTextResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory UpdateMessageTextResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  UpdateMessageContentResponse._() : super();
+  factory UpdateMessageContentResponse() => create();
+  factory UpdateMessageContentResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory UpdateMessageContentResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
   'Will be removed in next major version')
-  UpdateMessageTextResponse clone() => UpdateMessageTextResponse()..mergeFromMessage(this);
+  UpdateMessageContentResponse clone() => UpdateMessageContentResponse()..mergeFromMessage(this);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  UpdateMessageTextResponse copyWith(void Function(UpdateMessageTextResponse) updates) => super.copyWith((message) => updates(message as UpdateMessageTextResponse)) as UpdateMessageTextResponse; // ignore: deprecated_member_use
+  UpdateMessageContentResponse copyWith(void Function(UpdateMessageContentResponse) updates) => super.copyWith((message) => updates(message as UpdateMessageContentResponse)) as UpdateMessageContentResponse; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
-  static UpdateMessageTextResponse create() => UpdateMessageTextResponse._();
-  UpdateMessageTextResponse createEmptyInstance() => create();
-  static $pb.PbList<UpdateMessageTextResponse> createRepeated() => $pb.PbList<UpdateMessageTextResponse>();
+  static UpdateMessageContentResponse create() => UpdateMessageContentResponse._();
+  UpdateMessageContentResponse createEmptyInstance() => create();
+  static $pb.PbList<UpdateMessageContentResponse> createRepeated() => $pb.PbList<UpdateMessageContentResponse>();
   @$core.pragma('dart2js:noInline')
-  static UpdateMessageTextResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpdateMessageTextResponse>(create);
-  static UpdateMessageTextResponse? _defaultInstance;
+  static UpdateMessageContentResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpdateMessageContentResponse>(create);
+  static UpdateMessageContentResponse? _defaultInstance;
 }
 
 class PinMessageRequest extends $pb.GeneratedMessage {
@@ -4370,7 +4076,9 @@ class AddReactionRequest extends $pb.GeneratedMessage {
     ..a<$fixnum.Int64>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'guildId', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
     ..a<$fixnum.Int64>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'channelId', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
     ..a<$fixnum.Int64>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'messageId', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
-    ..aOM<$1.Emote>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'emote', subBuilder: $1.Emote.create)
+    ..e<ReactionKind>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'reactionKind', $pb.PbFieldType.OE, defaultOrMaker: ReactionKind.REACTION_KIND_IMAGE_UNSPECIFIED, valueOf: ReactionKind.valueOf, enumValues: ReactionKind.values)
+    ..aOS(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'reactionData')
+    ..aOS(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'reactionName')
     ..hasRequiredFields = false
   ;
 
@@ -4379,7 +4087,9 @@ class AddReactionRequest extends $pb.GeneratedMessage {
     $fixnum.Int64? guildId,
     $fixnum.Int64? channelId,
     $fixnum.Int64? messageId,
-    $1.Emote? emote,
+    ReactionKind? reactionKind,
+    $core.String? reactionData,
+    $core.String? reactionName,
   }) {
     final _result = create();
     if (guildId != null) {
@@ -4391,8 +4101,14 @@ class AddReactionRequest extends $pb.GeneratedMessage {
     if (messageId != null) {
       _result.messageId = messageId;
     }
-    if (emote != null) {
-      _result.emote = emote;
+    if (reactionKind != null) {
+      _result.reactionKind = reactionKind;
+    }
+    if (reactionData != null) {
+      _result.reactionData = reactionData;
+    }
+    if (reactionName != null) {
+      _result.reactionName = reactionName;
     }
     return _result;
   }
@@ -4445,15 +4161,31 @@ class AddReactionRequest extends $pb.GeneratedMessage {
   void clearMessageId() => clearField(3);
 
   @$pb.TagNumber(4)
-  $1.Emote get emote => $_getN(3);
+  ReactionKind get reactionKind => $_getN(3);
   @$pb.TagNumber(4)
-  set emote($1.Emote v) { setField(4, v); }
+  set reactionKind(ReactionKind v) { setField(4, v); }
   @$pb.TagNumber(4)
-  $core.bool hasEmote() => $_has(3);
+  $core.bool hasReactionKind() => $_has(3);
   @$pb.TagNumber(4)
-  void clearEmote() => clearField(4);
-  @$pb.TagNumber(4)
-  $1.Emote ensureEmote() => $_ensure(3);
+  void clearReactionKind() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get reactionData => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set reactionData($core.String v) { $_setString(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasReactionData() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearReactionData() => clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get reactionName => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set reactionName($core.String v) { $_setString(5, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasReactionName() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearReactionName() => clearField(6);
 }
 
 class AddReactionResponse extends $pb.GeneratedMessage {
@@ -4490,7 +4222,7 @@ class RemoveReactionRequest extends $pb.GeneratedMessage {
     ..a<$fixnum.Int64>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'guildId', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
     ..a<$fixnum.Int64>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'channelId', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
     ..a<$fixnum.Int64>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'messageId', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
-    ..aOM<$1.Emote>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'emote', subBuilder: $1.Emote.create)
+    ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'reactionData')
     ..hasRequiredFields = false
   ;
 
@@ -4499,7 +4231,7 @@ class RemoveReactionRequest extends $pb.GeneratedMessage {
     $fixnum.Int64? guildId,
     $fixnum.Int64? channelId,
     $fixnum.Int64? messageId,
-    $1.Emote? emote,
+    $core.String? reactionData,
   }) {
     final _result = create();
     if (guildId != null) {
@@ -4511,8 +4243,8 @@ class RemoveReactionRequest extends $pb.GeneratedMessage {
     if (messageId != null) {
       _result.messageId = messageId;
     }
-    if (emote != null) {
-      _result.emote = emote;
+    if (reactionData != null) {
+      _result.reactionData = reactionData;
     }
     return _result;
   }
@@ -4565,15 +4297,13 @@ class RemoveReactionRequest extends $pb.GeneratedMessage {
   void clearMessageId() => clearField(3);
 
   @$pb.TagNumber(4)
-  $1.Emote get emote => $_getN(3);
+  $core.String get reactionData => $_getSZ(3);
   @$pb.TagNumber(4)
-  set emote($1.Emote v) { setField(4, v); }
+  set reactionData($core.String v) { $_setString(3, v); }
   @$pb.TagNumber(4)
-  $core.bool hasEmote() => $_has(3);
+  $core.bool hasReactionData() => $_has(3);
   @$pb.TagNumber(4)
-  void clearEmote() => clearField(4);
-  @$pb.TagNumber(4)
-  $1.Emote ensureEmote() => $_ensure(3);
+  void clearReactionData() => clearField(4);
 }
 
 class RemoveReactionResponse extends $pb.GeneratedMessage {
@@ -4603,5 +4333,95 @@ class RemoveReactionResponse extends $pb.GeneratedMessage {
   @$core.pragma('dart2js:noInline')
   static RemoveReactionResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<RemoveReactionResponse>(create);
   static RemoveReactionResponse? _defaultInstance;
+}
+
+class TypingRequest extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'TypingRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.chat.v1'), createEmptyInstance: create)
+    ..a<$fixnum.Int64>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'guildId', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
+    ..a<$fixnum.Int64>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'channelId', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
+    ..hasRequiredFields = false
+  ;
+
+  TypingRequest._() : super();
+  factory TypingRequest({
+    $fixnum.Int64? guildId,
+    $fixnum.Int64? channelId,
+  }) {
+    final _result = create();
+    if (guildId != null) {
+      _result.guildId = guildId;
+    }
+    if (channelId != null) {
+      _result.channelId = channelId;
+    }
+    return _result;
+  }
+  factory TypingRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory TypingRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  TypingRequest clone() => TypingRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  TypingRequest copyWith(void Function(TypingRequest) updates) => super.copyWith((message) => updates(message as TypingRequest)) as TypingRequest; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static TypingRequest create() => TypingRequest._();
+  TypingRequest createEmptyInstance() => create();
+  static $pb.PbList<TypingRequest> createRepeated() => $pb.PbList<TypingRequest>();
+  @$core.pragma('dart2js:noInline')
+  static TypingRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<TypingRequest>(create);
+  static TypingRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $fixnum.Int64 get guildId => $_getI64(0);
+  @$pb.TagNumber(1)
+  set guildId($fixnum.Int64 v) { $_setInt64(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasGuildId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearGuildId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $fixnum.Int64 get channelId => $_getI64(1);
+  @$pb.TagNumber(2)
+  set channelId($fixnum.Int64 v) { $_setInt64(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasChannelId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearChannelId() => clearField(2);
+}
+
+class TypingResponse extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'TypingResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protocol.chat.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  TypingResponse._() : super();
+  factory TypingResponse() => create();
+  factory TypingResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory TypingResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  TypingResponse clone() => TypingResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  TypingResponse copyWith(void Function(TypingResponse) updates) => super.copyWith((message) => updates(message as TypingResponse)) as TypingResponse; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static TypingResponse create() => TypingResponse._();
+  TypingResponse createEmptyInstance() => create();
+  static $pb.PbList<TypingResponse> createRepeated() => $pb.PbList<TypingResponse>();
+  @$core.pragma('dart2js:noInline')
+  static TypingResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<TypingResponse>(create);
+  static TypingResponse? _defaultInstance;
 }
 
